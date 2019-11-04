@@ -16,7 +16,7 @@
           </div>
           <div class="col-md-4 col-xs-4 center-xs pt5">
             <div>
-              <logo width="auto" height="41px" />
+              <!-- <logo width="auto" height="41px" /> -->
             </div>
           </div>
           <div class="col-xs-2 visible-xs">
@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="col-xs-2 col-md-6 center-xs">
-            <logo width="auto" height="41px" />
+            <!-- <logo width="auto" height="41px" /> -->
           </div>
           <div class="col-xs-5 col-md-3 end-xs">
             <div>
@@ -66,7 +66,6 @@ import CurrentPage from 'theme/mixins/currentPage'
 import AccountIcon from 'theme/components/core/blocks/Header/AccountIcon'
 import CompareIcon from 'theme/components/core/blocks/Header/CompareIcon'
 import HamburgerIcon from 'theme/components/core/blocks/Header/HamburgerIcon'
-import Logo from 'theme/components/core/Logo'
 import MicrocartIcon from 'theme/components/core/blocks/Header/MicrocartIcon'
 import SearchIcon from 'theme/components/core/blocks/Header/SearchIcon'
 import WishlistIcon from 'theme/components/core/blocks/Header/WishlistIcon'
@@ -77,7 +76,6 @@ export default {
     AccountIcon,
     CompareIcon,
     HamburgerIcon,
-    Logo,
     MicrocartIcon,
     SearchIcon,
     WishlistIcon

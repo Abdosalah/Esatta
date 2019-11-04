@@ -3,7 +3,7 @@
     <overlay v-if="overlayActive" />
     <loader />
     <div id="viewport" class="w-100 relative">
-      <main-header />
+      <nav-bar />
       <async-sidebar
         :async-component="SearchPanel"
         :is-open="isSearchPanelOpen"
@@ -40,7 +40,7 @@
 <script>
 import { mapState } from 'vuex'
 import AsyncSidebar from 'theme/components/theme/blocks/AsyncSidebar/AsyncSidebar.vue'
-import MainHeader from 'theme/components/core/blocks/Header/Header.vue'
+import NavBar from 'theme/components/core/blocks/Header/NavBar.vue'
 import MainFooter from 'theme/components/core/blocks/Footer/Footer.vue'
 import Overlay from 'theme/components/core/Overlay.vue'
 import Loader from 'theme/components/core/Loader.vue'
@@ -108,7 +108,7 @@ export default {
   },
   metaInfo: Head,
   components: {
-    MainHeader,
+    NavBar,
     MainFooter,
     SidebarMenu, // eslint-disable-line vue/no-unused-components
     Overlay,
