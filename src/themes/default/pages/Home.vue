@@ -1,6 +1,7 @@
 <template>
   <div id="home">
     <head-image />
+    <how-itworks />
 
     <promoted-offers />
 
@@ -32,6 +33,9 @@
 </template>
 
 <script>
+// Esatta custom components
+import HowItworks from 'theme/components/custom/HowItWorks.vue'
+
 // query constructor
 import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/common'
 import { isServer, onlineHelper } from '@vue-storefront/core/helpers'
@@ -55,6 +59,7 @@ export default {
   mixins: [Home],
   components: {
     HeadImage,
+    HowItworks,
     Onboard,
     ProductListing,
     PromotedOffers,
