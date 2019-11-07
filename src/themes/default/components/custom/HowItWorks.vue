@@ -1,9 +1,8 @@
  <template> 
- <!-- sm:m-auto lg:pl-16 w-full lg:m-0 py-10 -->
-  <div class="main-div">
+  <div class="main-div lg:relative">
     <img class="h-screen w-screen object-cover hidden lg:block" src="assets/esatta-images/hp_hiw.jpg">
-    <h1 class="text-5xl font-black">How it Works</h1>
-    <div class="steps">
+    <div class="lg:absolute lg:top-10 lg:left-10 lg:block m-auto table">
+      <h1 class="text-5xl font-black">How it Works</h1>
       <!-- NUMBER ONE -->
       <p class="numbers">1</p>
       <div class="pt-8 ml-20">

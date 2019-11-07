@@ -9686,11 +9686,11 @@ video {
   left: 0;
 }
 
-.inset-auto {
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
+.inset-10 {
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
 }
 
 .inset-y-0 {
@@ -9703,14 +9703,14 @@ video {
   left: 0;
 }
 
-.inset-y-auto {
-  top: auto;
-  bottom: auto;
+.inset-y-10 {
+  top: 10%;
+  bottom: 10%;
 }
 
-.inset-x-auto {
-  right: auto;
-  left: auto;
+.inset-x-10 {
+  right: 10%;
+  left: 10%;
 }
 
 .top-0 {
@@ -9729,20 +9729,20 @@ video {
   left: 0;
 }
 
-.top-auto {
-  top: auto;
+.top-10 {
+  top: 10%;
 }
 
-.right-auto {
-  right: auto;
+.right-10 {
+  right: 10%;
 }
 
-.bottom-auto {
-  bottom: auto;
+.bottom-10 {
+  bottom: 10%;
 }
 
-.left-auto {
-  left: auto;
+.left-10 {
+  left: 10%;
 }
 
 .resize-none {
@@ -20538,11 +20538,11 @@ video {
     left: 0;
   }
 
-  .sm\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .sm\:inset-10 {
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
   }
 
   .sm\:inset-y-0 {
@@ -20555,14 +20555,14 @@ video {
     left: 0;
   }
 
-  .sm\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .sm\:inset-y-10 {
+    top: 10%;
+    bottom: 10%;
   }
 
-  .sm\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .sm\:inset-x-10 {
+    right: 10%;
+    left: 10%;
   }
 
   .sm\:top-0 {
@@ -20581,20 +20581,20 @@ video {
     left: 0;
   }
 
-  .sm\:top-auto {
-    top: auto;
+  .sm\:top-10 {
+    top: 10%;
   }
 
-  .sm\:right-auto {
-    right: auto;
+  .sm\:right-10 {
+    right: 10%;
   }
 
-  .sm\:bottom-auto {
-    bottom: auto;
+  .sm\:bottom-10 {
+    bottom: 10%;
   }
 
-  .sm\:left-auto {
-    left: auto;
+  .sm\:left-10 {
+    left: 10%;
   }
 
   .sm\:resize-none {
@@ -31391,11 +31391,11 @@ video {
     left: 0;
   }
 
-  .md\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .md\:inset-10 {
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
   }
 
   .md\:inset-y-0 {
@@ -31408,14 +31408,14 @@ video {
     left: 0;
   }
 
-  .md\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .md\:inset-y-10 {
+    top: 10%;
+    bottom: 10%;
   }
 
-  .md\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .md\:inset-x-10 {
+    right: 10%;
+    left: 10%;
   }
 
   .md\:top-0 {
@@ -31434,20 +31434,20 @@ video {
     left: 0;
   }
 
-  .md\:top-auto {
-    top: auto;
+  .md\:top-10 {
+    top: 10%;
   }
 
-  .md\:right-auto {
-    right: auto;
+  .md\:right-10 {
+    right: 10%;
   }
 
-  .md\:bottom-auto {
-    bottom: auto;
+  .md\:bottom-10 {
+    bottom: 10%;
   }
 
-  .md\:left-auto {
-    left: auto;
+  .md\:left-10 {
+    left: 10%;
   }
 
   .md\:resize-none {
@@ -42244,11 +42244,11 @@ video {
     left: 0;
   }
 
-  .lg\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .lg\:inset-10 {
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
   }
 
   .lg\:inset-y-0 {
@@ -42261,14 +42261,14 @@ video {
     left: 0;
   }
 
-  .lg\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .lg\:inset-y-10 {
+    top: 10%;
+    bottom: 10%;
   }
 
-  .lg\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .lg\:inset-x-10 {
+    right: 10%;
+    left: 10%;
   }
 
   .lg\:top-0 {
@@ -42287,20 +42287,20 @@ video {
     left: 0;
   }
 
-  .lg\:top-auto {
-    top: auto;
+  .lg\:top-10 {
+    top: 10%;
   }
 
-  .lg\:right-auto {
-    right: auto;
+  .lg\:right-10 {
+    right: 10%;
   }
 
-  .lg\:bottom-auto {
-    bottom: auto;
+  .lg\:bottom-10 {
+    bottom: 10%;
   }
 
-  .lg\:left-auto {
-    left: auto;
+  .lg\:left-10 {
+    left: 10%;
   }
 
   .lg\:resize-none {
@@ -53097,11 +53097,11 @@ video {
     left: 0;
   }
 
-  .xl\:inset-auto {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
+  .xl\:inset-10 {
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
   }
 
   .xl\:inset-y-0 {
@@ -53114,14 +53114,14 @@ video {
     left: 0;
   }
 
-  .xl\:inset-y-auto {
-    top: auto;
-    bottom: auto;
+  .xl\:inset-y-10 {
+    top: 10%;
+    bottom: 10%;
   }
 
-  .xl\:inset-x-auto {
-    right: auto;
-    left: auto;
+  .xl\:inset-x-10 {
+    right: 10%;
+    left: 10%;
   }
 
   .xl\:top-0 {
@@ -53140,20 +53140,20 @@ video {
     left: 0;
   }
 
-  .xl\:top-auto {
-    top: auto;
+  .xl\:top-10 {
+    top: 10%;
   }
 
-  .xl\:right-auto {
-    right: auto;
+  .xl\:right-10 {
+    right: 10%;
   }
 
-  .xl\:bottom-auto {
-    bottom: auto;
+  .xl\:bottom-10 {
+    bottom: 10%;
   }
 
-  .xl\:left-auto {
-    left: auto;
+  .xl\:left-10 {
+    left: 10%;
   }
 
   .xl\:resize-none {
