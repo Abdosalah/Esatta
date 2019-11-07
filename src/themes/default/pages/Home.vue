@@ -2,7 +2,7 @@
   <div id="home">
     <head-image />
     <how-itworks />
-
+    <just-landed />
     <promoted-offers />
 
     <section class="new-collection container px15" v-if="everythingNewCollection && everythingNewCollection.length">
@@ -35,6 +35,7 @@
 <script>
 // Esatta custom components
 import HowItworks from 'theme/components/custom/HowItWorks.vue'
+import JustLanded from 'theme/components/custom/JustLanded.vue'
 
 // query constructor
 import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/common'
@@ -60,6 +61,7 @@ export default {
   components: {
     HeadImage,
     HowItworks,
+    JustLanded,
     Onboard,
     ProductListing,
     PromotedOffers,

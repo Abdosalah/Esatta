@@ -11,7 +11,7 @@
           Use our Body Measurement tools to find the perfect fit 
           <br/>for you then browse gaments that look best on you
         </p>
-        <p class="more"><a href="/how-it-works">Learn More</a></p>
+        <p class="text-red mt-2"><a href="/how-it-works">Learn More</a></p>
       </div>
       <div class="clearfix" />
       <!-- NUMBER TWO -->
@@ -22,7 +22,7 @@
           Identify the latest styles from our independent
           <br/>designers - only on Esatta, and only for a limited time
         </p>
-        <p class="more"><a href="/how-it-works">Learn More</a></p>
+        <p class="text-red mt-2"><a href="/how-it-works">Learn More</a></p>
       </div>
       <div class="clearfix" />
       <!-- NUMBER THREE -->
@@ -33,7 +33,7 @@
           Feel great in our perfectly fitted garments, or we will
           <br/>alter, remake or refund the garment - on us
         </p>
-        <p class="more"><a href="/how-it-works">Learn More</a></p>
+        <p class="text-red mt-2"><a href="/how-it-works">Learn More</a></p>
       </div>
       <!-- END -->
     </div>
@@ -50,10 +50,5 @@
   float: left;
   font-weight: 900;
   font-size: 7rem;
-}
-
-.more {
-  color: #EC145B;
-  margin-top: 0.5rem;
 }
 </style>
