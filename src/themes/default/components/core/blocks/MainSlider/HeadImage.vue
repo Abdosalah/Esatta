@@ -45,7 +45,7 @@
 
 .buttons-div {
   position: absolute;
-  top: 55%;
+  top: 65%;
 }
 
 .header-buttons {
