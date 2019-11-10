@@ -4,7 +4,7 @@
     <how-itworks />
     <just-landed />
     <designers />
-    
+
     <Onboard />
   </div>
 </template>
