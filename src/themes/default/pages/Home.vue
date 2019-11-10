@@ -3,31 +3,8 @@
     <head-image />
     <how-itworks />
     <just-landed />
-    <promoted-offers />
-
-    <section class="new-collection container px15" v-if="everythingNewCollection && everythingNewCollection.length">
-      <div>
-        <header class="col-md-12">
-          <h2 class="align-center cl-accent">
-            {{ $t('Everything new') }}
-          </h2>
-        </header>
-      </div>
-      <div class="row center-xs">
-        <product-listing columns="4" :products="everythingNewCollection" />
-      </div>
-    </section>
-
-    <section v-if="isOnline" class="container pb60 px15">
-      <div class="row center-xs">
-        <header class="col-md-12" :class="{ pt40: everythingNewCollection && everythingNewCollection.length }">
-          <h2 class="align-center cl-accent">
-            {{ $t('Get inspired') }}
-          </h2>
-        </header>
-      </div>
-      <tile-links />
-    </section>
+    <designers />
+    
     <Onboard />
   </div>
 </template>
@@ -36,6 +13,7 @@
 // Esatta custom components
 import HowItworks from 'theme/components/custom/HowItWorks.vue'
 import JustLanded from 'theme/components/custom/JustLanded.vue'
+import Designers from 'theme/components/custom/Designers.vue'
 
 // query constructor
 import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/common'
@@ -50,7 +28,6 @@ import HeadImage from 'theme/components/core/blocks/MainSlider/HeadImage'
 
 // Theme local components
 import Onboard from 'theme/components/theme/blocks/Home/Onboard'
-import PromotedOffers from 'theme/components/theme/blocks/PromotedOffers/PromotedOffers'
 import TileLinks from 'theme/components/theme/blocks/TileLinks/TileLinks'
 import { Logger } from '@vue-storefront/core/lib/logger'
 import { mapGetters } from 'vuex'
@@ -61,10 +38,10 @@ export default {
   components: {
     HeadImage,
     HowItworks,
+    Designers,
     JustLanded,
     Onboard,
     ProductListing,
-    PromotedOffers,
     TileLinks
   },
   computed: {
