@@ -2,7 +2,9 @@
   <div class="main-div h-48 md:h-64 lg:w-1/3 w-full">
     <div class="flex items-center justify-center">
       <img class="h-5 w-5 float-left mr-2" src="assets/esatta-images/plus.svg">
-      <p class="text-red">LATEST INDEPENDANT</p>
+      <p class="text-red">
+        LATEST INDEPENDANT
+      </p>
     </div>
     <p class="text-center text-5xl font-black">
       DESIGNERS

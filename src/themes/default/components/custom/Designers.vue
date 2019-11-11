@@ -23,7 +23,7 @@
         tile-name="4"
         tile-image="assets/esatta-images/designers/hp_el4.jpg"
       />
-      <middle-tile class="md:inline-block hidden"/>
+      <middle-tile class="md:inline-block hidden" />
       <tiles
         class="lg:inline-block hidden"
         tile-name="6"
