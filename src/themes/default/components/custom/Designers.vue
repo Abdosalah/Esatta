@@ -23,11 +23,7 @@
         tile-name="4"
         tile-image="assets/esatta-images/designers/hp_el4.jpg"
       />
-      <tiles
-        class="inline-block"
-        tile-name="5"
-        tile-image="assets/esatta-images/designers/hp_el1.jpg"
-      />
+      <middle-tile class="md:inline-block hidden"/>
       <tiles
         class="lg:inline-block hidden"
         tile-name="6"
@@ -56,10 +52,12 @@
 
 <script>
 import Tiles from 'theme/components/custom/Tiles.vue'
+import MiddleTile from 'theme/components/custom/MiddleTile.vue'
 
 export default {
   components: {
-    Tiles
+    Tiles,
+    MiddleTile
   }
 }
 </script>
