@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray pt-8% md:pt-0">
+  <div class="bg-white md:bg-gray pt-8% md:pt-0">
     <!-- SHOP WOMEN -->
     <div class="md:p-4% lg:mr-nav">
       <div class="relative">
