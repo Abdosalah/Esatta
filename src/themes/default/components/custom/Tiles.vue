@@ -1,7 +1,7 @@
 <template>
   <div class="main-div m-5 h-48 md:h-64 lg:w-1/3 w-1/2 relative">
     <img class="h-full w-full" :src="tileImage">
-    <div class="designer-text">
+    <div class="designer-text hidden md:block">
       <p class="text-red">
         DESIGN
       </p>
