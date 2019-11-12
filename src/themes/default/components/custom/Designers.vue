@@ -23,20 +23,20 @@
     </div>
     <div class="flex my-4  flex md:hidden">
       <div class="w-1/2 text-center">
-          <p class="mb-4">
-            Designer Name
-          </p>
-          <p class="text-red">
-            Designer Location
-          </p>
+        <p class="mb-4">
+          Designer Name
+        </p>
+        <p class="text-red">
+          Designer Location
+        </p>
       </div>
       <div class="w-1/2 text-center">
-          <p class="mb-4">
-            Designer Name
-          </p>
-          <p class="text-red">
-            Designer Location
-          </p>
+        <p class="mb-4">
+          Designer Name
+        </p>
+        <p class="text-red">
+          Designer Location
+        </p>
       </div>
     </div>
     <div class="flex">
@@ -76,20 +76,20 @@
     </div>
     <div class="flex mb-8 flex md:hidden">
       <div class="w-1/2 text-center">
-          <p class="mb-4">
-            Designer Name
-          </p>
-          <p class="text-red">
-            Designer Location
-          </p>
+        <p class="mb-4">
+          Designer Name
+        </p>
+        <p class="text-red">
+          Designer Location
+        </p>
       </div>
       <div class="w-1/2 text-center">
-          <p class="mb-4">
-            Designer Name
-          </p>
-          <p class="text-red">
-            Designer Location
-          </p>
+        <p class="mb-4">
+          Designer Name
+        </p>
+        <p class="text-red">
+          Designer Location
+        </p>
       </div>
     </div>
   </div>
