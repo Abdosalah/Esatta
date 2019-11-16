@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <header class="modal-header py25 px65 h1 serif weight-700 bg-cl-secondary">
+  <div class="main-div">
+    <header class="modal-header py25 px65 h1 serif weight-700">
       <i
         slot="close"
         class="modal-close material-icons p15 cl-bg-tertiary"
@@ -8,12 +8,15 @@
       >
         close
       </i>
-      {{ $t('Log in') }}
+      {{ $t('Log In') }}
     </header>
     <div v-if="hasRedirect" class="pt10 pb10 px65 redirect-error">
       <p class="h5 mb0 mt0">
         {{ $t('You need to be logged in to see this page') }}
       </p>
+    </div>
+    <div class="bg-blue-800 w-full mb10 ">
+      <img class="h-5 w-5 mr-5" src="assets/esatta-images/facebook.svg">
     </div>
     <div class="modal-content pt30 pb60 px65 cl-secondary">
       <form @submit.prevent="login" novalidate>
@@ -24,7 +27,7 @@
           focus
           v-model="email"
           @blur="$v.email.$touch()"
-          :placeholder="$t('E-mail address *')"
+          :placeholder="$t('Email')"
           :validations="[
             {
               condition: !$v.email.required && $v.email.$error,
@@ -42,13 +45,13 @@
           name="password"
           v-model="password"
           @blur="$v.password.$touch()"
-          :placeholder="$t('Password *')"
+          :placeholder="$t('Password')"
           :validations="[{
             condition: !$v.password.required && $v.password.$error,
             text: $t('Field is required.')
           }]"
         />
-        <div class="row">
+        <div class="row text-black">
           <base-checkbox
             class="col-xs-7 col-sm-6 mb20"
             id="remember"
@@ -56,7 +59,7 @@
           >
             {{ $t('Remember me') }}
           </base-checkbox>
-          <div class="col-xs-5 col-sm-6 mb35 flex end-xs middle-xs">
+          <div class="col-xs-5 col-sm-6 mb35 flex end-xs middle-xs forgot-pass">
             <a href="#" @click.prevent="remindPassword">
               {{ $t('Forgot the password?') }}
             </a>
@@ -65,12 +68,13 @@
         <button-full class="mb20" type="submit" data-testid="loginSubmit">
           {{ $t('Log in to your account') }}
         </button-full>
-        <div class="center-xs">
+        <!-- REGISTER LINK -->
+        <!-- <div class="center-xs text-black">
           {{ $t('or') }}
           <a href="#" @click.prevent="switchElem" data-testid="registerLink">
             {{ $t('register an account') }}
           </a>
-        </div>
+        </div> -->
       </form>
     </div>
   </div>
@@ -157,6 +161,14 @@ export default {
 $color-error: color(error);
 $white: color(white);
 
+  .main-div {
+    background-color: #FADBD9;
+  }
+
+  .my-pass[type=password], textarea {
+    background-color :cyan;
+  }
+
   .modal-content {
     @media (max-width: 400px) {
       padding-left: 20px;
@@ -166,5 +178,9 @@ $white: color(white);
   .redirect-error {
     background-color: $color-error;
     color: $white;
+  }
+
+  .forgot-pass {
+    color : #C57974;
   }
 </style>
