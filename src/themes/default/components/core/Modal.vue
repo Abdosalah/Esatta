@@ -138,7 +138,7 @@ $z-index-modal: map-get($z-index, modal);
     z-index: $z-index-modal+1;
     pointer-events: auto;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1024px) {
       min-height: 100%;
       min-width: 100%;
       margin: 0;
