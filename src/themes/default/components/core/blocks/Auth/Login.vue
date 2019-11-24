@@ -1,7 +1,7 @@
 <template>
-  <!-- <div class="w-screen relative"> -->
-    <div class="main-div">
-      <header class="modal-header py25 px65 h1 serif weight-700">
+  <div class="h-screen lg:h-65% lg:flex">
+    <div class="main-div sm:px-0 md:px-13% lg:px-0 lg:w-1/2">
+      <header class="modal-header py25 px-15% h1 serif weight-700 sm:text-left md:text-center lg:text-left">
         <i
           slot="close"
           class="modal-close material-icons p15 cl-bg-tertiary"
@@ -16,7 +16,8 @@
           {{ $t('You need to be logged in to see this page') }}
         </p>
       </div>
-      <div class="mb10 mx-16 flex">
+      <!-- FB LOGIN -->
+      <div class="mb10 mx-6 md:mx-15% flex">
         <div class="w-1/6 bg-blue-700 opacity-50 p-4">
           <img class="h-8 w-8 ml-2" src="assets/esatta-images/facebook.svg">
         </div>
@@ -26,8 +27,12 @@
           </p>
         </div>
       </div>
-      <div class="modal-content pt30 pb-8 px-16 cl-secondary">
+      <p class=" text-center my-text-color">
+        or
+      </p>
+      <div class="modal-content pt-2 pb-8 px-15% cl-secondary">
         <form @submit.prevent="login" novalidate>
+          <!-- EMAIL FIELD -->
           <base-input
             class="mb10"
             type="email"
@@ -47,6 +52,7 @@
               }
             ]"
           />
+          <!-- PASSWORD FIELD -->
           <base-input
             class="mb10"
             type="password"
@@ -67,7 +73,7 @@
             >
               {{ $t('Remember me') }}
             </base-checkbox>
-            <div class="col-xs-5 col-sm-6 mb35 flex end-xs middle-xs forgot-pass">
+            <div class="col-xs-5 col-sm-6 mb35 flex end-xs middle-xs my-text-color">
               <a href="#" @click.prevent="remindPassword">
                 {{ $t('Forgot the password?') }}
               </a>
@@ -86,7 +92,26 @@
         </form>
       </div>
     </div>
-  <!-- </div> -->
+    <div class="bg-black h-35% lg:bg-white lg:h-auto lg:w-1/2 relative">
+      <img
+        class="w-full h-full opacity-25 object-cover lg:opacity-100 lg:object-fill"
+        src="assets/esatta-images/login.jpg"
+      >
+      <!-- md top 15% -->
+      <div class="absolute rounded-full h-16 w-16 flex items-center justify-center bg-white lg:bg-transparent top-15% left-45% lg:top-33%">
+        <img
+          class="h-10 w-10"
+          src="assets/esatta-images/page-banner/measure.svg"
+        >
+      </div>
+      <!-- md top 45% -->
+      <p class="absolute font-extrabold text-2xl text-center top-45% left-35%">
+        MEASURE ME
+        <br class="sm:block md:hidden lg:block">
+        & SIGN UP
+      </p>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -179,7 +204,7 @@ $white: color(white);
     color: $white;
   }
 
-  .forgot-pass {
+  .my-text-color {
     color : #C57974;
   }
 
