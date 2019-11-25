@@ -3538,6 +3538,10 @@ video {
   height: 65%;
 }
 
+.h-1\/2 {
+  height: 50vh;
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -5192,8 +5196,16 @@ video {
   padding: 13%;
 }
 
+.p-10\% {
+  padding: 10%;
+}
+
 .p-8\% {
   padding: 8%;
+}
+
+.p-5\% {
+  padding: 5%;
 }
 
 .p-4\% {
@@ -5410,6 +5422,16 @@ video {
   padding-right: 13%;
 }
 
+.py-10\% {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.px-10\% {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .py-8\% {
   padding-top: 8%;
   padding-bottom: 8%;
@@ -5418,6 +5440,16 @@ video {
 .px-8\% {
   padding-left: 8%;
   padding-right: 8%;
+}
+
+.py-5\% {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.px-5\% {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .py-4\% {
@@ -5766,6 +5798,22 @@ video {
   padding-left: 13%;
 }
 
+.pt-10\% {
+  padding-top: 10%;
+}
+
+.pr-10\% {
+  padding-right: 10%;
+}
+
+.pb-10\% {
+  padding-bottom: 10%;
+}
+
+.pl-10\% {
+  padding-left: 10%;
+}
+
 .pt-8\% {
   padding-top: 8%;
 }
@@ -5780,6 +5828,22 @@ video {
 
 .pl-8\% {
   padding-left: 8%;
+}
+
+.pt-5\% {
+  padding-top: 5%;
+}
+
+.pr-5\% {
+  padding-right: 5%;
+}
+
+.pb-5\% {
+  padding-bottom: 5%;
+}
+
+.pl-5\% {
+  padding-left: 5%;
 }
 
 .pt-4\% {
@@ -8998,6 +9062,13 @@ video {
   left: 15%;
 }
 
+.inset-10\% {
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;
+}
+
 .inset-y-0 {
   top: 0;
   bottom: 0;
@@ -9126,6 +9197,16 @@ video {
 .inset-x-15\% {
   right: 15%;
   left: 15%;
+}
+
+.inset-y-10\% {
+  top: 10%;
+  bottom: 10%;
+}
+
+.inset-x-10\% {
+  right: 10%;
+  left: 10%;
 }
 
 .top-0 {
@@ -9334,6 +9415,22 @@ video {
 
 .left-15\% {
   left: 15%;
+}
+
+.top-10\% {
+  top: 10%;
+}
+
+.right-10\% {
+  right: 10%;
+}
+
+.bottom-10\% {
+  bottom: 10%;
+}
+
+.left-10\% {
+  left: 10%;
 }
 
 .resize-none {
@@ -13789,6 +13886,10 @@ video {
     height: 65%;
   }
 
+  .sm\:h-1\/2 {
+    height: 50vh;
+  }
+
   .sm\:leading-none {
     line-height: 1;
   }
@@ -15443,8 +15544,16 @@ video {
     padding: 13%;
   }
 
+  .sm\:p-10\% {
+    padding: 10%;
+  }
+
   .sm\:p-8\% {
     padding: 8%;
+  }
+
+  .sm\:p-5\% {
+    padding: 5%;
   }
 
   .sm\:p-4\% {
@@ -15661,6 +15770,16 @@ video {
     padding-right: 13%;
   }
 
+  .sm\:py-10\% {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+  .sm\:px-10\% {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
   .sm\:py-8\% {
     padding-top: 8%;
     padding-bottom: 8%;
@@ -15669,6 +15788,16 @@ video {
   .sm\:px-8\% {
     padding-left: 8%;
     padding-right: 8%;
+  }
+
+  .sm\:py-5\% {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .sm\:px-5\% {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .sm\:py-4\% {
@@ -16017,6 +16146,22 @@ video {
     padding-left: 13%;
   }
 
+  .sm\:pt-10\% {
+    padding-top: 10%;
+  }
+
+  .sm\:pr-10\% {
+    padding-right: 10%;
+  }
+
+  .sm\:pb-10\% {
+    padding-bottom: 10%;
+  }
+
+  .sm\:pl-10\% {
+    padding-left: 10%;
+  }
+
   .sm\:pt-8\% {
     padding-top: 8%;
   }
@@ -16031,6 +16176,22 @@ video {
 
   .sm\:pl-8\% {
     padding-left: 8%;
+  }
+
+  .sm\:pt-5\% {
+    padding-top: 5%;
+  }
+
+  .sm\:pr-5\% {
+    padding-right: 5%;
+  }
+
+  .sm\:pb-5\% {
+    padding-bottom: 5%;
+  }
+
+  .sm\:pl-5\% {
+    padding-left: 5%;
   }
 
   .sm\:pt-4\% {
@@ -19249,6 +19410,13 @@ video {
     left: 15%;
   }
 
+  .sm\:inset-10\% {
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
+  }
+
   .sm\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -19377,6 +19545,16 @@ video {
   .sm\:inset-x-15\% {
     right: 15%;
     left: 15%;
+  }
+
+  .sm\:inset-y-10\% {
+    top: 10%;
+    bottom: 10%;
+  }
+
+  .sm\:inset-x-10\% {
+    right: 10%;
+    left: 10%;
   }
 
   .sm\:top-0 {
@@ -19585,6 +19763,22 @@ video {
 
   .sm\:left-15\% {
     left: 15%;
+  }
+
+  .sm\:top-10\% {
+    top: 10%;
+  }
+
+  .sm\:right-10\% {
+    right: 10%;
+  }
+
+  .sm\:bottom-10\% {
+    bottom: 10%;
+  }
+
+  .sm\:left-10\% {
+    left: 10%;
   }
 
   .sm\:resize-none {
@@ -24041,6 +24235,10 @@ video {
     height: 65%;
   }
 
+  .md\:h-1\/2 {
+    height: 50vh;
+  }
+
   .md\:leading-none {
     line-height: 1;
   }
@@ -25695,8 +25893,16 @@ video {
     padding: 13%;
   }
 
+  .md\:p-10\% {
+    padding: 10%;
+  }
+
   .md\:p-8\% {
     padding: 8%;
+  }
+
+  .md\:p-5\% {
+    padding: 5%;
   }
 
   .md\:p-4\% {
@@ -25913,6 +26119,16 @@ video {
     padding-right: 13%;
   }
 
+  .md\:py-10\% {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+  .md\:px-10\% {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
   .md\:py-8\% {
     padding-top: 8%;
     padding-bottom: 8%;
@@ -25921,6 +26137,16 @@ video {
   .md\:px-8\% {
     padding-left: 8%;
     padding-right: 8%;
+  }
+
+  .md\:py-5\% {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .md\:px-5\% {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .md\:py-4\% {
@@ -26269,6 +26495,22 @@ video {
     padding-left: 13%;
   }
 
+  .md\:pt-10\% {
+    padding-top: 10%;
+  }
+
+  .md\:pr-10\% {
+    padding-right: 10%;
+  }
+
+  .md\:pb-10\% {
+    padding-bottom: 10%;
+  }
+
+  .md\:pl-10\% {
+    padding-left: 10%;
+  }
+
   .md\:pt-8\% {
     padding-top: 8%;
   }
@@ -26283,6 +26525,22 @@ video {
 
   .md\:pl-8\% {
     padding-left: 8%;
+  }
+
+  .md\:pt-5\% {
+    padding-top: 5%;
+  }
+
+  .md\:pr-5\% {
+    padding-right: 5%;
+  }
+
+  .md\:pb-5\% {
+    padding-bottom: 5%;
+  }
+
+  .md\:pl-5\% {
+    padding-left: 5%;
   }
 
   .md\:pt-4\% {
@@ -29501,6 +29759,13 @@ video {
     left: 15%;
   }
 
+  .md\:inset-10\% {
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
+  }
+
   .md\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -29629,6 +29894,16 @@ video {
   .md\:inset-x-15\% {
     right: 15%;
     left: 15%;
+  }
+
+  .md\:inset-y-10\% {
+    top: 10%;
+    bottom: 10%;
+  }
+
+  .md\:inset-x-10\% {
+    right: 10%;
+    left: 10%;
   }
 
   .md\:top-0 {
@@ -29837,6 +30112,22 @@ video {
 
   .md\:left-15\% {
     left: 15%;
+  }
+
+  .md\:top-10\% {
+    top: 10%;
+  }
+
+  .md\:right-10\% {
+    right: 10%;
+  }
+
+  .md\:bottom-10\% {
+    bottom: 10%;
+  }
+
+  .md\:left-10\% {
+    left: 10%;
   }
 
   .md\:resize-none {
@@ -34293,6 +34584,10 @@ video {
     height: 65%;
   }
 
+  .lg\:h-1\/2 {
+    height: 50vh;
+  }
+
   .lg\:leading-none {
     line-height: 1;
   }
@@ -35947,8 +36242,16 @@ video {
     padding: 13%;
   }
 
+  .lg\:p-10\% {
+    padding: 10%;
+  }
+
   .lg\:p-8\% {
     padding: 8%;
+  }
+
+  .lg\:p-5\% {
+    padding: 5%;
   }
 
   .lg\:p-4\% {
@@ -36165,6 +36468,16 @@ video {
     padding-right: 13%;
   }
 
+  .lg\:py-10\% {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+  .lg\:px-10\% {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
   .lg\:py-8\% {
     padding-top: 8%;
     padding-bottom: 8%;
@@ -36173,6 +36486,16 @@ video {
   .lg\:px-8\% {
     padding-left: 8%;
     padding-right: 8%;
+  }
+
+  .lg\:py-5\% {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .lg\:px-5\% {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .lg\:py-4\% {
@@ -36521,6 +36844,22 @@ video {
     padding-left: 13%;
   }
 
+  .lg\:pt-10\% {
+    padding-top: 10%;
+  }
+
+  .lg\:pr-10\% {
+    padding-right: 10%;
+  }
+
+  .lg\:pb-10\% {
+    padding-bottom: 10%;
+  }
+
+  .lg\:pl-10\% {
+    padding-left: 10%;
+  }
+
   .lg\:pt-8\% {
     padding-top: 8%;
   }
@@ -36535,6 +36874,22 @@ video {
 
   .lg\:pl-8\% {
     padding-left: 8%;
+  }
+
+  .lg\:pt-5\% {
+    padding-top: 5%;
+  }
+
+  .lg\:pr-5\% {
+    padding-right: 5%;
+  }
+
+  .lg\:pb-5\% {
+    padding-bottom: 5%;
+  }
+
+  .lg\:pl-5\% {
+    padding-left: 5%;
   }
 
   .lg\:pt-4\% {
@@ -39753,6 +40108,13 @@ video {
     left: 15%;
   }
 
+  .lg\:inset-10\% {
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
+  }
+
   .lg\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -39881,6 +40243,16 @@ video {
   .lg\:inset-x-15\% {
     right: 15%;
     left: 15%;
+  }
+
+  .lg\:inset-y-10\% {
+    top: 10%;
+    bottom: 10%;
+  }
+
+  .lg\:inset-x-10\% {
+    right: 10%;
+    left: 10%;
   }
 
   .lg\:top-0 {
@@ -40089,6 +40461,22 @@ video {
 
   .lg\:left-15\% {
     left: 15%;
+  }
+
+  .lg\:top-10\% {
+    top: 10%;
+  }
+
+  .lg\:right-10\% {
+    right: 10%;
+  }
+
+  .lg\:bottom-10\% {
+    bottom: 10%;
+  }
+
+  .lg\:left-10\% {
+    left: 10%;
   }
 
   .lg\:resize-none {
@@ -44545,6 +44933,10 @@ video {
     height: 65%;
   }
 
+  .xl\:h-1\/2 {
+    height: 50vh;
+  }
+
   .xl\:leading-none {
     line-height: 1;
   }
@@ -46199,8 +46591,16 @@ video {
     padding: 13%;
   }
 
+  .xl\:p-10\% {
+    padding: 10%;
+  }
+
   .xl\:p-8\% {
     padding: 8%;
+  }
+
+  .xl\:p-5\% {
+    padding: 5%;
   }
 
   .xl\:p-4\% {
@@ -46417,6 +46817,16 @@ video {
     padding-right: 13%;
   }
 
+  .xl\:py-10\% {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+  .xl\:px-10\% {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
   .xl\:py-8\% {
     padding-top: 8%;
     padding-bottom: 8%;
@@ -46425,6 +46835,16 @@ video {
   .xl\:px-8\% {
     padding-left: 8%;
     padding-right: 8%;
+  }
+
+  .xl\:py-5\% {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .xl\:px-5\% {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .xl\:py-4\% {
@@ -46773,6 +47193,22 @@ video {
     padding-left: 13%;
   }
 
+  .xl\:pt-10\% {
+    padding-top: 10%;
+  }
+
+  .xl\:pr-10\% {
+    padding-right: 10%;
+  }
+
+  .xl\:pb-10\% {
+    padding-bottom: 10%;
+  }
+
+  .xl\:pl-10\% {
+    padding-left: 10%;
+  }
+
   .xl\:pt-8\% {
     padding-top: 8%;
   }
@@ -46787,6 +47223,22 @@ video {
 
   .xl\:pl-8\% {
     padding-left: 8%;
+  }
+
+  .xl\:pt-5\% {
+    padding-top: 5%;
+  }
+
+  .xl\:pr-5\% {
+    padding-right: 5%;
+  }
+
+  .xl\:pb-5\% {
+    padding-bottom: 5%;
+  }
+
+  .xl\:pl-5\% {
+    padding-left: 5%;
   }
 
   .xl\:pt-4\% {
@@ -50005,6 +50457,13 @@ video {
     left: 15%;
   }
 
+  .xl\:inset-10\% {
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
+  }
+
   .xl\:inset-y-0 {
     top: 0;
     bottom: 0;
@@ -50133,6 +50592,16 @@ video {
   .xl\:inset-x-15\% {
     right: 15%;
     left: 15%;
+  }
+
+  .xl\:inset-y-10\% {
+    top: 10%;
+    bottom: 10%;
+  }
+
+  .xl\:inset-x-10\% {
+    right: 10%;
+    left: 10%;
   }
 
   .xl\:top-0 {
@@ -50341,6 +50810,22 @@ video {
 
   .xl\:left-15\% {
     left: 15%;
+  }
+
+  .xl\:top-10\% {
+    top: 10%;
+  }
+
+  .xl\:right-10\% {
+    right: 10%;
+  }
+
+  .xl\:bottom-10\% {
+    bottom: 10%;
+  }
+
+  .xl\:left-10\% {
+    left: 10%;
   }
 
   .xl\:resize-none {

@@ -19,7 +19,7 @@
       <!-- FB LOGIN -->
       <div class="mb10 mx-6 md:mx-15% flex">
         <div class="w-1/6 bg-blue-700 opacity-50 p-4">
-          <img class="h-8 w-8 ml-2" src="assets/esatta-images/facebook.svg">
+          <img class="h-8 w-8 ml-2" src="../../../../assets/esatta-images/facebook.svg">
         </div>
         <div class="w-5/6 p-4 fb-blue">
           <p class=" text-white text-center">
@@ -95,13 +95,13 @@
     <div class="bg-black h-35% lg:bg-white lg:h-auto lg:w-1/2 relative">
       <img
         class="w-full h-full opacity-25 object-cover lg:opacity-100 lg:object-fill"
-        src="assets/esatta-images/login.jpg"
+        src="../../../../assets/esatta-images/login.jpg"
       >
       <!-- md top 15% -->
       <div class="absolute rounded-full h-16 w-16 flex items-center justify-center bg-white lg:bg-transparent top-15% left-45% lg:top-33%">
         <img
           class="h-10 w-10"
-          src="assets/esatta-images/page-banner/measure.svg"
+          src="../../../../assets/esatta-images/page-banner/measure.svg"
         >
       </div>
       <!-- md top 45% -->

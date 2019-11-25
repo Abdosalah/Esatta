@@ -3,10 +3,53 @@
     <div
       v-for="(product, key) in products"
       :key="product.id"
-      class="col-sm-6 flex"
-      :class="['col-md-' + (12/columns)%10, wide(product.sale, product.new, key)]"
+      class="flex pl-5 pb-10"
+      :class="{ mySpecdiv: key === 12, normalDiv: key !== 12 }"
     >
-      <product-tile :product="product" />
+      <div v-if="key === 12" class="middle-section">
+        <div class="w-1/3 py-5% pl-4%">
+          <p class="text-3xl font-bold">
+            How It Works
+          </p>
+          <p class="text-red py-8">
+            Exclusive styles by independent <br>
+            designers. Made for you
+          </p>
+          <button class="bg-black text-white py-4 px-16">
+            LEARN MORE
+          </button>
+        </div>
+        <div class="w-1/4 text-center py-10%">
+          <p class="pb-4 text-6xl font-black">
+            1
+          </p>
+          <p class="text-xs">
+            SHOP YOUR BODY
+          </p>
+        </div>
+        <div class="w-1/4 text-center py-5%">
+          <p class="text-6xl font-black">
+            2
+          </p>
+          <p class="py-4 text-xs">
+            HANDCRAFTED & INDEPENDENT
+          </p>
+          <p class="text-xs">
+            All our garment are made for you <br>
+            from scratch and designed by <br>
+            independent designers
+          </p>
+        </div>
+        <div class="w-1/4 text-center  py-10%">
+          <p class="pb-4 text-6xl font-black">
+            3
+          </p>
+          <p class="text-xs">
+            OUR FIT GUARANTEE
+          </p>
+        </div>
+      </div>
+      <product-tile v-if="key !== 12" :product="product" />
     </div>
   </div>
 </template>
@@ -42,3 +85,18 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.middle-section {
+  display: flex;
+  width: 100%;
+  height: 23rem;
+  border: 0.5px solid gray;
+}
+.mySpecdiv {
+  width: 100%;
+}
+.normalDiv {
+  width: 25%;
+}
+</style>
