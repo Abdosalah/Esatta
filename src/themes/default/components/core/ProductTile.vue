@@ -18,6 +18,14 @@
           :alt="product.name | htmlDecode"
           data-testid="productImage"
         />
+        <div class="product-corner">
+          <i class="material-icons my-fav-icon">
+            favorite_border
+          </i>
+          <p v-if="isNew === 'new'" class="pb-1 text-xs">
+            NEW
+          </p>
+        </div>
       </div>
 
       <p class="mb0 cl-accent mt10" v-if="!onlyImage">
@@ -189,5 +197,18 @@ $color-white: color(white);
       content: 'New';
     }
   }
+}
+
+.product-corner {
+  border-bottom-left-radius: 50%;
+  padding-left: 0.5rem;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.my-fav-icon:hover {
+  color: red;
 }
 </style>
