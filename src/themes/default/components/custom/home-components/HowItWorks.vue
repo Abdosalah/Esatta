@@ -1,7 +1,7 @@
 <template>
   <div class="main-div lg:relative">
     <img class="h-screen w-screen object-cover hidden lg:block" src="assets/esatta-images/hp_hiw.jpg">
-    <div class="lg:absolute lg:top-10 lg:left-10 lg:block m-auto table">
+    <div class="lg:absolute lg:top-10% lg:left-10% lg:block m-auto table">
       <h1 class="text-5xl font-black">
         How it Works
       </h1>
