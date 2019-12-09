@@ -1,0 +1,94 @@
+<template>
+  <div>
+    <img class="image" src="assets/esatta-images/plus.svg">
+
+    <router-link :to="localizedRoute('/my-account')" exact class="link">
+      <img src="assets/esatta-images/page-banner/measure.svg" class="images">
+      {{ $t('MEASURE ME') }}
+    </router-link>
+    <router-link :to="localizedRoute('/delivery')" exact class="link">
+      <img src="assets/esatta-images/page-banner/browse.svg" class="images">
+      {{ $t('BROWSE') }}
+    </router-link>
+    <router-link :to="localizedRoute('/returns')" exact class="link">
+      <img src="assets/esatta-images/page-banner/measure.svg" class="images">
+      {{ $t('LIKED') }}
+    </router-link>
+    <router-link :to="localizedRoute('/returns')" exact class="link">
+      <img src="assets/esatta-images/page-banner/measure.svg" class="images">
+      {{ $t('BAG') }}
+    </router-link>
+    <router-link :to="localizedRoute('/returns')" exact class="link">
+      <img src="assets/esatta-images/page-banner/measure.svg" class="images">
+      {{ $t('LOG IN') }}
+    </router-link>
+    <Currency class="currency" />
+    <div class="downlinks">
+      <router-link :to="localizedRoute('/returns')" exact class="link">
+        {{ $t('HOW IT WORKS') }}
+      </router-link>
+      <router-link :to="localizedRoute('/returns')" exact class="link">
+        {{ $t('OUR DESIGNERS') }}
+      </router-link>
+      <router-link :to="localizedRoute('/returns')" exact class="link">
+        {{ $t('BODY SHAPES') }}
+      </router-link>
+    </div>
+  </div>
+</template>
+
+<script>
+import Currency from 'theme/components/core/Currency'
+export default {
+  components: {
+    Currency
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.image{
+  width:20%;
+  height:10%;
+  text-align: center;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  justify-content: center;
+}
+.images{
+  opacity: 0.20;
+}
+.link{
+  display: flex;
+  text-align: center;
+  font-size: x-small;
+  letter-spacing: 2px;
+  padding: 2%;
+  padding-left: 10%;
+}
+.images{
+  width:1.75rem;
+  height:1.75rem;
+  padding: 2%;
+  margin-right: 10%;
+  position: relative;
+  bottom: 8px;
+}
+.currency{
+  width: 80%;
+  border-style: none;
+  background: transparent;
+  outline: none;
+  text-align: center;
+  font-size: x-small;
+  margin-top: 10%;
+  text-align: center;
+}
+.downlinks{
+  color: rgb(240, 78, 105);
+  font-size: xx-small;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 5%;
+}
+</style>>

@@ -5146,6 +5146,10 @@ video {
   padding: 1px;
 }
 
+.p-nav {
+  padding: 18%;
+}
+
 .p-4\% {
   padding: 4%;
 }
@@ -5342,6 +5346,16 @@ video {
 .px-px {
   padding-left: 1px;
   padding-right: 1px;
+}
+
+.py-nav {
+  padding-top: 18%;
+  padding-bottom: 18%;
+}
+
+.px-nav {
+  padding-left: 18%;
+  padding-right: 18%;
 }
 
 .py-4\% {
@@ -5666,6 +5680,22 @@ video {
 
 .pl-px {
   padding-left: 1px;
+}
+
+.pt-nav {
+  padding-top: 18%;
+}
+
+.pr-nav {
+  padding-right: 18%;
+}
+
+.pb-nav {
+  padding-bottom: 18%;
+}
+
+.pl-nav {
+  padding-left: 18%;
 }
 
 .pt-4\% {
@@ -15035,6 +15065,10 @@ video {
     padding: 1px;
   }
 
+  .sm\:p-nav {
+    padding: 18%;
+  }
+
   .sm\:p-4\% {
     padding: 4%;
   }
@@ -15231,6 +15265,16 @@ video {
   .sm\:px-px {
     padding-left: 1px;
     padding-right: 1px;
+  }
+
+  .sm\:py-nav {
+    padding-top: 18%;
+    padding-bottom: 18%;
+  }
+
+  .sm\:px-nav {
+    padding-left: 18%;
+    padding-right: 18%;
   }
 
   .sm\:py-4\% {
@@ -15555,6 +15599,22 @@ video {
 
   .sm\:pl-px {
     padding-left: 1px;
+  }
+
+  .sm\:pt-nav {
+    padding-top: 18%;
+  }
+
+  .sm\:pr-nav {
+    padding-right: 18%;
+  }
+
+  .sm\:pb-nav {
+    padding-bottom: 18%;
+  }
+
+  .sm\:pl-nav {
+    padding-left: 18%;
   }
 
   .sm\:pt-4\% {
@@ -24925,6 +24985,10 @@ video {
     padding: 1px;
   }
 
+  .md\:p-nav {
+    padding: 18%;
+  }
+
   .md\:p-4\% {
     padding: 4%;
   }
@@ -25121,6 +25185,16 @@ video {
   .md\:px-px {
     padding-left: 1px;
     padding-right: 1px;
+  }
+
+  .md\:py-nav {
+    padding-top: 18%;
+    padding-bottom: 18%;
+  }
+
+  .md\:px-nav {
+    padding-left: 18%;
+    padding-right: 18%;
   }
 
   .md\:py-4\% {
@@ -25445,6 +25519,22 @@ video {
 
   .md\:pl-px {
     padding-left: 1px;
+  }
+
+  .md\:pt-nav {
+    padding-top: 18%;
+  }
+
+  .md\:pr-nav {
+    padding-right: 18%;
+  }
+
+  .md\:pb-nav {
+    padding-bottom: 18%;
+  }
+
+  .md\:pl-nav {
+    padding-left: 18%;
   }
 
   .md\:pt-4\% {
@@ -34815,6 +34905,10 @@ video {
     padding: 1px;
   }
 
+  .lg\:p-nav {
+    padding: 18%;
+  }
+
   .lg\:p-4\% {
     padding: 4%;
   }
@@ -35011,6 +35105,16 @@ video {
   .lg\:px-px {
     padding-left: 1px;
     padding-right: 1px;
+  }
+
+  .lg\:py-nav {
+    padding-top: 18%;
+    padding-bottom: 18%;
+  }
+
+  .lg\:px-nav {
+    padding-left: 18%;
+    padding-right: 18%;
   }
 
   .lg\:py-4\% {
@@ -35335,6 +35439,22 @@ video {
 
   .lg\:pl-px {
     padding-left: 1px;
+  }
+
+  .lg\:pt-nav {
+    padding-top: 18%;
+  }
+
+  .lg\:pr-nav {
+    padding-right: 18%;
+  }
+
+  .lg\:pb-nav {
+    padding-bottom: 18%;
+  }
+
+  .lg\:pl-nav {
+    padding-left: 18%;
   }
 
   .lg\:pt-4\% {
@@ -44705,6 +44825,10 @@ video {
     padding: 1px;
   }
 
+  .xl\:p-nav {
+    padding: 18%;
+  }
+
   .xl\:p-4\% {
     padding: 4%;
   }
@@ -44901,6 +45025,16 @@ video {
   .xl\:px-px {
     padding-left: 1px;
     padding-right: 1px;
+  }
+
+  .xl\:py-nav {
+    padding-top: 18%;
+    padding-bottom: 18%;
+  }
+
+  .xl\:px-nav {
+    padding-left: 18%;
+    padding-right: 18%;
   }
 
   .xl\:py-4\% {
@@ -45225,6 +45359,22 @@ video {
 
   .xl\:pl-px {
     padding-left: 1px;
+  }
+
+  .xl\:pt-nav {
+    padding-top: 18%;
+  }
+
+  .xl\:pr-nav {
+    padding-right: 18%;
+  }
+
+  .xl\:pb-nav {
+    padding-bottom: 18%;
+  }
+
+  .xl\:pl-nav {
+    padding-left: 18%;
   }
 
   .xl\:pt-4\% {
