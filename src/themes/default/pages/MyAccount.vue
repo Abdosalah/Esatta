@@ -1,8 +1,8 @@
 <template>
   <div id="my_account" class="relative">
-    <img class="h-screen w-screen object-cover" src="../assets/esatta-images/my-profile/profile_bg.jpg">
+    <img class="my-bg-img" src="../assets/esatta-images/my-profile/profile_bg.jpg">
 
-    <div class="bg-white absolute top-5% ml-9% mr-9% w-82% lg:w-69%">
+    <div class="bg-white absolute pt-12 top-5% ml-9% mr-9% w-82% lg:w-69%">
       <div class="flex">
         <!--  -->
         <!-- <breadcrumbs
@@ -91,15 +91,6 @@ export default {
 @import '~theme/css/variables/colors';
 @import '~theme/css/helpers/functions/color';
 
-// .profile-main-div {
-//   background-image: url(../assets/esatta-images/my-profile/profile_bg.jpg);
-// }
-
-// .other-profile-divs {
-//   margin-left: 5%;
-//   wid
-// }
-
 .static-menu {
   ul {
     list-style: none;
@@ -124,4 +115,16 @@ export default {
     }
   }
 }
+
+#my_account {
+  height: 300vh;
+}
+
+.my-bg-img {
+  height: 150vh;
+  width: 100vw;
+  object-fit: cover;
+  background: linear-gradient( rgba( 0, 0, 0, 0.0 ), #ffff);
+}
+
 </style>

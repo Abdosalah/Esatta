@@ -17,7 +17,7 @@ let routes = [
   { name: 'magazine', path: '/magazine', component: Static, props: {page: 'lorem', title: 'Magazine'} },
   { name: 'sale', path: '/sale', component: Static, props: {page: 'lorem', title: 'Sale'} },
   { name: 'order-tracking', path: '/order-tracking', component: Static, props: {page: 'lorem', title: 'Track my Order'} },
-  { name: 'my-account', path: '/my-account', component: MyAccount, meta: { requiresAuth: true } },
+  { name: 'my-account', path: '/my-account', component: MyAccount, meta: { requiresAuth: true }, props: { activeBlock: 'MyMeasurements' } },
   { name: 'my-measurements', path: '/my-account/measurements', component: MyAccount, props: { activeBlock: 'MyMeasurements' }, meta: { requiresAuth: true } },
   { name: 'my-contact-details', path: '/my-account/contact-details', component: MyAccount, props: { activeBlock: 'MyContactDetails' }, meta: { requiresAuth: true } },
   { name: 'my-orders', path: '/my-account/orders', component: MyAccount, props: { activeBlock: 'MyOrders' }, meta: { requiresAuth: true } },
