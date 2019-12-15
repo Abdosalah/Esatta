@@ -1,9 +1,10 @@
 <template>
-  <div id="product" itemscope itemtype="http://schema.org/Product">
-    <section class="bg-cl-secondary px20 product-top-section">
+  <div id="product" class="lg:pr-nav bg-cl-secondary" itemscope itemtype="http://schema.org/Product">
+    <section class="product-top-section">
       <div class="container">
         <section class="row m0 between-xs">
-          <div class="col-xs-12 col-md-6 center-xs middle-xs image">
+          <!-- PRODUCT IMAGE -->
+          <div class="w-2/3 image">
             <product-gallery
               :offline="image"
               :gallery="gallery"
@@ -11,46 +12,63 @@
               :product="product"
             />
           </div>
-          <div class="col-xs-12 col-md-5 data">
-            <breadcrumbs
-              class="pt40 pb20 hidden-xs"
-              :routes="breadcrumbs.routes"
-              :active-route="breadcrumbs.name"
-            />
-            <h1 class="mb20 mt0 cl-mine-shaft product-name" data-testid="productName" itemprop="name">
+          <!-- PRODUCT DATA -->
+          <div class="w-1/3 pl-16 pt-48 data">
+            <p class="text-2xl tracking-widest font-medium uppercase" data-testid="productName" itemprop="name">
               {{ product.name | htmlDecode }}
               <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share" />
-            </h1>
-            <div class="mb20 uppercase cl-secondary" itemprop="sku" :content="product.sku">
-              {{ $t('SKU') }}: {{ product.sku }}
+            </p>
+            <div class="cl-secondary text-sm" itemprop="sku" :content="product.sku">
+              Pel Guthrie - Auckland, NZ
+              <!-- {{ $t('SKU') }}: {{ product.sku }} -->
+            </div>
+            <div class="cl-secondary text-sm mb-8" itemprop="sku" :content="product.sku">
+              SPRING SUMMER 2017
+              <!-- {{ $t('SKU') }}: {{ product.sku }} -->
             </div>
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <meta itemprop="priceCurrency" :content="currentStore.i18n.currencyCode">
               <meta itemprop="price" :content="parseFloat(product.priceInclTax).toFixed(2)">
               <meta itemprop="availability" :content="structuredData.availability">
               <meta itemprop="url" :content="product.url_path">
+              <hr class="cl-secondary">
+              <!-- PRICE SECTION -->
               <div
-                class="mb40 price serif"
+                class="serif pt-2 inline-block"
                 v-if="product.type_id !== 'grouped'"
               >
                 <div
                   class="h3 cl-secondary"
                   v-if="product.special_price && product.priceInclTax && product.originalPriceInclTax"
                 >
-                  <span class="h2 cl-mine-shaft weight-700">
+                  <span class="text-xl font-semibold">
                     {{ product.priceInclTax * product.qty | price }}
                   </span>&nbsp;
-                  <span class="price-original h3">
+                  <span class="price-original text-xl font-semibold">
                     {{ product.originalPriceInclTax * product.qty | price }}
                   </span>
                 </div>
                 <div
-                  class="h2 cl-mine-shaft weight-700"
+                  class="text-xl font-semibold"
                   v-if="!product.special_price && product.priceInclTax"
                 >
                   {{ product.qty > 0 ? product.priceInclTax * product.qty : product.priceInclTax | price }}
                 </div>
               </div>
+              <!-- TIMER & QTY LEFT SECTION -->
+              <div class="inline-block pl-6 relative mb-1">
+                <div class="absolute -top-1rem">
+                  <p class="inline-block w-max text-xs">
+                    <img class="h-4 w-4 inline mr-3" src="../assets/esatta-images/product/clock.svg">
+                    ENDS IN 16:18:25
+                    <span class="inline-block ml-12">
+                      5 LEFT / 300
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <hr class="cl-secondary mt-2">
+
               <div
                 class="cl-primary variants"
                 v-if="product.type_id =='configurable' && !loading"
@@ -368,12 +386,6 @@ $bg-secondary: color(secondary, $colors-background);
 .product-name {
   @media (max-width: 767px) {
     font-size: 36px;
-  }
-}
-
-.price {
-  @media (max-width: 767px) {
-    color: $color-primary;
   }
 }
 
