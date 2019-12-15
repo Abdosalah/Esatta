@@ -87,7 +87,16 @@
       </div>
     </div>
     <!-- CLOSER FIT SECTION -->
-    <div class="flex">
+    <div class="text-center relative text-gray">
+      <hr>
+      <button class="absolute -top-0.7rem bg-white" @click="isHidden = !isHidden">
+        GET A CLOSER FIT
+        <p class="text-6xl absolute left-40% -top-50%" v-if="isHidden">
+          &#8964;
+        </p>
+      </button>
+    </div>
+    <div class="flex" v-if="!isHidden">
       <div class="w-1/6">
         <button class="block bg-gray mb-2 px-8 py-12 w-full" @click="toggle('ShoulderAngle')">
           ShoulderAngle
@@ -108,6 +117,54 @@
       <div class="w-5/6">
         <component :is="component" />
       </div>
+    </div>
+    <div class="mb-24" v-if="isHidden" />
+    <!-- BROWSE BODY TYPE SECTION -->
+    <div class="flex text-center text-white">
+      <div class="w-1/2 relative bg-black h-20rem">
+        <img class="opacity-50 absolute w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
+        <div class="mt-12">
+          <p class="tracking-widest text-lg">
+            &#9888;  NEW MEASUREMENTS REQUIRED
+          </p>
+          <p class="mt-6 text-xs">
+            Your body may have changed, re-scan for the best fit
+          </p>
+          <button class="mt-20 border border-white py-2 px-6">
+            <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure.svg">
+            <p class="text-sm ml-2 inline">
+              UPLOAD OR LOCATE SCANNER
+            </p>
+          </button>
+          <p class="text-xs mt-6">
+            Last scanned: 22/12/2019
+          </p>
+        </div>
+      </div>
+      <div class="w-1/2 bg-black h-20rem opacity-50 ml-px">
+        <div class="mt-12">
+          <p class="tracking-widest text-lg">
+            CAN'T GET TO A SCANNER ?
+          </p>
+          <p class="mt-6 text-xs">
+            If your body has changed and you can't get to a scanner
+          </p>
+          <button class="mt-20 border border-white py-2 px-6">
+            <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape.svg">
+            <p class="text-sm ml-2 inline">
+              RE-MEASURE NOW
+            </p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="bg-red h-32 text-center text-white pt-10">
+      <p class="text-sm inline-block">
+        BROWSE MY BODY TYPE
+      </p>
+      <p class="inline-block pl-4">
+        &rarr;
+      </p>
     </div>
   </div>
 </template>
@@ -131,7 +188,8 @@ export default {
   },
   data () {
     return {
-      component: ShoulderAngle
+      component: SeatAngle,
+      isHidden: false
     }
   },
   methods: {
@@ -205,6 +263,11 @@ button:focus {
   border: 1px solid #EC145B;
   padding: 0.2rem;
   margin-right: 0.5rem;
+}
+
+.new-scan-img {
+  background-color: black;
+  opacity: 50%;
 }
 
 </style>
