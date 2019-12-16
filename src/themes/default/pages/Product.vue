@@ -32,13 +32,13 @@
               <meta itemprop="availability" :content="structuredData.availability">
               <meta itemprop="url" :content="product.url_path">
               <hr class="cl-secondary">
-              <!-- PRICE SECTION -->
+              <!-- PRICE, TIMER & QTY LEFT SECTION -->
               <div
-                class="serif pt-2 inline-block"
+                class="pt-2 inline-block w-full flex"
                 v-if="product.type_id !== 'grouped'"
               >
                 <div
-                  class="h3 cl-secondary"
+                  class="h3 cl-secondary inline w-1/4"
                   v-if="product.special_price && product.priceInclTax && product.originalPriceInclTax"
                 >
                   <span class="text-xl font-semibold">
@@ -49,26 +49,24 @@
                   </span>
                 </div>
                 <div
-                  class="text-xl font-semibold"
+                  class="text-lg font-semibold inline w-1/4"
                   v-if="!product.special_price && product.priceInclTax"
                 >
                   {{ product.qty > 0 ? product.priceInclTax * product.qty : product.priceInclTax | price }}
                 </div>
-              </div>
-              <!-- TIMER & QTY LEFT SECTION -->
-              <div class="inline-block pl-6 relative mb-1">
-                <div class="absolute -top-1rem">
-                  <p class="inline-block w-max text-xs">
-                    <img class="h-4 w-4 inline mr-3" src="../assets/esatta-images/product/clock.svg">
+                <div class="inline text-xs w-3/4 flex">
+                  <div class="w-1/2">
+                    <img class="h-4 w-4 inline mr-2" src="../assets/esatta-images/product/clock.svg">
                     ENDS IN 16:18:25
-                    <span class="inline-block ml-12">
-                      5 LEFT / 300
-                    </span>
+                  </div>
+                  <p class="inline w-1/2 text-right">
+                    5 LEFT/300
                   </p>
                 </div>
               </div>
-              <hr class="cl-secondary mt-2">
+              <hr class="cl-secondary mt-2 mb-12">
 
+              <!-- COLOURS AND QUANTITY SECTION -->
               <div
                 class="cl-primary variants"
                 v-if="product.type_id =='configurable' && !loading"
@@ -77,19 +75,16 @@
                   {{ product.errors | formatProductMessages }}
                 </div>
                 <div
-                  class="h5"
+                  class="h5 flex"
                   v-for="(option, index) in product.configurable_options"
                   v-if="(!product.errors || Object.keys(product.errors).length === 0) && Object.keys(configuration).length > 0"
                   :key="index"
                 >
-                  <div class="variants-label" data-testid="variantsLabel">
-                    {{ option.label }}
-                    <span class="weight-700">
-                      {{ configuration[option.attribute_code ? option.attribute_code : option.label.toLowerCase()].label }}
-                    </span>
-                  </div>
-                  <div class="row top-xs m0 pt15 pb40 variants-wrapper">
-                    <div v-if="option.label == 'Color'">
+                  <div class="variants-wrapper w-1/2" v-if="option.label == 'Color'">
+                    <div class="variants-label pb-3" data-testid="variantsLabel" v-if="option.label == 'Color'">
+                      COLOURS
+                    </div>
+                    <div>
                       <color-selector
                         v-for="(c, i) in options[option.attribute_code]"
                         v-if="isOptionAvailable(c)"
@@ -101,77 +96,45 @@
                         :class="{ active: c.id == configuration[option.attribute_code].id }"
                       />
                     </div>
-                    <div class="sizes" v-else-if="option.label == 'Size'">
-                      <size-selector
-                        v-for="(s, i) in options[option.attribute_code]"
-                        v-if="isOptionAvailable(s)"
-                        :key="i"
-                        :id="s.id"
-                        :label="s.label"
-                        context="product"
-                        :code="option.attribute_code"
-                        class="mr10 mb10"
-                        :class="{ active: s.id == configuration[option.attribute_code].id }"
-                        v-focus-clean
-                      />
-                    </div>
-                    <div :class="option.attribute_code" v-else>
-                      <generic-selector
-                        v-for="(s, i) in options[option.attribute_code]"
-                        v-if="isOptionAvailable(s)"
-                        :key="i"
-                        :id="s.id"
-                        :label="s.label"
-                        context="product"
-                        :code="option.attribute_code"
-                        class="mr10 mb10"
-                        :class="{ active: s.id == configuration[option.attribute_code].id }"
-                        v-focus-clean
-                      />
-                    </div>
-                    <span
-                      v-if="option.label == 'Size'"
-                      @click="openSizeGuide"
-                      class="
-                        p0 ml30 inline-flex middle-xs no-underline h5
-                        action size-guide pointer cl-secondary
-                      "
-                    >
-                      <i class="pr5 material-icons">accessibility</i>
-                      <span>
-                        {{ $t('Size guide') }}
-                      </span>
-                    </span>
+                  </div>
+                  <div class="w-1/2" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle' && option.label == 'Color'">
+                    <base-input-number
+                      :name="$t('QTY')"
+                      v-model="product.qty"
+                      :min="1"
+                      @blur="$v.$touch()"
+                      :validations="[
+                        {
+                          condition: $v.product.qty.$error && !$v.product.qty.minValue,
+                          text: $t('Quantity must be above 0')
+                        }
+                      ]"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-            <product-links
-              v-if="product.type_id =='grouped' && !loading"
-              :products="product.product_links"
-            />
-            <product-bundle-options
-              v-if="product.bundle_options && product.bundle_options.length > 0 && !loading"
-              :product="product"
-            />
-            <product-custom-options
-              v-else-if="product.custom_options && product.custom_options.length > 0 && !loading"
-              :product="product"
-            />
-            <div class="row m0 mb35" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle'">
-              <base-input-number
-                :name="$t('Quantity')"
-                v-model="product.qty"
-                :min="1"
-                @blur="$v.$touch()"
-                :validations="[
-                  {
-                    condition: $v.product.qty.$error && !$v.product.qty.minValue,
-                    text: $t('Quantity must be above 0')
-                  }
-                ]"
-              />
+
+            <div class="mt-6">
+              <p class="text-xs inline">
+                I WOULD LIKE A
+              </p>
+              <select class="text-xs inline bg-cl-secondary">
+                <option value="volvo">
+                  STANDARD
+                </option>
+                <option value="saab">
+                  SLIM
+                </option>
+                <option value="opel">
+                  SOMETHING
+                </option>
+              </select>
+              <p class="text-xs inline">
+                FIT
+              </p>
             </div>
+
             <div class="row m0">
               <add-to-cart
                 :product="product"
@@ -349,6 +312,15 @@ $color-tertiary: color(tertiary);
 $color-secondary: color(secondary);
 $color-white: color(white);
 $bg-secondary: color(secondary, $colors-background);
+
+select:focus {
+  outline: none;
+}
+
+select {
+  border-top: 1px solid #E2E2E2;
+  border-bottom: 1px solid #E2E2E2;
+}
 
 .product {
   &__add-to-compare {
