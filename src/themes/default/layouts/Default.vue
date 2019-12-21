@@ -40,7 +40,7 @@
 <script>
 import { mapState } from 'vuex'
 import AsyncSidebar from 'theme/components/theme/blocks/AsyncSidebar/AsyncSidebar.vue'
-import NavBar from 'theme/components/core/blocks/Header/NavBar.vue'
+import NavBar from 'theme/components/core/Navbar'
 import MainFooter from 'theme/components/core/blocks/Footer/Footer.vue'
 import Overlay from 'theme/components/core/Overlay.vue'
 import Loader from 'theme/components/core/Loader.vue'

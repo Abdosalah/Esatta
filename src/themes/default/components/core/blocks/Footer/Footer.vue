@@ -5,37 +5,39 @@
     </div>
     <hr class="hr-text">
     <div class="downfooter">
-      <div class="container">
-        <p class="heading">
-          {{ $t('Account') }}
-        </p>
-        <div class="link">
-          <router-link :to="localizedRoute('/my-account')" exact>
-            {{ $t('YOUR BAG') }}
-          </router-link>
-        </div>
-        <div class="link">
-          <router-link :to="localizedRoute('/delivery')" exact>
-            {{ $t('LIKED') }}
-          </router-link>
-        </div>
-        <div class="link">
-          <router-link :to="localizedRoute('/returns')" exact>
-            {{ $t('PURCHASE HISTORY') }}
-          </router-link>
-        </div>
-        <div class="link">
-          <router-link :to="localizedRoute('/returns')" exact>
-            {{ $t('ACCOUNT SETTINGS') }}
-          </router-link>
-        </div>
-        <div class="link">
-          <router-link :to="localizedRoute('/returns')" exact>
-            {{ $t('FOR A FRIEND SETTINGS') }}
-          </router-link>
+      <div class="container hidden lg:inline-block">
+        <div class="" >
+          <p class="heading">
+            {{ $t('Account') }}
+          </p>
+          <div class="link">
+            <router-link :to="localizedRoute('/my-account')" exact>
+              {{ $t('YOUR BAG') }}
+            </router-link>
+          </div>
+          <div class="link">
+            <router-link :to="localizedRoute('/delivery')" exact>
+              {{ $t('LIKED') }}
+            </router-link>
+          </div>
+          <div class="link">
+            <router-link :to="localizedRoute('/returns')" exact>
+              {{ $t('PURCHASE HISTORY') }}
+            </router-link>
+          </div>
+          <div class="link">
+            <router-link :to="localizedRoute('/returns')" exact>
+              {{ $t('ACCOUNT SETTINGS') }}
+            </router-link>
+          </div>
+          <div class="link">
+            <router-link :to="localizedRoute('/returns')" exact>
+              {{ $t('FOR A FRIEND SETTINGS') }}
+            </router-link>
+          </div>
         </div>
       </div>
-      <div class="container">
+      <div class="container inline-block text-center md:text-left">
         <p class="heading">
           {{ $t('Quick Links') }}
         </p>
@@ -60,7 +62,7 @@
           </router-link>
         </div>
       </div>
-      <div class="container">
+      <div class="container hidden md:inline-block">
         <p class="heading">
           {{ $t('Help') }}
         </p>
@@ -85,7 +87,7 @@
           </router-link>
         </div>
       </div>
-      <div class="container">
+      <div class="container hidden md:inline-block">
         <p class="heading">
           {{ $t('Follow Us') }}
         </p>
@@ -139,7 +141,6 @@ export default {
   display: flex;
 }
 .container{
-  display: inline-block;
   height: 10%;
   align-items: vertical;
   margin: 3%;

@@ -1,6 +1,6 @@
 <template>
   <footer class="f2">
-    <div class="shopwomancontainer">
+    <div class="shopwomancontainer hidden lg:inline-block">
       <p class="heading">
         {{ $t('Shop Woman') }}
       </p>
@@ -79,7 +79,7 @@
         </div>
       </div>
     </div>
-    <div class="shopwomancontainer">
+    <div class="shopwomancontainer inline-block">
       <Newsletter />
     </div>
   </footer>
@@ -110,7 +110,6 @@ export default {
   padding: 3%;
 }
 .shopwomancontainer{
-  display: inline-block;
   height: 10%;
   align-items: vertical;
   justify-content: center;

@@ -8,49 +8,17 @@
         <div class="row between-xs middle-xs" v-if="!isCheckoutPage || isThankYouPage">
           <div class="col-md-4 col-xs-2 middle-xs">
             <div>
-              <hamburger-icon class="p15 icon bg-cl-secondary pointer" />
-            </div>
-          </div>
-          <div class="col-xs-2 visible-xs">
-            <search-icon class="p15 icon pointer" />
-          </div>
-          <div class="col-md-4 col-xs-4 center-xs pt5">
-            <div>
-              <!-- <logo width="auto" height="41px" /> -->
-            </div>
-          </div>
-          <div class="col-xs-2 visible-xs">
-            <wishlist-icon class="p15 icon pointer" />
-          </div>
-          <div class="col-md-4 col-xs-2 end-xs">
-            <div class="inline-flex right-icons">
-              <search-icon class="p15 icon hidden-xs pointer" />
-              <wishlist-icon class="p15 icon hidden-xs pointer" />
-              <compare-icon class="p15 icon hidden-xs pointer" />
-              <microcart-icon class="p15 icon pointer" />
               <account-icon class="p15 icon hidden-xs pointer" />
             </div>
           </div>
-        </div>
-        <div class="row between-xs middle-xs px15 py5" v-if="isCheckoutPage && !isThankYouPage">
-          <div class="col-xs-5 col-md-3 middle-xs">
+          <div class="col-md-4 col-xs-4 center-xs pt5">
             <div>
-              <router-link :to="localizedRoute('/')" class="cl-tertiary links">
-                {{ $t('Return to shopping') }}
-              </router-link>
+              <img class="image" src="assets/esatta-images/plus.svg">
             </div>
           </div>
-          <div class="col-xs-2 col-md-6 center-xs">
-            <!-- <logo width="auto" height="41px" /> -->
-          </div>
-          <div class="col-xs-5 col-md-3 end-xs">
-            <div>
-              <a v-if="!currentUser" href="#" @click.prevent="gotoAccount" class="cl-tertiary links">
-                {{ $t('Login to your account') }}
-              </a>
-              <span v-else>
-                {{ $t('You are logged in as') }} {{ currentUser.firstname }}
-              </span>
+          <div class="col-md-4 col-xs-2 end-xs">
+            <div class="inline-flex right-icons">
+              <hamburger-icon class="p15 icon bg-cl-secondary pointer" />
             </div>
           </div>
         </div>
@@ -177,5 +145,9 @@ header {
   a, span {
     font-size: 12px;
   }
+}
+.image{
+  height: 10%;
+  width: 10%;
 }
 </style>

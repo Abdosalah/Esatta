@@ -1,5 +1,9 @@
 <template>
   <footer class="footer">
+    <div class="securepayments lg:hidden">
+      <hr>
+      <img class="securepayments" src="assets/footer_payment.png">
+    </div>
     <h3 class="heading">
       {{ $t('Join our Newsletter') }}
     </h3>
@@ -9,7 +13,7 @@
         <i class="icon ion-android-arrow-forward" />
       </button>
     </div>
-    <div class="securepayments">
+    <div class="securepayments hidden lg:block">
       <hr>
       <img class="securepayments" src="assets/footer_payment.png">
     </div>
@@ -69,4 +73,28 @@ button {
   border: none;
   outline: none;
 }
+/* input[type="text"] {
+    display: block;
+    font-size: 15px;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    width: 100%;
+    background: none;
+    border: none;
+    background-image: url(/assets/esatta-images/page-banner/wave.svg);
+    background-repeat: repeat-x;
+    background-position: 0 bottom;
+    padding: 0 0 1em;
+    -webkit-animation: input-wave 0.4s linear infinite;
+    animation: input-wave 0.4s linear infinite;
+      animation-duration: 0.4s;
+      animation-timing-function: linear;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-fill-mode: none;
+      animation-play-state: running;
+      animation-name: input-wave;
+  } */
+  /* assets/esatta-images/page-banner/wave.svg */
 </style>

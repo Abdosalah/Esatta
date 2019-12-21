@@ -1,52 +1,71 @@
 <template>
   <div>
-    <img class="image" src="assets/esatta-images/plus.svg">
+    <div class="Navbar hidden lg:block">
+      <img class="images" src="assets/esatta-images/plus.svg">
 
-    <router-link :to="localizedRoute('/my-account')" exact class="link">
-      <img src="assets/esatta-images/page-banner/measure.svg" class="images">
-      {{ $t('MEASURE ME') }}
-    </router-link>
-    <router-link :to="localizedRoute('/delivery')" exact class="link">
-      <img src="assets/esatta-images/page-banner/browse.svg" class="images">
-      {{ $t('BROWSE') }}
-    </router-link>
-    <router-link :to="localizedRoute('/returns')" exact class="link">
-      <img src="assets/esatta-images/page-banner/measure.svg" class="images">
-      {{ $t('LIKED') }}
-    </router-link>
-    <router-link :to="localizedRoute('/returns')" exact class="link">
-      <img src="assets/esatta-images/page-banner/measure.svg" class="images">
-      {{ $t('BAG') }}
-    </router-link>
-    <router-link :to="localizedRoute('/returns')" exact class="link">
-      <img src="assets/esatta-images/page-banner/measure.svg" class="images">
-      {{ $t('LOG IN') }}
-    </router-link>
-    <Currency class="currency" />
-    <div class="downlinks">
-      <router-link :to="localizedRoute('/returns')" exact class="link">
-        {{ $t('HOW IT WORKS') }}
+      <router-link :to="localizedRoute('/my-account')" exact class="link">
+        <img src="assets/esatta-images/page-banner/measure.svg" class="images">
+        {{ $t('MEASURE ME') }}
+      </router-link>
+      <router-link :to="localizedRoute('/delivery')" exact class="link">
+        <img src="assets/esatta-images/page-banner/browse.svg" class="images">
+        {{ $t('BROWSE') }}
       </router-link>
       <router-link :to="localizedRoute('/returns')" exact class="link">
-        {{ $t('OUR DESIGNERS') }}
+        <img src="assets/esatta-images/page-banner/measure.svg" class="images">
+        {{ $t('LIKED') }}
       </router-link>
       <router-link :to="localizedRoute('/returns')" exact class="link">
-        {{ $t('BODY SHAPES') }}
+        <img src="assets/esatta-images/page-banner/measure.svg" class="images">
+        {{ $t('BAG') }}
       </router-link>
+      <router-link :to="localizedRoute('/returns')" exact class="link">
+        <img src="assets/esatta-images/page-banner/measure.svg" class="images">
+        {{ $t('LOG IN') }}
+      </router-link>
+      <Currency class="currency" />
+      <div class="downlinks">
+        <router-link :to="localizedRoute('/returns')" exact class="link">
+          {{ $t('HOW IT WORKS') }}
+        </router-link>
+        <router-link :to="localizedRoute('/returns')" exact class="link">
+          {{ $t('OUR DESIGNERS') }}
+        </router-link>
+        <router-link :to="localizedRoute('/returns')" exact class="link">
+          {{ $t('BODY SHAPES') }}
+        </router-link>
+      </div>
+    </div>
+    <div class="lg:hidden">
+      <MediumNavbar />
     </div>
   </div>
 </template>
 
 <script>
 import Currency from 'theme/components/core/Currency'
+import MediumNavbar from 'theme/components/core/MediumNavbar'
 export default {
   components: {
-    Currency
+    Currency,
+    MediumNavbar
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.Navbar{
+  position: fixed;
+  right: 5%;
+  top: 28%;
+  z-index: 1000;
+  background-color: white;
+  padding: 5px;
+  color: black;
+  font-weight: bold;
+  width: 12%;
+  height: 57%;
+}
 .image{
   width:20%;
   height:10%;
@@ -85,7 +104,7 @@ export default {
   text-align: center;
 }
 .downlinks{
-  color: rgb(240, 78, 105);
+  color: #EC145B;
   font-size: xx-small;
   text-align: center;
   letter-spacing: 1px;

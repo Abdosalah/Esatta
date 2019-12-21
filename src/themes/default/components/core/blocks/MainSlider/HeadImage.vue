@@ -30,19 +30,11 @@
         </button>
       </div>
     </div>
-    <v-card class="Navbar">
-      <Navbar />
-    </v-card>
   </div>
 </template>
 
 <script>
-import Navbar from 'theme/components/core/Navbar'
-export default {
-  components: {
-    Navbar
-  }
-}
+
 </script>>
 
 <style lang="scss" scoped>
