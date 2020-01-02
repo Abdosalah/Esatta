@@ -1,6 +1,7 @@
 <template>
   <button-full @click.native="addToCart(product)" :disabled="isProductDisabled" data-testid="addToCart">
-    {{ $t('Add to cart') }}
+    BAG IT
+    <img class="h-8 w-8 inline ml-8" src="../../assets/esatta-images/product/bag.svg">
   </button-full>
 </template>
 

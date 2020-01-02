@@ -1,8 +1,8 @@
 <template>
   <div id="product" class="lg:pr-nav bg-cl-secondary" itemscope itemtype="http://schema.org/Product">
     <section class="product-top-section">
-      <div class="container">
-        <section class="row m0 between-xs">
+      <div class="">
+        <section class="flex">
           <!-- PRODUCT IMAGE -->
           <div class="w-2/3 image">
             <product-gallery
@@ -12,8 +12,11 @@
               :product="product"
             />
           </div>
+          <div class="inline pt-48">
+            <wishlist-button :product="product" />
+          </div>
           <!-- PRODUCT DATA -->
-          <div class="w-1/3 pl-16 pt-48 data">
+          <div class="w-1/3 pt-48 data">
             <p class="text-2xl tracking-widest font-medium uppercase" data-testid="productName" itemprop="name">
               {{ product.name | htmlDecode }}
               <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share" />
@@ -115,7 +118,7 @@
               </div>
             </div>
 
-            <div class="mt-6">
+            <div class="mt-6 tracking-widest">
               <p class="text-xs inline">
                 I WOULD LIKE A
               </p>
@@ -134,19 +137,16 @@
                 FIT
               </p>
             </div>
-
-            <div class="row m0">
+            <!-- BAG IT SECTION -->
+            <div class="mt-12">
               <add-to-cart
                 :product="product"
                 :disabled="$v.product.qty.$error && !$v.product.qty.minValue"
-                class="col-xs-12 col-sm-4 col-md-6"
+                class="w-3/4 py-8 rounded-full"
               />
             </div>
-            <div class="row py40 add-to-buttons">
-              <div class="col-xs-6 col-sm-3 col-md-6">
-                <wishlist-button :product="product" />
-              </div>
-              <div class="col-xs-6 col-sm-3 col-md-6 product__add-to-compare">
+            <div class="">
+              <div class="product__add-to-compare">
                 <button
                   @click="isOnCompare ? removeFromList('compare') : addToList('compare')"
                   class="
@@ -394,12 +394,12 @@ select {
   }
 }
 
-.add-to-buttons {
-  @media (max-width: 767px) {
-    padding-top: 30px;
-    margin-bottom: 40px;
-  }
-}
+// .add-to-buttons {
+//   @media (max-width: 767px) {
+//     padding-top: 30px;
+//     margin-bottom: 40px;
+//   }
+// }
 
 .details {
   @media (max-width: 767px) {

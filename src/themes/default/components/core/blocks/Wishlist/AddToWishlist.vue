@@ -1,12 +1,13 @@
 <template>
-  <button @click="isOnWishlist ? removeFromWishlist(product) : addToWishlist(product)" class="p0 inline-flex middle-xs bg-cl-transparent brdr-none action h5 pointer cl-secondary" type="button" data-testid="addToWishlist">
-    <i class="pr5 material-icons">{{ favoriteIcon }}</i>
-    <template v-if="!isOnWishlist">
+  <button @click="isOnWishlist ? removeFromWishlist(product) : addToWishlist(product)" class="p-8 bg-white rounded-full" type="button" data-testid="addToWishlist">
+    <img v-if="isOnWishlist" class="h-8 w-8" src="../../../../assets/esatta-images/product/liked_prod.svg">
+    <img v-if="!isOnWishlist" class="h-8 w-8" src="../../../../assets/esatta-images/product/like.svg">
+    <!-- <template v-if="!isOnWishlist">
       {{ $t('Add to favorite') }}
     </template>
     <template v-else>
       {{ $t('Remove') }}
-    </template>
+    </template> -->
   </button>
 </template>
 
