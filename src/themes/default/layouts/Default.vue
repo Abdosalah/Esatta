@@ -3,7 +3,7 @@
     <overlay v-if="overlayActive" />
     <loader />
     <div id="viewport" class="w-100 relative">
-      <!-- <nav-bar /> -->
+      <nav-bar />
       <async-sidebar
         :async-component="SearchPanel"
         :is-open="isSearchPanelOpen"
@@ -91,18 +91,18 @@ export default {
   serverPrefetch () {
     return this.fetchMenuData()
   },
-  beforeMount () {
-    // Progress bar on top of the page
-    this.$router.beforeEach((to, from, next) => {
-      this.$Progress.start()
-      this.$Progress.increase(40)
-      next()
-    })
-    this.$router.afterEach((to, from) => {
-      this.$Progress.finish()
-    })
-    this.$bus.$on('offline-order-confirmation', this.onOrderConfirmation)
-  },
+  // beforeMount () {
+  //   // Progress bar on top of the page
+  //   this.$router.beforeEach((to, from, next) => {
+  //     this.$Progress.start()
+  //     this.$Progress.increase(40)
+  //     next()
+  //   })
+  //   this.$router.afterEach((to, from) => {
+  //     this.$Progress.finish()
+  //   })
+  //   this.$bus.$on('offline-order-confirmation', this.onOrderConfirmation)
+  // },
   beforeDestroy () {
     this.$bus.$off('offline-order-confirmation', this.onOrderConfirmation)
   },
