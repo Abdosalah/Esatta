@@ -60,7 +60,7 @@ module.exports = {
         red: '#EC145B',
         gray: '#E2E2E2',
         grey_text: '#a0aec0',
-        dark_grey: "#a9a9a9"
+        dark_grey: '#a9a9a9'
       }
     }
   },

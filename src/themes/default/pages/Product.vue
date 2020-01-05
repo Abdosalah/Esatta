@@ -177,7 +177,7 @@
           <p class="text-xl">
             WHY THIS FITS YOU "ALEX"
           </p>
-          <hr class="mt-4" />
+          <hr class="mt-4">
         </div>
         <div class="flex pt-20">
           <div class="w-1/2">
