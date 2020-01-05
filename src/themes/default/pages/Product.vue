@@ -1,10 +1,10 @@
 <template>
-  <div id="product" class="lg:pr-nav bg-cl-secondary" itemscope itemtype="http://schema.org/Product">
-    <section class="product-top-section">
+  <div id="product" class="" itemscope itemtype="http://schema.org/Product">
+    <section class="product-top-section bg-dark_grey lg:pr-nav">
       <div class="">
         <section class="flex">
           <!-- PRODUCT IMAGE -->
-          <div class="w-2/3 image">
+          <div class="w-60% h-screen image">
             <product-gallery
               :offline="image"
               :gallery="gallery"
@@ -12,16 +12,16 @@
               :product="product"
             />
           </div>
-          <div class="inline pt-48">
+          <div class="inline pt-56 mr-12 h-screen middle-div">
             <wishlist-button :product="product" />
           </div>
           <!-- PRODUCT DATA -->
-          <div class="w-1/3 pt-48 data">
+          <div class="w-1/3 pt-56 data">
             <p class="text-2xl tracking-widest font-medium uppercase" data-testid="productName" itemprop="name">
               {{ product.name | htmlDecode }}
               <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share" />
             </p>
-            <div class="cl-secondary text-sm" itemprop="sku" :content="product.sku">
+            <div class="cl-secondary text-sm mt-2" itemprop="sku" :content="product.sku">
               Pel Guthrie - Auckland, NZ
               <!-- {{ $t('SKU') }}: {{ product.sku }} -->
             </div>
@@ -118,18 +118,18 @@
               </div>
             </div>
 
-            <div class="mt-6 tracking-widest">
+            <div class="mt-10 tracking-widest">
               <p class="text-xs inline">
                 I WOULD LIKE A
               </p>
-              <select class="text-xs inline bg-cl-secondary">
-                <option value="volvo">
+              <select class="text-xs inline bg-dark_grey">
+                <option value="1">
                   STANDARD
                 </option>
-                <option value="saab">
+                <option value="2">
                   SLIM
                 </option>
-                <option value="opel">
+                <option value="3">
                   SOMETHING
                 </option>
               </select>
@@ -145,7 +145,7 @@
                 class="w-3/4 py-8 rounded-full"
               />
             </div>
-            <div class="">
+            <!-- <div class="">
               <div class="product__add-to-compare">
                 <button
                   @click="isOnCompare ? removeFromList('compare') : addToList('compare')"
@@ -165,53 +165,61 @@
                   </template>
                 </button>
               </div>
-            </div>
+            </div> -->
           </div>
         </section>
       </div>
     </section>
-    <section class="container px15 pt50 pb35 cl-accent details">
-      <h2 class="h3 m0 mb10 serif lh20 details-title">
-        {{ $t('Product details') }}
-      </h2>
-      <div
-        class="h4 details-wrapper"
-        :class="{'details-wrapper--open': detailsOpen}"
-      >
-        <div class="row between-md m0">
-          <div class="col-xs-12 col-sm-6">
-            <div
-              class="lh30 h5"
-              itemprop="description"
-              v-html="product.description"
-            />
+    <section class="py-56 bg-cl-secondary flex lg:pr-nav">
+      <div class="w-2/3 pl-10%">
+        <img class="profile-img" src="../assets/esatta-images/my-profile/avatar.jpg">
+        <div class="inline-block pl-8">
+          <p class="text-xl">
+            WHY THIS FITS YOU "ALEX"
+          </p>
+          <hr class="mt-4" />
+        </div>
+        <div class="flex pt-20">
+          <div class="w-1/2">
+            <div class="relative">
+              <img class="w-60% h-25rem absolute" src="../assets/esatta-images/product/body_shape.svg">
+              <img class="w-60% h-25rem py-8" src="../assets/esatta-images/product/shape_shape.png">
+            </div>
           </div>
-          <div class="col-xs-12 col-sm-5">
-            <ul class="attributes p0 pt5 m0">
-              <product-attribute
-                :key="attr.attribute_code"
-                v-for="attr in customAttributes"
-                :product="product"
-                :attribute="attr"
-                empty-placeholder="N/A"
-              />
-            </ul>
+          <div class="w-1/2 text-left text-sm pt-8">
+            <div>
+              <p class="text-lg font-bold tracking-widest">
+                HOURGLASS
+              </p>
+              <p class="pt-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
+                Vivamus molestie orci sit amet venenatis congue.
+              </p>
+              <p class="pt-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
+                Vivamus molestie orci sit amet venenatis congue.
+              </p>
+              <p class="pt-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
+                Vivamus molestie orci sit amet venenatis congue.
+              </p>
+            </div>
           </div>
-          <div
-            class="details-overlay"
-            @click="showDetails"
-          />
         </div>
       </div>
     </section>
-    <reviews :product-id="originalProduct.id" v-show="OnlineOnly" />
-    <related-products
-      type="upsell"
-      :heading="$t('We found other products you might like')"
-    />
-    <promoted-offers single-banner />
-    <related-products type="related" />
-    <SizeGuide />
+    <section class="bg-cl-secondary lg:pr-nav">
+      <p class="text-center text-2xl font-medium pb-8">
+        YOU MIGHT ALSO LIKE
+      </p>
+      <related-products
+        type="upsell"
+        class="bg-cl-secondary"
+      />
+    </section>
   </div>
 </template>
 
@@ -477,5 +485,18 @@ select {
 
 .web-share {
   float: right;
+}
+
+.middle-div {
+  background: linear-gradient(to right,
+     #f2f2f2 50%, #a9a9a9 50% );
+}
+
+.profile-img {
+  height: 5rem;
+  width: 5rem;
+  margin-left: 2.5rem;
+  border-radius: 50%;
+  display: inline-block;
 }
 </style>

@@ -33,7 +33,7 @@ export default {
     heading: {
       type: String,
       required: false,
-      default: i18n.t('Similar products')
+      default: i18n.t('')
     }
   },
   components: {

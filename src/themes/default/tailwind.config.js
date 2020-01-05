@@ -7,7 +7,8 @@ module.exports = {
         '10%': '10%',
         '9%': '9%',
         '8%': '8%',
-        '4%': '4%'
+        '4%': '4%',
+        '-7rem': '-7rem'
       },
       width: {
         'max': 'max-content',
@@ -15,7 +16,8 @@ module.exports = {
         '82%': '82%',
         '78%': '78%',
         '69%': '69%',
-        '67%': '67%'
+        '67%': '67%',
+        '60%': '60%'
       },
       padding: {
         'nav': '22%',
@@ -57,7 +59,8 @@ module.exports = {
       colors: {
         red: '#EC145B',
         gray: '#E2E2E2',
-        grey_text: '#a0aec0'
+        grey_text: '#a0aec0',
+        dark_grey: "#a9a9a9"
       }
     }
   },
