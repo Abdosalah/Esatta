@@ -11,9 +11,9 @@
 
 <script>
 // Esatta custom components
-import HowItworks from 'theme/components/custom/HowItWorks.vue'
-import JustLanded from 'theme/components/custom/JustLanded.vue'
-import Designers from 'theme/components/custom/Designers.vue'
+import HowItworks from 'theme/components/custom/home-components/HowItWorks.vue'
+import JustLanded from 'theme/components/custom/home-components/JustLanded.vue'
+import Designers from 'theme/components/custom/home-components/Designers.vue'
 
 // query constructor
 import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/common'

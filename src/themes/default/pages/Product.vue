@@ -1,9 +1,10 @@
 <template>
-  <div id="product" itemscope itemtype="http://schema.org/Product">
-    <section class="bg-cl-secondary px20 product-top-section">
-      <div class="container">
-        <section class="row m0 between-xs">
-          <div class="col-xs-12 col-md-6 center-xs middle-xs image">
+  <div id="product" class="" itemscope itemtype="http://schema.org/Product">
+    <section class="product-top-section bg-dark_grey lg:pr-nav">
+      <div class="">
+        <section class="flex">
+          <!-- PRODUCT IMAGE -->
+          <div class="w-60% h-screen image">
             <product-gallery
               :offline="image"
               :gallery="gallery"
@@ -11,46 +12,64 @@
               :product="product"
             />
           </div>
-          <div class="col-xs-12 col-md-5 data">
-            <breadcrumbs
-              class="pt40 pb20 hidden-xs"
-              :routes="breadcrumbs.routes"
-              :active-route="breadcrumbs.name"
-            />
-            <h1 class="mb20 mt0 cl-mine-shaft product-name" data-testid="productName" itemprop="name">
+          <div class="inline pt-56 mr-12 h-screen middle-div">
+            <wishlist-button :product="product" />
+          </div>
+          <!-- PRODUCT DATA -->
+          <div class="w-1/3 pt-56 data">
+            <p class="text-2xl tracking-widest font-medium uppercase" data-testid="productName" itemprop="name">
               {{ product.name | htmlDecode }}
               <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share" />
-            </h1>
-            <div class="mb20 uppercase cl-secondary" itemprop="sku" :content="product.sku">
-              {{ $t('SKU') }}: {{ product.sku }}
+            </p>
+            <div class="cl-secondary text-sm mt-2" itemprop="sku" :content="product.sku">
+              Pel Guthrie - Auckland, NZ
+              <!-- {{ $t('SKU') }}: {{ product.sku }} -->
+            </div>
+            <div class="cl-secondary text-sm mb-8" itemprop="sku" :content="product.sku">
+              SPRING SUMMER 2017
+              <!-- {{ $t('SKU') }}: {{ product.sku }} -->
             </div>
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <meta itemprop="priceCurrency" :content="currentStore.i18n.currencyCode">
               <meta itemprop="price" :content="parseFloat(product.priceInclTax).toFixed(2)">
               <meta itemprop="availability" :content="structuredData.availability">
               <meta itemprop="url" :content="product.url_path">
+              <hr class="cl-secondary">
+              <!-- PRICE, TIMER & QTY LEFT SECTION -->
               <div
-                class="mb40 price serif"
+                class="pt-2 inline-block w-full flex"
                 v-if="product.type_id !== 'grouped'"
               >
                 <div
-                  class="h3 cl-secondary"
+                  class="h3 cl-secondary inline w-1/4"
                   v-if="product.special_price && product.priceInclTax && product.originalPriceInclTax"
                 >
-                  <span class="h2 cl-mine-shaft weight-700">
+                  <span class="text-xl font-semibold">
                     {{ product.priceInclTax * product.qty | price }}
                   </span>&nbsp;
-                  <span class="price-original h3">
+                  <span class="price-original text-xl font-semibold">
                     {{ product.originalPriceInclTax * product.qty | price }}
                   </span>
                 </div>
                 <div
-                  class="h2 cl-mine-shaft weight-700"
+                  class="text-lg font-semibold inline w-1/4"
                   v-if="!product.special_price && product.priceInclTax"
                 >
                   {{ product.qty > 0 ? product.priceInclTax * product.qty : product.priceInclTax | price }}
                 </div>
+                <div class="inline text-xs w-3/4 flex">
+                  <div class="w-1/2">
+                    <img class="h-4 w-4 inline mr-2" src="../assets/esatta-images/product/clock.svg">
+                    ENDS IN 16:18:25
+                  </div>
+                  <p class="inline w-1/2 text-right">
+                    5 LEFT/300
+                  </p>
+                </div>
               </div>
+              <hr class="cl-secondary mt-2 mb-12">
+
+              <!-- COLOURS AND QUANTITY SECTION -->
               <div
                 class="cl-primary variants"
                 v-if="product.type_id =='configurable' && !loading"
@@ -59,19 +78,16 @@
                   {{ product.errors | formatProductMessages }}
                 </div>
                 <div
-                  class="h5"
+                  class="h5 flex"
                   v-for="(option, index) in product.configurable_options"
                   v-if="(!product.errors || Object.keys(product.errors).length === 0) && Object.keys(configuration).length > 0"
                   :key="index"
                 >
-                  <div class="variants-label" data-testid="variantsLabel">
-                    {{ option.label }}
-                    <span class="weight-700">
-                      {{ configuration[option.attribute_code ? option.attribute_code : option.label.toLowerCase()].label }}
-                    </span>
-                  </div>
-                  <div class="row top-xs m0 pt15 pb40 variants-wrapper">
-                    <div v-if="option.label == 'Color'">
+                  <div class="variants-wrapper w-1/2" v-if="option.label == 'Color'">
+                    <div class="variants-label pb-3" data-testid="variantsLabel" v-if="option.label == 'Color'">
+                      COLOURS
+                    </div>
+                    <div>
                       <color-selector
                         v-for="(c, i) in options[option.attribute_code]"
                         v-if="isOptionAvailable(c)"
@@ -83,89 +99,54 @@
                         :class="{ active: c.id == configuration[option.attribute_code].id }"
                       />
                     </div>
-                    <div class="sizes" v-else-if="option.label == 'Size'">
-                      <size-selector
-                        v-for="(s, i) in options[option.attribute_code]"
-                        v-if="isOptionAvailable(s)"
-                        :key="i"
-                        :id="s.id"
-                        :label="s.label"
-                        context="product"
-                        :code="option.attribute_code"
-                        class="mr10 mb10"
-                        :class="{ active: s.id == configuration[option.attribute_code].id }"
-                        v-focus-clean
-                      />
-                    </div>
-                    <div :class="option.attribute_code" v-else>
-                      <generic-selector
-                        v-for="(s, i) in options[option.attribute_code]"
-                        v-if="isOptionAvailable(s)"
-                        :key="i"
-                        :id="s.id"
-                        :label="s.label"
-                        context="product"
-                        :code="option.attribute_code"
-                        class="mr10 mb10"
-                        :class="{ active: s.id == configuration[option.attribute_code].id }"
-                        v-focus-clean
-                      />
-                    </div>
-                    <span
-                      v-if="option.label == 'Size'"
-                      @click="openSizeGuide"
-                      class="
-                        p0 ml30 inline-flex middle-xs no-underline h5
-                        action size-guide pointer cl-secondary
-                      "
-                    >
-                      <i class="pr5 material-icons">accessibility</i>
-                      <span>
-                        {{ $t('Size guide') }}
-                      </span>
-                    </span>
+                  </div>
+                  <div class="w-1/2" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle' && option.label == 'Color'">
+                    <base-input-number
+                      :name="$t('QTY')"
+                      v-model="product.qty"
+                      :min="1"
+                      @blur="$v.$touch()"
+                      :validations="[
+                        {
+                          condition: $v.product.qty.$error && !$v.product.qty.minValue,
+                          text: $t('Quantity must be above 0')
+                        }
+                      ]"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-            <product-links
-              v-if="product.type_id =='grouped' && !loading"
-              :products="product.product_links"
-            />
-            <product-bundle-options
-              v-if="product.bundle_options && product.bundle_options.length > 0 && !loading"
-              :product="product"
-            />
-            <product-custom-options
-              v-else-if="product.custom_options && product.custom_options.length > 0 && !loading"
-              :product="product"
-            />
-            <div class="row m0 mb35" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle'">
-              <base-input-number
-                :name="$t('Quantity')"
-                v-model="product.qty"
-                :min="1"
-                @blur="$v.$touch()"
-                :validations="[
-                  {
-                    condition: $v.product.qty.$error && !$v.product.qty.minValue,
-                    text: $t('Quantity must be above 0')
-                  }
-                ]"
-              />
+
+            <div class="mt-10 tracking-widest">
+              <p class="text-xs inline">
+                I WOULD LIKE A
+              </p>
+              <select class="text-xs inline bg-dark_grey">
+                <option value="1">
+                  STANDARD
+                </option>
+                <option value="2">
+                  SLIM
+                </option>
+                <option value="3">
+                  SOMETHING
+                </option>
+              </select>
+              <p class="text-xs inline">
+                FIT
+              </p>
             </div>
-            <div class="row m0">
+            <!-- BAG IT SECTION -->
+            <div class="mt-12">
               <add-to-cart
                 :product="product"
                 :disabled="$v.product.qty.$error && !$v.product.qty.minValue"
-                class="col-xs-12 col-sm-4 col-md-6"
+                class="w-3/4 py-8 rounded-full"
               />
             </div>
-            <div class="row py40 add-to-buttons">
-              <div class="col-xs-6 col-sm-3 col-md-6">
-                <wishlist-button :product="product" />
-              </div>
-              <div class="col-xs-6 col-sm-3 col-md-6 product__add-to-compare">
+            <!-- <div class="">
+              <div class="product__add-to-compare">
                 <button
                   @click="isOnCompare ? removeFromList('compare') : addToList('compare')"
                   class="
@@ -184,53 +165,61 @@
                   </template>
                 </button>
               </div>
-            </div>
+            </div> -->
           </div>
         </section>
       </div>
     </section>
-    <section class="container px15 pt50 pb35 cl-accent details">
-      <h2 class="h3 m0 mb10 serif lh20 details-title">
-        {{ $t('Product details') }}
-      </h2>
-      <div
-        class="h4 details-wrapper"
-        :class="{'details-wrapper--open': detailsOpen}"
-      >
-        <div class="row between-md m0">
-          <div class="col-xs-12 col-sm-6">
-            <div
-              class="lh30 h5"
-              itemprop="description"
-              v-html="product.description"
-            />
+    <section class="py-56 bg-cl-secondary flex lg:pr-nav">
+      <div class="w-2/3 pl-10%">
+        <img class="profile-img" src="../assets/esatta-images/my-profile/avatar.jpg">
+        <div class="inline-block pl-8">
+          <p class="text-xl">
+            WHY THIS FITS YOU "ALEX"
+          </p>
+          <hr class="mt-4">
+        </div>
+        <div class="flex pt-20">
+          <div class="w-1/2">
+            <div class="relative">
+              <img class="w-60% h-25rem absolute" src="../assets/esatta-images/product/body_shape.svg">
+              <img class="w-60% h-25rem py-8" src="../assets/esatta-images/product/shape_shape.png">
+            </div>
           </div>
-          <div class="col-xs-12 col-sm-5">
-            <ul class="attributes p0 pt5 m0">
-              <product-attribute
-                :key="attr.attribute_code"
-                v-for="attr in customAttributes"
-                :product="product"
-                :attribute="attr"
-                empty-placeholder="N/A"
-              />
-            </ul>
+          <div class="w-1/2 text-left text-sm pt-8">
+            <div>
+              <p class="text-lg font-bold tracking-widest">
+                HOURGLASS
+              </p>
+              <p class="pt-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
+                Vivamus molestie orci sit amet venenatis congue.
+              </p>
+              <p class="pt-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
+                Vivamus molestie orci sit amet venenatis congue.
+              </p>
+              <p class="pt-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
+                Vivamus molestie orci sit amet venenatis congue.
+              </p>
+            </div>
           </div>
-          <div
-            class="details-overlay"
-            @click="showDetails"
-          />
         </div>
       </div>
     </section>
-    <reviews :product-id="originalProduct.id" v-show="OnlineOnly" />
-    <related-products
-      type="upsell"
-      :heading="$t('We found other products you might like')"
-    />
-    <promoted-offers single-banner />
-    <related-products type="related" />
-    <SizeGuide />
+    <section class="bg-cl-secondary lg:pr-nav">
+      <p class="text-center text-2xl font-medium pb-8">
+        YOU MIGHT ALSO LIKE
+      </p>
+      <related-products
+        type="upsell"
+        class="bg-cl-secondary"
+      />
+    </section>
   </div>
 </template>
 
@@ -332,6 +321,15 @@ $color-secondary: color(secondary);
 $color-white: color(white);
 $bg-secondary: color(secondary, $colors-background);
 
+select:focus {
+  outline: none;
+}
+
+select {
+  border-top: 1px solid #E2E2E2;
+  border-bottom: 1px solid #E2E2E2;
+}
+
 .product {
   &__add-to-compare {
     display: none;
@@ -371,12 +369,6 @@ $bg-secondary: color(secondary, $colors-background);
   }
 }
 
-.price {
-  @media (max-width: 767px) {
-    color: $color-primary;
-  }
-}
-
 .variants-label {
   @media (max-width: 767px) {
     font-size: 14px;
@@ -410,12 +402,12 @@ $bg-secondary: color(secondary, $colors-background);
   }
 }
 
-.add-to-buttons {
-  @media (max-width: 767px) {
-    padding-top: 30px;
-    margin-bottom: 40px;
-  }
-}
+// .add-to-buttons {
+//   @media (max-width: 767px) {
+//     padding-top: 30px;
+//     margin-bottom: 40px;
+//   }
+// }
 
 .details {
   @media (max-width: 767px) {
@@ -493,5 +485,18 @@ $bg-secondary: color(secondary, $colors-background);
 
 .web-share {
   float: right;
+}
+
+.middle-div {
+  background: linear-gradient(to right,
+     #f2f2f2 50%, #a9a9a9 50% );
+}
+
+.profile-img {
+  height: 5rem;
+  width: 5rem;
+  margin-left: 2.5rem;
+  border-radius: 50%;
+  display: inline-block;
 }
 </style>

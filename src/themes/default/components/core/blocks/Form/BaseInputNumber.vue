@@ -1,6 +1,6 @@
 <template>
   <div class="base-input-number">
-    <label class="base-input-number__label cl-primary flex" :for="getInputId">{{ name }}</label>
+    <label class="base-input-number__label cl-primary flex pb-3" :for="getInputId">{{ name }}</label>
     <input
       :id="getInputId"
       type="number"
@@ -66,8 +66,6 @@ export default {
     width: 100%;
 
     &__input {
-      border-style: solid;
-      border-width: 0 0 1px 0;
       width: 50px;
       height: 1.4rem;
       line-height: 1.7rem;
