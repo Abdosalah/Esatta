@@ -1,6 +1,6 @@
 <template>
-  <div class="media-gallery">
-    <div v-if="isOnline" class="relative w-100">
+  <div class="media-gallery bg-cl-secondary">
+    <div v-if="isOnline" class="relative w-100 -mt-7rem">
       <product-gallery-overlay
         v-if="isZoomOpen"
         :current-slide="currentSlide"
