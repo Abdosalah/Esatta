@@ -13,7 +13,7 @@
             />
           </div>
           <div class="inline pt-56 mr-12 h-screen middle-div">
-            <wishlist-button :product="product" />
+            <wishlist-button :product="product" img-dimensions="height_8" button-dimensions="big" />
           </div>
           <!-- PRODUCT DATA -->
           <div class="w-1/3 pt-56 data">
