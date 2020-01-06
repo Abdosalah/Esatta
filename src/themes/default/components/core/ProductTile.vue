@@ -19,9 +19,7 @@
           data-testid="productImage"
         />
         <div class="product-corner">
-          <i class="material-icons my-fav-icon">
-            favorite_border
-          </i>
+          <wishlist-button :product="product" img-dimensions="height_4" button-dimensions="" />
           <p v-if="isNew === 'new'" class="pb-1 text-xs">
             NEW
           </p>
@@ -65,6 +63,7 @@ import ProductImage from './ProductImage'
 export default {
   mixins: [ProductTile],
   components: {
+    'WishlistButton': () => import(/* webpackChunkName: "wishlist" */'theme/components/core/blocks/Wishlist/AddToWishlist'),
     ProductImage
   },
   props: {
