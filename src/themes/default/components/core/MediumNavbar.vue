@@ -1,39 +1,39 @@
 <template>
   <div>
     <Navbarup />
-      <v-bottom-navigation v-model = "bottomNav" class = "nav">
-        <v-btn value="recent" class="button">
-          <img src="assets/esatta-images/page-banner/browse.svg" class="image">
-          <span>BROWSE</span>
-        </v-btn>
-        <v-btn value="favorites" class="button">
-          <img src="assets/esatta-images/page-banner/measure.svg" class="image">
-          <span>LIKED</span>
-        </v-btn>
-        <v-btn value="nearby" class="button">
-          <img src="assets/esatta-images/page-banner/measure.svg" class="image">
-          <span>MEASURE ME</span>
-        </v-btn>
-        <v-btn value="nearby" class="button">
-          <img src="assets/esatta-images/page-banner/measure.svg" class="image">
-          <span>BAG</span>
-        </v-btn>
-      </v-bottom-navigation>
+    <v-bottom-navigation v-model="bottomNav" class="nav">
+      <v-btn value="recent" class="button">
+        <img src="assets/esatta-images/page-banner/browse.svg" class="image">
+        <span>BROWSE</span>
+      </v-btn>
+      <v-btn value="favorites" class="button">
+        <img src="assets/esatta-images/page-banner/measure.svg" class="image">
+        <span>LIKED</span>
+      </v-btn>
+      <v-btn value="nearby" class="button">
+        <img src="assets/esatta-images/page-banner/measure.svg" class="image">
+        <span>MEASURE ME</span>
+      </v-btn>
+      <v-btn value="nearby" class="button">
+        <img src="assets/esatta-images/page-banner/measure.svg" class="image">
+        <span>BAG</span>
+      </v-btn>
+    </v-bottom-navigation>
   </div>
 </template>
 
 <script>
 import Navbarup from 'theme/components/core/blocks/Header/NavBar'
- export default {
-    data () {
-      return {
-        bottomNav: 'recent',
-      }
-    },
-    components: {
-      Navbarup
+export default {
+  data () {
+    return {
+      bottomNav: 'recent'
+    }
+  },
+  components: {
+    Navbarup
   }
-  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -47,7 +47,7 @@ import Navbarup from 'theme/components/core/blocks/Header/NavBar'
   height: 6%;
   padding: 0;
   margin: 0;
-  display:flex; 
+  display:flex;
   flex-direction:row;
 }
 // .nav:hover{

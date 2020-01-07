@@ -6,7 +6,7 @@
     <hr class="hr-text">
     <div class="downfooter">
       <div class="container hidden lg:inline-block">
-        <div class="" >
+        <div class="">
           <p class="heading">
             {{ $t('Account') }}
           </p>
