@@ -21,14 +21,14 @@
           </p>
         </button>
       </div>
-      <div class="block md:inline-block md:ml-10">
+      <router-link :to="localizedRoute('/c/women-20')" class="block md:inline-block md:ml-10" exact>
         <button class="header-buttons">
           <img class="w-8 h-8 float-left" src="assets/esatta-images/page-banner/browse.svg">
           <p class="button-text">
             BROWSE
           </p>
         </button>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -57,6 +57,7 @@
   width: 17rem;
   margin-top: 2rem;
   padding: 1rem 3.5rem;
+  outline: none;
 }
 
 .button-text {

@@ -40,17 +40,21 @@ export default {
   $color-active: color(primary);
 
   .color {
-    width: 40px;
-    height: 40px;
+    width: 1.7rem;
+    height: 1.7rem;
 
     &.active {
       border-color: $color-active;
     }
   }
 
+  .color:focus {
+    outline: none;
+  }
+
   .color-inside {
-    width: 34px;
-    height: 34px;
+    width: 1.5rem;
+    height: 1.5rem;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%)

@@ -8,7 +8,7 @@
     >
       <div class="modal-wrapper">
         <div class="modal-center">
-          <div class="modal-container bg-cl-primary" ref="modal-content" :style="style">
+          <div class="modal-container bg-cl-primary" ref="modal-content">
             <header class="modal-header py25 px65 h1 serif weight-700 bg-cl-secondary" v-if="$slots.header">
               <i
                 slot="close"
@@ -131,14 +131,14 @@ $z-index-modal: map-get($z-index, modal);
   }
 
   .modal-container {
-    width: 945px;
+    width: 70%;
     margin: 0 auto;
     max-width: 100%;
     max-height: 100%;
     z-index: $z-index-modal+1;
     pointer-events: auto;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1024px) {
       min-height: 100%;
       min-width: 100%;
       margin: 0;
@@ -152,14 +152,14 @@ $z-index-modal: map-get($z-index, modal);
         margin: 0;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       padding: 25px 20px;
     }
   }
 
   .modal-content {
-    @media (max-width: 600px) {
-      padding: 30px 20px;
+    @media (max-width: 768px) {
+      padding: 30px 1.5rem;
     }
   }
 

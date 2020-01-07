@@ -96,9 +96,9 @@
 </template>
 
 <script>
-import Tiles from 'theme/components/custom/Tiles.vue'
-import MiddleTile from 'theme/components/custom/MiddleTile.vue'
-import TopTile from 'theme/components/custom/TopTile.vue'
+import Tiles from 'theme/components/custom/home-components/Tiles.vue'
+import MiddleTile from 'theme/components/custom/home-components/MiddleTile.vue'
+import TopTile from 'theme/components/custom/home-components/TopTile.vue'
 
 export default {
   components: {

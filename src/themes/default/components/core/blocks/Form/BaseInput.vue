@@ -3,7 +3,7 @@
     <div class="relative">
       <input
         class="
-         py10 w-100 border-box brdr-none brdr-bottom-1
+         w-100 border-box brdr-none brdr-bottom-1
          brdr-cl-primary h4 sans-serif
        "
         :class="{pr30: type === 'password', empty: value === ''}"
@@ -135,11 +135,12 @@ export default {
 
   input {
     background: inherit;
+    border: 1px solid #C57974;
+    padding: 2rem;
 
     &:hover,
     &:focus {
       outline: none;
-      border-color: $color-puerto-rico;
     }
 
     &:disabled,
@@ -150,20 +151,17 @@ export default {
     }
   }
   label {
-    color:#999;
+    background-color: #FADBD9;
+    color: #C57974;
     position:absolute;
     pointer-events:none;
     user-select: none;
-    left: 0;
-    top: 10px;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
+    left: 5%;
+    top: 26%;
   }
   input:focus ~ label, input:not(.empty) ~ label{
     top: -10px;
     font-size:14px;
-    color:$color-puerto-rico;
   }
 
   .icon {

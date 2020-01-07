@@ -1,20 +1,19 @@
 <template>
   <div id="category">
-    <header class="bg-cl-secondary py35 pl20">
-      <div class="container">
-        <breadcrumbs :routes="breadcrumbs.routes" :active-route="category.name" />
-        <div class="row middle-sm">
-          <h1 class="col-sm-8 category-title mb10">
-            {{ category.name }}
-          </h1>
-          <div class="sorting col-sm-2 align-right mt50">
-            <label class="mr10">{{ $t('Columns') }}:</label>
-            <columns @change-column="columnChange" />
-          </div>
-          <div class="sorting col-sm-2 align-right mt50">
-            <sort-by :has-label="true" />
-          </div>
-        </div>
+    <div class="relative">
+      <img class="h-1/2 w-screen object-cover" src="../assets/esatta-images/hp_hiw.jpg">
+      <div class="absolute top-50% left-10% text-4xl font-bold">
+        <p class="hidden md:inline-block">
+          BROWSE
+        </p>
+        <p v-if="category.name === 'Women'" class="inline-block">
+          WOMEN
+        </p>
+      </div>
+    </div>
+    <header class="bg-cl-secondary pl20 py-4">
+      <div class="sorting col-sm-2 align-right">
+        <sort-by :has-label="true" />
       </div>
       <div class="container">
         <div class="row m0">
@@ -30,12 +29,11 @@
         </div>
       </div>
     </header>
-    <div class="container pb60">
-      <div class="row m0 pt15">
-        <div class="col-md-3 start-xs category-filters">
+    <div class="pb60 pt-16 mr-nav">
+      <!-- <div class="col-md-3 start-xs category-filters">
           <sidebar :filters="filters.available" />
-        </div>
-        <div class="col-md-3 start-xs mobile-filters" v-show="mobileFilters">
+        </div> -->
+      <!-- <div class="col-md-3 start-xs mobile-filters" v-show="mobileFilters">
           <div class="close-container absolute w-100">
             <i class="material-icons p15 close cl-accent" @click="closeFilters">close</i>
           </div>
@@ -49,19 +47,15 @@
           >
             {{ $t('Filter') }}
           </button-full>
+        </div> -->
+      <div class="px10">
+        <div v-if="isCategoryEmpty" class="hidden-xs">
+          <h4 data-testid="noProductsInfo">
+            {{ $t('No products found!') }}
+          </h4>
+          <p>{{ $t('Please change Your search criteria and try again. If still not finding anything relevant, please visit the Home page and try out some of our bestsellers!') }}</p>
         </div>
-        <div class="col-md-9 px10 border-box products-list">
-          <p class="col-xs-12 end-md m0 pb20 cl-secondary">
-            {{ productsTotal }} {{ $t('items') }}
-          </p>
-          <div v-if="isCategoryEmpty" class="hidden-xs">
-            <h4 data-testid="noProductsInfo">
-              {{ $t('No products found!') }}
-            </h4>
-            <p>{{ $t('Please change Your search criteria and try again. If still not finding anything relevant, please visit the Home page and try out some of our bestsellers!') }}</p>
-          </div>
-          <product-listing :columns="defaultColumn" :products="products" />
-        </div>
+        <product-listing :columns="defaultColumn" :products="products" />
       </div>
     </div>
   </div>
@@ -89,7 +83,7 @@ export default {
   data () {
     return {
       mobileFilters: false,
-      defaultColumn: 3
+      defaultColumn: 4
     }
   },
   async asyncData ({ store, route }) { // this is for SSR purposes to prefetch data - and it's always executed before parent component methods

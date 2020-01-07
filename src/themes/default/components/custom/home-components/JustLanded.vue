@@ -5,7 +5,7 @@
       <div class="relative">
         <img class="h-25rem w-full lg:w-2/3 object-cover float-right" src="assets/esatta-images/just-landed/just_landed.jpg">
         <div class="clearfix" />
-        <div class="my-links ml-4% md:ml-0 w-11/12 md:w-auto bg-white md:-left-1.5% lg:left-5%">
+        <router-link :to="localizedRoute('/c/women-20')" class="my-links ml-4% md:ml-0 w-11/12 md:w-auto bg-white md:-left-1.5% lg:left-5%" exact>
           <img class="h-5 w-5 float-left mr-5" src="assets/esatta-images/plus.svg">
           <p class=" text-red">
             SHOP NEWEST PRODUCTS
@@ -13,7 +13,7 @@
           <p class=" font-black text-6xl pl-5">
             Shop women
           </p>
-        </div>
+        </router-link>
       </div>
     </div>
     <!-- JUST LANDED -->
