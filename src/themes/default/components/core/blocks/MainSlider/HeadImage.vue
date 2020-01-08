@@ -33,6 +33,10 @@
   </div>
 </template>
 
+<script>
+
+</script>>
+
 <style lang="scss" scoped>
 .brush-div {
   top: 20%;
@@ -61,5 +65,17 @@
   display: inline-block;
   margin-top: 0.3rem;
   margin-left: 1rem;
+}
+.Navbar{
+  position: fixed;
+  right: 5%;
+  top: 28%;
+  z-index: 1000;
+  background-color: white;
+  padding: 5px;
+  color: black;
+  font-weight: bold;
+  width: 12%;
+  height: 57%;
 }
 </style>

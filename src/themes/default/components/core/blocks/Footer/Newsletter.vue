@@ -1,73 +1,100 @@
 <template>
-  <div class="newsletter py25 px15 bg-cl-secondary" v-if="!isSubscribed">
-    <div class="container">
-      <div class="newsletter-content m0 row middle-sm start-md">
-        <div class="col-md-8 col-xs-12">
-          <h3 class="h3 cl-accent weight-400 m0">
-            {{ $t('Subscribe to the newsletter and receive a coupon for 10% off') }}
-          </h3>
-        </div>
-        <div class="newsletter-button col-md-4 col-xs-12 end-md">
-          <button-outline
-            @click.native="showNewsletterPopup"
-            color="dark"
-            data-testid="openNewsletterButton"
-          >
-            {{ $t('Subscribe') }}
-          </button-outline>
-        </div>
-      </div>
+  <footer class="footer">
+    <div class="securepayments lg:hidden">
+      <hr>
+      <img class="securepayments" src="assets/footer_payment.png">
     </div>
-    <newsletter-popup v-if="loadNewsletterPopup" />
-  </div>
+    <h3 class="heading">
+      {{ $t('Join our Newsletter') }}
+    </h3>
+    <div class="webflow-style-input">
+      <input type="email" placeholder="EMAIL ADDRESS">
+      <button type="submit">
+        <i class="icon ion-android-arrow-forward" />
+      </button>
+    </div>
+    <div class="securepayments hidden lg:block">
+      <hr>
+      <img class="securepayments" src="assets/footer_payment.png">
+    </div>
+  </footer>
 </template>
 
 <script>
-import SubscriptionStatus from '@vue-storefront/core/modules/newsletter/mixins/SubscriptionStatus'
-import ButtonOutline from 'theme/components/theme/ButtonOutline'
-import { mapState } from 'vuex'
-const NewsletterPopup = () => import(/* webpackChunkName: "vsf-newsletter-modal" */ 'theme/components/core/NewsletterPopup.vue')
-
 export default {
-  name: 'Newsletter',
-  mixins: [SubscriptionStatus],
-  data () {
-    return {
-      loadNewsletterPopup: false
-    }
-  },
-  computed: {
-    ...mapState({
-      isOpen: state => state.ui.newsletterPopup
-    })
-  },
-  methods: {
-    showNewsletterPopup () {
-      this.loadNewsletterPopup = true
-      this.$bus.$emit('modal-show', 'modal-newsletter')
-    }
-  },
-  components: {
-    ButtonOutline,
-    NewsletterPopup
-  }
+
 }
 </script>
 
-<style scoped>
-  @media (min-width: 767px) and (max-width: 1200px){
-    .button-outline{
-      min-width: 100%;
-    }
-  }
-  @media (max-width: 767px) {
-    .h3 {
-      font-size: 18px;
-      text-align: center;
-    }
-    .newsletter-button {
-      padding-top: 25px;
-      text-align: center;
-    }
-  }
+<style lang= scss scoped>
+.footer{
+  display: contents;
+}
+.heading{
+  color: rgb(214, 155, 121);
+  display: block;
+}
+.securepayments{
+    width: 80%;
+}
+hr {
+    border: none;
+    border-top: 1px double white;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    margin-bottom: 2%;
+    width: 80%;
+    font-size: x-small;
+    letter-spacing: 1px;
+    opacity: 0.30;
+}
+hr:after {
+    background: rgb(20, 0, 0);
+    color:white;
+    content: 'SECURE PAYMENT';
+    padding: 0 4px;
+    position: relative;
+    top: -9px;
+    margin: 2%;
+}
+input {
+  border-style: none;
+  background: transparent;
+  outline: none;
+  text-align: center;
+  font-size: x-small;
+  letter-spacing: 1px;
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+/* input[type="text"] {
+    display: block;
+    font-size: 15px;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    width: 100%;
+    background: none;
+    border: none;
+    background-image: url(/assets/esatta-images/page-banner/wave.svg);
+    background-repeat: repeat-x;
+    background-position: 0 bottom;
+    padding: 0 0 1em;
+    -webkit-animation: input-wave 0.4s linear infinite;
+    animation: input-wave 0.4s linear infinite;
+      animation-duration: 0.4s;
+      animation-timing-function: linear;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-fill-mode: none;
+      animation-play-state: running;
+      animation-name: input-wave;
+  } */
+  /* assets/esatta-images/page-banner/wave.svg */
 </style>
