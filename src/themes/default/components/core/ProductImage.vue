@@ -87,19 +87,17 @@ export default {
 <style lang="scss" scoped>
   .image{
     position: relative;
-    width: 100%;
     height: 0;
-    padding-bottom: calc(740% / (600 / 100));
+    padding-bottom: calc(740% / (1100 / 80));
     overflow: hidden;
-    mix-blend-mode: multiply;
     &__thumb{
       max-width: 100%;
       height: auto;
       position: absolute;
-      top: 50%;
+      top: 37%;
       left: 50%;
       width: auto;
-      height: 70%;
+      height: 100%;
       transform: translate3d(-50%, -50%, 0);
       &--placeholder{
         width: auto;

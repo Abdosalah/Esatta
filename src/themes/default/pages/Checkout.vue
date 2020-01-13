@@ -1,25 +1,108 @@
 <template>
-  <div id="checkout">
-    <div class="container">
-      <div class="row" v-show="!isThankYouPage">
-        <div class="col-sm-7 col-xs-12 pb70">
-          <div class="checkout-title py5 px20">
-            <h1>
-              {{ $t('Checkout') }}
-            </h1>
+  <div class=" bg-cl-secondary" id="checkout">
+    <div class="">
+      <div class="flex" v-show="!isThankYouPage">
+        <div class="w-1/3 bg-pink-200 px-8%">
+          <p class="text-3xl font-bold my-12 tracking-widest">
+            BAG
+          </p>
+          <cart-summary />
+        </div>
+        <div class="w-2/3 flex">
+          <div class="w-1/2 pl-13% pr-8%">
+            <p class="text-3xl font-bold my-12 tracking-widest">
+              DELIVERY
+            </p>
+            <form>
+              <!-- Personal Delivery Details -->
+              <div>
+                <input class="appearance-none block w-full py-1.75 px-4 mb-3" id="checkout-name" type="text" placeholder="Jane Doe">
+              </div>
+              <div>
+                <input class="appearance-none block w-full py-1.75 px-4 mb-3" id="checkout-address" type="text" placeholder="Unit, Apartment, Suite, Building, Floor, etc">
+              </div>
+              <div>
+                <input class="appearance-none block w-full py-1.75 px-4 mb-3" id="checkout-street-address" type="text" placeholder="Street Address, PO Box">
+              </div>
+              <div>
+                <input class="appearance-none block w-full py-1.75 px-4 mb-3" id="checkout-suburb" type="text" placeholder="Suburb">
+              </div>
+              <div class="flex">
+                <input class="appearance-none block w-2/5 py-1.75 px-4 mb-3 mr-10%" id="checkout-suburb" type="text" placeholder="Post code">
+                <div class="relative w-1/2 h-full">
+                  <select class="country-select" id="grid-state">
+                    <option>Australia</option>
+                    <option>New Zealand</option>
+                    <option>USA</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <!-- Shipping Radio Buttons -->
+              <div class="bg-white py-2 mt-12 mb-3">
+                <label class="block cursor-pointer flex">
+                  <div class="w-11/12 pt-0.6 flex">
+                  <p class="inline w-10/12 pl-4">
+                    Standard Shipping AU
+                  </p>
+                  <p class="inline w-2/12">
+                    $0.00
+                  </p>
+                  </div>
+                  <input class="w-1/12" type="radio" name="delivery-option" value="">
+                </label>
+                <label class="block cursor-pointer flex">
+                  <div class="w-11/12 pt-0.6 flex">
+                    <p class="inline w-10/12 pl-4">
+                      Express Shipping AU
+                    </p>
+                    <p class="inline w-2/12">
+                      $10.00
+                    </p>
+                  </div>
+                  <input class="w-1/12" type="radio" name="delivery-option" value="">
+                </label>
+              </div>
+              <div class="flex">
+                <input class="block w-full px-4 mb-3 h-24" type="text" name="delivery-notes" id="" placeholder="Delivery Notes">
+              </div>
+              <div>
+                <input class="block w-full py-1.75 px-4 mb-3" id="checkout-email" type="email" placeholder="Email">
+              </div>
+              <div>
+                <input class="block w-full py-1.75 px-4 mb-3" id="checkout-phone" type="tel" placeholder="Area Code  |  Mobile Number">
+              </div>
+            </form>
           </div>
-          <personal-details
-            class="line relative"
+          <div class="w-1/2 pr-nav">
+            <p class="text-3xl font-bold my-12 tracking-widest">
+              PAY
+            </p>
+            <div class="">
+              <div class="flex">
+                <button class="block bg-gray w-1/2 py-0.9" @click="toggle('Card')">
+                  Card
+                </button>
+                <button class="block bg-gray w-1/2 py-0.9" @click="toggle('Paypal')">
+                  Pay Pal
+                </button>
+              </div>
+              <div class="">
+                <component :is="component" />
+              </div>
+            </div>
+          </div>
+          <!-- <personal-details
+            class=""
             :is-active="activeSection.personalDetails"
             :focused-field="focusedField"
           />
-          <shipping class="line relative" :is-active="activeSection.shipping" v-if="!isVirtualCart" />
-          <payment class="line relative" :is-active="activeSection.payment" />
-          <order-review class="line relative" :is-active="activeSection.orderReview" />
-          <div id="custom-steps" />
-        </div>
-        <div class="hidden-xs col-sm-5 bg-cl-secondary">
-          <cart-summary />
+          <shipping class="" :is-active="activeSection.shipping" v-if="!isVirtualCart" />
+          <payment class="" :is-active="activeSection.payment" />
+          <order-review class="" :is-active="activeSection.orderReview" />
+          <div id="custom-steps" /> -->
         </div>
       </div>
     </div>
@@ -36,6 +119,8 @@ import Payment from 'theme/components/core/blocks/Checkout/Payment'
 import OrderReview from 'theme/components/core/blocks/Checkout/OrderReview'
 import CartSummary from 'theme/components/core/blocks/Checkout/CartSummary'
 import ThankYouPage from 'theme/components/core/blocks/Checkout/ThankYouPage'
+import Card from 'theme/components/custom/checkout-components/Card'
+import Paypal from 'theme/components/custom/checkout-components/Paypal'
 
 export default {
   components: {
@@ -44,10 +129,27 @@ export default {
     Payment,
     OrderReview,
     CartSummary,
-    ThankYouPage
+    ThankYouPage,
+    Card,
+    Paypal
   },
   mixins: [Checkout],
+  data () {
+    return {
+      component: Card
+    }
+  },
   methods: {
+    toggle (param) {
+      switch (param) {
+        case 'Card' :
+          this.component = Card
+          break;
+        case 'Paypal' :
+          this.component = Paypal
+          break;
+      }
+    },
     notifyEmptyCart () {
       this.$store.dispatch('notification/spawnNotification', {
         type: 'warning',
@@ -88,100 +190,81 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '~theme/css/base/text';
-  @import '~theme/css/variables/colors';
-  @import '~theme/css/helpers/functions/color';
-  $bg-secondary: color(secondary, $colors-background);
-  $color-tertiary: color(tertiary);
-  $color-secondary: color(secondary);
-  $color-error: color(error);
-  $color-white: color(white);
-  $color-black: color(black);
+.country-select {
+  display: block;
+  width: 100%;
+  background-color: white;
+  height: inherit;
+  line-height: 1.25;
+  appearance: none;
+  padding: 1.1rem 1rem;
+  margin-bottom: 0.75rem;
+}
 
-  #checkout {
-    .number-circle {
-      width: 35px;
-      height: 35px;
 
-      @media (max-width: 768px) {
-        width: 25px;
-        height: 25px;
-        line-height: 25px;
-      }
-    }
-    .radioStyled {
-      display: block;
-      position: relative;
-      padding-left: 35px;
-      margin-bottom: 12px;
-      cursor: pointer;
-      font-size: 16px;
-      line-height: 30px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+/* Customize the label (the container) */
+// .container {
+//   display: block;
+//   position: relative;
+//   padding-left: 35px;
+//   margin-bottom: 12px;
+//   cursor: pointer;
+//   font-size: 22px;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+// }
 
-      input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-      }
+// /* Hide the browser's default radio button */
+// .container input {
+//   position: absolute;
+//   opacity: 0;
+//   cursor: pointer;
+//   height: 0;
+//   width: 0;
+// }
 
-      .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 25px;
-        width: 25px;
-        border-radius: 50%;
-        border: 1px solid $bg-secondary;
+// /* Create a custom radio button */
+// .checkmark {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 25px;
+//   width: 25px;
+//   background-color: #eee;
+//   border-radius: 50%;
+// }
 
-        &:after {
-          content: "";
-          position: absolute;
-          display: none;
-          top: 3px;
-          left: 3px;
-          width: 19px;
-          height: 19px;
-          border-radius: 50%;
-          background: $color-secondary;
-        }
-      }
+// /* On mouse-over, add a grey background color */
+// .container:hover input ~ .checkmark {
+//   background-color: #ccc;
+// }
 
-      input:checked ~ .checkmark:after {
-        display: block;
-      }
-    }
-  }
+// /* When the radio button is checked, add a blue background */
+// .container input:checked ~ .checkmark {
+//   background-color: #2196F3;
+// }
 
-  .line {
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 37px;
-      z-index: -1;
-      width: 1px;
-      height: 100%;
-      background-color: $bg-secondary;
+// /* Create the indicator (the dot/circle - hidden when not checked) */
+// .checkmark:after {
+//   content: "";
+//   position: absolute;
+//   display: none;
+// }
 
-      @media (max-width: 768px) {
-        display: none;
-      }
-    }
-  }
+// /* Show the indicator (dot/circle) when checked */
+// .container input:checked ~ .checkmark:after {
+//   display: block;
+// }
 
-  .checkout-title {
-    @media (max-width: 767px) {
-      background-color: $bg-secondary;
-      margin-bottom: 25px;
-
-      h1 {
-        font-size: 36px;
-      }
-    }
-  }
+// /* Style the indicator (dot/circle) */
+// .container .checkmark:after {
+//   top: 9px;
+//   left: 9px;
+//   width: 8px;
+//   height: 8px;
+//   border-radius: 50%;
+//   background: white;
+// }
 </style>
