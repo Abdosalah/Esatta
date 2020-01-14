@@ -83,12 +83,12 @@
             {{ $t('LOGIN & CONTINUE') }}
           </button-full>
           <!-- REGISTER LINK -->
-          <!-- <div class="center-xs text-black">
+          <div class="center-xs text-black">
             {{ $t('or') }}
             <a href="#" @click.prevent="switchElem" data-testid="registerLink">
               {{ $t('register an account') }}
             </a>
-          </div> -->
+          </div>
         </form>
       </div>
     </div>

@@ -13,6 +13,7 @@ module.exports = {
       },
       width: {
         'max': 'max-content',
+        'fill': '-webkit-fill-available',
         '92%': '92%',
         '82%': '82%',
         '78%': '78%',

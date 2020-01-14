@@ -6,7 +6,7 @@
           <p class="text-3xl font-bold my-12 tracking-widest">
             BAG
           </p>
-          <cart-summary />
+          <display-products />
         </div>
         <div class="w-2/3 flex">
           <div class="w-1/2 pl-13% pr-8%">
@@ -28,7 +28,7 @@
                 <input class="appearance-none block w-full py-1.75 px-4 mb-3" id="checkout-suburb" type="text" placeholder="Suburb">
               </div>
               <div class="flex">
-                <input class="appearance-none block w-2/5 py-1.75 px-4 mb-3 mr-10%" id="checkout-suburb" type="text" placeholder="Post code">
+                <input class="appearance-none block w-2/5 py-1.75 px-4 mb-3 mr-10%" id="checkout-suburb" type="number" placeholder="Post code">
                 <div class="relative w-1/2 h-full">
                   <select class="country-select" id="grid-state">
                     <option>Australia</option>
@@ -36,7 +36,7 @@
                     <option>USA</option>
                   </select>
                   <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                   </div>
                 </div>
               </div>
@@ -44,12 +44,12 @@
               <div class="bg-white py-2 mt-12 mb-3">
                 <label class="block cursor-pointer flex">
                   <div class="w-11/12 pt-0.6 flex">
-                  <p class="inline w-10/12 pl-4">
-                    Standard Shipping AU
-                  </p>
-                  <p class="inline w-2/12">
-                    $0.00
-                  </p>
+                    <p class="inline w-10/12 pl-4">
+                      Standard Shipping AU
+                    </p>
+                    <p class="inline w-2/12">
+                      $0.00
+                    </p>
                   </div>
                   <input class="w-1/12" type="radio" name="delivery-option" value="">
                 </label>
@@ -76,33 +76,50 @@
               </div>
             </form>
           </div>
+          <!-- PAYMENT SECTION -->
           <div class="w-1/2 pr-nav">
             <p class="text-3xl font-bold my-12 tracking-widest">
               PAY
             </p>
             <div class="">
               <div class="flex">
-                <button class="block bg-gray w-1/2 py-0.9" @click="toggle('Card')">
+                <button class="block bg-gray w-1/2 py-0.9 my-btn" @click="toggle('Card')">
                   Card
                 </button>
-                <button class="block bg-gray w-1/2 py-0.9" @click="toggle('Paypal')">
+                <button class="block bg-gray w-1/2 py-0.9 my-btn" @click="toggle('Paypal')">
                   Pay Pal
                 </button>
               </div>
               <div class="">
                 <component :is="component" />
               </div>
+              <div class="mx-8%">
+                <p class="text-center mt-4 mb-6 text-xl tracking-widest font-bold">
+                  YOUR ORDER
+                </p>
+                <cart-summary />
+              </div>
+              <div class="mb-8 mx-8%">
+                <input class="h-auto" type="radio" id="terms_and_conditions" name="drone" value="terms_and_conditions">
+                <label for="terms_and_conditions">
+                  <span class="inline text-sm text-grey_text">
+                    I understand and agree to the
+                    <p class="inline text-red">
+                      terms & conditions
+                    </p>
+                  </span>
+                </label>
+              </div>
+              <div>
+                <button class="bg-black text-white w-full mx-4% rounded-full text-xl h-20">
+                  PAY
+                  <p class="inline pl-15%">
+                    &rarr;
+                  </p>
+                </button>
+              </div>
             </div>
           </div>
-          <!-- <personal-details
-            class=""
-            :is-active="activeSection.personalDetails"
-            :focused-field="focusedField"
-          />
-          <shipping class="" :is-active="activeSection.shipping" v-if="!isVirtualCart" />
-          <payment class="" :is-active="activeSection.payment" />
-          <order-review class="" :is-active="activeSection.orderReview" />
-          <div id="custom-steps" /> -->
         </div>
       </div>
     </div>
@@ -121,6 +138,7 @@ import CartSummary from 'theme/components/core/blocks/Checkout/CartSummary'
 import ThankYouPage from 'theme/components/core/blocks/Checkout/ThankYouPage'
 import Card from 'theme/components/custom/checkout-components/Card'
 import Paypal from 'theme/components/custom/checkout-components/Paypal'
+import DisplayProducts from 'theme/components/custom/checkout-components/DisplayProducts'
 
 export default {
   components: {
@@ -131,7 +149,8 @@ export default {
     CartSummary,
     ThankYouPage,
     Card,
-    Paypal
+    Paypal,
+    DisplayProducts
   },
   mixins: [Checkout],
   data () {
@@ -200,71 +219,10 @@ export default {
   padding: 1.1rem 1rem;
   margin-bottom: 0.75rem;
 }
-
-
-/* Customize the label (the container) */
-// .container {
-//   display: block;
-//   position: relative;
-//   padding-left: 35px;
-//   margin-bottom: 12px;
-//   cursor: pointer;
-//   font-size: 22px;
-//   -webkit-user-select: none;
-//   -moz-user-select: none;
-//   -ms-user-select: none;
-//   user-select: none;
-// }
-
-// /* Hide the browser's default radio button */
-// .container input {
-//   position: absolute;
-//   opacity: 0;
-//   cursor: pointer;
-//   height: 0;
-//   width: 0;
-// }
-
-// /* Create a custom radio button */
-// .checkmark {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   height: 25px;
-//   width: 25px;
-//   background-color: #eee;
-//   border-radius: 50%;
-// }
-
-// /* On mouse-over, add a grey background color */
-// .container:hover input ~ .checkmark {
-//   background-color: #ccc;
-// }
-
-// /* When the radio button is checked, add a blue background */
-// .container input:checked ~ .checkmark {
-//   background-color: #2196F3;
-// }
-
-// /* Create the indicator (the dot/circle - hidden when not checked) */
-// .checkmark:after {
-//   content: "";
-//   position: absolute;
-//   display: none;
-// }
-
-// /* Show the indicator (dot/circle) when checked */
-// .container input:checked ~ .checkmark:after {
-//   display: block;
-// }
-
-// /* Style the indicator (dot/circle) */
-// .container .checkmark:after {
-//   top: 9px;
-//   left: 9px;
-//   width: 8px;
-//   height: 8px;
-//   border-radius: 50%;
-//   background: white;
-// }
+.my-btn:focus {
+  background-color: white;
+}
+button:focus {
+  outline: none;
+}
 </style>
