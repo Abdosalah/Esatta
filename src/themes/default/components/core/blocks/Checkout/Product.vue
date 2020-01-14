@@ -39,7 +39,7 @@
       </div>
     </div>
     <div>
-      <hr class="border-white" />
+      <hr class="border-white">
     </div>
   </div>
 </template>
