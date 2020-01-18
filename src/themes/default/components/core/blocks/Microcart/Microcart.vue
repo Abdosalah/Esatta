@@ -1,10 +1,6 @@
 <template>
-  <div
-    class="microcart cl-accent"
-    :class="[productsInCart.length ? 'bg-cl-secondary' : 'bg-cl-primary']"
-    data-testid="microcart"
-  >
-    <div class="row bg-cl-primary px40 actions">
+  <div class="microcart">
+    <!-- <div class="row bg-cl-pink px40 actions">
       <div class="col-xs end-xs">
         <button
           type="button"
@@ -17,8 +13,21 @@
           </i>
         </button>
       </div>
+    </div> -->
+    
+    <div v-if="productsInCart.length" class="summary d-inline-flex align-center pt30 pb20 px40 cl-accent serif">
+      <h7 class="pr-20 text-3xl font-bold">BAG</h7>
+      <div class="pl-20 pt-3 weight-700 b align-center middle-xs" v-for="(segment, index) in totals" :key="index" v-if="segment.code === 'grand_total'">
+        <!-- <div class="col-xs h4 total-price-label">
+          {{ segment.title }}
+        </div> -->
+        <div class=" align-center total-price-value">
+          {{ segment.value | price }}
+        </div>
+      </div>
     </div>
-    <div class="row middle-xs bg-cl-primary top-sm px40 actions">
+
+    <!-- <div class="row middle-xs bg-cl-pink top-sm px40 actions">
       <div class="col-xs-12 col-sm">
         <h2
           v-if="productsInCart.length"
@@ -33,7 +42,7 @@
           @click.native="clearCart"
         />
       </div>
-    </div>
+    </div> -->
 
     <h4 v-if="!productsInCart.length" class="cl-accent ml30">
       {{ $t('Your shopping cart is empty.') }}
@@ -45,76 +54,30 @@
       </router-link>
       {{ $t('to find something beautiful for You!') }}
     </div>
-    <ul v-if="productsInCart.length" class="bg-cl-primary m0 px40 pb40 products">
+    <ul v-if="productsInCart.length" class="bg-cl-mistyrose m0 px40 products">
       <product v-for="product in productsInCart" :key="product.sku" :product="product" />
     </ul>
-    <div v-if="productsInCart.length" class="summary px40 cl-accent serif">
-      <h3 class="m0 pt40 mb30 weight-400 summary-heading">
-        {{ $t('Shopping summary') }}
-      </h3>
-      <div v-for="(segment, index) in totals" :key="index" class="row py20" v-if="segment.code !== 'grand_total'">
-        <div class="col-xs">
-          {{ segment.title }}
-          <button v-if="appliedCoupon && segment.code === 'discount'" type="button" class="p0 brdr-none bg-cl-transparent close delete-button ml10" @click="clearCoupon">
-            <i class="material-icons cl-accent">
-              close
-            </i>
-          </button>
-        </div>
-        <div v-if="segment.value != null" class="col-xs align-right">
-          {{ segment.value | price }}
-        </div>
-      </div>
-      <div class="row py20">
-        <div v-if="OnlineOnly && !addCouponPressed" class="col-xs-12">
-          <button
-            class="p0 brdr-none serif fs-medium-small cl-accent bg-cl-transparent"
-            type="button"
-            @click="addDiscountCoupon"
-          >
-            {{ $t('Add a discount code') }}
-          </button>
-        </div>
-        <div v-if="OnlineOnly && addCouponPressed" class="col-xs-12 pt30 coupon-wrapper">
-          <div class="coupon-input">
-            <label class="h6 cl-secondary">{{ $t('Discount code') }}</label>
-            <base-input type="text" id="couponinput" :autofocus="true" v-model.trim="couponCode" @keyup.enter="setCoupon" />
-          </div>
-          <button-outline color="dark" :disabled="!couponCode" @click.native="setCoupon">
-            {{ $t('Add discount code') }}
-          </button-outline>
-        </div>
-      </div>
 
-      <div class="row pt30 pb20 weight-700 middle-xs" v-for="(segment, index) in totals" :key="index" v-if="segment.code === 'grand_total'">
-        <div class="col-xs h4 total-price-label">
-          {{ segment.title }}
-        </div>
-        <div class="col-xs align-right h2 total-price-value">
-          {{ segment.value | price }}
-        </div>
-      </div>
-    </div>
+    
 
     <div
       class="row py20 px40 middle-xs actions"
       v-if="productsInCart.length && !isCheckoutMode"
     >
-      <div class="col-xs-12 col-sm first-sm">
+      <!-- <div class="col-xs-12 col-sm first-sm">
         <router-link :to="localizedRoute('/')" class="no-underline cl-secondary link">
           <span @click="closeMicrocartExtend">
             {{ $t('Return to shopping') }}
           </span>
         </router-link>
-      </div>
-      <div class="col-xs-12 first-xs col-sm-4 end-sm">
-        <button-full
-          :link="{ name: 'checkout' }"
-          @click.native="closeMicrocartExtend"
+      </div> -->
+      <div >
+        <button-full class="button"
+                     :link="{ name: 'checkout' }"
+                     @click.native="closeMicrocartExtend"
         >
-          {{ $t('Go to checkout') }}
+          {{ $t('CHECKOUT') }}
         </button-full>
-        <instant-checkout v-if="isInstantCheckoutRegistered" class="no-outline button-full block brdr-none w-100 px10 py20 bg-cl-mine-shaft :bg-cl-th-secondary ripple weight-400 h4 cl-white sans-serif fs-medium mt20" />
       </div>
     </div>
   </div>
@@ -271,6 +234,7 @@ export default {
       padding:  0 15px;
       font-size: 12px;
     }
+    display: inline-flex;
   }
 
   .summary-heading {
@@ -281,13 +245,14 @@ export default {
 
   .total-price-label {
     @media (max-width: 767px) {
-      font-size: 18px;
+      font-size: small;
+
     }
   }
 
   .total-price-value {
     @media (max-width: 767px) {
-      font-size: 24px;
+      font-size: 10px;
     }
   }
 
@@ -306,6 +271,15 @@ export default {
     .coupon-input {
       margin-right: 20px;
       width: 100%;
+    }
+    .button{
+      border-radius: 20%;
+      background-color: white;
+    }
+    .bag{
+      font-weight: bold;
+      font-size: large;
+      padding-right: 30%;
     }
   }
 </style>

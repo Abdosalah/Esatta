@@ -77,10 +77,11 @@ export default {
     right: 0;
     z-index: 3;
     height: 100%;
-    width: 800px;
+    width: 45%;
     min-width: 320px;
     overflow-y: auto;
     overflow-x: hidden;
+    background-color: mistyrose;
     -webkit-overflow-scrolling: touch;
   }
 

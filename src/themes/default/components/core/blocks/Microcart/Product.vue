@@ -22,10 +22,10 @@
         >
           {{ product.name | htmlDecode }}
         </router-link>
-        <div class="h6 cl-bg-tertiary pt5 sku" data-testid="productSku">
+        <!-- <div class="h6 cl-bg-tertiary pt5 sku" data-testid="productSku">
           {{ product.sku }}
-        </div>
-        <div class="h6 cl-bg-tertiary pt5 options" v-if="isOnline && product.totals && product.totals.options">
+        </div> -->
+        <!-- <div class="h6 cl-bg-tertiary pt5 options" v-if="isOnline && product.totals && product.totals.options">
           <div v-for="opt in product.totals.options" :key="opt.label">
             <span class="opn">{{ opt.label }}: </span>
             <span class="opv" v-html="opt.value" />
@@ -36,12 +36,46 @@
             <span class="opn">{{ opt.label }}: </span>
             <span class="opv" v-html="opt.value" />
           </div>
-        </div>
-        <div class="h6 pt5 cl-error" v-if="product.errors && Object.keys(product.errors).length > 0">
+        </div> -->
+        <!-- <div class="h6 pt5 cl-error" v-if="product.errors && Object.keys(product.errors).length > 0">
           {{ product.errors | formatProductMessages }}
         </div>
         <div class="h6 pt5 cl-success" v-if="product.info && Object.keys(product.info).length > 0 && Object.keys(product.errors).length === 0">
           {{ product.info | formatProductMessages }}
+        </div> -->
+        <div class="flex py15 mr10 start-xs between-sm actions">
+          <div class="prices" v-if="!displayItemDiscounts || !isOnline">
+            <span class="h4 serif cl-error price-special" v-if="product.special_price">
+              {{ product.priceInclTax * product.qty | price }}&nbsp;
+            </span>
+            <span class="h6 serif price-original" v-if="product.special_price">
+              {{ product.originalPriceInclTax * product.qty | price }}
+            </span>
+            <span class="h4 serif price-regular" v-else data-testid="productPrice">
+              {{ (product.originalPriceInclTax ? product.originalPriceInclTax : product.priceInclTax) * product.qty | price }}
+            </span>
+          </div>
+          <div class="prices" v-else-if="isOnline && product.totals">
+            <span class="h4 serif cl-error price-special" v-if="product.totals.discount_amount">
+              {{ product.totals.row_total - product.totals.discount_amount + product.totals.tax_amount | price }}&nbsp;
+            </span>
+            <span class="h6 serif price-original" v-if="product.totals.discount_amount">
+              {{ product.totals.row_total_incl_tax | price }}
+            </span>
+            <span class="h4 serif price-regular" v-if="!product.totals.discount_amount">
+              {{ product.totals.row_total_incl_tax | price }}
+            </span>
+          </div>
+          <div class="prices" v-else>
+            <span class="h4 serif price-regular">
+              {{ product.regular_price * product.qty | price }}
+            </span>
+          </div>
+          <div class="links">
+            <div class="mt5" @click="removeItem">
+              <remove-button />
+            </div>
+          </div>
         </div>
       </div>
       <div class="h5 pt5 cl-accent lh25 qty">
@@ -51,40 +85,6 @@
           @input="updateQuantity"
           :min="1"
         />
-      </div>
-    </div>
-    <div class="flex py15 mr10 align-right start-xs between-sm actions">
-      <div class="prices" v-if="!displayItemDiscounts || !isOnline">
-        <span class="h4 serif cl-error price-special" v-if="product.special_price">
-          {{ product.priceInclTax * product.qty | price }}&nbsp;
-        </span>
-        <span class="h6 serif price-original" v-if="product.special_price">
-          {{ product.originalPriceInclTax * product.qty | price }}
-        </span>
-        <span class="h4 serif price-regular" v-else data-testid="productPrice">
-          {{ (product.originalPriceInclTax ? product.originalPriceInclTax : product.priceInclTax) * product.qty | price }}
-        </span>
-      </div>
-      <div class="prices" v-else-if="isOnline && product.totals">
-        <span class="h4 serif cl-error price-special" v-if="product.totals.discount_amount">
-          {{ product.totals.row_total - product.totals.discount_amount + product.totals.tax_amount | price }}&nbsp;
-        </span>
-        <span class="h6 serif price-original" v-if="product.totals.discount_amount">
-          {{ product.totals.row_total_incl_tax | price }}
-        </span>
-        <span class="h4 serif price-regular" v-if="!product.totals.discount_amount">
-          {{ product.totals.row_total_incl_tax | price }}
-        </span>
-      </div>
-      <div class="prices" v-else>
-        <span class="h4 serif price-regular">
-          {{ product.regular_price * product.qty | price }}
-        </span>
-      </div>
-      <div class="links">
-        <div class="mt5" @click="removeItem">
-          <remove-button />
-        </div>
       </div>
     </div>
   </li>
