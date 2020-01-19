@@ -14,9 +14,11 @@
         </button>
       </div>
     </div> -->
-    
+
     <div v-if="productsInCart.length" class="summary d-inline-flex align-center pt30 pb20 px40 cl-accent serif">
-      <h7 class="pr-20 text-3xl font-bold">BAG</h7>
+      <h7 class="pr-20 text-3xl font-bold">
+        BAG
+      </h7>
       <div class="pl-20 pt-3 weight-700 b align-center middle-xs" v-for="(segment, index) in totals" :key="index" v-if="segment.code === 'grand_total'">
         <!-- <div class="col-xs h4 total-price-label">
           {{ segment.title }}
@@ -58,8 +60,6 @@
       <product v-for="product in productsInCart" :key="product.sku" :product="product" />
     </ul>
 
-    
-
     <div
       class="row py20 px40 middle-xs actions"
       v-if="productsInCart.length && !isCheckoutMode"
@@ -71,7 +71,7 @@
           </span>
         </router-link>
       </div> -->
-      <div >
+      <div>
         <button-full class="button"
                      :link="{ name: 'checkout' }"
                      @click.native="closeMicrocartExtend"

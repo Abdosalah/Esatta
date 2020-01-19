@@ -3,7 +3,7 @@
     <overlay v-if="overlayActive" />
     <loader />
     <div id="viewport" class="w-100 relative">
-      <callto-action />
+      <callto-action class="hidden lg:block" />
       <nav-bar />
       <async-sidebar
         :async-component="SearchPanel"
