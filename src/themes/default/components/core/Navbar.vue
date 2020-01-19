@@ -15,8 +15,9 @@
         <img src="assets/esatta-images/page-banner/measure.svg" class="images">
         {{ $t('LIKED') }}
       </router-link>
-      <router-link :to="localizedRoute('/returns')" exact class="link">
+      <router-link :to="localizedRoute('/MicrocartIcon')" exact class="link">
         <img src="assets/esatta-images/page-banner/measure.svg" class="images">
+        <MicrocartIcon />
         {{ $t('BAG') }}
       </router-link>
       <router-link :to="localizedRoute('/returns')" exact class="link">
@@ -45,10 +46,12 @@
 <script>
 import Currency from 'theme/components/core/Currency'
 import MediumNavbar from 'theme/components/core/MediumNavbar'
+import MicrocartIcon from 'theme/components/core/blocks/Header/MicrocartIcon'
 export default {
   components: {
     Currency,
-    MediumNavbar
+    MediumNavbar,
+    MicrocartIcon
   }
 }
 </script>

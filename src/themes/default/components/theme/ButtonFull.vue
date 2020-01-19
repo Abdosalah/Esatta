@@ -3,7 +3,7 @@
     :is="link ? 'router-link' : 'button'"
     :type="!link ? type : false"
     :to="localizedRoute(link)"
-    class="no-outline button-full block brdr-none w-100 px10 py20 bg-white :bg-cl-th-secondary ripple weight-400 h4 cl-black sans-serif fs-medium"
+    class="no-outline button-full block brdr-none brdr-rd-45px w-100 px10 py20 bg-cl-white :bg-cl-th-secondary ripple weight-400 h4 cl-black sans-serif fs-medium"
     :class="{ 'no-underline pointer align-center border-box': link, 'disabled': disabled, 'button-disabled': disabled }"
     data-testid="subscribeSubmit"
     :disabled="disabled"
@@ -48,5 +48,6 @@ export default {
 <style lang="scss">
   .button-full {
     min-width: 250px;
+    border-radius: 40px;
   }
 </style>
