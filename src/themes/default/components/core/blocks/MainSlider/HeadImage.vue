@@ -15,15 +15,15 @@
     <div class="buttons-div text-center w-full">
       <div class="block md:inline-block">
         <button class="header-buttons">
-          <img class="w-8 h-8 float-left" src="assets/esatta-images/page-banner/measure.svg">
+          <img class="w-8 h-8 inline" src="assets/esatta-images/page-banner/measure.svg">
           <p class="button-text">
             MEASURE ME
           </p>
         </button>
       </div>
-      <router-link :to="localizedRoute('/c/women-20')" class="block md:inline-block md:ml-10" exact>
+      <router-link :to="localizedRoute('/c/women-20')" class="block md:inline-block md:ml-10 router-links" exact>
         <button class="header-buttons">
-          <img class="w-8 h-8 float-left" src="assets/esatta-images/page-banner/browse.svg">
+          <img class="w-8 h-8 inline" src="assets/esatta-images/page-banner/browse.svg">
           <p class="button-text">
             BROWSE
           </p>
@@ -58,13 +58,22 @@
   margin-top: 2rem;
   padding: 1rem 3.5rem;
   outline: none;
+  border: none;
+  transition: all 0.3s ease 0s;
+}
+.header-buttons:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.2);
+}
+.router-links:hover::after {
+  content: none;
 }
 
 .button-text {
   color: white;
-  display: inline-block;
+  display: inline;
   margin-top: 0.3rem;
-  margin-left: 1rem;
+  padding-left: 1rem;
 }
 .Navbar{
   position: fixed;
