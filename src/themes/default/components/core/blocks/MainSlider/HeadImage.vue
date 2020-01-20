@@ -2,8 +2,8 @@
   <div class="relative">
     <img class="h-screen w-screen object-cover" src="assets/esatta-images/page-banner/hp_banner.jpg">
     <div class="absolute brush-div w-3/5">
-      <img class="hidden md:block brush-image" src="assets/esatta-images/page-banner/brush.png">
-      <div class="text-white banner-text inset-0">
+      <img class="hidden md:block brush-image animated fadeInLeft" src="assets/esatta-images/page-banner/brush.png">
+      <div class="text-white banner-text inset-0 text-delay animated slideInLeft">
         <p class="text-5xl text-center font-bold">
           You've never <br class="block md:hidden"> looked <br class="block lg:hidden"> more you.
         </p>
@@ -12,7 +12,7 @@
         </p>
       </div>
     </div>
-    <div class="buttons-div text-center w-full top-45% lg:top-65%">
+    <div class="buttons-div top-45% lg:top-65%  animated slideInUp">
       <div class="block md:inline-block">
         <button class="header-buttons">
           <img class="w-8 h-8 inline" src="assets/esatta-images/page-banner/measure.svg">
@@ -33,11 +33,11 @@
   </div>
 </template>
 
-<script>
-
-</script>>
-
 <style lang="scss" scoped>
+.text-delay {
+  animation-duration: 1s;
+  animation-delay: 0.4s;
+}
 .brush-div {
   width: 80%;
   left: 10%;
@@ -47,9 +47,12 @@
   position: absolute;
   top: 33%;
 }
-
 .buttons-div {
+  animation-duration: 1s;
+  animation-delay: 0.4s;
+  text-align: center;
   position: absolute;
+  width: 100%;
 }
 
 .header-buttons {
@@ -78,5 +81,6 @@
 .brush-image {
   height: 27vh;
   width: 100vw;
+  animation-duration: 1s;
 }
 </style>
