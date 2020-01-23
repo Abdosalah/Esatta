@@ -1,7 +1,8 @@
 <template>
   <div id="home">
     <head-image />
-    <how-itworks />
+    <how-itworksmobile class="block md:hidden" />
+    <how-itworks class="hidden md:block" />
     <just-landed />
     <designers />
 
@@ -12,6 +13,7 @@
 <script>
 // Esatta custom components
 import HowItworks from 'theme/components/custom/home-components/HowItWorks.vue'
+import HowItworksmobile from 'theme/components/custom/home-components/HowItworksmobile.vue'
 import JustLanded from 'theme/components/custom/home-components/JustLanded.vue'
 import Designers from 'theme/components/custom/home-components/Designers.vue'
 
@@ -42,6 +44,7 @@ export default {
     JustLanded,
     Onboard,
     ProductListing,
+    HowItworksmobile,
     TileLinks
   },
   computed: {

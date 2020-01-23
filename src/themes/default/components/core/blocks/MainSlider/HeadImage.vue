@@ -2,17 +2,17 @@
   <div class="relative">
     <img class="h-screen w-screen object-cover" src="assets/esatta-images/page-banner/hp_banner.jpg">
     <div class="absolute brush-div w-3/5">
-      <img class="hidden md:block" src="assets/esatta-images/page-banner/brush.png">
-      <div class="text-white banner-text inset-0">
+      <img class="hidden md:block brush-image animated fadeInLeft" src="assets/esatta-images/page-banner/brush.png">
+      <div class="text-white banner-text inset-0 text-delay animated slideInLeft">
         <p class="text-5xl text-center font-bold">
-          You've never looked more you.
+          You've never <br class="block md:hidden"> looked <br class="block lg:hidden"> more you.
         </p>
         <p class="text-sm text-center hidden lg:block">
           EXCLUSIVE DESIGN CUSTOMISED FOR YOUR BODY TYPE
         </p>
       </div>
     </div>
-    <div class="buttons-div text-center w-full">
+    <div class="buttons-div top-45% lg:top-65%  animated slideInUp">
       <div class="block md:inline-block">
         <button class="header-buttons">
           <img class="w-8 h-8 inline" src="assets/esatta-images/page-banner/measure.svg">
@@ -33,23 +33,26 @@
   </div>
 </template>
 
-<script>
-
-</script>>
-
 <style lang="scss" scoped>
+.text-delay {
+  animation-duration: 1s;
+  animation-delay: 0.4s;
+}
 .brush-div {
-  top: 20%;
-  left: 20%;
+  width: 80%;
+  left: 10%;
+  top: 17%;
 }
 .banner-text {
   position: absolute;
   top: 33%;
 }
-
 .buttons-div {
+  animation-duration: 1s;
+  animation-delay: 0.4s;
+  text-align: center;
   position: absolute;
-  top: 65%;
+  width: 100%;
 }
 
 .header-buttons {
@@ -75,16 +78,9 @@
   margin-top: 0.3rem;
   padding-left: 1rem;
 }
-.Navbar{
-  position: fixed;
-  right: 5%;
-  top: 28%;
-  z-index: 1000;
-  background-color: white;
-  padding: 5px;
-  color: black;
-  font-weight: bold;
-  width: 12%;
-  height: 57%;
+.brush-image {
+  height: 27vh;
+  width: 100vw;
+  animation-duration: 1s;
 }
 </style>
