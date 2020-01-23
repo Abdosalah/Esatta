@@ -1,6 +1,6 @@
 <template>
-  <div class="sidebar-menu fixed mw-100 bg-cl-secondary">
-    <div class="row brdr-bottom-1 brdr-cl-bg-secondary">
+  <!-- <div class="sidebar-menu fixed mw-100 bg-cl-secondary"> -->
+  <!-- <div class="row brdr-bottom-1 brdr-cl-bg-secondary">
       <div
         v-if="submenu.depth"
         class="col-xs bg-cl-primary"
@@ -17,23 +17,57 @@
           <i class="material-icons p15">close</i>
         </button>
       </div>
-    </div>
-    <div class="sidebar-menu__container row">
-      <div class="col-xs-12 h4 serif">
-        <ul class="p0 m0 relative sidebar-menu__list" :style="mainListStyles">
-          <li
-            @click="closeMenu"
-            class="brdr-bottom-1 brdr-cl-bg-secondary bg-cl-primary"
+    </div> -->
+  <div class="sidebar-menu__container row">
+    <div class="col-xs-12 h4 serif">
+      <ul class="p0 m0 relative sidebar-menu__list" :style="mainListStyles">
+        <li
+          @click="closeMenu"
+          class="brdr-bottom-1 brdr-cl-bg-secondary bg-cl-primary"
+        >
+          <router-link
+            class="block px25 py20 cl-accent no-underline"
+            :to="localizedRoute('/')"
+            exact
           >
-            <router-link
-              class="block px25 py20 cl-accent no-underline"
-              :to="localizedRoute('/')"
-              exact
-            >
-              {{ $t('Home') }}
-            </router-link>
-          </li>
-          <li
+            {{ $t('HOW IT WORKS') }}
+          </router-link>
+        </li>
+        <li
+          @click="closeMenu"
+          class="brdr-bottom-1 brdr-cl-bg-secondary bg-cl-primary"
+        >
+          <router-link
+            class="block px25 py20 cl-accent no-underline"
+            :to="localizedRoute('/')"
+            exact
+          >
+            {{ $t('OUR DESIGNERS') }}
+          </router-link>
+        </li><li
+          @click="closeMenu"
+          class="brdr-bottom-1 brdr-cl-bg-secondary bg-cl-primary"
+        >
+          <router-link
+            class="block px25 py20 cl-accent no-underline"
+            :to="localizedRoute('/')"
+            exact
+          >
+            {{ $t('BODY SHAPES') }}
+          </router-link>
+        </li><li
+          @click="closeMenu"
+          class="brdr-bottom-1 brdr-cl-bg-secondary bg-cl-primary"
+        >
+          <router-link
+            class="block px25 py20 cl-accent no-underline"
+            :to="localizedRoute('/')"
+            exact
+          >
+            {{ $t('SELL ON ESATTA') }}
+          </router-link>
+        </li>
+      <!-- <li
             class="brdr-bottom-1 brdr-cl-bg-secondary bg-cl-primary flex"
             :key="category.slug"
             @click="closeMenu"
@@ -75,7 +109,7 @@
               :to="localizedRoute('/sale')"
               exact
             >
-              {{ $t('Sale') }}
+              {{ $t('OUR DESIGNERS') }}
             </router-link>
           </li>
           <li
@@ -88,7 +122,7 @@
               :to="localizedRoute('/magazine')"
               exact
             >
-              {{ $t('Magazine') }}
+              {{ $t('BODY SHAPES') }}
             </router-link>
           </li>
           <li
@@ -101,7 +135,7 @@
               :to="localizedRoute('/compare')"
               exact
             >
-              {{ $t('Compare products') }}
+              {{ $t('BODY SHAPES') }}
             </router-link>
           </li>
           <li
@@ -127,11 +161,11 @@
             >
               {{ $t('My account') }}
             </a>
-          </li>
-        </ul>
-      </div>
+          </li> -->
+      </ul>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>

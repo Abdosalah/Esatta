@@ -1,8 +1,8 @@
 <template>
-  <transition :name="direction === 'right' ? 'slide-left' : direction === 'left' ? 'slide-right' : null ">
+  <transition :name="direction === 'left' ? 'slide-left' : direction === 'right' ? 'slide-right' : null ">
     <div
       class="mw-100 fixed cl-accent bg-cl-primary"
-      :class="direction === 'left' ? 'left-sidebar' : direction === 'right' ? 'right-sidebar' : null "
+      :class="direction === 'left' ? 'right-sidebar' : direction === 'left' ? 'left-sidebar' : null "
       data-testid="sidebar"
       v-if="isOpen"
     >

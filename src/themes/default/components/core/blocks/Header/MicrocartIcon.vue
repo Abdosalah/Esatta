@@ -28,8 +28,10 @@ export default {
 
 <style scoped>
   .minicart-count {
-    top: 7px;
-    left: 50%;
+    /* top: 7px; */
+    top: -42%;
+    /* left: 50%; */
+    right: 7px;
     min-width: 16px;
     min-height: 16px;
     border-radius: 10px;

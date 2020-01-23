@@ -14,7 +14,7 @@
       type="button"
       class="bg-cl-transparent brdr-none p0"
     >
-      <i class="material-icons block">account_circle</i>
+      <img src="assets/svg/log_in.svg" class="w-6 h-6">
     </button>
 
     <no-ssr>

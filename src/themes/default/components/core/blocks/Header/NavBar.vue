@@ -4,22 +4,16 @@
       class="fixed w-100 brdr-bottom-1 bg-cl-primary brdr-cl-secondary"
       :class="{ 'is-visible': navVisible }"
     >
-      <div class="container px15">
-        <div class="row between-xs middle-xs" v-if="!isCheckoutPage || isThankYouPage">
-          <div class="col-md-4 col-xs-2 middle-xs">
-            <div>
-              <account-icon class="p15 icon hidden-xs pointer" />
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-4 center-xs pt5">
-            <div>
-              <img class="image" src="assets/esatta-images/plus.svg">
-            </div>
-          </div>
-          <div class="col-md-4 col-xs-2 end-xs">
-            <div class="inline-flex right-icons">
-              <hamburger-icon class="p15 icon bg-cl-secondary pointer" />
-            </div>
+      <div class="row between-xs middle-xs" v-if="!isCheckoutPage || isThankYouPage">
+        <div class="col-md-4 col-xs-2 middle-xs">
+          <account-icon class="p15 icon hidden-xs pointer" />
+        </div>
+        <div class="col-md-3 col-xs-5 center-xs ">
+          <img class="logo" src="assets/logo.svg">
+        </div>
+        <div class="col-md-4 col-xs-2 end-xs px-3">
+          <div class="inline-flex right-icons">
+            <hamburger-icon class="p15 icon pointer" />
           </div>
         </div>
       </div>
@@ -32,21 +26,13 @@
 import { mapState } from 'vuex'
 import CurrentPage from 'theme/mixins/currentPage'
 import AccountIcon from 'theme/components/core/blocks/Header/AccountIcon'
-import CompareIcon from 'theme/components/core/blocks/Header/CompareIcon'
 import HamburgerIcon from 'theme/components/core/blocks/Header/HamburgerIcon'
-import MicrocartIcon from 'theme/components/core/blocks/Header/MicrocartIcon'
-import SearchIcon from 'theme/components/core/blocks/Header/SearchIcon'
-import WishlistIcon from 'theme/components/core/blocks/Header/WishlistIcon'
 
 export default {
   name: 'Header',
   components: {
     AccountIcon,
-    CompareIcon,
-    HamburgerIcon,
-    MicrocartIcon,
-    SearchIcon,
-    WishlistIcon
+    HamburgerIcon
   },
   mixins: [CurrentPage],
   data () {
@@ -114,7 +100,6 @@ header {
   opacity: 0.6;
   &:hover,
   &:focus {
-    background-color: $color-icon-hover;
     opacity: 1;
   }
 }
@@ -149,5 +134,9 @@ header {
 .image{
   height: 10%;
   width: 10%;
+}
+.logo{
+  width: 50%;
+  margin-left: 25%;
 }
 </style>
