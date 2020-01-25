@@ -1,13 +1,13 @@
 <template>
-  <li class="row flex-nowrap py10">
+  <li class="row flex-nowrap py30">
     <div>
       <div class="ml10 bg-cl-secondary">
         <product-image :image="image" />
       </div>
     </div>
-    <div class="col-xs flex pl35 py15 start-xs between-sm details">
+    <div class="col-xs flex pl35 start-xs between-sm details">
       <div>
-        <router-link
+        <!-- <router-link
           class="serif h4 name"
           :to="localizedRoute({
             name: product.type_id + '-product',
@@ -21,7 +21,7 @@
           @click.native="$store.commit('ui/setMicrocart', false)"
         >
           {{ product.name | htmlDecode }}
-        </router-link>
+        </router-link> -->
         <!-- <div class="h6 cl-bg-tertiary pt5 sku" data-testid="productSku">
           {{ product.sku }}
         </div> -->
@@ -43,7 +43,7 @@
         <div class="h6 pt5 cl-success" v-if="product.info && Object.keys(product.info).length > 0 && Object.keys(product.errors).length === 0">
           {{ product.info | formatProductMessages }}
         </div> -->
-        <div class="flex py15 mr10 start-xs between-sm actions">
+        <div class="flex mr10 start-xs between-sm actions">
           <div class="prices" v-if="!displayItemDiscounts || !isOnline">
             <span class="h4 serif cl-error price-special" v-if="product.special_price">
               {{ product.priceInclTax * product.qty | price }}&nbsp;
@@ -129,7 +129,8 @@ export default {
   .image {
     mix-blend-mode: multiply;
     vertical-align: top;
-    width: 150px;
+    width: 145px;
+    height: 165px;
     @media (max-width: 767px) {
       width: 100px;
     }

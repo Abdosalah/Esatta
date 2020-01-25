@@ -71,7 +71,7 @@
           </span>
         </router-link>
       </div> -->
-      <div>
+      <div class="checkout">
         <button-full class="button"
                      :link="{ name: 'checkout' }"
                      @click.native="closeMicrocartExtend"
@@ -280,6 +280,9 @@ export default {
       font-weight: bold;
       font-size: large;
       padding-right: 30%;
+    }
+    .checkout{
+      width: 300px;
     }
   }
 </style>

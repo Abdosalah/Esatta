@@ -59,14 +59,14 @@ export default {
 <style lang="scss" scoped>
 .Navbar{
   position: fixed;
-  right: 5%;
+  right: 4%;
   top: 24%;
   z-index: 1000;
   background-color: white;
   padding: 5px;
   color: black;
   font-weight: bold;
-  width: 10rem;
+  width: 11rem;
   height: auto;
 }
 .image{
