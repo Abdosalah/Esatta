@@ -1,19 +1,9 @@
 <template>
   <footer class="footer">
-    <div class="securepayments lg:hidden">
-      <hr>
-      <img class="securepayments" src="assets/footer_payment.png">
+    <div>
+      <SocialMedia class="securepayments" />
     </div>
-    <h3 class="heading">
-      {{ $t('Join our Newsletter') }}
-    </h3>
-    <div class="webflow-style-input">
-      <input type="email" placeholder="EMAIL ADDRESS">
-      <button type="submit">
-        <i class="icon ion-android-arrow-forward" />
-      </button>
-    </div>
-    <div class="securepayments hidden lg:block">
+    <div class="securepayments hidden md:block">
       <hr>
       <img class="securepayments" src="assets/footer_payment.png">
     </div>
@@ -21,8 +11,11 @@
 </template>
 
 <script>
+import SocialMedia from 'theme/components/core/blocks/Footer/SocialMedia'
 export default {
-
+  components: {
+    SocialMedia
+  }
 }
 </script>
 

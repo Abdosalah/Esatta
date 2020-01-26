@@ -1,85 +1,6 @@
 <template>
   <footer class="f2">
-    <div class="shopwomancontainer hidden lg:inline-block">
-      <p class="heading">
-        {{ $t('Shop Woman') }}
-      </p>
-      <div class="upfooter">
-        <div class="container">
-          <p class="subheading">
-            {{ $t('CATEGORIES') }}
-          </p>
-          <div class="links">
-            <div class="link">
-              <div>
-                <router-link :to="localizedRoute('/returns')" exact>
-                  {{ $t('FESTIVALS') }}
-                </router-link>
-              </div>
-              <div>
-                <router-link :to="localizedRoute('/returns')" exact>
-                  {{ $t('BRIDAL PARTIES') }}
-                </router-link>
-              </div>
-              <div>
-                <router-link :to="localizedRoute('/returns')" exact>
-                  {{ $t('BEACH TO BAR') }}
-                </router-link>
-              </div>
-            </div>
-            <div class="link">
-              <div>
-                <router-link :to="localizedRoute('/returns')" exact>
-                  {{ $t('CHRISTMAS PARTY') }}
-                </router-link>
-              </div>
-              <div>
-                <router-link :to="localizedRoute('/returns')" exact>
-                  {{ $t('SUMMER FUN') }}
-                </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <p class="subheading">
-            {{ $t('PRODUCTS') }}
-          </p>
-          <div class="links">
-            <div class="link">
-              <div>
-                <router-link :to="localizedRoute('/returns')" exact>
-                  {{ $t('FESTIVALS') }}
-                </router-link>
-              </div>
-              <div>
-                <router-link :to="localizedRoute('/returns')" exact>
-                  {{ $t('BRIDAL PARTIES') }}
-                </router-link>
-              </div>
-              <div>
-                <router-link :to="localizedRoute('/returns')" exact>
-                  {{ $t('BEACH TO BAR') }}
-                </router-link>
-              </div>
-            </div>
-            <div class="link">
-              <div>
-                <router-link :to="localizedRoute('/returns')" exact>
-                  {{ $t('CHRISTMAS PARTY') }}
-                </router-link>
-              </div>
-              <div>
-                <router-link :to="localizedRoute('/returns')" exact>
-                  {{ $t('SUMMER FUN') }}
-                </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="shopwomancontainer inline-block">
+    <div class="shopwomancontainer flex">
       <Newsletter />
     </div>
   </footer>
@@ -110,11 +31,8 @@ export default {
   padding: 3%;
 }
 .shopwomancontainer{
-  height: 10%;
-  align-items: vertical;
-  justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
 }
 .container{
   width: fit-content;

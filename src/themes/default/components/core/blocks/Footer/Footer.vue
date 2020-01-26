@@ -1,10 +1,39 @@
 <template>
   <footer class="f1 lg:pr-nav">
-    <div class="shopwoman">
+    <div class="hidden md:block">
       <ShopWomen />
     </div>
     <hr class="hr-text">
-    <div class="downfooter">
+    <div class="downfooter hidden md:flex">
+      <div class="container hidden md:inline-block">
+        <p class="heading">
+          {{ $t('Shop Woman') }}
+        </p>
+        <div class="Subcontainer">
+          <p class="subheading">
+            {{ $t('CATEGORIES') }}
+          </p>
+          <div class="links">
+            <div class="link">
+              <div class="mb-1">
+                <router-link :to="localizedRoute('/returns')" exact>
+                  {{ $t('FESTIVALS') }}
+                </router-link>
+              </div>
+              <div class="mb-1">
+                <router-link :to="localizedRoute('/returns')" exact>
+                  {{ $t('BRIDAL PARTIES') }}
+                </router-link>
+              </div>
+              <div class="mb-1">
+                <router-link :to="localizedRoute('/returns')" exact>
+                  {{ $t('BEACH TO BAR') }}
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container hidden lg:inline-block">
         <div class="">
           <p class="heading">
@@ -87,45 +116,53 @@
           </router-link>
         </div>
       </div>
-      <div class="container hidden md:inline-block">
-        <p class="heading">
-          {{ $t('Follow Us') }}
+    </div>
+    <div class="md:hidden">
+      <div class="block">
+        <SocialMedia />
+      </div>
+      <div class="container inline-block text-center md:text-left">
+        <p class="headingQL">
+          {{ $t('Quick Links') }}
         </p>
         <div class="link">
           <router-link :to="localizedRoute('/i/about-us')" exact>
-            {{ $t('FACEBOOK') }}
+            {{ $t('MEASURE ME') }}
           </router-link>
         </div>
         <div class="link">
           <router-link :to="localizedRoute('/i/customer-service')" exact>
-            {{ $t('INSTAGRAM') }}
+            {{ $t('HOW IT WORKS') }}
           </router-link>
         </div>
         <div class="link">
           <router-link :to="localizedRoute('/store-locator')" exact>
-            {{ $t('SNAPCHAT') }}
+            {{ $t('OUR DESIGNERS') }}
           </router-link>
         </div>
         <div class="link">
           <router-link :to="localizedRoute('/store-locator')" exact>
-            {{ $t('TUMBLER') }}
-          </router-link>
-        </div>
-        <div class="link">
-          <router-link :to="localizedRoute('/store-locator')" exact>
-            {{ $t('TWITTER') }}
+            {{ $t('HOW TO SELL ON ESSATA') }}
           </router-link>
         </div>
       </div>
+      <div class="securepayment">
+        <SecurePayment />
+      </div>
     </div>
+    <div class="h-20 lg:hidden"></div>
   </footer>
 </template>
 
 <script>
 import ShopWomen from 'theme/components/core/blocks/Footer/ShopWomen'
+import SocialMedia from 'theme/components/core/blocks/Footer/SocialMedia'
+import SecurePayment from 'theme/components/core/blocks/Footer/SecurePayment'
 export default {
   components: {
-    ShopWomen
+    ShopWomen,
+    SocialMedia,
+    SecurePayment
   }
 }
 </script>
@@ -138,7 +175,7 @@ export default {
   height: 50%;
 }
 .downfooter{
-  display: flex;
+  /* display: flex; */
 }
 .container{
   height: 10%;
@@ -147,11 +184,34 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 8pt;
+  width: -webkit-fill-available;
+}
+.Subcontainer{
+  width: fit-content;
+}
+.subheading{
+  letter-spacing: 1px;
+  padding: 1%;
+  font-size: 8pt;
+  padding-bottom: 15%;
 }
 .heading{
   color: rgb(214, 155, 121);
   font-size: 12pt;
   margin-bottom: 15%;
+}
+.headingQL{
+  color: rgb(214, 155, 121);
+  font-size: 12pt;
+  margin-bottom: 5%;
+}
+.links{
+  /* color: rgb(207, 132, 132); */
+  display: flex;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-size: 6pt;
+  letter-spacing: 2px;
 }
 .link{
   letter-spacing: 1px;
@@ -163,9 +223,6 @@ export default {
 }
 .divider{
   background-color: brown;
-}
-.shopwoman{
-  display: block;
 }
 .hr-text {
   line-height: 1em;
@@ -182,4 +239,29 @@ export default {
   opacity: .5;
   /* width: 80%; */
   }
+  .hr1 {
+    border: none;
+    border-top: 1px double white;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    margin-bottom: 2%;
+    width: 80%;
+    font-size: x-small;
+    letter-spacing: 1px;
+    opacity: 0.30;
+}
+hr1:after {
+    background: rgb(20, 0, 0);
+    color:white;
+    content: 'SECURE PAYMENT';
+    padding: 0 4px;
+    position: relative;
+    top: -9px;
+    margin: 2%;
+}
+.securepayment{
+  width: 100%;
+  height: 40%;
+}
 </style>
