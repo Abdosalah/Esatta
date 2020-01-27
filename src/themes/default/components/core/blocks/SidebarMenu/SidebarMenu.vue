@@ -153,22 +153,22 @@ export default {
         {
           id: 1,
           name: i18n.t('My profile'),
-          url: '/my-account'
+          url: '/my-profile'
         },
         {
           id: 2,
           name: i18n.t('My shipping details'),
-          url: '/my-account/shipping-details'
+          url: '/my-profile/shipping-details'
         },
         {
           id: 3,
           name: i18n.t('My newsletter'),
-          url: '/my-account/newsletter'
+          url: '/my-profile/newsletter'
         },
         {
           id: 4,
           name: i18n.t('My orders'),
-          url: '/my-account/orders'
+          url: '/my-profile/orders'
         },
         {
           id: 5,
@@ -215,7 +215,7 @@ export default {
         this.$nextTick(() => {
           this.$store.commit('ui/setAuthElem', 'login')
           this.$bus.$emit('modal-show', 'modal-signup')
-          this.$router.push({ name: 'my-account' })
+          this.$router.push({ name: 'my-profile' })
         })
       }
     }

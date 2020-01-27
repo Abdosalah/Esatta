@@ -9,12 +9,12 @@
           :routes="[{name: 'Homepage', route_link: '/'}]"
           active-route="My Account"
         /> -->
-        <p class="pl-8% pt-12 text-5xl font-extrabold w-1/3">
+        <p class="pl-8% pt-12 text-5xl font-extrabold w-1/2">
           My Profile
         </p>
-        <div class="pl-4% pt-20 w-2/3">
-          <p class="pl-5% inline-block" v-for="(page, index) in navigation" :key="index">
-            <router-link :to="localizedRoute(page.link)" class="">
+        <div class="pl-10% pt-20 w-2/3">
+          <p class="pl-5% inline-block text-dark_grey hover:text-red" v-for="(page, index) in navigation" :key="index">
+            <router-link :to="localizedRoute(page.link)" class="router-links">
               {{ page.title }}
             </router-link>
           </p>
@@ -57,9 +57,9 @@ export default {
   data () {
     return {
       navigation: [
-        { title: this.$t('MEASUREMENTS'), link: '/my-account/measurements' },
-        { title: this.$t('CONTACT DETAILS'), link: '/my-account/contact-details' },
-        { title: this.$t('PURCHASE HISTORY'), link: '/my-account/orders' }
+        { title: this.$t('Measurements'), link: '/my-profile/measurements' },
+        { title: this.$t('Purchases'), link: '/my-profile/contact-details' },
+        { title: this.$t('Settings'), link: '/my-profile/orders' }
       ]
     }
   },
@@ -117,7 +117,7 @@ export default {
 }
 
 #my_account {
-  height: 300vh;
+  height: 310vh;
 }
 
 .my-bg-img {
@@ -126,5 +126,7 @@ export default {
   object-fit: cover;
   background: linear-gradient( rgba( 0, 0, 0, 0.0 ), #ffff);
 }
-
+.router-links:hover::after {
+  content: none;
+}
 </style>

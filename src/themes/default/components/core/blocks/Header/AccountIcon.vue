@@ -49,13 +49,13 @@ export default {
     return {
       showMenu: false,
       navigation: [
-        { title: this.$t('My profile'), link: '/my-account' },
-        { title: this.$t('My shipping details'), link: '/my-account/shipping-details' },
-        { title: this.$t('My newsletter'), link: '/my-account/newsletter' },
-        { title: this.$t('My orders'), link: '/my-account/orders' },
+        { title: this.$t('My profile'), link: '/my-profile' },
+        { title: this.$t('My shipping details'), link: '/my-profile/shipping-details' },
+        { title: this.$t('My newsletter'), link: '/my-profile/newsletter' },
+        { title: this.$t('My orders'), link: '/my-profile/orders' },
         { title: this.$t('My loyalty card'), link: '#' },
         { title: this.$t('My product reviews'), link: '#' },
-        { title: this.$t('My Recently viewed products'), link: '/my-account/recently-viewed' }
+        { title: this.$t('My Recently viewed products'), link: '/my-profile/recently-viewed' }
       ]
     }
   },

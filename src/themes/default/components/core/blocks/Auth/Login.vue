@@ -144,7 +144,7 @@
         <br>yourself to calculate your body shape
       </p>
       <button class="absolute top-50% left-38% mt-20 border border-white py-2 px-6">
-        <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape.svg">
+        <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg">
         <p class="text-sm ml-2 inline text-white">
           BASIC MEASUREMENTS
         </p>
@@ -171,7 +171,7 @@
         <br>Connect your body scan to Esatta now
       </p>
       <button class="absolute top-50% left-40% mt-20 border border-white py-2 px-6">
-        <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape.svg">
+        <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg">
         <p class="text-sm ml-2 inline text-white">
           LINK A SCAN
         </p>

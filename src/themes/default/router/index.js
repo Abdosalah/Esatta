@@ -6,7 +6,7 @@ const Category = () => import(/* webpackChunkName: "vsf-category" */ 'theme/page
 const CmsPage = () => import(/* webpackChunkName: "vsf-cms" */ 'theme/pages/CmsPage.vue')
 const Checkout = () => import(/* webpackChunkName: "vsf-checkout" */ 'theme/pages/Checkout.vue')
 const Compare = () => import(/* webpackChunkName: "vsf-compare" */ 'theme/pages/Compare.vue')
-const MyAccount = () => import(/* webpackChunkName: "vsf-my-account" */ 'theme/pages/MyAccount.vue')
+const MyAccount = () => import(/* webpackChunkName: "vsf-my-profile" */ 'theme/pages/MyAccount.vue')
 const Static = () => import(/* webpackChunkName: "vsf-static" */ 'theme/pages/Static.vue')
 
 let routes = [
@@ -17,11 +17,11 @@ let routes = [
   { name: 'magazine', path: '/magazine', component: Static, props: {page: 'lorem', title: 'Magazine'} },
   { name: 'sale', path: '/sale', component: Static, props: {page: 'lorem', title: 'Sale'} },
   { name: 'order-tracking', path: '/order-tracking', component: Static, props: {page: 'lorem', title: 'Track my Order'} },
-  { name: 'my-account', path: '/my-account', component: MyAccount, meta: { requiresAuth: true }, props: { activeBlock: 'MyMeasurements' } },
-  { name: 'my-measurements', path: '/my-account/measurements', component: MyAccount, props: { activeBlock: 'MyMeasurements' }, meta: { requiresAuth: true } },
-  { name: 'my-contact-details', path: '/my-account/contact-details', component: MyAccount, props: { activeBlock: 'MyContactDetails' }, meta: { requiresAuth: true } },
-  { name: 'my-orders', path: '/my-account/orders', component: MyAccount, props: { activeBlock: 'MyOrders' }, meta: { requiresAuth: true } },
-  { name: 'my-order', path: '/my-account/orders/:orderId', component: MyAccount, props: { activeBlock: 'MyOrder' }, meta: { requiresAuth: true } },
+  { name: 'my-profile', path: '/my-profile', component: MyAccount, meta: { requiresAuth: true }, props: { activeBlock: 'MyMeasurements' } },
+  { name: 'my-measurements', path: '/my-profile/measurements', component: MyAccount, props: { activeBlock: 'MyMeasurements' }, meta: { requiresAuth: true } },
+  { name: 'my-contact-details', path: '/my-profile/contact-details', component: MyAccount, props: { activeBlock: 'MyContactDetails' }, meta: { requiresAuth: true } },
+  { name: 'my-orders', path: '/my-profile/orders', component: MyAccount, props: { activeBlock: 'MyOrders' }, meta: { requiresAuth: true } },
+  { name: 'my-order', path: '/my-profile/orders/:orderId', component: MyAccount, props: { activeBlock: 'MyOrder' }, meta: { requiresAuth: true } },
   { name: 'about-us', path: '/about-us', component: Static, props: {page: 'lorem', title: 'About us'} },
   { name: 'customer-service', path: '/customer-service', component: Static, props: {page: 'lorem', title: 'Customer service'} },
   { name: 'store-locator', path: '/store-locator', component: Static, props: {page: 'lorem', title: 'Store locator'} },
