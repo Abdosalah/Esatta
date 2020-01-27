@@ -39,7 +39,7 @@
                 {{ $t('Orders') }}
               </h3>
               <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/my-account')" exact>
+                <router-link class="cl-secondary" :to="localizedRoute('/my-profile')" exact>
                   {{ $t('My account') }}
                 </router-link>
               </div>

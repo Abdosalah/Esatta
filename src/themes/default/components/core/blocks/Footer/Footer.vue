@@ -11,7 +11,7 @@
             {{ $t('Account') }}
           </p>
           <div class="link">
-            <router-link :to="localizedRoute('/my-account')" exact>
+            <router-link :to="localizedRoute('/my-profile')" exact>
               {{ $t('YOUR BAG') }}
             </router-link>
           </div>

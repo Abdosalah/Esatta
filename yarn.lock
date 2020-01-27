@@ -15062,7 +15062,7 @@ vue-apollo@^3.0.0-beta.19:
     chalk "^2.4.1"
     throttle-debounce "^2.0.0"
 
-vue-carousel@^0.6.9:
+vue-carousel@^0.6.15, vue-carousel@^0.6.9:
   version "0.6.15"
   resolved "https://registry.yarnpkg.com/vue-carousel/-/vue-carousel-0.6.15.tgz#7446e3cb2762d58175d52c83c4052a1aeeae91ea"
   integrity sha512-ioSqGWQY6AafsappbruOlK0Se5k0tV2Vz9wp4FZqjwjLytJ/CK6yB8EJIwai60G9giE9oaKJzsRpKhahpU43dw==
