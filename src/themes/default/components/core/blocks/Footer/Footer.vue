@@ -205,9 +205,6 @@ export default {
   height: 50%;
   font-family: LATO, "EB GARAMOND";
 }
-.downfooter{
-  /* display: flex; */
-}
 .container{
   height: 10%;
   align-items: vertical;

@@ -1,5 +1,5 @@
 <template>
-  <div class="main-div m-5 h-48 md:h-64 lg:w-1/3 w-1/2 relative">
+  <div class="main-div m-2 w-1/2 relative md:m-5 md:h-64 lg:w-1/3">
     <img class="h-full w-full" :src="tileImage">
     <div class="designer-text hidden md:block">
       <p class="text-red">

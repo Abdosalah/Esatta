@@ -4,7 +4,8 @@
       <h7 class="pr-20 text-3xl font-bold">
         BAG
       </h7>
-      <div class="pl-20 pt-3 weight-700 b align-center middle-xs" v-for="(segment, index) in totals" :key="index" v-if="segment.code === 'grand_total'">
+      <div class="pl-20 pt-3 weight-700 b align-center middle-xs" v-for="(segment, index) in totals" :key="index">
+        //v-if="segment.code === 'grand_total'">
         <div class=" align-center total-price-value">
           {{ segment.value | price }}
         </div>
@@ -59,12 +60,7 @@ import Product from 'theme/components/core/blocks/Microcart/Product'
 export default {
   components: {
     Product,
-    ClearCartButton,
-    ButtonFull,
-    ButtonOutline,
-    BaseInput,
-    InstantCheckout,
-    ops: {}
+    ButtonFull
   },
   mixins: [
     Microcart,

@@ -64,6 +64,7 @@
 .main-div {
   background-color: #FADBD9;
   position: relative;
+  padding: 3rem 0rem;
 }
 
 .numbers {

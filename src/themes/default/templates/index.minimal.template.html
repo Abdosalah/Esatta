@@ -2,14 +2,18 @@
 <html data-vue-meta-server-rendered {{{ meta.inject().htmlAttrs.text() }}}>
   <head><!-- index for default theme -->
 		<!-- {{{ meta.inject().title.text() }}} -->
-		<title>Esatta</title>		
+		<title>Esatta</title>
 		{{{ meta.inject().meta.text() }}}
 		<meta name="generator" content="Vue Storefront">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		{{{ meta.inject().link.text() }}}
 		{{{ output.appendHead() }}}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+		<link rel="stylesheet" href="/animations.css" type="text/css">
 	</head>
   <body>
 		<!--vue-ssr-outlet-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="/css3-animate-it.js"></script>
   </body>
 </html>

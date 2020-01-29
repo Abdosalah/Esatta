@@ -3,7 +3,7 @@
     <p class="text-sm">
       {{ attrName }}
     </p>
-    <p class="text-4xl text-grey_text pt-2">
+    <p class="text-2xl text-grey_text pt-2">
       {{ attrValue }}
     </p>
     <hr class="my-underline mb-8">

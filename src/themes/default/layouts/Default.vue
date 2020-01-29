@@ -3,6 +3,7 @@
     <overlay v-if="overlayActive" />
     <loader />
     <div id="viewport" class="w-100 relative">
+      <callto-action class="hidden lg:block" />
       <nav-bar />
       <async-sidebar
         :async-component="SearchPanel"
@@ -39,6 +40,7 @@
 </template>
 
 <script>
+import CalltoAction from 'theme/components/custom/CalltoAction'
 import { mapState } from 'vuex'
 import AsyncSidebar from 'theme/components/theme/blocks/AsyncSidebar/AsyncSidebar.vue'
 import AsyncSidebarNav from 'theme/components/theme/blocks/AsyncSidebar/AsyncSidebarNav.vue'
@@ -120,6 +122,7 @@ export default {
     CookieNotification,
     OfflineBadge,
     OrderConfirmation,
+    CalltoAction,
     AsyncSidebar
   }
 }
