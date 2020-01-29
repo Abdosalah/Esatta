@@ -5,7 +5,7 @@
     </div>
     <hr class="hr-text">
     <div class="downfooter hidden md:flex">
-      <div class="container hidden md:inline-block">
+      <!-- <div class="container hidden md:inline-block">
         <p class="heading">
           {{ $t('Shop Woman') }}
         </p>
@@ -33,8 +33,35 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="container hidden lg:inline-block">
+        <div class="">
+          <p class="heading">
+            {{ $t('Browse') }}
+          </p>
+          <div class="link">
+            <router-link :to="localizedRoute('/my-account')" exact>
+              {{ $t('SHOP WOMAN') }}
+            </router-link>
+          </div>
+          <div class="link">
+            <router-link :to="localizedRoute('/delivery')" exact>
+              {{ $t('LATEST DESIGNS') }}
+            </router-link>
+          </div>
+          <div class="link">
+            <router-link :to="localizedRoute('/returns')" exact>
+              {{ $t('BUY FOR A FRIEND') }}
+            </router-link>
+          </div>
+          <div class="link">
+            <router-link :to="localizedRoute('/returns')" exact>
+              {{ $t('BODY SHAPES') }}
+            </router-link>
+          </div>
+        </div>
+      </div>
+      <div class="container hidden md:inline-block">
         <div class="">
           <p class="heading">
             {{ $t('Account') }}
@@ -56,12 +83,7 @@
           </div>
           <div class="link">
             <router-link :to="localizedRoute('/returns')" exact>
-              {{ $t('ACCOUNT SETTINGS') }}
-            </router-link>
-          </div>
-          <div class="link">
-            <router-link :to="localizedRoute('/returns')" exact>
-              {{ $t('FOR A FRIEND SETTINGS') }}
+              {{ $t('SETTINGS') }}
             </router-link>
           </div>
         </div>
@@ -87,7 +109,7 @@
         </div>
         <div class="link">
           <router-link :to="localizedRoute('/store-locator')" exact>
-            {{ $t('HOW TO SELL ON ESSATA') }}
+            {{ $t('SELL ON ESSATA') }}
           </router-link>
         </div>
       </div>
@@ -127,30 +149,36 @@
         </p>
         <div class="link">
           <router-link :to="localizedRoute('/i/about-us')" exact>
-            {{ $t('MEASURE ME') }}
+            {{ $t('DELIVERY') }}
           </router-link>
         </div>
         <div class="link">
           <router-link :to="localizedRoute('/i/customer-service')" exact>
-            {{ $t('HOW IT WORKS') }}
+            {{ $t('ALTERATIONS') }}
           </router-link>
         </div>
         <div class="link">
           <router-link :to="localizedRoute('/store-locator')" exact>
-            {{ $t('OUR DESIGNERS') }}
+            {{ $t('FAQ') }}
           </router-link>
         </div>
         <div class="link">
           <router-link :to="localizedRoute('/store-locator')" exact>
-            {{ $t('HOW TO SELL ON ESSATA') }}
+            {{ $t('SELL ON ESSATA') }}
+          </router-link>
+        </div>
+        <div class="link">
+          <router-link :to="localizedRoute('/store-locator')" exact>
+            {{ $t('CONTACT') }}
           </router-link>
         </div>
       </div>
-      <div class="securepayment">
+      <div class="securepayment pb-3">
         <SecurePayment />
       </div>
     </div>
-    <div class="h-20 lg:hidden"></div>
+    <jtb />
+    <div class="h-16 lg:hidden" />
   </footer>
 </template>
 
@@ -158,11 +186,13 @@
 import ShopWomen from 'theme/components/core/blocks/Footer/ShopWomen'
 import SocialMedia from 'theme/components/core/blocks/Footer/SocialMedia'
 import SecurePayment from 'theme/components/core/blocks/Footer/SecurePayment'
+import jtb from 'theme/components/core/blocks/Footer/jtb'
 export default {
   components: {
     ShopWomen,
     SocialMedia,
-    SecurePayment
+    SecurePayment,
+    jtb
   }
 }
 </script>
@@ -173,6 +203,7 @@ export default {
   color: rgb(209, 193, 169);
   justify-content: center;
   height: 50%;
+  font-family: LATO, "EB GARAMOND";
 }
 .downfooter{
   /* display: flex; */
@@ -196,12 +227,12 @@ export default {
   padding-bottom: 15%;
 }
 .heading{
-  color: rgb(214, 155, 121);
+  color: #C57974;
   font-size: 12pt;
   margin-bottom: 15%;
 }
 .headingQL{
-  color: rgb(214, 155, 121);
+  color: #C57974;
   font-size: 12pt;
   margin-bottom: 5%;
 }

@@ -13,6 +13,7 @@
       </router-link>
       <router-link :to="localizedRoute('/returns')" exact class="link">
         <img src="assets/svg/like_prod.svg" class="images opacity-25">
+        <WishlistIcon />
         {{ $t('LIKED') }}
       </router-link>
       <router-link :to="localizedRoute('/MicrocartIcon')" exact class="link">
@@ -47,11 +48,13 @@
 import Currency from 'theme/components/core/Currency'
 import MediumNavbar from 'theme/components/core/MediumNavbar'
 import MicrocartIcon from 'theme/components/core/blocks/Header/MicrocartIcon'
+import WishlistIcon from 'theme/components/core/blocks/Header/WishlistIcon'
 export default {
   components: {
     Currency,
     MediumNavbar,
-    MicrocartIcon
+    MicrocartIcon,
+    WishlistIcon
   }
 }
 </script>

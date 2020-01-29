@@ -16861,6 +16861,10 @@ video {
     padding-left: 6rem;
   }
 
+  .sm\:pl-10prc {
+    padding-left: 10%;
+  }
+
   .sm\:pt-32 {
     padding-top: 8rem;
   }
@@ -22425,6 +22429,10 @@ video {
 
   .sm\:w-1\/12 {
     width: 8.333333%;
+  }
+
+  .sm\:w-10prc {
+    width: 10%;
   }
 
   .sm\:w-2\/12 {
@@ -28048,6 +28056,9 @@ video {
   .md\:pl-0\.6 {
     padding-left: 0.6rem;
   }
+  .md\:pl-20prc {
+    padding-left: 20%;
+  }
 
   .md\:pt-0\.9 {
     padding-top: 0.9rem;
@@ -33309,6 +33320,10 @@ video {
 
   .md\:w-px {
     width: 1px;
+  }
+
+  .md\:w-7prc {
+    width: 7%;
   }
 
   .md\:w-1\/2 {
@@ -38707,6 +38722,9 @@ video {
 
   .lg\:pl-12 {
     padding-left: 3rem;
+  }
+  .lg\:pl-35prc {
+    padding-left: 35%;
   }
 
   .lg\:pt-16 {

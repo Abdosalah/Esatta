@@ -63,23 +63,27 @@ export default {
   @import '~theme/css/helpers/functions/color';
 
   .base-input-number {
+    display: flex;
     width: 100%;
 
     &__input {
+      font-weight: bold;
+      font-size: x-small;
       width: 50px;
       height: 1.4rem;
-      line-height: 1.7rem;
+      // line-height: 1.7rem;
       @media (min-width: 768px) {
         height: 1.7rem;
       }
     }
 
     &__label {
-      font-size: 0.8rem;
-      line-height: 1.2rem;
+      color: #C57974;
+      font-size: x-small;
+      // line-height: 1.2rem;
       max-width: 100px;
       @media (min-width: 768px) {
-        font-size: 1rem;
+        font-size: x-small;
         line-height: 1.4rem;
       }
     }

@@ -1,51 +1,15 @@
 <template>
   <div class="microcart">
-    <!-- <div class="row bg-cl-pink px40 actions">
-      <div class="col-xs end-xs">
-        <button
-          type="button"
-          class="p0 brdr-none bg-cl-transparent close"
-          @click="closeMicrocartExtend"
-          data-testid="closeMicrocart"
-        >
-          <i class="material-icons py20 cl-accent">
-            close
-          </i>
-        </button>
-      </div>
-    </div> -->
-
     <div v-if="productsInCart.length" class="summary d-inline-flex align-center pt30 pb20 px40 cl-accent serif">
       <h7 class="pr-20 text-3xl font-bold">
         BAG
       </h7>
       <div class="pl-20 pt-3 weight-700 b align-center middle-xs" v-for="(segment, index) in totals" :key="index" v-if="segment.code === 'grand_total'">
-        <!-- <div class="col-xs h4 total-price-label">
-          {{ segment.title }}
-        </div> -->
         <div class=" align-center total-price-value">
           {{ segment.value | price }}
         </div>
       </div>
     </div>
-
-    <!-- <div class="row middle-xs bg-cl-pink top-sm px40 actions">
-      <div class="col-xs-12 col-sm">
-        <h2
-          v-if="productsInCart.length"
-          class="cl-accent mt35 mb35"
-        >
-          {{ $t('Shopping cart') }}
-        </h2>
-      </div>
-      <div class="col-xs-12 col-sm mt35 mb35 mt0 end-sm clearcart-col">
-        <clear-cart-button
-          v-if="productsInCart.length"
-          @click.native="clearCart"
-        />
-      </div>
-    </div> -->
-
     <h4 v-if="!productsInCart.length" class="cl-accent ml30">
       {{ $t('Your shopping cart is empty.') }}
     </h4>
@@ -56,21 +20,15 @@
       </router-link>
       {{ $t('to find something beautiful for You!') }}
     </div>
-    <ul v-if="productsInCart.length" class="bg-cl-mistyrose m0 px40 products">
-      <product v-for="product in productsInCart" :key="product.sku" :product="product" />
-    </ul>
-
+    <div>
+      <ul v-if="productsInCart.length" class="list v-chat-scroll bg-cl-mistyrose m0 px40 products">
+        <product v-for="product in productsInCart" :key="product.sku" :product="product" />
+      </ul>
+    </div>
     <div
       class="row py20 px40 middle-xs actions"
       v-if="productsInCart.length && !isCheckoutMode"
     >
-      <!-- <div class="col-xs-12 col-sm first-sm">
-        <router-link :to="localizedRoute('/')" class="no-underline cl-secondary link">
-          <span @click="closeMicrocartExtend">
-            {{ $t('Return to shopping') }}
-          </span>
-        </router-link>
-      </div> -->
       <div class="checkout">
         <button-full class="button"
                      :link="{ name: 'checkout' }"
@@ -105,7 +63,8 @@ export default {
     ButtonFull,
     ButtonOutline,
     BaseInput,
-    InstantCheckout
+    InstantCheckout,
+    ops: {}
   },
   mixins: [
     Microcart,
@@ -207,6 +166,10 @@ export default {
   }
 
   .products {
+    height:23rem;
+    position: relative;
+    overflow: hidden;
+    overflow-y: scroll;
     @media (max-width: 767px) {
       padding: 30px 15px;
     }
@@ -283,6 +246,14 @@ export default {
     }
     .checkout{
       width: 300px;
+    }
+    .list{
+      // width: 100%;
+      // position: -webkit-sticky;
+      // position: sticky;
+      height: 8rem;
+      position: relative;
+      overflow: hidden;
     }
   }
 </style>

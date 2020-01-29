@@ -89,12 +89,12 @@ export default {
     position: relative;
     height: 0;
     padding-bottom: calc(740% / (1100 / 80));
-    overflow: hidden;
+    // overflow: hidden;
     &__thumb{
       max-width: 100%;
       height: auto;
       position: absolute;
-      top: 37%;
+      top: 50%;
       left: 50%;
       width: auto;
       height: 100%;
