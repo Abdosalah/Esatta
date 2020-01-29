@@ -3,46 +3,40 @@
     <div class="Navbar hidden lg:block">
       <img class="image" src="assets/logo.svg">
 
-      <<<<<<< HEAD
       <router-link :to="localizedRoute('/my-account')" exact class="link">
         <img src="assets/esatta-images/page-banner/measure.svg" class="images opacity-25">
-        =======
-        <router-link :to="localizedRoute('/my-profilee')" exact class="link">
-          <img src="assets/esatta-images/page-banner/measure.svg" class="images">
-          >>>>>>> master
-          {{ $t('MEASURE ME') }}
-        </router-link>
-        <router-link :to="localizedRoute('/delivery')" exact class="link">
-          <img src="assets/svg/browse_b.svg" class="images opacity-25">
-          {{ $t('BROWSE') }}
-        </router-link>
-        <router-link :to="localizedRoute('/returns')" exact class="link">
-          <img src="assets/svg/like_prod.svg" class="images opacity-25">
-          <WishlistIcon />
-          {{ $t('LIKED') }}
-        </router-link>
-        <router-link :to="localizedRoute('/MicrocartIcon')" exact class="link">
-          <img src="assets/svg/bag.svg" class="images">
-          <MicrocartIcon />
-          {{ $t('BAG') }}
-        </router-link>
-        <router-link :to="localizedRoute('/returns')" exact class="link">
-          <img src="assets/svg/log_in.svg" class="images">
-          {{ $t('LOG IN') }}
-        </router-link>
-        <Currency class="currency opacity-25" />
-        <div class="downlinks">
-          <router-link :to="localizedRoute('/returns')" exact class="link">
-            {{ $t('HOW IT WORKS') }}
-          </router-link>
-          <router-link :to="localizedRoute('/returns')" exact class="link">
-            {{ $t('OUR DESIGNERS') }}
-          </router-link>
-          <router-link :to="localizedRoute('/returns')" exact class="link">
-            {{ $t('BODY SHAPES') }}
-          </router-link>
-        </div>
+        {{ $t('MEASURE ME') }}
       </router-link>
+      <router-link :to="localizedRoute('/delivery')" exact class="link">
+        <img src="assets/svg/browse_b.svg" class="images opacity-25">
+        {{ $t('BROWSE') }}
+      </router-link>
+      <router-link :to="localizedRoute('/returns')" exact class="link">
+        <img src="assets/svg/like_prod.svg" class="images opacity-25">
+        <WishlistIcon />
+        {{ $t('LIKED') }}
+      </router-link>
+      <router-link :to="localizedRoute('/MicrocartIcon')" exact class="link">
+        <img src="assets/svg/bag.svg" class="images">
+        <MicrocartIcon />
+        {{ $t('BAG') }}
+      </router-link>
+      <router-link :to="localizedRoute('/returns')" exact class="link">
+        <img src="assets/svg/log_in.svg" class="images">
+        {{ $t('LOG IN') }}
+      </router-link>
+      <Currency class="currency opacity-25" />
+      <div class="downlinks">
+        <router-link :to="localizedRoute('/returns')" exact class="link">
+          {{ $t('HOW IT WORKS') }}
+        </router-link>
+        <router-link :to="localizedRoute('/returns')" exact class="link">
+          {{ $t('OUR DESIGNERS') }}
+        </router-link>
+        <router-link :to="localizedRoute('/returns')" exact class="link">
+          {{ $t('BODY SHAPES') }}
+        </router-link>
+      </div>
     </div>
     <div class="lg:hidden">
       <MediumNavbar />
