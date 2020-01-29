@@ -26,8 +26,6 @@
           {{ product.name | htmlDecode }}
         </router-link>
 
-        
-
         <!-- <div class="h6 cl-bg-tertiary pt5 options" v-if="isOnline && product.totals && product.totals.options">
           <div v-for="opt in product.totals.options" :key="opt.label">
             <span class="opn">{{ opt.label }}: </span>
@@ -47,13 +45,6 @@
         <div class="h6 pt5 cl-success" v-if="product.info && Object.keys(product.info).length > 0 && Object.keys(product.errors).length === 0">
           {{ product.info | formatProductMessages }}
         </div> -->
-
-
-
-
-
-
-
 
         <div class="text-xs flex mr10 start-xs between-sm actions">
           <div class="prices" v-if="!displayItemDiscounts || !isOnline">
