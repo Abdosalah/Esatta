@@ -1,12 +1,18 @@
 <template>
   <div class="microcart">
-    <div v-if="productsInCart.length" class="summary d-inline-flex align-center pt30 pb20 px40 cl-accent serif">
-      <h7 class="pr-20 text-3xl font-bold">
+    <div v-if="productsInCart.length" class="summary d-inline-flex align-center pt-16 pb20 px40">
+      <h7 class="pr-32 text-3xl font-bold">
         BAG
       </h7>
-      <div class="pl-20 pt-3 weight-700 b align-center middle-xs" v-for="(segment, index) in totals" :key="index">
-        //v-if="segment.code === 'grand_total'">
-        <div class=" align-center total-price-value">
+      <div class="pt-3 weight-700 b align-center middle-xs">
+        <div class="text-xs1 align-center total-price-value">
+          <h4 v-if="productsInCart.length" class="toptext">
+            ({{ productsInCart.length }} ITEMS)
+          </h4>
+        </div>
+      </div>
+      <div class="pt-3 weight-700 b align-center middle-xs" v-for="(segment, index) in totals" :key="index" v-if="segment.code === 'grand_total'">
+        <div class="totalprice align-center total-price-value">
           {{ segment.value | price }}
         </div>
       </div>
@@ -194,6 +200,8 @@ export default {
       font-size: 12px;
     }
     display: inline-flex;
+    letter-spacing: 1px;
+    font-family: LATO, "EB GARAMOND";
   }
 
   .summary-heading {
@@ -251,5 +259,21 @@ export default {
       position: relative;
       overflow: hidden;
     }
+  }
+  .toptext{
+    letter-spacing: 1px;
+    font-size: x-small;
+    padding-top: 4px;
+    font-family: LATO, "EB GARAMOND";
+
+  }
+  .microcart{
+    font-family: LATO, "EB GARAMOND";
+  }
+  .totalprice{
+    font-family: LATO, "EB GARAMOND";
+    letter-spacing: 1px;
+    font-size: medium;
+    padding-left: 3px;
   }
 </style>

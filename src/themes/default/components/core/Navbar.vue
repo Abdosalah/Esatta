@@ -4,7 +4,7 @@
       <img class="image" src="assets/logo.svg">
 
       <router-link :to="localizedRoute('/my-account')" exact class="link">
-        <img src="assets/esatta-images/page-banner/measure.svg" class="images opacity-25">
+        <img src="assets/svg/measure.svg" class="images">
         {{ $t('MEASURE ME') }}
       </router-link>
       <router-link :to="localizedRoute('/delivery')" exact class="link">
@@ -13,14 +13,14 @@
       </router-link>
       <router-link :to="localizedRoute('/returns')" exact class="link">
         <img src="assets/svg/like_prod.svg" class="images opacity-25">
-        <WishlistIcon />
+        <!-- <WishlistIcon /> -->
         {{ $t('LIKED') }}
       </router-link>
-      <router-link :to="localizedRoute('/MicrocartIcon')" exact class="link">
+      <!-- <router-link :to="localizedRoute('/MicrocartIcon')" exact class="link">
         <img src="assets/svg/bag.svg" class="images">
-        <MicrocartIcon />
         {{ $t('BAG') }}
-      </router-link>
+      </router-link> -->
+      <MicrocartIcon />
       <router-link :to="localizedRoute('/returns')" exact class="link">
         <img src="assets/svg/log_in.svg" class="images">
         {{ $t('LOG IN') }}

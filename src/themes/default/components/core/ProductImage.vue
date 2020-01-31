@@ -33,6 +33,8 @@
       itemprop="image"
       class="image__thumb"
     >
+    <!-- <i class="close fa fa-times" /> -->
+    <i class="material-icons">close</i>
   </div>
 </template>
 
@@ -105,4 +107,29 @@ export default {
       }
     }
   }
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    z-index: 1;
+    transition: all 0.25s;
+  }
+
+  // &:hover {
+  //   i {
+  //     text-shadow: 1px 2px 5px black;
+  //   }
+
+  //   &:after {
+  //     background: rgba(0,0,0,0.5);
+  //   }
+  // }
+
+  // &:active {
+  //     i {
+  //     text-shadow: 0px 0px 1px black;
+  //   }
+  // }
 </style>

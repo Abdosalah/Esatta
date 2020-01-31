@@ -1,6 +1,9 @@
 <template>
   <div class="base-input-number">
     <label class="base-input-number__label cl-primary flex pb-3" :for="getInputId">{{ name }}</label>
+    <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity">
+      <i class="material-icons">plus</i>
+    </button>
     <input
       :id="getInputId"
       type="number"

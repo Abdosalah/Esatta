@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbarup />
-    <div class="sm:hidden md:flex">
+    <div class=" hidden md:flex">
       <v-bottom-navigation v-model="bottomNav" class="nav">
         <v-btn value="recent" class="button">
           <img src="assets/svg/browse_b.svg" class="image opacity-20">
@@ -12,13 +12,14 @@
           <span>LIKED</span>
         </v-btn>
         <v-btn value="nearby" class="button">
-          <img src="assets/esatta-images/page-banner/measure.svg" class="image opacity-20">
+          <img src="assets/svg/measure.svg" class="image">
           <span>MEASURE ME</span>
         </v-btn>
         <v-btn value="nearby" class="button">
           <img src="assets/svg/bag.svg" class="image">
           <span>BAG</span>
         </v-btn>
+        <!-- <MicrocartIcon class="button" /> -->
       </v-bottom-navigation>
     </div>
     <div class="md:hidden">
@@ -46,6 +47,7 @@
 
 <script>
 import Navbarup from 'theme/components/core/blocks/Header/NavBar'
+import MicrocartIcon from 'theme/components/core/blocks/Header/MicrocartIcon'
 export default {
   data () {
     return {
@@ -53,7 +55,8 @@ export default {
     }
   },
   components: {
-    Navbarup
+    Navbarup,
+    MicrocartIcon
   }
 }
 </script>
