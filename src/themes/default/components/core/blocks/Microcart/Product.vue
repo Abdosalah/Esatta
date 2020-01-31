@@ -2,8 +2,13 @@
   <li class="list row flex-nowrap py30">
     <div class="block">
       <div class="flex">
-        <div class="ml10 bg-cl-secondary">
-          <product-image :image="image" />
+        <div>
+          <div class="ml10 bg-cl-secondary">
+            <product-image :image="image" />
+          </div>
+          <div class="img" @click="removeItem">
+            <remove-button />
+          </div>
         </div>
         <div class="col-xs flex pl35 start-xs between-sm details">
           <div>
@@ -25,27 +30,6 @@
             >
               {{ product.name | htmlDecode }}
             </router-link>
-
-            <!-- <div class="h6 cl-bg-tertiary pt5 options" v-if="isOnline && product.totals && product.totals.options">
-              <div v-for="opt in product.totals.options" :key="opt.label">
-                <span class="opn">{{ opt.label }}: </span>
-                <span class="opv" v-html="opt.value" />
-              </div>
-            </div>
-            <div class="h6 cl-bg-tertiary pt5 options" v-else-if="product.options">
-              <div v-for="opt in product.options" :key="opt.label">
-                <span class="opn">{{ opt.label }}: </span>
-                <span class="opv" v-html="opt.value" />
-              </div>
-            </div> -->
-
-            <!-- <div class="h6 pt5 cl-error" v-if="product.errors && Object.keys(product.errors).length > 0">
-              {{ product.errors | formatProductMessages }}
-            </div>
-            <div class="h6 pt5 cl-success" v-if="product.info && Object.keys(product.info).length > 0 && Object.keys(product.errors).length === 0">
-              {{ product.info | formatProductMessages }}
-            </div> -->
-
             <div class="text-xs flex mr10 start-xs between-sm actions">
               <div class="prices" v-if="!displayItemDiscounts || !isOnline">
                 <span class="h4 cl-error price-special" v-if="product.special_price">
@@ -224,5 +208,11 @@ export default {
     width: 86%;
     margin-left: 2%;
     margin-top: 5%;
+}
+.img{
+  position: absolute; /* Reposition logo from the natural layout */
+  left: 104px;
+  top: 95px;
+  z-index: 2;
 }
 </style>

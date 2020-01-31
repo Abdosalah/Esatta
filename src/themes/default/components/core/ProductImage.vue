@@ -34,7 +34,7 @@
       class="image__thumb"
     >
     <!-- <i class="close fa fa-times" /> -->
-    <i class="material-icons">close</i>
+    <!-- <i class="material-icons">close</i> -->
   </div>
 </template>
 

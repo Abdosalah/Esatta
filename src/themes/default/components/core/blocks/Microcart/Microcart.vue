@@ -7,7 +7,8 @@
       <div class="pt-3 weight-700 b align-center middle-xs">
         <div class="text-xs1 align-center total-price-value">
           <h4 v-if="productsInCart.length" class="toptext">
-            ({{ productsInCart.length }} ITEMS)
+            <!-- ({{ productsInCart.length }} ITEMS) -->
+            <totalCartItems />
           </h4>
         </div>
       </div>
@@ -62,11 +63,13 @@ import ClearCartButton from 'theme/components/core/blocks/Microcart/ClearCartBut
 import ButtonFull from 'theme/components/theme/ButtonFull'
 import ButtonOutline from 'theme/components/theme/ButtonOutline'
 import Product from 'theme/components/core/blocks/Microcart/Product'
+import totalCartItems from 'theme/components/core/blocks/Microcart/totalCartItems'
 
 export default {
   components: {
     Product,
-    ButtonFull
+    ButtonFull,
+    totalCartItems
   },
   mixins: [
     Microcart,
