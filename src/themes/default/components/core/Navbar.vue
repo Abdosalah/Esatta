@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="Navbar hidden lg:block">
+    <div class="Navbar hidden lg:block animated fadein">
       <img class="image" src="assets/logo.svg">
 
-      <router-link :to="localizedRoute('/my-account')" exact class="link">
+      <router-link v-if="!currentUser" :to="localizedRoute('/my-account')" exact class="link">
         <img src="assets/svg/measure.svg" class="images">
         {{ $t('MEASURE ME') }}
       </router-link>
@@ -21,9 +21,13 @@
         {{ $t('BAG') }}
       </router-link> -->
       <MicrocartIcon />
-      <router-link :to="localizedRoute('/returns')" exact class="link">
+      <router-link v-if="!currentUser" :to="localizedRoute('/returns')" exact class="link">
         <img src="assets/svg/log_in.svg" class="images">
         {{ $t('LOG IN') }}
+      </router-link>
+      <router-link v-else :to="localizedRoute('/my-account')" exact class="link">
+        <img src="assets/svg/measure.svg" class="images">
+        {{ $t('MEASURE ME') }}
       </router-link>
       <Currency class="currency opacity-25" />
       <div class="downlinks">
@@ -33,7 +37,7 @@
         <router-link :to="localizedRoute('/returns')" exact class="link">
           {{ $t('OUR DESIGNERS') }}
         </router-link>
-        <router-link :to="localizedRoute('/returns')" exact class="link">
+        <router-link v-if="!currentUser" :to="localizedRoute('/returns')" exact class="link">
           {{ $t('BODY SHAPES') }}
         </router-link>
       </div>

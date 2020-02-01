@@ -10,8 +10,8 @@
         :is-open="isSearchPanelOpen"
         @close="$store.commit('ui/setSearchpanel')"
       />
-      <async-sidebar
-        class="bg-mistyrose w-600px"
+      <AsyncSidebarNav
+        class="bg-mistyrose"
         :async-component="Microcart"
         :is-open="isMicrocartOpen"
         @close="$store.commit('ui/setMicrocart')"
@@ -123,7 +123,8 @@ export default {
     OfflineBadge,
     OrderConfirmation,
     CalltoAction,
-    AsyncSidebar
+    AsyncSidebar,
+    AsyncSidebarNav
   }
 }
 </script>

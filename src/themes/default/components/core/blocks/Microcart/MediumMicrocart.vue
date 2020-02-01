@@ -1,55 +1,65 @@
 <template>
-  <div class="microcart">
-    <div class="w-600px hidden lg:block">
-      <div v-if="productsInCart.length" class="summary d-inline-flex align-center pt-16 pb20 px40">
-        <h7 class="pr-32 text-3xl font-bold">
-          BAG
-        </h7>
-        <div class="pt-3 weight-700 b align-center middle-xs">
-          <div class="text-xs1 align-center total-price-value">
-            <h4 v-if="productsInCart.length" class="toptext">
-              <!-- ({{ productsInCart.length }} ITEMS) -->
-              <totalCartItems />
-            </h4>
-          </div>
-        </div>
-        <div class="pt-3 weight-700 b align-center middle-xs" v-for="(segment, index) in totals" :key="index" v-if="segment.code === 'grand_total'">
-          <div class="totalprice align-center total-price-value">
-            {{ segment.value | price }}
-          </div>
-        </div>
-      </div>
-      <h4 v-if="!productsInCart.length" class="cl-accent ml30">
-        {{ $t('Your shopping cart is empty.') }}
-      </h4>
-      <div v-if="!productsInCart.length" class="ml30" @click="closeMicrocartExtend">
-        {{ $t("Don't hesitate and") }}
-        <router-link :to="localizedRoute('/')">
-          {{ $t('browse our catalog') }}
-        </router-link>
-        {{ $t('to find something beautiful for You!') }}
-      </div>
-      <div>
-        <ul v-if="productsInCart.length" class="list v-chat-scroll bg-cl-mistyrose m0 px40 products">
-          <product v-for="product in productsInCart" :key="product.sku" :product="product" />
-        </ul>
-      </div>
-      <div
-        class="row py20 px40 middle-xs actions"
-        v-if="productsInCart.length && !isCheckoutMode"
-      >
-        <div class="checkout">
-          <button-full class="button"
-                       :link="{ name: 'checkout' }"
-                       @click.native="closeMicrocartExtend"
-          >
-            {{ $t('CHECKOUT') }}
-          </button-full>
+  <div class="microcart w-full">
+    <div v-if="productsInCart.length" class="summary d-inline-flex pt-16 pb20 px40">
+      <h7 class="bag pr-32 text-3xl font-bold">
+        BAG
+      </h7>
+      <div class="hidden md:block pt-3 weight-700 b align-center middle-xs">
+        <div class="text-xs1 align-center total-price-value">
+          <h4 v-if="productsInCart.length" class="toptext">
+            <totalCartItems />
+          </h4>
         </div>
       </div>
     </div>
-    <div class="lg:hidden">
-      <MediumMicrocart />
+    <h4 v-if="!productsInCart.length" class="cl-accent ml30">
+      {{ $t('Your shopping cart is empty.') }}
+    </h4>
+    <div v-if="!productsInCart.length" class="ml30" @click="closeMicrocartExtend">
+      {{ $t("Don't hesitate and") }}
+      <router-link :to="localizedRoute('/')">
+        {{ $t('browse our catalog') }}
+      </router-link>
+      {{ $t('to find something beautiful for You!') }}
+    </div>
+    <div>
+      <ul v-if="productsInCart.length" class="list v-chat-scroll bg-cl-mistyrose m0 px40 products">
+        <product v-for="product in productsInCart" :key="product.sku" :product="product" />
+      </ul>
+    </div>
+    <div class="total pt-3 weight-700 b align-center middle-xs" v-for="(segment, index) in totals" :key="index" v-if="segment.code === 'grand_total'">
+      <div class="hidden md:block totalprice align-center total-price-value">
+        TOTAL: &emsp; {{ segment.value | price }}
+      </div>
+      <div class="md:hidden totalprice align-center total-price-value">
+        TOTAL: &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; {{ segment.value | price }}
+      </div>
+    </div>
+    <div
+      class="hidden md:block row middle-xs actions"
+      v-if="productsInCart.length && !isCheckoutMode"
+    >
+      <div class="checkout">
+        <button-full class="button"
+                     :link="{ name: 'checkout' }"
+                     @click.native="closeMicrocartExtend"
+        >
+          {{ $t('CHECKOUT') }}
+        </button-full>
+      </div>
+    </div>
+    <div
+      class="md:hidden row middle-xs actionsSmall"
+      v-if="productsInCart.length && !isCheckoutMode"
+    >
+      <div class="checkoutSmall">
+        <button-full class="button"
+                     :link="{ name: 'checkout' }"
+                     @click.native="closeMicrocartExtend"
+        >
+          {{ $t('CHECKOUT') }}
+        </button-full>
+      </div>
     </div>
   </div>
 </template>
@@ -67,16 +77,14 @@ import BaseInput from 'theme/components/core/blocks/Form/BaseInput'
 import ClearCartButton from 'theme/components/core/blocks/Microcart/ClearCartButton'
 import ButtonFull from 'theme/components/theme/ButtonFull'
 import ButtonOutline from 'theme/components/theme/ButtonOutline'
-import Product from 'theme/components/core/blocks/Microcart/Product'
+import Product from 'theme/components/core/blocks/Microcart/MediumProduct'
 import totalCartItems from 'theme/components/core/blocks/Microcart/totalCartItems'
-import MediumMicrocart from 'theme/components/core/blocks/Microcart/MediumMicrocart'
 
 export default {
   components: {
     Product,
     ButtonFull,
-    totalCartItems,
-    MediumMicrocart
+    totalCartItems
   },
   mixins: [
     Microcart,
@@ -188,6 +196,9 @@ export default {
   }
 
   .actions {
+    margin-top: 2%;
+    float: right;
+    margin-right: 5%;
     @media (max-width: 767px) {
       padding: 0 15px;
     }
@@ -203,12 +214,34 @@ export default {
       }
     }
   }
+  .actionsSmall {
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 5%;
+    @media (max-width: 767px) {
+    }
+    .link {
+      @media (max-width: 767px) {
+        display: flex;
+        justify-content: center;
+        padding: 20px 70px;
+        &.checkout {
+          margin-top: 55px;
+          padding: 0;
+        }
+      }
+    }
+  }
+  .checkoutSmall{
+      width: 100%;
+    }
 
   .summary {
     @media (max-width: 767px) {
       padding:  0 15px;
       font-size: 12px;
     }
+    width: 100%;
     display: inline-flex;
     letter-spacing: 1px;
     font-family: LATO, "EB GARAMOND";
@@ -285,5 +318,13 @@ export default {
     letter-spacing: 1px;
     font-size: medium;
     padding-left: 3px;
+    float: right;
+    margin-right: 3rem;
+  }
+  .bag{
+    width: 90%;
+  }
+  .total{
+    height: 3rem;
   }
 </style>

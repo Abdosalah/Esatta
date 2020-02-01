@@ -12,7 +12,7 @@
       v-show="totalQuantity"
       data-testid="wishlistcount"
     >
-      {{ totalQuantity }}
+      <!-- {{ productsInWishlist.length }} -->
     </span>
   </button>
 </template>

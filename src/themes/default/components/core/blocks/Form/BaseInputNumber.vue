@@ -107,7 +107,7 @@ export default {
     &__label {
       color: #C57974;
       font-size: x-small;
-      margin-top: 7px;
+      margin-top: 10px;
       // line-height: 1.2rem;
       max-width: 100px;
       @media (min-width: 768px) {
@@ -121,10 +121,12 @@ export default {
     border-radius: 50%;
     background-color: white;
     // color: mistyrose;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     font-weight: bolder;
     margin: 7px;
+    border: 2px solid mistyrose;
+    // color: mistyrose;
   }
 
 </style>

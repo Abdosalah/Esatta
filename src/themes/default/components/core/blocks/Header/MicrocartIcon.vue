@@ -6,11 +6,20 @@
     data-testid="openMicrocart"
     :aria-label="$t('Open microcart')"
   >
-    <img src="assets/svg/bag.svg" class="images md:mt-2 lg:mt-0">
+    <img src="assets/svg/bag.svg" class="images hidden lg:block md:mt-2 lg:mt-0 lg:relative">
+    <img src="assets/svg/bag.svg" class="mediumImages lg:hidden md:mt-2 lg:mt-0 lg:relative">
     <div>BAG</div>
     <!-- <i class="material-icons">shopping_cart</i> -->
     <span
-      class="minicart-count absolute flex center-xs middle-xs border-box py0 px2 h6 lh16 weight-700 cl-white"
+      class="hidden lg:block minicart-count absolute flex center-xs middle-xs border-box py0 px2 h6 lh16 weight-700 cl-white"
+      v-cloak
+      v-show="totalQuantity"
+      data-testid="minicartCount"
+    >
+      {{ totalQuantity }}
+    </span>
+    <span
+      class="lg:hidden minicart-count-medium absolute flex center-xs middle-xs border-box py0 px2 h6 lh16 weight-700 cl-white"
       v-cloak
       v-show="totalQuantity"
       data-testid="minicartCount"
@@ -39,6 +48,16 @@ export default {
     border-radius: 10px;
     background-color: #EC145B;
   }
+  .minicart-count-medium {
+    /* top: 7px; */
+    top: 10%;
+    left: 45%;
+    /* right: 7px; */
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 10px;
+    background-color: #EC145B;
+  }
   .link{
   width: 100%;
   display: flex;
@@ -60,6 +79,12 @@ export default {
   padding: 2%;
   margin-right: 10%;
   position: relative;
+  bottom: 8px;
+}
+.mediumImages{
+  width:22%;
+  height:1.75rem;
+  padding: 2%;
   bottom: 8px;
 }
 </style>

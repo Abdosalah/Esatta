@@ -2,34 +2,31 @@
   <li class="list row flex-nowrap">
     <div class="block">
       <div class="flex">
-        <div>
-          <div class="ml10 bg-cl-secondary">
-            <product-image :image="image" />
-          </div>
-          <div class="img" @click="removeItem">
-            <remove-button />
-          </div>
+        <div class="ml10 bg-cl-secondary">
+          <product-image :image="image" />
         </div>
         <div class="col-xs flex pl35 start-xs between-sm details">
           <div>
             <div class="designer h6 cl-bg-tertiary pt5 sku" data-testid="productSku">
               {{ product.sku }}
             </div>
-            <router-link
-              class="h4 text-xs name"
-              :to="localizedRoute({
-                name: product.type_id + '-product',
-                params: {
-                  parentSku: product.parentSku ? product.parentSku : product.sku,
-                  slug: product.slug,
-                  childSku: product.sku
-                }
-              })"
-              data-testid="productLink"
-              @click.native="$store.commit('ui/setMicrocart', false)"
-            >
-              {{ product.name | htmlDecode }}
-            </router-link>
+            <div class="names">
+              <router-link
+                class="h4 text-xs name"
+                :to="localizedRoute({
+                  name: product.type_id + '-product',
+                  params: {
+                    parentSku: product.parentSku ? product.parentSku : product.sku,
+                    slug: product.slug,
+                    childSku: product.sku
+                  }
+                })"
+                data-testid="productLink"
+                @click.native="$store.commit('ui/setMicrocart', false)"
+              >
+                {{ product.name | htmlDecode }}
+              </router-link>
+            </div>
             <div class="text-xs flex mr10 start-xs between-sm actions">
               <div class="prices" v-if="!displayItemDiscounts || !isOnline">
                 <span class="h4 cl-error price-special" v-if="product.special_price">
@@ -58,11 +55,6 @@
                   {{ product.regular_price * product.qty | price }}
                 </span>
               </div>
-              <!-- <div class="links">
-                <div class="mt5" @click="removeItem">
-                  <remove-button />
-                </div>
-              </div> -->
             </div>
           </div>
           <div class="text-xs h5 pt5 cl-accent lh25 qty">
@@ -74,6 +66,12 @@
               :min="1"
             />
           </div>
+          <div class="remove md:hidden" @click="removeItem">
+            <remove-button />
+          </div>
+        </div>
+        <div class="remove hidden md:block" @click="removeItem">
+          <remove-button />
         </div>
       </div>
       <hr>
@@ -86,7 +84,7 @@ import config from 'config'
 import Product from '@vue-storefront/core/compatibility/components/blocks/Microcart/Product'
 
 import ProductImage from 'theme/components/core/ProductImage'
-import RemoveButton from './RemoveButton'
+import RemoveButton from './MediumRemoveButton'
 import BaseInputNumber from 'theme/components/core/blocks/Form/BaseInputNumber'
 import { onlineHelper } from '@vue-storefront/core/helpers'
 
@@ -124,6 +122,7 @@ export default {
     height: 150px;
     @media (max-width: 767px) {
       width: 100px;
+      height: 100%;
     }
   }
 
@@ -135,6 +134,8 @@ export default {
   }
 
   .name {
+    padding-top: 5px;
+    padding-bottom: 5px;
     @media (max-width: 767px) {
       font-size: 14px;
     }
@@ -192,7 +193,9 @@ export default {
     font-family: LATO, "EB GARAMOND";
     letter-spacing: 1px;
     font-weight: bold;
-    // width: 65%;
+    background-color: white;
+    padding-top: 15px;
+    margin-top: 15px;
   }
   .designer{
     color: #C57974;
@@ -205,13 +208,24 @@ export default {
     color: white;
     overflow: visible;
     margin-bottom: 2%;
+    width: 86%;
     margin-left: 2%;
-    margin-top: 5%;
 }
 .img{
   position: absolute; /* Reposition logo from the natural layout */
   left: 90px;
   top: 95px;
   z-index: 2;
+}
+.remove{
+    width: fit-content;
+    margin-right: 5%;
+}
+.block{
+    width: 100%;
+}
+.names{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 </style>

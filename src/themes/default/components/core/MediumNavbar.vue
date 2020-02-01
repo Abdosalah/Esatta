@@ -11,15 +11,18 @@
           <img src="assets/svg/like_prod.svg" class="image opacity-20">
           <span>LIKED</span>
         </v-btn>
-        <v-btn value="nearby" class="button">
+        <v-btn value="nearby" class="button"
+               :class="{'white': !clicked, 'blue': clicked}"
+               @click="clicked = !clicked"
+        >
           <img src="assets/svg/measure.svg" class="image">
           <span>MEASURE ME</span>
         </v-btn>
-        <v-btn value="nearby" class="button">
+        <!-- <v-btn value="nearby" class="button">
           <img src="assets/svg/bag.svg" class="image">
           <span>BAG</span>
-        </v-btn>
-        <!-- <MicrocartIcon class="button" /> -->
+        </v-btn> -->
+        <MicrocartIcon class="button" />
       </v-bottom-navigation>
     </div>
     <div class="md:hidden">
@@ -76,6 +79,9 @@ export default {
   flex-direction:row;
 }
 .nav:hover{
+  background: none !important;
+}
+.nav:active{
   background: none;
 }
 .nav2{
@@ -107,9 +113,13 @@ export default {
   letter-spacing: 2px;
   font-weight: bold;
   width: 20%;
+  justify-content: center;
 }
 .button:hover{
   background-color: rgba(255, 255, 255, 0.3);
+}
+.button:active{
+  background-color: none !important;
 }
 .button2{
   // padding: 0px 20px;

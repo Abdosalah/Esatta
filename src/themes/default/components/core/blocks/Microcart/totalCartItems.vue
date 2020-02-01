@@ -10,12 +10,20 @@
     <!-- <div>BAG</div> -->
     <!-- <i class="material-icons">shopping_cart</i> -->
     <span
-      class=""
+      class="hidden lg:block"
       v-cloak
       v-show="totalQuantity"
       data-testid="minicartCount"
     >
-      ({{ totalQuantity }} ITEMS)
+      ({{ totalQuantity }}  ITEMS)
+    </span>
+    <span
+      class="lg:hidden text-sm"
+      v-cloak
+      v-show="totalQuantity"
+      data-testid="minicartCount"
+    >
+      {{ totalQuantity }}  ITEMS
     </span>
   </button>
 </template>

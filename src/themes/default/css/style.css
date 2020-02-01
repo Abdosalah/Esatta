@@ -45196,6 +45196,10 @@ video {
   .lg\:w-64 {
     width: 16rem;
   }
+  
+  .lg\:w-600px {
+    width: 600px;
+  }
 
   .lg\:w-auto {
     width: auto;
