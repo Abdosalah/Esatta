@@ -250,6 +250,7 @@ export default {
       width: 100%;
     }
     .button{
+      font-size: small;
       border-radius: 20%;
       background-color: white;
     }

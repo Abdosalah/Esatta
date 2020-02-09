@@ -7,7 +7,7 @@
         <img src="assets/svg/measure.svg" class="images">
         {{ $t('MEASURE ME') }}
       </router-link>
-      <router-link :to="localizedRoute('/delivery')" exact class="link">
+      <router-link :to="localizedRoute('/b/women-20')" exact class="link">
         <img src="assets/svg/browse_b.svg" class="images opacity-25">
         {{ $t('BROWSE') }}
       </router-link>

@@ -8,6 +8,7 @@ const Checkout = () => import(/* webpackChunkName: "vsf-checkout" */ 'theme/page
 const Compare = () => import(/* webpackChunkName: "vsf-compare" */ 'theme/pages/Compare.vue')
 const MyAccount = () => import(/* webpackChunkName: "vsf-my-profile" */ 'theme/pages/MyAccount.vue')
 const Static = () => import(/* webpackChunkName: "vsf-static" */ 'theme/pages/Static.vue')
+const Browse = () => import(/* webpackChunkName: "vsf-browse" */ 'theme/components/core/blocks/Browse/Browse.vue')
 
 let routes = [
   { name: 'home', path: '/', component: Home, alias: '/pwa.html' },
@@ -42,7 +43,9 @@ let routes = [
   { name: 'configurable-product', path: '/p/:parentSku/:slug/:childSku', component: Product }, // :sku param can be marked as optional with ":sku?" (https://github.com/vuejs/vue-router/blob/dev/examples/route-matching/app.js#L16), but it requires a lot of work to adjust the rest of the site
   { name: 'product', path: '/p/:parentSku/:slug/:childSku', component: Product }, // :sku param can be marked as optional with ":sku?" (https://github.com/vuejs/vue-router/blob/dev/examples/route-matching/app.js#L16), but it requires a lot of work to adjust the rest of the site
   { name: 'category', path: '/c/:slug', component: Category },
-  { name: 'cms-page', path: '/i/:slug', component: CmsPage }
+  { name: 'cms-page', path: '/i/:slug', component: CmsPage },
+  // { name: 'browse', path: '/browse', component: Browse }
+  { name: 'browse', path: '/b/:slug', component: Browse }
 ]
 
 export default routes

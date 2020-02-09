@@ -225,7 +225,7 @@ export default {
     width: 100%;
 }
 .names{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 </style>

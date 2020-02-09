@@ -143,7 +143,7 @@
       <div class="block">
         <SocialMedia />
       </div>
-      <div class="container inline-block text-center md:text-left">
+      <div class="container inline-block text-center md:text-left py-6">
         <p class="headingQL">
           {{ $t('Quick Links') }}
         </p>

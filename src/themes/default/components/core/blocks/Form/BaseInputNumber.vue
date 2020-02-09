@@ -1,7 +1,7 @@
 <template>
   <div class="base-input-number">
     <label class="base-input-number__label cl-primary flex pb-3" :for="getInputId">{{ name }}</label>
-    <button type="button" class="button font-medium serif" data-quantity="minus" data-field="quantity"
+    <button type="button" class="button font-black" data-quantity="minus" data-field="quantity"
             @click.prevent="decrement"
     >
       <i class="" aria-hidden="true">-</i>
@@ -16,7 +16,7 @@
       @input="$emit('input', $event.target.value)"
       @blur="$emit('blur', $event.target.value)"
     >
-    <button type="button" class="button font-medium serif" data-quantity="minus" data-field="quantity"
+    <button type="button" class="button font-black" data-quantity="plus" data-field="quantity"
             @click.prevent="increment"
     >
       <i class="" aria-hidden="true">+</i>
@@ -100,7 +100,7 @@ export default {
       -webkit-appearance: none;
       // line-height: 1.7rem;
       @media (min-width: 768px) {
-        height: 1.7rem;
+        height: 2rem;
       }
     }
 
@@ -117,7 +117,7 @@ export default {
     }
   }
   .button{
-    font-size: small;
+    font-size: large;
     border-radius: 50%;
     background-color: white;
     // color: mistyrose;
@@ -126,7 +126,8 @@ export default {
     font-weight: bolder;
     margin: 7px;
     border: 2px solid mistyrose;
-    // color: mistyrose;
+    color: mistyrose;
+    // color: #C57974;
   }
 
 </style>

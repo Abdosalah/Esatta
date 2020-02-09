@@ -3,11 +3,11 @@
     <div class="block">
       <div class="flex">
         <div>
-          <div class="ml10 bg-cl-secondary">
-            <product-image :image="image" />
-          </div>
           <div class="img" @click="removeItem">
             <remove-button />
+          </div>
+          <div class="ml10 bg-cl-secondary">
+            <product-image :image="image" />
           </div>
         </div>
         <div class="col-xs flex pl35 start-xs between-sm details">
@@ -129,6 +129,7 @@ export default {
 
   .details {
     flex-direction: column;
+    padding-top: 10%;
     @media (max-width: 767px) {
       padding: 0 10px 0 20px;
     }
@@ -189,6 +190,7 @@ export default {
     flex-wrap: nowrap;
   }
   .list{
+    height: 180px;
     font-family: LATO, "EB GARAMOND";
     letter-spacing: 1px;
     font-weight: bold;
@@ -209,9 +211,9 @@ export default {
     margin-top: 5%;
 }
 .img{
-  position: absolute; /* Reposition logo from the natural layout */
-  left: 90px;
-  top: 95px;
+  position: relative; /* Reposition logo from the natural layout */
+  left: 45%;
+  top: 50%;
   z-index: 2;
 }
 </style>

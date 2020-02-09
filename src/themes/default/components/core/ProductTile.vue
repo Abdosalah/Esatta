@@ -1,6 +1,6 @@
 <template>
   <div
-    class="product align-center w-100 pb20"
+    class="product align-center w-100"
     v-observe-visibility="visibilityChanged"
   >
     <router-link
@@ -19,17 +19,22 @@
           data-testid="productImage"
         />
         <div class="product-corner">
-          <wishlist-button :product="product" img-dimensions="height_4" button-dimensions="" />
-          <p v-if="isNew === 'new'" class="pb-1 text-xs">
+          <wishlist-button class="p-3px" :product="product" img-dimensions="height_4" button-dimensions="" />
+          <MeasureMeButton class="p-3px mr-2" :product="product" img-dimensions="height_4" button-dimensions="" />
+          <ExpiryButton class="p-3px" :product="product" img-dimensions="height_4" button-dimensions="" />
+          <p v-if="isNew === 'new'" class="pb-1 text-xs p-3px">
             NEW
           </p>
         </div>
       </div>
 
-      <p class="mb0 cl-accent mt10" v-if="!onlyImage">
-        {{ product.name | htmlDecode }}
+      <p class="designer" v-if="!onlyImage">
+        {{ product.sku | htmlDecode }}
       </p>
 
+      <p class="product-name" v-if="!onlyImage">
+        {{ product.name | htmlDecode }}
+      </p>
       <span
         class="price-original mr5 lh30 cl-secondary"
         v-if="product.special_price && parseFloat(product.originalPriceInclTax) > 0 && !onlyImage"
@@ -45,10 +50,15 @@
       </span>
 
       <span
-        class="lh30 cl-secondary"
+        class="price lh30 cl-secondary"
         v-if="!product.special_price && parseFloat(product.priceInclTax) > 0 && !onlyImage"
       >
         {{ product.priceInclTax | price }}
+      </span>
+      <span
+        class="left lh30 cl-secondary"
+      >
+        {{ product.priceInclTax | price }} left
       </span>
     </router-link>
   </div>
@@ -59,12 +69,16 @@ import rootStore from '@vue-storefront/core/store'
 import { ProductTile } from '@vue-storefront/core/modules/catalog/components/ProductTile.ts'
 import config from 'config'
 import ProductImage from './ProductImage'
+import MeasureMeButton from 'theme/components/core/blocks/Browse/MeasureMeButton'
+import ExpiryButton from 'theme/components/core/blocks/Browse/ExpiryButton'
 
 export default {
   mixins: [ProductTile],
   components: {
     'WishlistButton': () => import(/* webpackChunkName: "wishlist" */'theme/components/core/blocks/Wishlist/AddToWishlist'),
-    ProductImage
+    ProductImage,
+    MeasureMeButton,
+    ExpiryButton
   },
   props: {
     labelsActive: {
@@ -135,6 +149,8 @@ $color-white: color(white);
 
 .price-original {
   text-decoration: line-through;
+  font-size: x-small;
+  color: #bcbec0;
 }
 
 %label {
@@ -170,7 +186,7 @@ $color-white: color(white);
   }
   &__content{
 
-    padding-bottom: calc(300% / (257 / 100));
+    padding-bottom: calc(400% / (257 / 100));
     mix-blend-mode: darken;
     opacity: .8;
     transform: scale(1);
@@ -180,7 +196,7 @@ $color-white: color(white);
       padding-bottom: calc(208% / (168 / 100));
     }
     @media (min-width: 1200px) {
-      padding-bottom: calc(300% / (276 / 100));
+      padding-bottom: calc(400% / (276 / 100));
     }
   }
 
@@ -205,9 +221,30 @@ $color-white: color(white);
   position: absolute;
   top: 0;
   right: 0;
+  display: grid;
 }
 
 .my-fav-icon:hover {
   color: red;
 }
+.designer{
+  font-size: xx-small;
+  color: #bcbec0;
+  padding: 3%;
+  padding-top: 10%;
+}
+.product-name{
+  font-size: x-small;
+  font-weight: bold;
+  }
+.price{
+  font-size: x-small;
+  color: #bcbec0;
+}
+.left{
+  font-size: x-small;
+  color: #EC145B;
+  padding-left: 3px;
+}
+
 </style>

@@ -25,7 +25,7 @@ hr {
 hr:after {
     background: rgb(20, 0, 0);
     color:white;
-    content: 'SEQURE PAYMENT';
+    content: 'SECURE PAYMENT';
     padding: 0 4px;
     position: relative;
     top: -9px;

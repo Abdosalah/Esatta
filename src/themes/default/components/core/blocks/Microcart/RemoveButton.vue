@@ -8,12 +8,13 @@
 </template>
 <style scoped>
 .icon {
-    padding-top: 5px;
-    padding-right: 6px;
-    padding-left: 1px;
+    padding-top: 6px;
+    padding-right: 4px;
 }
 .button{
   border-radius: 50%;
   background-color: white;
+  height: 1.8rem;
+  width: 1.8rem;
 }
 </style>

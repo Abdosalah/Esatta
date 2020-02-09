@@ -11,5 +11,7 @@
   letter-spacing: 1px;
   font-size: small;
   font-family: LATO, "EB GARAMOND";
+  font-size: xx-small;
+  opacity: 50%;
 }
 </style>>

@@ -11,10 +11,7 @@
           <img src="assets/svg/like_prod.svg" class="image opacity-20">
           <span>LIKED</span>
         </v-btn>
-        <v-btn value="nearby" class="button"
-               :class="{'white': !clicked, 'blue': clicked}"
-               @click="clicked = !clicked"
-        >
+        <v-btn value="nearby" class="button">
           <img src="assets/svg/measure.svg" class="image">
           <span>MEASURE ME</span>
         </v-btn>
@@ -36,7 +33,7 @@
           <span>LIKED</span>
         </v-btn>
         <v-btn value="nearby" class="button2">
-          <img src="assets/esatta-images/page-banner/measure.svg" class="image2 opacity-25">
+          <img src="assets/svg/measure.svg" class="image2">
           <span>MEASURE ME</span>
         </v-btn>
         <v-btn value="nearby" class="button2">

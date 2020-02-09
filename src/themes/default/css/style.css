@@ -5376,6 +5376,10 @@ video {
   padding: 1px;
 }
 
+.p-3px{
+  padding: 3px;
+}
+
 .p-nav {
   padding: 22%;
 }
@@ -39671,6 +39675,10 @@ video {
 
   .lg\:pr-8\% {
     padding-right: 8%;
+  }
+
+  .lg\:pr-50\% {
+    padding-right: 50%;
   }
 
   .lg\:pb-8\% {
