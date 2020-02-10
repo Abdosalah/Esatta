@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="text-sm">
+    <p class="text-lg">
       {{ attrName }}
     </p>
     <p class="text-2xl text-grey_text pt-2">
@@ -19,6 +19,6 @@ export default {
 <style scoped>
 .my-underline{
   border-bottom: 1px solid #a0aec0;
-  margin-right: 4rem;
+  margin: 0rem 1rem 2rem;
 }
 </style>

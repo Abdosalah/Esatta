@@ -3,7 +3,7 @@
     <img class="my-bg-img" src="../assets/esatta-images/my-profile/profile_bg.jpg">
 
     <div class="bg-white absolute pt-12 top-5% ml-9% mr-9% w-82% lg:w-69%">
-      <div class="flex">
+      <div class="hidden md:flex">
         <!--  -->
         <!-- <breadcrumbs
           :routes="[{name: 'Homepage', route_link: '/'}]"
@@ -22,23 +22,58 @@
       </div>
 
       <div class="">
-        <!-- <div class="">
-          <nav class="">
-            <ul class="">
-              <li class="" v-for="(page, index) in navigation" :key="index" @click="notify(page.title)">
-                <router-link :to="localizedRoute(page.link)" class="">
-                  {{ page.title }}
-                </router-link>
-              </li>
-            </ul>
-          </nav>
-        </div> -->
-
-        <div class="">
-          <no-ssr>
-            <component :is="this.$props.activeBlock" />
-          </no-ssr>
+        <!-- PAGE HEADER -->
+        <div class="flex px-8%">
+          <img class="profile-img" src="../assets/esatta-images/my-profile/avatar.jpg">
+          <!-- WIP FOR TABLET VIEW -->
+          <div class="hidden md:block lg:hidden w-3/5 pt-8 pl-3% text-2xl font-bold">
+            ALEX
+          </div>
+          <div class="w-full ml-4% md:ml-0 lg:hidden">
+            <div class="md:mt-6 tablet-header">
+              <p class="md:hidden text-2xl font-bold">
+                ALEX
+              </p>
+              <p class="tracking-widest font-bold">
+                Womens Clothing
+              </p>
+            </div>
+            <div class="block md:flex">
+              <p class="md:w-1/2">
+                Height: 173 cm
+              </p>
+              <p class="md:w-1/2 md:text-right">
+                Weight: 70 kg
+              </p>
+            </div>
+          </div>
+          <div class="header-div hidden lg:flex">
+            <p class="hdr-component">
+              Alex
+            </p>
+            <p class="hdr-component">
+              Height: 173 cm
+            </p>
+            <p class="hdr-component">
+              Weight: 70 kg
+            </p>
+            <p class="pt-6 w-1/4 text-center inline-block">
+              Womans Clothing
+            </p>
+          </div>
         </div>
+        <div>
+          <div class="pt-10 pl-4% w-full flex md:hidden">
+            <p class="w-1/3 text-center inline-block text-dark_grey hover:text-red" v-for="(page, index) in navigation" :key="index">
+              <router-link :to="localizedRoute(page.link)" class="router-links">
+                {{ page.title }}
+              </router-link>
+            </p>
+          </div>
+        </div>
+        <no-ssr>
+          <component :is="this.$props.activeBlock" />
+        </no-ssr>
       </div>
     </div>
   </div>
@@ -128,5 +163,26 @@ export default {
 }
 .router-links:hover::after {
   content: none;
+}
+.profile-img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+}
+.tablet-header {
+  border-bottom: 1px solid #EC145B;
+}
+.header-div {
+  border-top: 1px solid #EC145B;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  width: 100%;
+}
+.hdr-component {
+  border-right: 1px solid #EC145B;
+  padding-top: 1.5rem;
+  width: 25%;
+  text-align: center;
+  display: inline-block;
 }
 </style>

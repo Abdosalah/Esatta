@@ -7,8 +7,9 @@
       :navigation-enabled="true"
       navigation-next-label="▶"
       navigation-prev-label="◀"
+      :loop="true"
     >
-      <slide class="pt-8">
+      <slide class="pt-8 text-center">
         <div class="flex flex-wrap">
           <dimensions
             class="w-1/2"
@@ -42,7 +43,7 @@
           />
       </div>
       </slide>
-      <slide class="pt-8">
+      <slide class="pt-8 text-center">
         <div class="flex flex-wrap">
           <dimensions
             class="w-1/2"
@@ -118,7 +119,7 @@ export default {
   height: 50vh;
   width: 50%;
   padding: 3rem 3rem 0 3rem;
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
 }
 </style>

@@ -5,19 +5,22 @@
         <section class="flex">
           <!-- PRODUCT IMAGE -->
           <div class="w-60% h-screen image">
-            <product-gallery
+            <!-- <product-gallery
               :offline="image"
               :gallery="gallery"
               :configuration="configuration"
               :product="product"
-            />
+            /> -->
+            <div class="h-full bg-cl-secondary">
+              <product-carousel :gallery="gallery" />
+            </div>
           </div>
-          <div class="inline pt-56 mr-12 h-screen middle-div">
+          <div class="inline pt-56 mr-4 h-screen middle-div">
             <wishlist-button :product="product" img-dimensions="height_8" button-dimensions="big" />
           </div>
           <!-- PRODUCT DATA -->
-          <div class="w-1/3 pt-56 data">
-            <p class="text-2xl tracking-widest font-medium uppercase" data-testid="productName" itemprop="name">
+          <div class="w-35% pt-56 data">
+            <p class="text-2xl tracking-widest font-medium" data-testid="productName" itemprop="name">
               {{ product.name | htmlDecode }}
               <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share" />
             </p>
@@ -52,7 +55,7 @@
                   </span>
                 </div>
                 <div
-                  class="text-lg font-semibold inline w-1/4"
+                  class="font-semibold inline w-1/4"
                   v-if="!product.special_price && product.priceInclTax"
                 >
                   {{ product.qty > 0 ? product.priceInclTax * product.qty : product.priceInclTax | price }}
@@ -63,7 +66,7 @@
                     ENDS IN 16:18:25
                   </div>
                   <p class="inline w-1/2 text-right">
-                    5 LEFT/300
+                   5 LEFT / 300
                   </p>
                 </div>
               </div>
@@ -83,6 +86,20 @@
                   v-if="(!product.errors || Object.keys(product.errors).length === 0) && Object.keys(configuration).length > 0"
                   :key="index"
                 >
+                  <div class="w-1/2" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle' && option.label == 'Color'">
+                    <base-input-number
+                      :name="$t('QTY')"
+                      v-model="product.qty"
+                      :min="1"
+                      @blur="$v.$touch()"
+                      :validations="[
+                        {
+                          condition: $v.product.qty.$error && !$v.product.qty.minValue,
+                          text: $t('Quantity must be above 0')
+                        }
+                      ]"
+                    />
+                  </div>
                   <div class="variants-wrapper w-1/2" v-if="option.label == 'Color'">
                     <div class="variants-label pb-3" data-testid="variantsLabel" v-if="option.label == 'Color'">
                       COLOURS
@@ -99,20 +116,6 @@
                         :class="{ active: c.id == configuration[option.attribute_code].id }"
                       />
                     </div>
-                  </div>
-                  <div class="w-1/2" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle' && option.label == 'Color'">
-                    <base-input-number
-                      :name="$t('QTY')"
-                      v-model="product.qty"
-                      :min="1"
-                      @blur="$v.$touch()"
-                      :validations="[
-                        {
-                          condition: $v.product.qty.$error && !$v.product.qty.minValue,
-                          text: $t('Quantity must be above 0')
-                        }
-                      ]"
-                    />
                   </div>
                 </div>
               </div>
@@ -142,7 +145,7 @@
               <add-to-cart
                 :product="product"
                 :disabled="$v.product.qty.$error && !$v.product.qty.minValue"
-                class="w-3/4 py-8 rounded-full"
+                class="w-3/4 py-8 rounded-full disable-hover"
               />
             </div>
             <!-- <div class="">
@@ -170,50 +173,9 @@
         </section>
       </div>
     </section>
-    <section class="py-56 bg-cl-secondary flex lg:pr-nav">
-      <div class="w-2/3 pl-10%">
-        <img class="profile-img" src="../assets/esatta-images/my-profile/avatar.jpg">
-        <div class="inline-block pl-8">
-          <p class="text-xl">
-            WHY THIS FITS YOU "ALEX"
-          </p>
-          <hr class="mt-4">
-        </div>
-        <div class="flex pt-20">
-          <div class="w-1/2">
-            <div class="relative">
-              <img class="w-60% h-25rem absolute" src="../assets/esatta-images/product/body_shape.svg">
-              <img class="w-60% h-25rem py-8" src="../assets/esatta-images/product/shape_shape.png">
-            </div>
-          </div>
-          <div class="w-1/2 text-left text-sm pt-8">
-            <div>
-              <p class="text-lg font-bold tracking-widest">
-                HOURGLASS
-              </p>
-              <p class="pt-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
-                Vivamus molestie orci sit amet venenatis congue.
-              </p>
-              <p class="pt-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
-                Vivamus molestie orci sit amet venenatis congue.
-              </p>
-              <p class="pt-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
-                Vivamus molestie orci sit amet venenatis congue.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="bg-cl-secondary lg:pr-nav">
-      <p class="text-center text-2xl font-medium pb-8">
-        YOU MIGHT ALSO LIKE
+      <p class="text-center text-lg font-medium py-12 cl-secondary">
+        You Might Also Like
       </p>
       <related-products
         type="upsell"
@@ -244,6 +206,7 @@ import focusClean from 'theme/components/theme/directives/focusClean'
 import WebShare from '@vue-storefront/core/modules/social-share/components/WebShare'
 import BaseInputNumber from 'theme/components/core/blocks/Form/BaseInputNumber'
 import SizeGuide from 'theme/components/core/blocks/Product/SizeGuide'
+import ProductCarousel from 'theme/components/custom/product-components/ProductCarousel'
 
 export default {
   components: {
@@ -263,6 +226,7 @@ export default {
     SizeSelector,
     WebShare,
     BaseInputNumber,
+    ProductCarousel,
     SizeGuide
   },
   mixins: [Product, VueOfflineMixin],
@@ -498,5 +462,10 @@ select {
   margin-left: 2.5rem;
   border-radius: 50%;
   display: inline-block;
+}
+
+.disable-hover:hover {
+  cursor: pointer;
+  background-color: white;
 }
 </style>

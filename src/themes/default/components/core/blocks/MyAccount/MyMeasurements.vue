@@ -1,32 +1,5 @@
 <template>
-  <div class="pt-12 ">
-    <!-- PAGE HEADER -->
-    <div class="flex px-16">
-      <img class="profile-img" src="../../../../assets/esatta-images/my-profile/avatar.jpg">
-
-      <!-- WIP FOR TABLET VIEW -->
-      <!-- <div>
-        <p>
-          Womans Clothing
-        </p>
-        
-      </div> -->
-
-      <div class="header-div hidden lg:flex">
-        <p class="hdr-component">
-          Alex
-        </p>
-        <p class="hdr-component">
-          Height: 173 cm
-        </p>
-        <p class="hdr-component">
-          Weight: 70 kg
-        </p>
-        <p class="pt-6 w-1/4 text-center inline-block">
-          Womans Clothing
-        </p>
-      </div>
-    </div>
+  <div class="">
     <!-- YOUR BODY SHAPE DIV -->
     <div class="mt-20">
       <p class="text-center text-red">
@@ -38,7 +11,7 @@
     </div>
     <!-- IMAGE AND ATTRIBUTES -->
     <div class="flex mt-12">
-      <div class="w-1/2 relative">
+      <div class="w-full md:w-45% relative">
         <img class="body-img" src="../../../../assets/esatta-images/my-profile/front_facing.svg">
         <!-- <button class="bg-red absolute top-23% left-32% py-4 px-6">
           <p class="text-white text-sm">
@@ -62,10 +35,10 @@
         </div>
       </div>
       <!-- DIMENSIONS CAROUSEL -->
-      <dimensions-carousel />
+      <dimensions-carousel class="hidden md:flex" />
       <!-- CLOSER FIT SECTION -->
     </div>
-    <div class="text-center relative text-gray">
+    <div class="text-center relative text-gray hidden md:block">
       <hr>
       <button class="absolute -top-0.7rem bg-white" @click="isHidden = !isHidden">
         GET A CLOSER FIT
@@ -74,7 +47,7 @@
         </p>
       </button>
     </div>
-    <div class="flex" v-if="!isHidden">
+    <div class="hidden md:flex" v-if="!isHidden">
       <div class="w-1/6">
         <button v-if="componentName === 'ShoulderAngle'"  class="block bg-white mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
           ShoulderAngle
@@ -109,22 +82,31 @@
       </div>
       <div class="w-5/6 relative">
         <component :is="component" />
-        <button class="absolute bottom-0 mb-4 block px-8 w-full text-red" @click="toggle(nextComponent)">
-          {{nextComponent}} &#8594;
+        <button v-if="componentName !== 'ShoulderAngle'" class="absolute bottom-0 mb-4 block w-1/2 text-red" @click="toggle(prevComponent)">
+          &#8592; Previous
+        </button>
+        <button class="absolute bottom-0 mb-4 block w-1/2 text-red ml-50%" @click="toggle(nextComponent)">
+          <p v-if="componentName !== 'BraSize'">
+            Next &#8594;
+          </p>
+          <p v-else >
+            Finish
+          </p>
         </button>
       </div>
     </div>
     <div class="mb-24" v-if="isHidden" />
     <!-- BROWSE BODY TYPE SECTION -->
-    <div class="flex text-center text-white">
-      <div class="w-1/2 relative bg-black h-20rem">
-        <img class="opacity-50 absolute w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
-        <div class="mt-12">
+    <div class="md:flex text-center text-white">
+      <div class="w-full md:w-1/2 relative bg-black h-20rem">
+        <img class="opacity-50 object-cover w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
+        <div class="pt-12 absolute top-0 w-full h-full">
           <p class="tracking-widest text-lg">
-            &#9888;  New Measurements Required
+            &#9888;  Re-Measurements Required
           </p>
-          <p class="mt-6 text-xs">
-            Use our body scanning app to capture the most accurate measurements
+          <p class="mt-6 text-xs h-8">
+            Your body may have changed. Please re-scan for the best fit.
+            <br>
           </p>
           <button class="mt-20 border border-white py-2 px-6">
             <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg">
@@ -132,17 +114,20 @@
               Measure Me Now
             </p>
           </button>
+          <p class="text-xs mt-6">
+            Last scanned: 22/12/2019
+          </p>
         </div>
       </div>
-      <div class="w-1/2 bg-black h-20rem opacity-50 ml-px">
-        <div class="mt-12">
+      <div class="w-full md:w-1/2 bg-black relative h-20rem opacity-50 ml-px">
+        <img class="opacity-50 object-cover w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
+        <div class="pt-12 absolute top-0 w-full h-full">
           <p class="tracking-widest text-lg">
-            Unsure if this is your Body Shape
+            Incorrect Measurements
           </p>
-          <p class="mt-6 text-xs">
-            Please try to re-measure yourself using the measurement app first.
-            <br>you still believe your measurement are incorrect.
-            <br>Please contact us using the link below.
+          <p class="mt-6 text-xs h-8">
+            If you believe your measurements are incorrect, please try to re-measure yourself with the app first.
+            <br>If that doesn't work, please contact us using the link below.
           </p>
           <button class="mt-20 border border-white py-2 px-6">
             <!-- <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg"> -->
@@ -153,14 +138,15 @@
         </div>
       </div>
     </div>
-    <div class="flex text-center">
-      <div class="w-1/2 scanned-div h-20rem opacity-50 ml-px">
-        <div class="mt-12">
+    <div class="md:flex text-center">
+      <div class="w-full md:w-1/2 relative h-20rem opacity-50 ml-px">
+        <img class="opacity-50 object-cover w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
+        <div class="pt-12 absolute top-0 w-full h-full">
           <p class="tracking-widest text-lg">
-             &#10003;  BODY SCAN
+             &#10003;  Body Scanned
           </p>
-          <p class="mt-6 text-xs">
-            If your body has changed and you can't get to a scanner
+          <p class="mt-6 text-xs h-8">
+            If you feel your body measurements have changed, please re-scan using the link below.
           </p>
           <button class="mt-20 border py-2 px-6">
             <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_black.svg">
@@ -168,16 +154,19 @@
               Re-Measure Now
             </p>
           </button>
+          <p class="text-xs mt-6">
+            Last scanned: 22/12/2019
+          </p>
         </div>
       </div>
-      <div class="w-1/2 relative bg-black text-white h-20rem">
-        <img class="opacity-50 absolute w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
-        <div class="mt-12">
+      <div class="w-full md:w-1/2 relative bg-black text-white h-20rem">
+        <img class="opacity-50 object-cover w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
+        <div class="pt-12 absolute top-0 w-full h-full">
           <p class="tracking-widest text-lg">
             &#9888;  New Scan Required
           </p>
-          <p class="mt-6 text-xs">
-            Your body may have changed. re-scan for the best fit
+          <p class="mt-6 text-xs h-8">
+            Use our app to easily scan your body so that we can accurately capture your measurements.
           </p>
           <button class="mt-20 border border-white py-2 px-6">
             <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg">
@@ -220,6 +209,7 @@ export default {
     return {
       component: SeatAngle,
       componentName: 'SeatAngle',
+      prevComponent: 'ShoulderAngle',
       nextComponent: 'Posture',
       isHidden: false
     }
@@ -228,6 +218,8 @@ export default {
     toggle (param) {
       switch (param) {
         case 'ShoulderAngle' :
+          if ( this.nextComponent === 'ShoulderAngle' )
+            this.isHidden = true
           this.component = ShoulderAngle
           this.componentName = 'ShoulderAngle'
           this.nextComponent = 'SeatAngle'
@@ -235,21 +227,25 @@ export default {
         case 'SeatAngle' :
           this.component = SeatAngle
           this.componentName = 'SeatAngle'
+          this.prevComponent = 'ShoulderAngle'
           this.nextComponent = 'Posture'
           break;
         case 'Posture' :
           this.component = Posture
           this.componentName = 'Posture'
+          this.prevComponent = 'SeatAngle'
           this.nextComponent = 'BustPoint'
           break;
         case 'BustPoint' :
           this.component = BustPoint
           this.componentName = 'BustPoint'
+          this.prevComponent = 'Posture'
           this.nextComponent = 'BraSize'
           break;
         case 'BraSize' :
           this.component = BraSize
           this.componentName = 'BraSize'
+          this.prevComponent = 'BustPoint'
           this.nextComponent = 'ShoulderAngle'
           break;
       }
@@ -259,25 +255,6 @@ export default {
 </script>
 
 <style scoped>
-
-.header-div {
-  border-top: 1px solid #EC145B;
-  margin-top: 3rem;
-  margin-left: 2rem;
-  width: 100%;
-}
-.hdr-component {
-  border-right: 1px solid #EC145B;
-  padding-top: 1.5rem;
-  width: 25%;
-  text-align: center;
-  display: inline-block;
-}
-.profile-img {
-  height: 7rem;
-  width: 7rem;
-  border-radius: 50%;
-}
 .body-img {
   height: 50vh;
   display: block;
@@ -285,7 +262,6 @@ export default {
 }
 
 button:focus {
-  background-color: white;
   outline: none;
 }
 
