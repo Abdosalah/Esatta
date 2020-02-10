@@ -66,7 +66,7 @@
                     ENDS IN 16:18:25
                   </div>
                   <p class="inline w-1/2 text-right">
-                   5 LEFT / 300
+                    5 LEFT / 300
                   </p>
                 </div>
               </div>

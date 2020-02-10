@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <swiper :options="swiperOption" class="h-screen">
-      <swiper-slide  v-for="(images, index) in gallery" :key="index" class="">
+      <swiper-slide v-for="(images, index) in gallery" :key="index" class="">
         <div class="h-screen">
           <img class="h-screen object-cover" :src="images.src" alt="">
         </div>
@@ -80,7 +80,7 @@
           </div>
         </section>
       </swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-pagination" slot="pagination" />
     </swiper>
   </div>
 </template>
@@ -92,8 +92,8 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   components: {
-  swiper,
-  swiperSlide
+    swiper,
+    swiperSlide
   },
   props: {
     gallery: {
@@ -101,8 +101,8 @@ export default {
       required: true
     }
   },
-  name: 'carrousel',
-  data() {
+  name: 'Carrousel',
+  data () {
     return {
       swiperOption: {
         direction: 'vertical',

@@ -41,7 +41,7 @@
             attr-name="Hip"
             attr-value="123.1 cm"
           />
-      </div>
+        </div>
       </slide>
       <slide class="pt-8 text-center">
         <div class="flex flex-wrap">
@@ -75,7 +75,7 @@
             attr-name="Calf Girth"
             attr-value="123.1 cm"
           />
-      </div>
+        </div>
       </slide>
       <slide>
         <div class="flex flex-wrap">
@@ -93,8 +93,7 @@
           <p>
             et neque. Mauris lobortis diam eu odio iaculis porttitor.
           </p>
-
-      </div>
+        </div>
       </slide>
     </carousel>
   </div>
@@ -112,7 +111,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped>
 .dimensions-div {

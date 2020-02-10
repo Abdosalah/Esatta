@@ -49,7 +49,7 @@
     </div>
     <div class="hidden md:flex" v-if="!isHidden">
       <div class="w-1/6">
-        <button v-if="componentName === 'ShoulderAngle'"  class="block bg-white mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
+        <button v-if="componentName === 'ShoulderAngle'" class="block bg-white mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
           ShoulderAngle
         </button>
         <button v-if="componentName !== 'ShoulderAngle'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
@@ -89,7 +89,7 @@
           <p v-if="componentName !== 'BraSize'">
             Next &#8594;
           </p>
-          <p v-else >
+          <p v-else>
             Finish
           </p>
         </button>
@@ -143,7 +143,7 @@
         <img class="opacity-50 object-cover w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
         <div class="pt-12 absolute top-0 w-full h-full">
           <p class="tracking-widest text-lg">
-             &#10003;  Body Scanned
+            &#10003;  Body Scanned
           </p>
           <p class="mt-6 text-xs h-8">
             If you feel your body measurements have changed, please re-scan using the link below.
@@ -218,8 +218,7 @@ export default {
     toggle (param) {
       switch (param) {
         case 'ShoulderAngle' :
-          if ( this.nextComponent === 'ShoulderAngle' )
-            this.isHidden = true
+          if (this.nextComponent === 'ShoulderAngle') { this.isHidden = true }
           this.component = ShoulderAngle
           this.componentName = 'ShoulderAngle'
           this.nextComponent = 'SeatAngle'
