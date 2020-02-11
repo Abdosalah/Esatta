@@ -111,12 +111,14 @@
                 </label>
               </div>
               <div>
-                <button class="bg-black text-white w-full mx-4% rounded-full text-xl h-20">
-                  PAY
-                  <p class="inline pl-15%">
-                    &rarr;
-                  </p>
-                </button>
+                <a href="/payment-success" class="payment-link">
+                  <button class="bg-black text-white w-full mx-4% rounded-full text-xl h-20">
+                    PAY
+                    <p class="inline pl-15%">
+                      &rarr;
+                    </p>
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -208,7 +210,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .country-select {
   display: block;
   width: 100%;
@@ -224,5 +226,9 @@ export default {
 }
 button:focus {
   outline: none;
+}
+.payment-link:hover::after {
+  content: none;
+  display: none;
 }
 </style>
