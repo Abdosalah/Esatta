@@ -1,7 +1,9 @@
 <template>
   <div id="category">
     <div>
-      <img class="banner" src="../../../../assets/images/designers/banner_desktop.png">
+      <img class="banner hidden lg:block" src="../../../../assets/images/designers/banner_desktop.png">
+      <img class="banner hidden md:block lg:hidden" src="../../../../assets/images/designers/banner_tablet.png">
+      <img class="banner md:hidden" src="../../../../assets/images/designers/banner_mobile.png">
       <RefineBar />
     </div>
     <browseProducts />

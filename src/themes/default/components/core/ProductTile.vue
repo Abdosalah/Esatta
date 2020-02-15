@@ -3,14 +3,14 @@
     class="product align-center w-100"
     v-observe-visibility="visibilityChanged"
   >
-    <router-link
-      class="block no-underline product-link"
-      :to="productLink"
-      data-testid="productLink"
+    <div
+      class="product-image relative bg-cl-secondary"
+      :class="[{ sale: labelsActive && isOnSale }, { new: labelsActive && isNew }]"
     >
-      <div
-        class="product-image relative bg-cl-secondary"
-        :class="[{ sale: labelsActive && isOnSale }, { new: labelsActive && isNew }]"
+      <router-link
+        class="block no-underline product-link"
+        :to="productLink"
+        data-testid="productLink"
       >
         <product-image
           class="product-image__content"
@@ -18,49 +18,50 @@
           :alt="product.name | htmlDecode"
           data-testid="productImage"
         />
-        <div class="product-corner">
-          <wishlist-button class="p-3px" :product="product" img-dimensions="height_4" button-dimensions="" />
-          <MeasureMeButton class="p-3px mr-2" :product="product" img-dimensions="height_4" button-dimensions="" />
-          <ExpiryButton class="p-3px" :product="product" img-dimensions="height_4" button-dimensions="" />
-          <p v-if="isNew === 'new'" class="pb-1 text-xs p-3px">
-            NEW
-          </p>
-        </div>
+      </router-link>
+      <div class="product-corner">
+        <wishlist-button class="p-3px" :product="product" img-dimensions="height_4" button-dimensions="" />
+        <MeasureMeButton class="p-3px mr-2" :product="product" img-dimensions="height_4" button-dimensions="" />
+        <ExpiryButton class="p-3px" :product="product" img-dimensions="height_4" button-dimensions="" />
+        <VueTourPopoverContent />
+        <p v-if="isNew === 'new'" class="pb-1 text-xs p-3px">
+          NEW
+        </p>
       </div>
+    </div>
 
-      <p class="designer" v-if="!onlyImage">
-        {{ product.sku | htmlDecode }}
-      </p>
+    <p class="designer" v-if="!onlyImage">
+      {{ product.sku | htmlDecode }}
+    </p>
 
-      <p class="product-name" v-if="!onlyImage">
-        {{ product.name | htmlDecode }}
-      </p>
-      <span
-        class="price-original mr5 lh30 cl-secondary"
-        v-if="product.special_price && parseFloat(product.originalPriceInclTax) > 0 && !onlyImage"
-      >
-        {{ product.originalPriceInclTax | price }}
-      </span>
+    <p class="product-name" v-if="!onlyImage">
+      {{ product.name | htmlDecode }}
+    </p>
+    <span
+      class="price-original mr5 lh30 cl-secondary"
+      v-if="product.special_price && parseFloat(product.originalPriceInclTax) > 0 && !onlyImage"
+    >
+      {{ product.originalPriceInclTax | price }}
+    </span>
 
-      <span
-        class="price-special lh30 cl-accent weight-700"
-        v-if="product.special_price && parseFloat(product.special_price) > 0 && !onlyImage"
-      >
-        {{ product.priceInclTax | price }}
-      </span>
+    <span
+      class="price-special lh30 cl-accent weight-700"
+      v-if="product.special_price && parseFloat(product.special_price) > 0 && !onlyImage"
+    >
+      {{ product.priceInclTax | price }}
+    </span>
 
-      <span
-        class="price lh30 cl-secondary"
-        v-if="!product.special_price && parseFloat(product.priceInclTax) > 0 && !onlyImage"
-      >
-        {{ product.priceInclTax | price }}
-      </span>
-      <span
-        class="left lh30 cl-secondary"
-      >
-        {{ product.priceInclTax | price }} left
-      </span>
-    </router-link>
+    <span
+      class="price lh30 cl-secondary"
+      v-if="!product.special_price && parseFloat(product.priceInclTax) > 0 && !onlyImage"
+    >
+      {{ product.priceInclTax | price }}
+    </span>
+    <span
+      class="left lh30 cl-secondary"
+    >
+      {{ product.priceInclTax | price }} left
+    </span>
   </div>
 </template>
 
@@ -71,6 +72,7 @@ import config from 'config'
 import ProductImage from './ProductImage'
 import MeasureMeButton from 'theme/components/core/blocks/Browse/MeasureMeButton'
 import ExpiryButton from 'theme/components/core/blocks/Browse/ExpiryButton'
+import VueTourPopoverContent from 'theme/components/core/blocks/Browse/VueTourPopoverContent'
 
 export default {
   mixins: [ProductTile],
@@ -78,7 +80,8 @@ export default {
     'WishlistButton': () => import(/* webpackChunkName: "wishlist" */'theme/components/core/blocks/Wishlist/AddToWishlist'),
     ProductImage,
     MeasureMeButton,
-    ExpiryButton
+    ExpiryButton,
+    VueTourPopoverContent
   },
   props: {
     labelsActive: {

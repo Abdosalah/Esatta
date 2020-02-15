@@ -1,30 +1,29 @@
 <template>
   <div class="navbar lg:pr-50%">
     <v-bottom-navigation v-model="bottomNav" class="nav">
-      <v-btn class="button">
+      <v-btn flat slot="activated" class="button">
         <span style="margin-top: 8px;">
           REFINE
         </span>
         <img src="../../../../assets/svg/flter.svg" class="images">
       </v-btn>
-
       <v-btn class="button">
         <span style="margin-top: 8px;">
-          CHECK
+          SORT BY
         </span>
         <img src="../../../../assets/svg/flter.svg" class="images">
       </v-btn>
 
-      <v-btn class="button">
+      <v-btn class="button hidden md:block">
         <span style="margin-top: 8px;">
-          COIN
+          SHOW
         </span>
         <img src="../../../../assets/svg/ar_d.svg" class="images">
       </v-btn>
 
-      <v-btn class="button">
+      <v-btn class="button hidden md:block">
         <span style="margin-top: 8px;">
-          USER
+          MODEL
         </span>
         <img src="../../../../assets/svg/eye.svg" class="images">
       </v-btn>

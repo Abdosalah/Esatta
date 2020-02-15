@@ -26,34 +26,9 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-button {
-    outline: none;
-}
-
-.big {
-  background-color: white;
-  border-radius: 9999px;
-  padding: 2rem;
-}
-
-.height_4 {
-  height: 1rem;
-  width: 1rem;
-}
-
-.height_8 {
-  height: 2rem;
-  width: 2rem;
-}
-.imgDimensions{
-    height: 10%;
-}
+<style scoped>
 .button{
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }
-.popover{
-  z-index: 10000;
-}
-</style>
+</style>>

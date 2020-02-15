@@ -16,7 +16,7 @@
           <p class="text-3xl font-bold">
             How It Works
           </p>
-          <p class="textpara text-red py-8">
+          <p class="textparaleft text-red py-8">
             Exclusive styles by independent <br>
             designers. Made for you
           </p>
@@ -137,6 +137,9 @@ export default {
   text-align: center;
   width: 100%;
   padding-top: 6%;
+}
+.textparaleft{
+  color: #EC145B;
 }
 
 </style>
