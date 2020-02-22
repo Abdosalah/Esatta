@@ -9,69 +9,69 @@
       navigation-prev-label="◀"
       :loop="true"
     >
-      <slide class="pt-8 text-center">
+      <slide class="text-center">
         <div class="flex flex-wrap">
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Neck"
             attr-value="123.1 cm"
           />
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Chest"
             attr-value="123.1 cm"
           />
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Waist"
             attr-value="123.1 cm"
           />
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Across Back"
             attr-value="123.1 cm"
           />
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="High Hip"
             attr-value="123.1 cm"
           />
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Hip"
             attr-value="123.1 cm"
           />
         </div>
       </slide>
-      <slide class="pt-8 text-center">
+      <slide class="text-center">
         <div class="flex flex-wrap">
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Arm length"
             attr-value="123.1 cm"
           />
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Upper arm girth"
             attr-value="123.1 cm"
           />
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Inside Leg"
             attr-value="123.1 cm"
           />
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Waist to Floor"
             attr-value="123.1 cm"
           />
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Thigh Girth"
             attr-value="123.1 cm"
           />
           <dimensions
-            class="w-1/2"
+            class="w-1/2 pb-2.7rem lg:pb-3.3rem"
             attr-name="Calf Girth"
             attr-value="123.1 cm"
           />
@@ -116,8 +116,7 @@ export default {
 .dimensions-div {
   height: 50vh;
   width: 50%;
-  padding: 3rem 3rem 0 3rem;
-  /* display: flex; */
+  padding: 0 3rem 0 3rem;
   flex-wrap: wrap;
 }
 </style>

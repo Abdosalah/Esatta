@@ -3,7 +3,7 @@
     <div class="Navbar hidden lg:block">
       <img class="images" src="assets/esatta-images/plus.svg">
 
-      <router-link :to="localizedRoute('/my-profilee')" exact class="link">
+      <router-link :to="localizedRoute('/my-profile')" exact class="link">
         <img src="assets/esatta-images/page-banner/measure.svg" class="images">
         {{ $t('MEASURE ME') }}
       </router-link>

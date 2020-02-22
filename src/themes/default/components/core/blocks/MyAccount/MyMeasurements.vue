@@ -13,34 +13,20 @@
     <div class="flex mt-12">
       <div class="w-full md:w-45% relative">
         <img class="body-img" src="../../../../assets/esatta-images/my-profile/front_facing.svg">
-        <!-- <button class="bg-red absolute top-23% left-32% py-4 px-6">
-          <p class="text-white text-sm">
-            VIEW ALL BODY SHAPES
-          </p>
-        </button> -->
         <div class="m-auto text-center my-16">
           <img class="body-scan-img" src="../../../../assets/esatta-images/my-profile/body_scan.svg">
           <p class="inline text-sm text-red">
             View all Body Shapes
           </p>
-          <!-- <div class="w-3/4 m-auto bg-gray mt-6 p-4">
-            <p class="text-sm">
-              A basic estimation of your measurement has<br>
-              been performed. We limit the clothing you have.<br>
-            </p>
-            <p class="pt-4 text-sm">
-              UNSURE IF THIS IS YOUR BODY SHAPE? <a class="text-red">Contact Us</a>
-            </p>
-          </div> -->
         </div>
       </div>
       <!-- DIMENSIONS CAROUSEL -->
       <dimensions-carousel class="hidden md:flex" />
       <!-- CLOSER FIT SECTION -->
     </div>
-    <div class="text-center relative text-gray hidden md:block">
+    <div class="relative text-gray hidden md:block">
       <hr>
-      <button class="absolute -top-0.7rem bg-white" @click="isHidden = !isHidden">
+      <button class="absolute -top-0.7rem bg-white ml-41%" @click="isHidden = !isHidden">
         GET A CLOSER FIT
         <p class="text-6xl absolute left-40% -top-50%" v-if="isHidden">
           &#8964;
@@ -48,36 +34,36 @@
       </button>
     </div>
     <div class="hidden md:flex" v-if="!isHidden">
-      <div class="w-1/6">
-        <button v-if="componentName === 'ShoulderAngle'" class="block bg-white mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
-          ShoulderAngle
+      <div class="w-1/6 text-sm">
+        <button v-if="componentName === 'ShoulderAngle'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
+          Shoulder Angle
         </button>
         <button v-if="componentName !== 'ShoulderAngle'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
-          ShoulderAngle
+          Shoulder Angle
         </button>
-        <button v-if="componentName === 'SeatAngle'" class="block bg-white mb-2 py-12 w-full" @click="toggle('SeatAngle')">
-          SeatAngle
+        <button v-if="componentName === 'SeatAngle'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('SeatAngle')">
+          Seat Angle
         </button>
         <button v-if="componentName !== 'SeatAngle'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('SeatAngle')">
-          SeatAngle
+          Seat Angle
         </button>
-        <button v-if="componentName === 'Posture'" class="block bg-white mb-2 py-12 w-full" @click="toggle('Posture')">
+        <button v-if="componentName === 'Posture'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('Posture')">
           Posture
         </button>
         <button v-if="componentName !== 'Posture'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('Posture')">
           Posture
         </button>
-        <button v-if="componentName === 'BustPoint'" class="block bg-white mb-2 py-12 w-full" @click="toggle('BustPoint')">
-          BustPoint
+        <button v-if="componentName === 'BustPoint'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('BustPoint')">
+          Bust Point
         </button>
         <button v-if="componentName !== 'BustPoint'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('BustPoint')">
-          BustPoint
+          Bust Point
         </button>
-        <button v-if="componentName === 'BraSize'" class="block bg-white mb-2 py-12 w-full" @click="toggle('BraSize')">
-          BraSize
+        <button v-if="componentName === 'BraSize'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('BraSize')">
+          Bra Size
         </button>
         <button v-if="componentName !== 'BraSize'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('BraSize')">
-          BraSize
+          Bra Size
         </button>
       </div>
       <div class="w-5/6 relative">
@@ -114,7 +100,7 @@
               Measure Me Now
             </p>
           </button>
-          <p class="text-xs mt-6">
+          <p class="text-xs mt-3">
             Last scanned: 22/12/2019
           </p>
         </div>
@@ -123,14 +109,14 @@
         <img class="opacity-50 object-cover w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
         <div class="pt-12 absolute top-0 w-full h-full">
           <p class="tracking-widest text-lg">
-            Incorrect Measurements
+            Incorrect Measurements ?
           </p>
           <p class="mt-6 text-xs h-8">
             If you believe your measurements are incorrect, please try to re-measure yourself with the app first.
             <br>If that doesn't work, please contact us using the link below.
           </p>
           <button class="mt-20 border border-white py-2 px-6">
-            <!-- <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg"> -->
+            <img class="h-8 w-1.2rem inline" src="../../../../assets/esatta-images/my-profile/phone_call.svg">
             <p class="text-sm ml-2 inline">
               Contact Us
             </p>
@@ -154,7 +140,7 @@
               Re-Measure Now
             </p>
           </button>
-          <p class="text-xs mt-6">
+          <p class="text-xs mt-3">
             Last scanned: 22/12/2019
           </p>
         </div>
@@ -177,8 +163,8 @@
         </div>
       </div>
     </div>
-    <div class="bg-red h-32 text-center text-white pt-10">
-      <p class="text-sm inline-block">
+    <div class="bg-red py-10 text-center text-white">
+      <p class="text-lg inline-block">
         BROWSE MY BODY TYPE
       </p>
       <p class="inline-block pl-4">

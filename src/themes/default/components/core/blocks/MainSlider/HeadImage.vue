@@ -7,12 +7,12 @@
         <p class="text-5xl text-center font-bold">
           You've never <br class="block md:hidden"> looked <br class="block lg:hidden"> more you.
         </p>
-        <p class="text-sm text-center hidden lg:block">
+        <p class="text-lg text-center hidden lg:block">
           EXCLUSIVE DESIGN CUSTOMISED FOR YOUR BODY TYPE
         </p>
       </div>
     </div>
-    <div class="buttons-div top-45% lg:top-65%  animated slideInUp">
+    <div class="buttons-div top-45% lg:top-50% animated slideInUp">
       <div class="block md:inline-block">
         <button class="header-buttons">
           <img class="w-8 h-8 inline" src="assets/esatta-images/page-banner/measure.svg">

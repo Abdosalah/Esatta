@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen lg:h-65% lg:flex">
     <div class="main-div sm:px-0 md:px-13% lg:px-0 lg:w-1/2">
-      <header class="modal-header py25 px-15% h1 serif weight-700 sm:text-left md:text-center lg:text-left">
+      <header id="login" class="modal-header py25 px-15% h1 serif weight-700 sm:text-left md:text-center lg:text-left">
         <i
           slot="close"
           class="modal-close material-icons p15 cl-bg-tertiary"
@@ -128,15 +128,17 @@
         class="w-full h-full opacity-25 object-cover lg:opacity-100 lg:object-fill"
         src="../../../../assets/esatta-images/login.jpg"
       >
-      <!-- md top 5% -->
-      <div class="measure-me-img left-30% bg-white top-19% lg:bg-transparent lg:top-33%">
+      <a class="left-45% top-0 absolute text-white text-2xl" href="#measureMe">&#8681;</a>
+      <a class="left-55% top-0 absolute text-white text-2xl" href="#login">&#8679;</a>
+      <!-- md top 6%% -->
+      <div class="measure-me-img left-30% bg-white top-10% lg:bg-transparent lg:top-33%">
         <img
           class="h-10 w-10"
           src="../../../../assets/esatta-images/signup/measure_me.svg"
         >
       </div>
       <!-- md top 45% -->
-      <p class="absolute tracking-widest text-white font-extrabold text-4xl text-center top-20% left-40%">
+      <p id="measureMe" class="absolute tracking-widest text-white font-extrabold text-4xl text-center top-11% left-40%">
         Measure Me
       </p>
       <p class="absolute text-white text-center top-50% left-35%">
@@ -156,14 +158,14 @@
         src="../../../../assets/esatta-images/login.jpg"
       >
       <!-- md top 5% -->
-      <div class="measure-me-img left-25% bg-white top-19% lg:bg-transparent lg:top-33%">
+      <div class="measure-me-img left-25% bg-white top-10% lg:bg-transparent lg:top-33%">
         <img
           class="h-10 w-10"
           src="../../../../assets/esatta-images/signup/measure_me.svg"
         >
       </div>
       <!-- md top 45% -->
-      <p class="absolute tracking-widest text-white font-extrabold text-4xl text-center top-20% left-35%">
+      <p class="absolute tracking-widest text-white font-extrabold text-4xl text-center top-11% left-35%">
         Already Scanned ?
       </p>
       <p class="absolute text-white text-center top-50% left-31%">
@@ -285,5 +287,9 @@ $white: color(white);
     display: flex;
     height: 4rem;
     width: 4rem;
+}
+
+a:hover::after {
+  display: none;
 }
 </style>

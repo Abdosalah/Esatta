@@ -38,14 +38,19 @@
         You might also like
       </p>
     </div>
+    <div>
+      <related-products type="upsell" class="bg-cl-secondary" />
+    </div>
   </div>
 </template>
 
 <script>
+import RelatedProducts from 'theme/components/core/blocks/Product/Related.vue'
 import CartSummary from 'theme/components/core/blocks/Checkout/CartSummary'
 export default {
   components: {
-    CartSummary
+    CartSummary,
+    RelatedProducts
   }
 }
 </script>
