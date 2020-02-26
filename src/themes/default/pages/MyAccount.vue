@@ -12,7 +12,7 @@
         <p class="pl-8% pt-12 text-5xl font-extrabold w-1/2">
           My Profile
         </p>
-        <div class="pl-10% pt-20 w-2/3">
+        <div class="pt-20 w-2/3 pr-8% text-right">
           <p class="pl-5% inline-block text-dark_grey hover:text-red" v-for="(page, index) in navigation" :key="index">
             <router-link :to="localizedRoute(page.link)" class="router-links">
               {{ page.title }}
@@ -39,25 +39,42 @@
               </p>
             </div>
             <div class="block md:flex">
-              <p class="md:w-1/2">
-                Height: 173 cm
+              <p class="md:w-1/2 cl-secondary inline-block">
+                Height:
               </p>
-              <p class="md:w-1/2 md:text-right">
-                Weight: 70 kg
+              <p class="md:w-1/2 inline-block font-semibold">
+                173 cm
+              </p>
+              <br>
+              <p class="md:w-1/2 cl-secondary inline-block md:text-right">
+                Weight:
+              </p>
+              <p class="md:w-1/2 inline-block font-semibold md:text-right">
+                70 kg
               </p>
             </div>
           </div>
           <div class="header-div hidden lg:flex">
-            <p class="hdr-component">
+            <p class="hdr-component font-bold">
               Alex
             </p>
-            <p class="hdr-component">
-              Height: 173 cm
-            </p>
-            <p class="hdr-component">
-              Weight: 70 kg
-            </p>
-            <p class="pt-6 w-1/4 text-center inline-block">
+            <div class="hdr-component">
+              <p class="inline-block cl-secondary">
+                Height:
+              </p>
+              <p class="inline-block font-semibold">
+                173 cm
+              </p>
+            </div>
+            <div class="hdr-component">
+              <p class="inline-block cl-secondary">
+                Weight:
+              </p>
+              <p class="inline-block font-semibold">
+                70 kg
+              </p>
+            </div>
+            <p class="pt-6 w-1/4 text-center inline-block font-bold">
               Womans Clothing
             </p>
           </div>
@@ -65,7 +82,10 @@
         <div>
           <div class="pt-10 pl-4% w-full flex md:hidden">
             <p class="w-1/3 text-center inline-block text-dark_grey hover:text-red" v-for="(page, index) in navigation" :key="index">
-              <router-link :to="localizedRoute(page.link)" class="router-links">
+              <router-link v-if="page.title !== 'Purchases'" :to="localizedRoute(page.link)" class="router-links">
+                {{ page.title }}
+              </router-link>
+              <router-link v-else :to="localizedRoute(page.link)" class="router-links pl-20%">
                 {{ page.title }}
               </router-link>
             </p>
@@ -163,6 +183,7 @@ export default {
 }
 .router-links:hover::after {
   content: none;
+  display: none;
 }
 .profile-img {
   height: 7rem;
