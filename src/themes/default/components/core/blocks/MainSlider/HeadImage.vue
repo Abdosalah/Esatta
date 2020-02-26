@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <img class="h-screen w-screen object-cover" src="assets/esatta-images/page-banner/hp_banner.jpg">
-    <div class="absolute brush-div w-3/5">
+    <div class="absolute brush-div top-17% lg:top-22%">
       <img class="hidden md:block brush-image animated fadeInLeft" src="assets/esatta-images/page-banner/brush.png">
       <div class="text-white banner-text inset-0 text-delay animated slideInLeft">
         <p class="text-5xl text-center font-bold">
@@ -41,7 +41,6 @@
 .brush-div {
   width: 80%;
   left: 10%;
-  top: 17%;
 }
 .banner-text {
   position: absolute;
@@ -80,7 +79,8 @@
 }
 .brush-image {
   height: 27vh;
-  width: 100vw;
+  width: 75%;
   animation-duration: 1s;
+  margin: auto;
 }
 </style>

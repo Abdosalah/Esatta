@@ -1,7 +1,18 @@
 <template>
   <div class="h-screen lg:h-65% lg:flex">
-    <div class="main-div sm:px-0 md:px-13% lg:px-0 lg:w-1/2">
-      <header id="login" class="modal-header py25 px-15% h1 serif weight-700 sm:text-left md:text-center lg:text-left">
+    <header id="login" class="modal-header py25 px-15% h1 serif weight-700 sm:text-left md:text-center lg:text-left lg:hidden">
+      <i
+        slot="close"
+        class="modal-close material-icons p15 cl-bg-tertiary"
+        @click="close"
+      >
+        close
+      </i>
+      {{ $t('LOGIN') }}
+    </header>
+    <!-- WHAT SHOULD BE HIDDEN WHEN ARROW IS CLICKED -->
+    <div v-if="showLogin" class="main-div sm:px-0 md:px-13% lg:px-0 lg:w-1/2">
+      <header id="login" class="modal-header px-15% h1 serif weight-700 sm:text-left md:text-center lg:text-left hidden lg:block">
         <i
           slot="close"
           class="modal-close material-icons p15 cl-bg-tertiary"
@@ -18,21 +29,21 @@
       </div>
       <!-- FB LOGIN -->
       <div class="mb10 mx-6 md:mx-15% flex">
-        <div class="w-1/6 bg-blue-700 opacity-50 p-4">
-          <img class="h-8 w-8 ml-2" src="../../../../assets/esatta-images/facebook.svg">
+        <div class="w-1/6 bg-blue-700 opacity-50 p-2">
+          <img class="h-6 w-6 m-auto" src="../../../../assets/esatta-images/facebook.svg">
         </div>
-        <div class="w-5/6 p-4 fb-blue">
-          <p class=" text-white text-center">
+        <div class="w-5/6 p-2 fb-blue">
+          <p class="text-white text-center text-sm">
             LOGIN WITH FACEBOOK
           </p>
         </div>
       </div>
       <div class="mb10 mx-6 md:mx-15% flex">
-        <div class="w-1/6 bg-white p-4">
-          <img class="h-8 w-8 ml-2" src="../../../../assets/esatta-images/google.svg">
+        <div class="w-1/6 bg-white p-2">
+          <img class="h-6 w-6 m-auto" src="../../../../assets/esatta-images/google.svg">
         </div>
-        <div class="w-5/6 p-4 bg-red">
-          <p class=" text-white text-center">
+        <div class="w-5/6 p-2 bg-red">
+          <p class="text-white text-center text-sm">
             LOGIN WITH GOOGLE
           </p>
         </div>
@@ -40,11 +51,11 @@
       <p class=" text-center my-text-color">
         or
       </p>
-      <div class="modal-content pt-2 pb-8 px-15% cl-secondary">
+      <div class="modal-content pt-2 pb-4 px-15% cl-secondary">
         <form @submit.prevent="login" novalidate>
           <!-- EMAIL FIELD -->
           <base-input
-            class="mb10"
+            class="mb-2"
             type="email"
             name="email"
             focus
@@ -64,7 +75,7 @@
           />
           <!-- PASSWORD FIELD -->
           <base-input
-            class="mb10"
+            class="mb-2"
             type="password"
             name="password"
             v-model="password"
@@ -81,15 +92,17 @@
               id="remember"
               v-model="remember"
             >
-              {{ $t('Remember me') }}
+              <p class="text-sm">
+                Remember me
+              </p>
             </base-checkbox>
-            <div class="col-xs-5 col-sm-6 mb35 flex end-xs middle-xs my-text-color">
+            <div class="col-xs-5 col-sm-6 mb35 flex end-xs middle-xs my-text-color text-sm">
               <a href="#" @click.prevent="remindPassword">
-                {{ $t('Forgot the password?') }}
+                {{ $t('Forgot your password?') }}
               </a>
             </div>
           </div>
-          <button-full class="mb20" type="submit" data-testid="loginSubmit">
+          <button-full type="submit" data-testid="loginSubmit">
             {{ $t('LOGIN & CONTINUE') }}
           </button-full>
           <!-- REGISTER LINK -->
@@ -103,24 +116,34 @@
       </div>
     </div>
 
-    <div class="hidden lg:block bg-black h-35% lg:bg-white lg:h-auto lg:w-1/2 relative">
+    <div class="hidden lg:block bg-black h-auto w-1/2 relative">
       <img
-        class="w-full h-full opacity-25 object-cover lg:opacity-100 lg:object-fill"
+        class="w-full h-full opacity-25 object-fill"
         src="../../../../assets/esatta-images/login.jpg"
       >
       <!-- md top 15% -->
-      <div class="absolute rounded-full h-16 w-16 flex items-center justify-center bg-white lg:bg-transparent top-15% left-45% lg:top-33%">
+      <div class="absolute rounded-full h-16 w-16 flex items-center justify-center bg-white left-10% top-10%">
         <img
           class="h-10 w-10"
-          src="../../../../assets/esatta-images/page-banner/measure.svg"
+          src="../../../../assets/esatta-images/signup/measure_me.svg"
         >
       </div>
       <!-- md top 45% -->
-      <p class="absolute font-extrabold text-2xl text-center top-45% left-35%">
+      <p class="absolute font-extrabold text-3xl text-center text-white top-12% left-30%">
         MEASURE ME
-        <br class="sm:block md:hidden lg:block">
-        & SIGN UP
       </p>
+      <p class="absolute text-white text-center top-35% w-full">
+        Just answer a few questions about
+        <br>yourself to calculate your body shape
+      </p>
+      <div class="w-fill absolute bottom-10% text-center">
+        <button class="border border-white py-2 px-6">
+          <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg">
+          <p class="text-sm ml-2 inline text-white">
+            BASIC MEASUREMENTS
+          </p>
+        </button>
+      </div>
     </div>
 
     <div class="lg:hidden bg-black h-1/2 lg:bg-white lg:h-auto lg:w-1/2 relative">
@@ -128,56 +151,31 @@
         class="w-full h-full opacity-25 object-cover lg:opacity-100 lg:object-fill"
         src="../../../../assets/esatta-images/login.jpg"
       >
-      <a class="left-45% top-0 absolute text-white text-2xl" href="#measureMe">&#8681;</a>
-      <a class="left-55% top-0 absolute text-white text-2xl" href="#login">&#8679;</a>
+      <a v-if="showLogin" class="left-50% top-0 absolute text-white text-2xl cursor-pointer" @click="showLogin = !showLogin">&#8681;</a>
+      <a v-if="!showLogin" class="left-50% top-0 absolute text-white text-2xl cursor-pointer" @click="showLogin = !showLogin">&#8679;</a>
       <!-- md top 6%% -->
-      <div class="measure-me-img left-30% bg-white top-10% lg:bg-transparent lg:top-33%">
+      <div class="measure-me-img left-10% md:left-30% bg-white top-10% lg:bg-transparent lg:top-33%">
         <img
           class="h-10 w-10"
           src="../../../../assets/esatta-images/signup/measure_me.svg"
         >
       </div>
       <!-- md top 45% -->
-      <p id="measureMe" class="absolute tracking-widest text-white font-extrabold text-4xl text-center top-11% left-40%">
+      <p class="absolute tracking-widest text-white font-extrabold text-4xl text-center top-11% left-30% md:left-40%">
         Measure Me
       </p>
-      <p class="absolute text-white text-center top-50% left-35%">
+      <p class="absolute text-white text-center top-35% w-full">
         Just answer a few questions about
         <br>yourself to calculate your body shape
       </p>
-      <button class="absolute top-50% left-38% mt-20 border border-white py-2 px-6">
-        <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg">
-        <p class="text-sm ml-2 inline text-white">
-          BASIC MEASUREMENTS
-        </p>
-      </button>
-    </div>
-    <div class="hidden md:block lg:hidden bg-black h-1/2 lg:bg-white lg:h-auto lg:w-1/2 relative">
-      <img
-        class="w-full h-full opacity-25 object-cover lg:opacity-100 lg:object-fill"
-        src="../../../../assets/esatta-images/login.jpg"
-      >
-      <!-- md top 5% -->
-      <div class="measure-me-img left-25% bg-white top-10% lg:bg-transparent lg:top-33%">
-        <img
-          class="h-10 w-10"
-          src="../../../../assets/esatta-images/signup/measure_me.svg"
-        >
+      <div class="w-fill absolute bottom-20% text-center">
+        <button class="border border-white py-2 px-6">
+          <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg">
+          <p class="text-sm ml-2 inline text-white">
+            BASIC MEASUREMENTS
+          </p>
+        </button>
       </div>
-      <!-- md top 45% -->
-      <p class="absolute tracking-widest text-white font-extrabold text-4xl text-center top-11% left-35%">
-        Already Scanned ?
-      </p>
-      <p class="absolute text-white text-center top-50% left-31%">
-        Already completed an mPort body scan?
-        <br>Connect your body scan to Esatta now
-      </p>
-      <button class="absolute top-50% left-40% mt-20 border border-white py-2 px-6">
-        <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg">
-        <p class="text-sm ml-2 inline text-white">
-          LINK A SCAN
-        </p>
-      </button>
     </div>
   </div>
 </template>
@@ -203,7 +201,8 @@ export default {
   },
   data () {
     return {
-      hasRedirect: !!localStorage.getItem('redirect')
+      hasRedirect: !!localStorage.getItem('redirect'),
+      showLogin: true
     }
   },
   methods: {
@@ -263,30 +262,34 @@ export default {
 $color-error: color(error);
 $white: color(white);
 
-  .main-div {
-    background-color: #FADBD9;
-  }
+.main-div {
+  background-color: #FADBD9;
+}
 
-  .redirect-error {
-    background-color: $color-error;
-    color: $white;
-  }
+#login {
+  background-color: #FADBD9;
+}
 
-  .my-text-color {
-    color : #C57974;
-  }
+.redirect-error {
+  background-color: $color-error;
+  color: $white;
+}
 
-  .fb-blue {
-    background-color: #3b5998;
-  }
-  .measure-me-img {
-    justify-content: center;
-    border-radius: 9999px;
-    align-items: center;
-    position: absolute;
-    display: flex;
-    height: 4rem;
-    width: 4rem;
+.my-text-color {
+  color : #C57974;
+}
+
+.fb-blue {
+  background-color: #3b5998;
+}
+.measure-me-img {
+  justify-content: center;
+  border-radius: 9999px;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  height: 4rem;
+  width: 4rem;
 }
 
 a:hover::after {

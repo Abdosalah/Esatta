@@ -136,7 +136,7 @@ export default {
   input {
     background: inherit;
     border: 1px solid #C57974;
-    padding: 2rem;
+    padding: 1.5rem;
 
     &:hover,
     &:focus {

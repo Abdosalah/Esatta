@@ -1,11 +1,12 @@
 <template>
   <div class="my-carousel">
-    <carousel :per-page="1" :navigate-to="someLocalProperty" :mouse-drag="false">
+    <carousel :per-page="1" :navigate-to="someLocalProperty" :mouse-drag="true">
       <slide>
         <div class="text-center relative">
           <p class="numbers absolute right-0 opacity-50">
             2
           </p>
+          <div class="absolute right-0 my-carousel w-3 h-20" />
           <p class="numbers">
             1
           </p>
@@ -26,6 +27,8 @@
           <p class="numbers absolute right-0 opacity-50">
             3
           </p>
+          <div class="absolute left-0 my-carousel w-3 h-20" />
+          <div class="absolute right-0 my-carousel w-3 h-20" />
           <p class="numbers">
             2
           </p>
@@ -43,6 +46,7 @@
           <p class="numbers absolute left-0 opacity-50">
             2
           </p>
+          <div class="absolute left-0 my-carousel w-3 h-20" />
           <p class="numbers">
             3
           </p>

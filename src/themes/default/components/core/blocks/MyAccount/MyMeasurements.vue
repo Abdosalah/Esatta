@@ -1,30 +1,46 @@
 <template>
   <div class="">
     <!-- YOUR BODY SHAPE DIV -->
-    <div class="mt-20">
+    <div class="mt-8">
       <p class="text-center text-red">
         Your Body Shape is
       </p>
-      <p class="text-center mt-4 text-4xl tracking-widest">
+      <p v-if="measurements" class="text-center mt-4 text-2xl font-semibold md:text-4xl tracking-widest">
         Bottom Hourglass
+      </p>
+      <p v-else class="text-center mt-4 text-4xl tracking-widest">
+        Unknown
       </p>
     </div>
     <!-- IMAGE AND ATTRIBUTES -->
     <div class="flex mt-12">
       <div class="w-full md:w-45% relative">
-        <img class="body-img" src="../../../../assets/esatta-images/my-profile/front_facing.svg">
-        <div class="m-auto text-center my-16">
+        <img v-if="measurements" class="body-img" src="../../../../assets/esatta-images/my-profile/front_facing.svg">
+        <div v-if="measurements" class="m-auto text-center my-16">
           <img class="body-scan-img" src="../../../../assets/esatta-images/my-profile/body_scan.svg">
           <p class="inline text-sm text-red">
             View all Body Shapes
           </p>
         </div>
+        <div v-else class="m-auto text-center mb-16 md:mt-13vh lg:mt-15vh">
+          <p class="text-sm cl-secondary">
+            OPPS WE ARE NOT SURE WHAT
+            <br>YOUR BODY TYPE IS
+          </p>
+          <button class="header-buttons">
+            <img class="w-8 h-8 inline" src="assets/esatta-images/page-banner/measure_black.svg">
+            <p class="button-text">
+              MEASURE ME
+            </p>
+          </button>
+        </div>
       </div>
       <!-- DIMENSIONS CAROUSEL -->
-      <dimensions-carousel class="hidden md:flex" />
-      <!-- CLOSER FIT SECTION -->
+      <dimensions-carousel v-if="measurements" :dimensions-list="dimensionsArray" class="hidden md:flex" />
+      <dimensions-carousel v-else :dimensions-list="noMeasurementsArray" class="hidden md:flex" />
     </div>
-    <div class="relative text-gray hidden md:block">
+    <!-- CLOSER FIT SECTION -->
+    <div v-if="measurements" class="relative text-gray hidden md:block">
       <hr>
       <button class="absolute -top-0.7rem bg-white ml-41%" @click="isHidden = !isHidden">
         GET A CLOSER FIT
@@ -33,7 +49,7 @@
         </p>
       </button>
     </div>
-    <div class="hidden md:flex" v-if="!isHidden">
+    <div v-if="measurements && !isHidden" class="hidden md:flex">
       <div class="w-1/6 text-sm">
         <button v-if="componentName === 'ShoulderAngle'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
           Shoulder Angle
@@ -84,86 +100,18 @@
     <div class="mb-24" v-if="isHidden" />
     <!-- BROWSE BODY TYPE SECTION -->
     <div class="md:flex text-center text-white">
-      <div class="w-full md:w-1/2 relative bg-black h-20rem">
-        <img class="opacity-50 object-cover w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
-        <div class="pt-12 absolute top-0 w-full h-full">
-          <p class="tracking-widest text-lg">
-            &#9888;  Re-Measurements Required
-          </p>
-          <p class="mt-6 text-xs h-8">
-            Your body may have changed. Please re-scan for the best fit.
-            <br>
-          </p>
-          <button class="mt-20 border border-white py-2 px-6">
-            <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg">
-            <p class="text-sm ml-2 inline">
-              Measure Me Now
-            </p>
-          </button>
-          <p class="text-xs mt-3">
-            Last scanned: 22/12/2019
-          </p>
-        </div>
-      </div>
-      <div class="w-full md:w-1/2 bg-black relative h-20rem opacity-50 ml-px">
-        <img class="opacity-50 object-cover w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
-        <div class="pt-12 absolute top-0 w-full h-full">
-          <p class="tracking-widest text-lg">
-            Incorrect Measurements ?
-          </p>
-          <p class="mt-6 text-xs h-8">
-            If you believe your measurements are incorrect, please try to re-measure yourself with the app first.
-            <br>If that doesn't work, please contact us using the link below.
-          </p>
-          <button class="mt-20 border border-white py-2 px-6">
-            <img class="h-8 w-1.2rem inline" src="../../../../assets/esatta-images/my-profile/phone_call.svg">
-            <p class="text-sm ml-2 inline">
-              Contact Us
-            </p>
-          </button>
-        </div>
-      </div>
+      <new-measurements />
+      <howto-measure />
     </div>
-    <div class="md:flex text-center">
-      <div class="w-full md:w-1/2 relative h-20rem opacity-50 ml-px">
-        <img class="opacity-50 object-cover w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
-        <div class="pt-12 absolute top-0 w-full h-full">
-          <p class="tracking-widest text-lg">
-            &#10003;  Body Scanned
-          </p>
-          <p class="mt-6 text-xs h-8">
-            If you feel your body measurements have changed, please re-scan using the link below.
-          </p>
-          <button class="mt-20 border py-2 px-6">
-            <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_black.svg">
-            <p class="text-sm ml-2 inline">
-              Re-Measure Now
-            </p>
-          </button>
-          <p class="text-xs mt-3">
-            Last scanned: 22/12/2019
-          </p>
-        </div>
-      </div>
-      <div class="w-full md:w-1/2 relative bg-black text-white h-20rem">
-        <img class="opacity-50 object-cover w-full h-20rem" src="../../../../assets/esatta-images/my-profile/new_scan.jpg">
-        <div class="pt-12 absolute top-0 w-full h-full">
-          <p class="tracking-widest text-lg">
-            &#9888;  New Scan Required
-          </p>
-          <p class="mt-6 text-xs h-8">
-            Use our app to easily scan your body so that we can accurately capture your measurements.
-          </p>
-          <button class="mt-20 border border-white py-2 px-6">
-            <img class="h-8 w-6 inline" src="../../../../assets/esatta-images/my-profile/measure_tape_white.svg">
-            <p class="text-sm ml-2 inline">
-              Re-Measure Now
-            </p>
-          </button>
-        </div>
-      </div>
+    <div v-if="measurements" class="md:flex text-center text-white">
+      <re-measurements />
+      <incorrect-measurements />
     </div>
-    <div class="bg-red py-10 text-center text-white">
+    <div v-if="measurements" class="md:flex text-center">
+      <body-scanned />
+      <incorrect-measurements />
+    </div>
+    <div v-if="measurements" class="bg-red py-10 text-center text-white">
       <p class="text-lg inline-block">
         BROWSE MY BODY TYPE
       </p>
@@ -180,11 +128,23 @@ import SeatAngle from 'theme/components/custom/profile-components/SeatAngle.vue'
 import Posture from 'theme/components/custom/profile-components/Posture.vue'
 import BustPoint from 'theme/components/custom/profile-components/BustPoint.vue'
 import BraSize from 'theme/components/custom/profile-components/BraSize.vue'
+import ReMeasurements from 'theme/components/custom/profile-components/ReMeasurements.vue'
+import IncorrectMeasurements from 'theme/components/custom/profile-components/IncorrectMeasurements.vue'
+import BodyScanned from 'theme/components/custom/profile-components/BodyScanned.vue'
+import NewscanRequired from 'theme/components/custom/profile-components/NewscanRequired.vue'
+import NewMeasurements from 'theme/components/custom/profile-components/NewMeasurements.vue'
+import HowtoMeasure from 'theme/components/custom/profile-components/HowtoMeasure.vue'
 import DimensionsCarousel from 'theme/components/custom/profile-components/DimensionsCarousel.vue'
 
 export default {
   components: {
     DimensionsCarousel,
+    ReMeasurements,
+    IncorrectMeasurements,
+    BodyScanned,
+    NewscanRequired,
+    NewMeasurements,
+    HowtoMeasure,
     ShoulderAngle,
     SeatAngle,
     Posture,
@@ -197,7 +157,108 @@ export default {
       componentName: 'SeatAngle',
       prevComponent: 'ShoulderAngle',
       nextComponent: 'Posture',
-      isHidden: false
+      isHidden: false,
+      measurements: true,
+      dimensionsArray: [
+        {
+          attrName: 'Neck',
+          value: 123.1
+        },
+        {
+          attrName: 'Bust',
+          value: 123.1
+        },
+        {
+          attrName: 'Waist',
+          value: 123.1
+        },
+        {
+          attrName: 'Across Back',
+          value: 123.1
+        },
+        {
+          attrName: 'High Hip',
+          value: 123.1
+        },
+        {
+          attrName: 'Hip',
+          value: 123.1
+        },
+        {
+          attrName: 'Arm length',
+          value: 123.1
+        },
+        {
+          attrName: 'Upper arm girth',
+          value: 123.1
+        },
+        {
+          attrName: 'Inside Leg',
+          value: 123.1
+        },
+        {
+          attrName: 'Waist to Floor',
+          value: 123.1
+        },
+        {
+          attrName: 'Thigh Girth',
+          value: 123.1
+        },
+        {
+          attrName: 'Calf Girth',
+          value: 123.1
+        }
+      ],
+      noMeasurementsArray: [
+        {
+          attrName: 'Neck',
+          value: 0.0
+        },
+        {
+          attrName: 'Chest',
+          value: 0.0
+        },
+        {
+          attrName: 'Waist',
+          value: 0.0
+        },
+        {
+          attrName: 'Across Back',
+          value: 0.0
+        },
+        {
+          attrName: 'High Hip',
+          value: 0.0
+        },
+        {
+          attrName: 'Hip',
+          value: 0.0
+        },
+        {
+          attrName: 'Arm length',
+          value: 0.0
+        },
+        {
+          attrName: 'Upper arm girth',
+          value: 0.0
+        },
+        {
+          attrName: 'Inside Leg',
+          value: 0.0
+        },
+        {
+          attrName: 'Waist to Floor',
+          value: 0.0
+        },
+        {
+          attrName: 'Thigh Girth',
+          value: 0.0
+        },
+        {
+          attrName: 'Calf Girth',
+          value: 0.0
+        }
+      ]
     }
   },
   methods: {
@@ -267,5 +328,22 @@ button:focus {
 
 .scanned-div {
   background-color: #DCDCDC;
+}
+
+.header-buttons {
+  background-color: #EC145B;
+  width: 17rem;
+  margin-top: 2rem;
+  padding: 1rem 3.5rem;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease 0s;
+}
+
+.button-text {
+  color: white;
+  display: inline;
+  margin-top: 0.3rem;
+  padding-left: 1rem;
 }
 </style>

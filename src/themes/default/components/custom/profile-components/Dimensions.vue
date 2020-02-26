@@ -4,7 +4,7 @@
       {{ attrName }}
     </p>
     <p class="text-2xl text-grey_text pt-2">
-      {{ attrValue }}
+      {{ attrValue }} cm
     </p>
     <hr class="my-underline mb-8">
   </div>
