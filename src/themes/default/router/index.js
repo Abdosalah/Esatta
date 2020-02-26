@@ -6,7 +6,9 @@ const Category = () => import(/* webpackChunkName: "vsf-category" */ 'theme/page
 const CmsPage = () => import(/* webpackChunkName: "vsf-cms" */ 'theme/pages/CmsPage.vue')
 const Checkout = () => import(/* webpackChunkName: "vsf-checkout" */ 'theme/pages/Checkout.vue')
 const PaymentSuccess = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/PaymentSuccess.vue')
+
 const DesignersPage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/DesignersPage.vue')
+
 const Compare = () => import(/* webpackChunkName: "vsf-compare" */ 'theme/pages/Compare.vue')
 const MyAccount = () => import(/* webpackChunkName: "vsf-my-profile" */ 'theme/pages/MyAccount.vue')
 const Static = () => import(/* webpackChunkName: "vsf-static" */ 'theme/pages/Static.vue')
