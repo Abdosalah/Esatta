@@ -1,11 +1,11 @@
 <template>
   <div class="">
-    <swiper :options="swiperOption" class="h-screen">
+    <swiper :options="swiperOption" class="h-88vh">
       <swiper-slide v-for="(images, index) in gallery" :key="index" class="">
         <div class="swiper-zoom-container h-screen relative">
-          <img id="carousel-img" class="h-screen object-cover w-full" :src="images.src" alt="">
+          <img id="carousel-img" class="h-screen object-fill w-full mb-15vh" :src="images.src" alt="">
         </div>
-        <div class="absolute w-full opacity-0 hover:opacity-100 z-10 top-42.5vh">
+        <div class="absolute w-full opacity-0 hover:opacity-100 z-10 top-35vh">
           <img class="m-auto h-15vh" src="../../../assets/esatta-images/zoom_plus.svg">
         </div>
       </swiper-slide>
@@ -108,7 +108,7 @@ export default {
   data () {
     return {
       swiperOption: {
-        direction: 'vertical',
+        direction: 'horizontal',
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -141,6 +141,6 @@ export default {
   width: fit-content;
 }
 #carousel-img {
-  object-fit: cover;
+  object-fit: fill;
 }
 </style>

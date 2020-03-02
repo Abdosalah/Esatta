@@ -10,14 +10,19 @@
         </h2>
       </header>
     </div>
-    <div class="row center-xs">
-      <product-listing columns="4" :products="product.related[type]" />
+    <div class="">
+      <product-listingcarousel class="hidden lg:block" :products="product.related[type]" />
+      <product-listingcarouseltablet class="hidden md:block lg:hidden" :products="product.related[type]" />
+      <product-listingcarouselmobile class="md:hidden" :products="product.related[type]" />
     </div>
   </section>
 </template>
 
 <script>
 import ProductListing from 'theme/components/core/ProductListing'
+import ProductListingcarousel from 'theme/components/core/ProductListingcarousel'
+import ProductListingcarouseltablet from 'theme/components/core/ProductListingcarouseltablet'
+import ProductListingcarouselmobile from 'theme/components/core/ProductListingcarouselmobile'
 
 import { prepareRelatedQuery } from '@vue-storefront/core/modules/catalog/queries/related'
 import i18n from '@vue-storefront/i18n'
@@ -37,6 +42,9 @@ export default {
     }
   },
   components: {
+    ProductListingcarousel,
+    ProductListingcarouseltablet,
+    ProductListingcarouselmobile,
     ProductListing
   },
   beforeMount () {
