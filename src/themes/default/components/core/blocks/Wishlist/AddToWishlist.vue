@@ -33,7 +33,9 @@ button {
 .big {
   background-color: white;
   border-radius: 9999px;
-  padding: 2rem;
+  padding: 2vw;
+  position: absolute;
+  z-index: 10;
 }
 
 .height_4 {
