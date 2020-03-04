@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import DesignerHeader from 'theme/components/custom/designer-page-components/DesignerHeader'
-import DesignersLarge from 'theme/components/custom/designer-page-components/DesignersLarge'
-import DesignersSmall from 'theme/components/custom/designer-page-components/DesignersSmall'
+import DesignerHeader from 'theme/components/custom/designers-page-components/DesignerHeader'
+import DesignersLarge from 'theme/components/custom/designers-page-components/DesignersLarge'
+import DesignersSmall from 'theme/components/custom/designers-page-components/DesignersSmall'
 export default {
   components: {
     DesignerHeader,

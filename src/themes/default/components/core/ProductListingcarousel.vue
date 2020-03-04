@@ -15,7 +15,7 @@
         <div
           v-for="(product, index) in products.slice(0,4)"
           :key="index"
-          class="w-95% mx-2%"
+          class="w-95% mx-2.5%"
         >
           <product-tile class="product-tile" :product="product" />
         </div>
@@ -24,7 +24,7 @@
         <div
           v-for="(product, index) in products.slice(4,8)"
           :key="index"
-          class="w-95% mx-2%"
+          class="w-95% mx-2.5%"
         >
           <product-tile class="product-tile" :product="product" />
         </div>

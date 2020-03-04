@@ -1,9 +1,9 @@
 <template>
   <div class="bg-white md:bg-gray pt-8% md:pt-0">
     <!-- SHOP WOMEN -->
-    <div class="md:p-4% lg:mr-nav">
+    <div class="md:p-4% lg:pb-0 lg:mr-nav">
       <div class="relative">
-        <img class="h-14rem w-full p-0 md:pl-5% md:pr-10% lg:p-0 lg lg:w-2/3 object-cover float-right" src="assets/esatta-images/just-landed/just_landed.jpg">
+        <img class="h-19rem w-full p-0 md:pl-5% md:pr-10% lg:p-0 lg lg:w-3/4 object-cover lg:ml-10%" src="assets/esatta-images/just-landed/just_landed.jpg">
         <div class="clearfix" />
         <router-link :to="localizedRoute('/c/women-20')" class="my-links ml-4% md:ml-0 w-85% md:w-auto bg-white md:-left-1.5% lg:left-5%" exact>
           <img class="h-5 w-5 float-left mr-5" src="assets/esatta-images/plus.svg">
@@ -17,9 +17,9 @@
       </div>
     </div>
     <!-- JUST LANDED -->
-    <div class="mt-8% md:mt-0 md:p-4% lg:mr-nav">
+    <div class="mt-8% md:mt-0 md:p-4% lg:mr-nav lg:pb-0">
       <div class="relative">
-        <img class="h-14rem w-full p-0 md:pr-5% md:pl-10% lg:p-0 lg lg:w-2/3 object-cover" src="assets/esatta-images/just-landed/just_landed.jpg">
+        <img class="h-19rem w-full p-0 md:pr-5% md:pl-10% lg:p-0 lg lg:w-3/4 object-cover lg:ml-15%" src="assets/esatta-images/just-landed/just_landed.jpg">
         <div class="my-links ml-11% w-85% md:w-auto bg-white md:-right-1.5% lg:right-5%">
           <img class="h-5 w-5 float-left mr-5" src="assets/esatta-images/plus.svg">
           <p class=" text-red">
@@ -32,9 +32,9 @@
       </div>
     </div>
     <!-- BUY FOR A FRIEND -->
-    <div class="mt-8% md:mt-0 md:p-4% lg:mr-nav">
+    <div class="mt-8% md:mt-0 md:p-4% lg:mr-nav ">
       <div class="relative">
-        <img class="h-14rem w-full p-0 md:pl-5% md:pr-10% lg:p-0 lg lg:w-2/3 object-cover float-right" src="assets/esatta-images/just-landed/buy_for_friend.jpg">
+        <img class="h-19rem w-full p-0 md:pl-5% md:pr-10% lg:p-0 lg lg:w-3/4 object-cover lg:ml-10%" src="assets/esatta-images/just-landed/buy_for_friend.jpg">
         <div class="clearfix" />
         <div class="my-links ml-4% md:ml-0 w-85% md:w-auto bg-white md:-left-1.5% lg:left-5%">
           <img class="h-5 w-5 float-left mr-5" src="assets/esatta-images/plus.svg">

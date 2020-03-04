@@ -8,6 +8,8 @@ const Checkout = () => import(/* webpackChunkName: "vsf-checkout" */ 'theme/page
 const PaymentSuccess = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/PaymentSuccess.vue')
 
 const DesignersPage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/DesignersPage.vue')
+const SingleDesignerpage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/SingleDesignerpage.vue')
+const HowitWorkspage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/HowitWorkspage.vue')
 
 const Compare = () => import(/* webpackChunkName: "vsf-compare" */ 'theme/pages/Compare.vue')
 const MyAccount = () => import(/* webpackChunkName: "vsf-my-profile" */ 'theme/pages/MyAccount.vue')
@@ -16,6 +18,8 @@ const Static = () => import(/* webpackChunkName: "vsf-static" */ 'theme/pages/St
 let routes = [
   { name: 'home', path: '/', component: Home, alias: '/pwa.html' },
   { name: 'checkout', path: '/checkout', component: Checkout },
+  { name: 'how-it-works', path: '/how-it-works', component: HowitWorkspage },
+  { name: 'single-designer', path: '/single-designer', component: SingleDesignerpage },
   { name: 'payment-success', path: '/payment-success', component: PaymentSuccess },
   { name: 'designers', path: '/designers', component: DesignersPage },
   { name: 'legal', path: '/legal', component: Static, props: {page: 'lorem', title: 'Legal Notice'}, meta: {title: 'Legal Notice', description: 'Legal Notice - example of description usage'} },
