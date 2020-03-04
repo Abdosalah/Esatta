@@ -1,10 +1,10 @@
 <template>
-  <div class="mr-18%">
-    <div class="my-grid mx-2%">
+  <div>
+    <div class="my-grid mx-2.5%">
       <div
         v-for="(designer, key) in deignersList"
         :key="key"
-        class="w-95% mx-2%"
+        class="w-95% mx-2.5%"
       >
         <img :src="designer.imageUrl" class="">
         <div class="text-center">
@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 .my-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   display: grid;
 }
 </style>
