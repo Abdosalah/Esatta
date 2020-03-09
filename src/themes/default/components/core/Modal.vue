@@ -131,7 +131,7 @@ $z-index-modal: map-get($z-index, modal);
   }
 
   .modal-container {
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
     max-width: 100%;
     max-height: 100%;

@@ -1,23 +1,24 @@
 <template>
   <div id="product" class="" itemscope itemtype="http://schema.org/Product">
     <section class="product-top-section bg-dark_grey lg:pr-nav">
-      <div class="">
-        <section class="flex">
+      <div class="relative">
+        <section class="block lg:flex">
           <!-- PRODUCT IMAGE -->
-          <div class="w-60% h-screen image">
-            <product-gallery
+          <div class="w-full h-88vh lg:h-screen image lg:w-60%">
+            <!-- <product-gallery
               :offline="image"
               :gallery="gallery"
               :configuration="configuration"
               :product="product"
-            />
-          </div>
-          <div class="inline pt-56 mr-12 h-screen middle-div">
-            <wishlist-button :product="product" img-dimensions="height_8" button-dimensions="big" />
+            /> -->
+            <div class="h-full bg-cl-secondary">
+              <product-carousel class="hidden lg:block" :gallery="gallery" />
+              <product-carouseltablet class="lg:hidden" :gallery="gallery" />
+            </div>
           </div>
           <!-- PRODUCT DATA -->
-          <div class="w-1/3 pt-56 data">
-            <p class="text-2xl tracking-widest font-medium uppercase" data-testid="productName" itemprop="name">
+          <div class="w-full data text-center px-20% pb-8 lg:pb-0 lg:w-40% lg:pr-0 lg:pl-4vw lg:pt-56 lg:text-left">
+            <p class="text-2xl tracking-widest font-medium" data-testid="productName" itemprop="name">
               {{ product.name | htmlDecode }}
               <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share" />
             </p>
@@ -52,18 +53,18 @@
                   </span>
                 </div>
                 <div
-                  class="text-lg font-semibold inline w-1/4"
+                  class="font-semibold inline w-1/4 text-left"
                   v-if="!product.special_price && product.priceInclTax"
                 >
                   {{ product.qty > 0 ? product.priceInclTax * product.qty : product.priceInclTax | price }}
                 </div>
                 <div class="inline text-xs w-3/4 flex">
-                  <div class="w-1/2">
+                  <div class="w-1/2 pt-0.2">
                     <img class="h-4 w-4 inline mr-2" src="../assets/esatta-images/product/clock.svg">
                     ENDS IN 16:18:25
                   </div>
-                  <p class="inline w-1/2 text-right">
-                    5 LEFT/300
+                  <p class="inline w-1/2 text-right pt-0.2">
+                    5 LEFT / 300
                   </p>
                 </div>
               </div>
@@ -100,12 +101,13 @@
                       />
                     </div>
                   </div>
-                  <div class="w-1/2" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle' && option.label == 'Color'">
+                  <div class="w-1/2 text-left" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle' && option.label == 'Color'">
                     <base-input-number
                       :name="$t('QTY')"
                       v-model="product.qty"
                       :min="1"
                       @blur="$v.$touch()"
+                      class="ml-50%"
                       :validations="[
                         {
                           condition: $v.product.qty.$error && !$v.product.qty.minValue,
@@ -142,7 +144,7 @@
               <add-to-cart
                 :product="product"
                 :disabled="$v.product.qty.$error && !$v.product.qty.minValue"
-                class="w-3/4 py-8 rounded-full"
+                class="w-1/2 m-auto lg:m-0 lg:w-3/4 py-8 rounded-full disable-hover"
               />
             </div>
             <!-- <div class="">
@@ -167,57 +169,17 @@
               </div>
             </div> -->
           </div>
+          <wishlist-button class="absolute top-77vh left-46% lg:left-55.75% lg:top-30%" :product="product" img-dimensions="height_8" button-dimensions="big" />
         </section>
       </div>
     </section>
-    <section class="py-56 bg-cl-secondary flex lg:pr-nav">
-      <div class="w-2/3 pl-10%">
-        <img class="profile-img" src="../assets/esatta-images/my-profile/avatar.jpg">
-        <div class="inline-block pl-8">
-          <p class="text-xl">
-            WHY THIS FITS YOU "ALEX"
-          </p>
-          <hr class="mt-4">
-        </div>
-        <div class="flex pt-20">
-          <div class="w-1/2">
-            <div class="relative">
-              <img class="w-60% h-25rem absolute" src="../assets/esatta-images/product/body_shape.svg">
-              <img class="w-60% h-25rem py-8" src="../assets/esatta-images/product/shape_shape.png">
-            </div>
-          </div>
-          <div class="w-1/2 text-left text-sm pt-8">
-            <div>
-              <p class="text-lg font-bold tracking-widest">
-                HOURGLASS
-              </p>
-              <p class="pt-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
-                Vivamus molestie orci sit amet venenatis congue.
-              </p>
-              <p class="pt-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
-                Vivamus molestie orci sit amet venenatis congue.
-              </p>
-              <p class="pt-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
-                Vivamus molestie orci sit amet venenatis congue.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="bg-cl-secondary lg:pr-nav">
-      <p class="text-center text-2xl font-medium pb-8">
-        YOU MIGHT ALSO LIKE
+      <p class="text-center text-lg font-medium py-12 cl-secondary">
+        You Might Also Like
       </p>
       <related-products
         type="upsell"
-        class="bg-cl-secondary"
+        class="bg-cl-secondary pl-8 md:pl-0 lg:pl-8 pr-8 lg:pr-0"
       />
     </section>
   </div>
@@ -244,6 +206,8 @@ import focusClean from 'theme/components/theme/directives/focusClean'
 import WebShare from '@vue-storefront/core/modules/social-share/components/WebShare'
 import BaseInputNumber from 'theme/components/core/blocks/Form/BaseInputNumber'
 import SizeGuide from 'theme/components/core/blocks/Product/SizeGuide'
+import ProductCarousel from 'theme/components/custom/product-components/ProductCarousel'
+import ProductCarouseltablet from 'theme/components/custom/product-components/ProductCarouseltablet'
 
 export default {
   components: {
@@ -263,6 +227,8 @@ export default {
     SizeSelector,
     WebShare,
     BaseInputNumber,
+    ProductCarousel,
+    ProductCarouseltablet,
     SizeGuide
   },
   mixins: [Product, VueOfflineMixin],
@@ -498,5 +464,10 @@ select {
   margin-left: 2.5rem;
   border-radius: 50%;
   display: inline-block;
+}
+
+.disable-hover:hover {
+  cursor: pointer;
+  background-color: white;
 }
 </style>

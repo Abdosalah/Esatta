@@ -5,6 +5,12 @@ const Product = () => import(/* webpackChunkName: "vsf-product" */ 'theme/pages/
 const Category = () => import(/* webpackChunkName: "vsf-category" */ 'theme/pages/Category.vue')
 const CmsPage = () => import(/* webpackChunkName: "vsf-cms" */ 'theme/pages/CmsPage.vue')
 const Checkout = () => import(/* webpackChunkName: "vsf-checkout" */ 'theme/pages/Checkout.vue')
+const PaymentSuccess = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/PaymentSuccess.vue')
+
+const DesignersPage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/DesignersPage.vue')
+const SingleDesignerpage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/SingleDesignerpage.vue')
+const HowitWorkspage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/HowitWorkspage.vue')
+
 const Compare = () => import(/* webpackChunkName: "vsf-compare" */ 'theme/pages/Compare.vue')
 const MyAccount = () => import(/* webpackChunkName: "vsf-my-profile" */ 'theme/pages/MyAccount.vue')
 const Static = () => import(/* webpackChunkName: "vsf-static" */ 'theme/pages/Static.vue')
@@ -14,6 +20,10 @@ const Contact = () => import(/* webpackChunkName: "vsf-browse" */ 'theme/compone
 let routes = [
   { name: 'home', path: '/', component: Home, alias: '/pwa.html' },
   { name: 'checkout', path: '/checkout', component: Checkout },
+  { name: 'how-it-works', path: '/how-it-works', component: HowitWorkspage },
+  { name: 'single-designer', path: '/single-designer', component: SingleDesignerpage },
+  { name: 'payment-success', path: '/payment-success', component: PaymentSuccess },
+  { name: 'designers', path: '/designers', component: DesignersPage },
   { name: 'legal', path: '/legal', component: Static, props: {page: 'lorem', title: 'Legal Notice'}, meta: {title: 'Legal Notice', description: 'Legal Notice - example of description usage'} },
   { name: 'privacy', path: '/privacy', component: Static, props: {page: 'lorem', title: 'Privacy'} },
   { name: 'magazine', path: '/magazine', component: Static, props: {page: 'lorem', title: 'Magazine'} },

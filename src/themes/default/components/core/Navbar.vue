@@ -2,7 +2,6 @@
   <div>
     <div class="Navbar hidden lg:block animated fadein">
       <img class="image" src="../../assets/logo.svg">
-
       <router-link v-if="!currentUser" :to="localizedRoute('/my-account')" exact class="link">
         <img src="../../assets/svg/measure.svg" class="images">
         {{ $t('MEASURE ME') }}
