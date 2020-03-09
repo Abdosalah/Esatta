@@ -14,6 +14,8 @@ const HowitWorkspage = () => import(/* webpackChunkName: "vsf-payment-success" *
 const Compare = () => import(/* webpackChunkName: "vsf-compare" */ 'theme/pages/Compare.vue')
 const MyAccount = () => import(/* webpackChunkName: "vsf-my-profile" */ 'theme/pages/MyAccount.vue')
 const Static = () => import(/* webpackChunkName: "vsf-static" */ 'theme/pages/Static.vue')
+const Browse = () => import(/* webpackChunkName: "vsf-browse" */ 'theme/components/core/blocks/Browse/Browse.vue')
+const Contact = () => import(/* webpackChunkName: "vsf-browse" */ 'theme/components/core/blocks/Contact/contact.vue')
 
 let routes = [
   { name: 'home', path: '/', component: Home, alias: '/pwa.html' },
@@ -40,7 +42,7 @@ let routes = [
   { name: 'delivery', path: '/delivery', component: Static, props: {page: 'lorem', title: 'Delivery'} },
   { name: 'returns', path: '/returns', component: Static, props: {page: 'lorem', title: 'Returns policy'} },
   { name: 'order-from-catalog', path: '/order-from-catalog', component: Static, props: {page: 'lorem', title: 'Order from catalog'} },
-  { name: 'contact', path: '/contact', component: Static, props: {page: 'contact', title: 'Contact'} },
+  // { name: 'contact', path: '/contact', component: Static, props: {page: 'contact', title: 'Contact'} },
   { name: 'compare', path: '/compare', component: Compare, props: {title: 'Compare Products'} },
   { name: 'page-not-found', path: '/page-not-found', component: PageNotFound },
   { name: 'error', path: '/error', component: ErrorPage, meta: { layout: 'minimal' } },
@@ -52,7 +54,9 @@ let routes = [
   { name: 'configurable-product', path: '/p/:parentSku/:slug/:childSku', component: Product }, // :sku param can be marked as optional with ":sku?" (https://github.com/vuejs/vue-router/blob/dev/examples/route-matching/app.js#L16), but it requires a lot of work to adjust the rest of the site
   { name: 'product', path: '/p/:parentSku/:slug/:childSku', component: Product }, // :sku param can be marked as optional with ":sku?" (https://github.com/vuejs/vue-router/blob/dev/examples/route-matching/app.js#L16), but it requires a lot of work to adjust the rest of the site
   { name: 'category', path: '/c/:slug', component: Category },
-  { name: 'cms-page', path: '/i/:slug', component: CmsPage }
+  { name: 'cms-page', path: '/i/:slug', component: CmsPage },
+  { name: 'browse', path: '/b/:slug', component: Browse },
+  { name: 'contact', path: '/contact', component: Contact }
 ]
 
 export default routes

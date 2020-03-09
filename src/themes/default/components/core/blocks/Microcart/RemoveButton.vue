@@ -1,8 +1,20 @@
 <template>
-  <button class="brdr-none bg-cl-transparent p0 middle-xs inline-flex cl-secondary">
+  <button class="button">
     <span class="hidden-xs h6">
-      {{ $t('Remove') }}
+      <!-- {{ $t('Remove') }} -->
     </span>
-    <i class="material-icons h4 p5 pr0">remove_shopping_cart</i>
+    <i class="icon material-icons h4">clear</i>
   </button>
 </template>
+<style scoped>
+.icon {
+    padding-top: 6px;
+    padding-right: 4px;
+}
+.button{
+  border-radius: 50%;
+  background-color: white;
+  height: 1.8rem;
+  width: 1.8rem;
+}
+</style>

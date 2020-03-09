@@ -1,7 +1,7 @@
 <template>
   <transition :name="direction === 'right' ? 'slide-left' : direction === 'left' ? 'slide-right' : null ">
     <div
-      class="mw-100 fixed cl-accent bg-cl-primary"
+      class="mw-100 fixed cl-accent "
       :class="direction === 'left' ? 'left-sidebar' : direction === 'right' ? 'right-sidebar' : null "
       data-testid="sidebar"
       v-if="isOpen"
@@ -77,12 +77,10 @@ export default {
     right: 0;
     z-index: 3;
     height: 100%;
-    width: 45%;
+    // width: 800px;
     min-width: 320px;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: mistyrose;
-    -webkit-overflow-scrolling: touch;
   }
 
   .left-sidebar{
@@ -93,7 +91,7 @@ export default {
     overflow: hidden;
     overflow-y: auto;
     z-index: 3;
-    -webkit-overflow-scrolling: touch;
+
     @media (max-width: 767px) {
       width: 100vh;
     }

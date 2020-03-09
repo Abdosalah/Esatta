@@ -10,7 +10,8 @@
         :is-open="isSearchPanelOpen"
         @close="$store.commit('ui/setSearchpanel')"
       />
-      <async-sidebar
+      <AsyncSidebarNav
+        class="bg-mistyrose"
         :async-component="Microcart"
         :is-open="isMicrocartOpen"
         @close="$store.commit('ui/setMicrocart')"
@@ -19,7 +20,7 @@
         :async-component="SidebarMenu"
         :is-open="isSidebarOpen"
         @close="$store.commit('ui/setSidebar')"
-        direction="left"
+        direction="right"
       />
       <async-sidebar
         :async-component="Wishlist"
@@ -42,6 +43,7 @@
 import CalltoAction from 'theme/components/custom/CalltoAction'
 import { mapState } from 'vuex'
 import AsyncSidebar from 'theme/components/theme/blocks/AsyncSidebar/AsyncSidebar.vue'
+import AsyncSidebarNav from 'theme/components/theme/blocks/AsyncSidebar/AsyncSidebarNav.vue'
 import NavBar from 'theme/components/core/Navbar'
 import MainFooter from 'theme/components/core/blocks/Footer/Footer.vue'
 import Overlay from 'theme/components/core/Overlay.vue'
@@ -121,7 +123,8 @@ export default {
     OfflineBadge,
     OrderConfirmation,
     CalltoAction,
-    AsyncSidebar
+    AsyncSidebar,
+    AsyncSidebarNav
   }
 }
 </script>
