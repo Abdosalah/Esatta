@@ -1,9 +1,8 @@
 <template>
   <div class="relative bg-cl-secondary">
     <img class="h-7/10 w-full" src="assets/esatta-images/how-it-works/responsible_man.jpg" alt="">
-    <div class="h-30vh" >
-    </div>
-    <div class="my-20 mx-5%" >
+    <div class="h-30vh" />
+    <div class="my-20 mx-5%">
       <p class="font-bold">
         WE DO BELIEVE IT'S POSSIBLE
       </p>

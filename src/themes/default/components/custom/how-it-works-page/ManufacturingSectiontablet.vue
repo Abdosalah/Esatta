@@ -21,8 +21,7 @@
           quisque placerat quisque.
         </p>
       </div>
-      <div class="w-2/5">
-      </div>
+      <div class="w-2/5" />
     </div>
     <div class="mx-5% flex pb-16">
       <ul class="text-sm cl-secondary list-disc w-3/5">

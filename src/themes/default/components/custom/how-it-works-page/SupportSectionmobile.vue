@@ -13,7 +13,7 @@
         </p>
       </button>
     </div>
-    <div class="my-20 mx-5%" >
+    <div class="my-20 mx-5%">
       <p class="text-center font-bold">
         WE DO BELIEVE IT'S POSSIBLE
       </p>
