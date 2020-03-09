@@ -1,5 +1,5 @@
 <template>
-  <div class="mr-20%">
+  <div class="pr-20% add-gradient pt-16">
     <p class="text-center text-5xl font-bold">
       Social Responsibility
     </p>
@@ -40,27 +40,33 @@
       <img class="w-1/2 mt-5%" src="assets/esatta-images/how-it-works/responsibility2.jpg">
     </div>
     <div class="w-full ml-12% bg-pink-200 pl-12 py-12">
-      <p class="font-bold text-2xl inline-block mx-2.5%">
+      <p class="font-bold text-2xl inline-block mr-2.5% text-pink-500">
         ORDER
       </p>
-      <p class="font-bold text-2xl inline-block mx-2.5%">
+      <p class="font-bold text-2xl inline-block mr-2.5%">
         +
       </p>
-      <p class="font-bold text-2xl inline-block mx-2.5%">
+      <p class="font-bold text-2xl inline-block mr-2.5% text-pink-500">
         MANUFACTURE
       </p>
-      <p class="font-bold text-2xl inline-block mx-2.5%">
+      <p class="font-bold text-2xl inline-block mr-2.5%">
         +
       </p>
-      <p class="font-bold text-2xl inline-block mx-2.5%">
+      <p class="font-bold text-2xl inline-block mr-2.5% text-pink-500">
         DELIVERY
       </p>
-      <p class="font-bold text-2xl inline-block mx-2.5%">
+      <p class="font-bold text-2xl inline-block mr-2.5%">
         =
       </p>
-      <p class="font-bold text-2xl inline-block mx-2.5%">
+      <p class="font-bold text-2xl inline-block mr-2.5%">
         NO WASTAGE
       </p>
     </div>
   </div>
 </template>
+
+<style scoped>
+.add-gradient {
+  background: linear-gradient(to bottom, #fff 95%, #f2f2f2 5%);
+}
+</style>

@@ -1,12 +1,16 @@
 <template>
-  <div class="relative flex">
-    <div class="w-1/2 h-65vh" />
-    <img class="w-1/2 h-65vh object-fill" src="assets/esatta-images/how-it-works/step2.jpg">
-    <div class="bg-white h-30vh w-1/2 absolute top-20vh right-35% flex">
+  <div class="relative flex mb-12 lg:mb-0">
+    <img class="w-full pb-16 lg:pb-0 object-fill h-75vh mb-20 lg:mb-0 lg:ml-50% lg:w-1/2 lg:h-65vh" src="assets/esatta-images/how-it-works/step2.jpg">
+    <div class="flex h-2/5 absolute bottom-0 w-90% left-5% bg-gray lg:bg-white lg:w-1/2 lg:left-20% lg:top-15vh">
+      <div class="w-2/5 lg:hidden">
+        <p class="steps-numbers">
+          2
+        </p>
+      </div>
       <div class="w-3/5">
         <p class="text-2xl py-12 font-bold">
-          HANDCRAFTER
-          <br>& INDEPENDANT
+          HANDCRAFTED
+          <br>& INDEPENDENT
         </p>
         <p class="text-sm cl-secondary">
           All our garments are made for you from scratch. Our tailors take your
@@ -14,7 +18,7 @@
           <br>garment will be unique to you!
         </p>
       </div>
-      <div class="w-2/5">
+      <div class="w-2/5 hidden lg:block">
         <p class="steps-numbers">
           2
         </p>
@@ -25,10 +29,11 @@
 
 <style scoped>
 .steps-numbers {
-  font-size: 10rem;
   height: 100%;
-  padding-top: 5%;
-  text-align: center;
+  font-size: 10rem;
   font-weight: 900;
+  padding-top: 20%;
+  text-align: center;
+  padding-bottom: 20%;
 }
 </style>
