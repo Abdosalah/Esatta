@@ -6,8 +6,8 @@
     data-testid="openMicrocart"
     :aria-label="$t('Open microcart')"
   >
-    <img src="assets/svg/bag.svg" class="images hidden lg:block md:mt-2 lg:mt-0 lg:relative">
-    <img src="assets/svg/bag.svg" class="mediumImages lg:hidden md:mt-2 lg:mt-0 lg:relative">
+    <img src="../../../../assets/svg/bag.svg" class="images hidden lg:block md:mt-2 lg:mt-0 lg:relative">
+    <img src="../../../../assets/svg/bag.svg" class="mediumImages lg:hidden md:mt-2 lg:mt-0 lg:relative">
     <div>BAG</div>
     <!-- <i class="material-icons">shopping_cart</i> -->
     <span

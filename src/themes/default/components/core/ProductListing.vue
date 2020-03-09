@@ -3,7 +3,7 @@
     <div
       v-for="(product, key) in products"
       :key="product.id"
-      class="flex pl-5 pb-10"
+      class="flex pl-5 pb-32"
       :class="{ mySpecdiv: key === 12, normalDiv: key !== 12 }"
     >
       <div v-if="key === 12" class="middle-section">
@@ -31,7 +31,7 @@
           <p class="py-4 text-xs font-bold">
             SHOP YOUR BODY
           </p>
-          <p class="textpara text-xs block lg:hidden">
+          <p class="textpara text-xs block">
             All our garment are made for you <br>
             from scratch and designed by <br>
             independent designers
@@ -57,7 +57,7 @@
           <p class="py-4 text-xs font-bold">
             OUR FIT GUARANTEE
           </p>
-          <p class="textpara text-xs block lg:hidden">
+          <p class="textpara text-xs block">
             All our garment are made for you <br>
             from scratch and designed by <br>
             independent designers

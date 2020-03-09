@@ -7,10 +7,10 @@
     }"
   >
     <div class="popper">
-      Popper Content
+      NEEDS BETTER MEASUREMENT
     </div>
 
-    <button slot="reference" pointer class="button">
+    <button slot="reference" pointer class="height_4 button">
       <img :class="imgDimensions" src="../../../../assets/esatta-images/signup/measure_me.svg">
     </button>
   </popper>
@@ -50,10 +50,16 @@ button {
     height: 10%;
 }
 .button{
-  height: 100%;
-  width: 100%;
+  margin-right: 9px;
 }
 .popover{
   z-index: 10000;
+}
+.popper{
+  color: #7b4240;
+  font-size: xx-small;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 10px;
 }
 </style>

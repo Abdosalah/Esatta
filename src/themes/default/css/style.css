@@ -11636,8 +11636,16 @@ video {
   width: 14rem;
 }
 
+.w-60 {
+  width: 15rem;
+}
+
 .w-64 {
   width: 16rem;
+}
+
+.w-72 {
+  width: 18rem;
 }
 
 .w-auto {
@@ -11796,6 +11804,10 @@ video {
 
 .w-60\% {
   width: 60%;
+}
+
+.w-45\% {
+  width: 45%;
 }
 
 .z-0 {

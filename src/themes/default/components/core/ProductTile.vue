@@ -21,9 +21,8 @@
       </router-link>
       <div class="product-corner">
         <wishlist-button class="p-3px" :product="product" img-dimensions="height_4" button-dimensions="" />
-        <MeasureMeButton class="p-3px mr-2" :product="product" img-dimensions="height_4" button-dimensions="" />
+        <MeasureMeButton class="p-3px" :product="product" img-dimensions="height_4" button-dimensions="" />
         <ExpiryButton class="p-3px" :product="product" img-dimensions="height_4" button-dimensions="" />
-        <VueTourPopoverContent />
         <p v-if="isNew === 'new'" class="pb-1 text-xs p-3px">
           NEW
         </p>
@@ -72,7 +71,6 @@ import config from 'config'
 import ProductImage from './ProductImage'
 import MeasureMeButton from 'theme/components/core/blocks/Browse/MeasureMeButton'
 import ExpiryButton from 'theme/components/core/blocks/Browse/ExpiryButton'
-import VueTourPopoverContent from 'theme/components/core/blocks/Browse/VueTourPopoverContent'
 
 export default {
   mixins: [ProductTile],
@@ -80,8 +78,7 @@ export default {
     'WishlistButton': () => import(/* webpackChunkName: "wishlist" */'theme/components/core/blocks/Wishlist/AddToWishlist'),
     ProductImage,
     MeasureMeButton,
-    ExpiryButton,
-    VueTourPopoverContent
+    ExpiryButton
   },
   props: {
     labelsActive: {
@@ -218,7 +215,7 @@ $color-white: color(white);
 }
 
 .product-corner {
-  border-bottom-left-radius: 50%;
+  border-bottom-left-radius: 10%;
   padding-left: 0.5rem;
   background-color: white;
   position: absolute;

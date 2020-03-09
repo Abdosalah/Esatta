@@ -1,7 +1,7 @@
 <template>
   <div class="securepayments">
     <hr>
-    <img class="securepayments" src="assets/footer_payment.png">
+    <img class="securepayments" src="../../../../assets/footer_payment.png">
   </div>
 </template>>
 <script>

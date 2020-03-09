@@ -5,7 +5,7 @@
     </div>
     <div class="securepayments hidden md:block">
       <hr>
-      <img class="securepayments" src="assets/footer_payment.png">
+      <img class="securepayments" src="../../../../assets/footer_payment.png">
     </div>
   </footer>
 </template>

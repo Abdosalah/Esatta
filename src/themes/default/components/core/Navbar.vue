@@ -1,18 +1,18 @@
 <template>
   <div>
     <div class="Navbar hidden lg:block animated fadein">
-      <img class="image" src="assets/logo.svg">
+      <img class="image" src="../../assets/logo.svg">
 
       <router-link v-if="!currentUser" :to="localizedRoute('/my-account')" exact class="link">
-        <img src="assets/svg/measure.svg" class="images">
+        <img src="../../assets/svg/measure.svg" class="images">
         {{ $t('MEASURE ME') }}
       </router-link>
       <router-link :to="localizedRoute('/b/women-20')" exact class="link">
-        <img src="assets/svg/browse_b.svg" class="images opacity-25">
+        <img src="../../assets/svg/browse_b.svg" class="images opacity-25">
         {{ $t('BROWSE') }}
       </router-link>
       <router-link :to="localizedRoute('/returns')" exact class="link">
-        <img src="assets/svg/like_prod.svg" class="images opacity-25">
+        <img src="../../assets/svg/like_prod.svg" class="images opacity-25">
         <!-- <WishlistIcon /> -->
         {{ $t('LIKED') }}
       </router-link>
@@ -22,11 +22,11 @@
       </router-link> -->
       <MicrocartIcon />
       <router-link v-if="!currentUser" :to="localizedRoute('/returns')" exact class="link">
-        <img src="assets/svg/log_in.svg" class="images">
+        <img src="../../assets/svg/log_in.svg" class="images">
         {{ $t('LOG IN') }}
       </router-link>
       <router-link v-else :to="localizedRoute('/my-account')" exact class="link">
-        <img src="assets/svg/measure.svg" class="images">
+        <img src="../../assets/svg/measure.svg" class="images">
         {{ $t('MEASURE ME') }}
       </router-link>
       <Currency class="currency opacity-25" />

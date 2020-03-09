@@ -1,17 +1,32 @@
 <template>
-  <!-- <button class="button">
-    <img :class="imgDimensions" src="../../../../assets/svg/clock.svg">
-  </button> -->
-  <b-button class="button" v-b-popover.hover="'I am popover directive content!'" title="Popover Titttle">
-    <img :class="imgDimensions" src="../../../../assets/svg/clock.svg">
-  </b-button>
+  <popper
+    trigger="hover"
+    :options="{
+      placement: 'left',
+      modifiers: { offset: { offset: '0,10px' } }
+    }"
+  >
+    <div class="popper">
+      ENDS IN
+    </div>
+
+    <button slot="reference" pointer class="height_4 button">
+      <img :class="imgDimensions" src="../../../../assets/svg/clock.svg">
+    </button>
+  </popper>
 </template>
 
 <script>
+import Popper from 'vue-popperjs';
+import 'vue-popperjs/dist/vue-popper.css';
+
 export default {
-  props: ['imgDimensions', 'buttonDimensions']
+  components: {
+    'popper': Popper
+  }
 }
 </script>
+
 <style lang="scss" scoped>
 button {
     outline: none;
@@ -36,6 +51,16 @@ button {
     height: 10%;
 }
 .button{
-    padding: 3px;
+  margin-right: 9px;
+}
+.popover{
+  z-index: 10000;
+}
+.popper{
+  color: #7b4240;
+  font-size: xx-small;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 10px;
 }
 </style>
