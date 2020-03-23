@@ -1,12 +1,12 @@
 <template>
   <button
     type="button"
-    class="bg-cl-transparent brdr-none inline-flex"
+    class="brdr-none inline-flex"
     @click="openSidebarMenu"
     :aria-label="$t('Open menu')"
     data-testid="menuButton"
   >
-    <i class="material-icons">dehaze</i>
+    <i class="material-icons">more_vert</i>
   </button>
 </template>
 
