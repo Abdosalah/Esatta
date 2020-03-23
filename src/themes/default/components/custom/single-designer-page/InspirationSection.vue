@@ -1,6 +1,6 @@
 <template>
   <div class="bg-cl-secondary">
-    <p class="text-bold text-2xl pl-15% py-16">
+    <p class="text-2xl pl-15% py-16 font-bold">
       INSPIRATION
     </p>
     <div class="flex relative mb-16">
