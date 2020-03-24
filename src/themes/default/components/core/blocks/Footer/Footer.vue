@@ -128,7 +128,7 @@
           </router-link>
         </div>
         <div class="link">
-          <router-link :to="localizedRoute('/contact')" exact>
+          <router-link :to="localizedRoute('/FAQ')" exact>
             {{ $t('FAQ') }}
           </router-link>
         </div>
@@ -168,7 +168,7 @@
           </router-link>
         </div>
         <div class="link">
-          <router-link :to="localizedRoute('/store-locator')" exact>
+          <router-link :to="localizedRoute('/contact')" exact>
             {{ $t('CONTACT') }}
           </router-link>
         </div>
