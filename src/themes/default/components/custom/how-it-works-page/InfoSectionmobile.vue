@@ -1,7 +1,7 @@
 <template>
   <div class="mb-16">
     <p class="text-center font-bold my-12 mx-20%">
-      INDEPENDANT DESIGNS MADE FOR YOU
+      INDEPENDENT DESIGNS MADE FOR YOU
     </p>
     <carousel class="mx-10% cl-secondary" :per-page="1" :navigate-to="someLocalProperty" :mouse-drag="true">
       <slide class="">

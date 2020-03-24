@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="mx-10% pb-12">
-      <ul class="text-sm cl-secondary list-disc ">
+      <ul class="text-sm cl-secondary list-disc pl-4">
         <li>
           No forced labour
         </li>

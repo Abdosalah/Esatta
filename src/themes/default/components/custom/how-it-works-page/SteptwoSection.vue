@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex mb-12 lg:mb-0">
     <img class="w-full pb-16 lg:pb-0 object-fill h-75vh mb-20 lg:mb-0 lg:ml-50% lg:w-1/2 lg:h-65vh" src="assets/esatta-images/how-it-works/step2.jpg">
-    <div class="flex h-2/5 absolute bottom-0 w-90% left-5% bg-gray lg:bg-white lg:w-1/2 lg:left-20% lg:top-15vh">
+    <div class="flex h-30vh absolute bottom-0 w-90% left-5% bg-gray lg:bg-white lg:w-1/2 lg:left-20% lg:top-15vh">
       <div class="w-2/5 lg:hidden">
         <p class="steps-numbers">
           2
@@ -32,8 +32,8 @@
   height: 100%;
   font-size: 10rem;
   font-weight: 900;
-  padding-top: 20%;
+  padding-top: 10%;
   text-align: center;
-  padding-bottom: 20%;
+  padding-bottom: 10%;
 }
 </style>

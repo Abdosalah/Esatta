@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-16">
+  <div class="">
     <p class="text-center text-5xl font-bold">
       Social Responsibility
     </p>
@@ -53,10 +53,7 @@
         <p class="font-bold text-2xl inline-block md:mr-2.5% text-pink-500">
           DELIVERY
         </p>
-        <p class="font-bold text-2xl inline-block md:hidden md:mr-2.5%">
-          =
-        </p>
-        <p class="font-bold text-2xl hidden md:inline-block md:mr-2.5%">
+        <p class="font-bold text-2xl md:mr-2.5%">
           =
         </p>
         <p class="font-bold text-2xl mt-4 md:mt-0 md:inline-block md:mr-2.5%">
