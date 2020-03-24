@@ -1,10 +1,10 @@
 <template>
   <div class="bg-cl-secondary">
-    <p class="text-bold text-2xl text-center py-16">
+    <p class="font-bold text-2xl text-center py-16">
       INSPIRATION
     </p>
 
-    <div class="relative w-full mt-20%">
+    <div class="relative w-full">
       <!-- HERE GOES ONE IMAGE -->
       <div class="h-2/5 bg-green-300" />
     </div>

@@ -1,23 +1,21 @@
 <template>
   <div class="">
-    <designer-header />
-    <div class="h-20 bg-cl-secondary mb-32">
-      REFINE FILTERS
-    </div>
-    <designers-large :deigners-list="designersArray" class="hidden lg:block" />
-    <designers-small :deigners-list="designersArray" class="lg:hidden" />
+    <page-header />
+    <page-bodylarge :designers-list="designersArray" class="hidden lg:block" />
+    <howit-works class="" />
+    <!-- <howit-workstablet class="" /> -->
   </div>
 </template>
 
 <script>
-import DesignerHeader from 'theme/components/custom/designers-page-components/DesignerHeader'
-import DesignersLarge from 'theme/components/custom/designers-page-components/DesignersLarge'
-import DesignersSmall from 'theme/components/custom/designers-page-components/DesignersSmall'
+import PageHeader from 'theme/components/custom/body-shapes/PageHeader'
+import PageBodylarge from 'theme/components/custom/body-shapes/PageBodylarge'
+import HowitWorks from 'theme/components/custom/body-shapes/HowitWorks'
 export default {
   components: {
-    DesignerHeader,
-    DesignersLarge,
-    DesignersSmall
+    PageHeader,
+    HowitWorks,
+    PageBodylarge
   },
   data () {
     return {
@@ -26,6 +24,26 @@ export default {
           name: 'Clifford Smith',
           origin: 'Brooklyn, USA',
           imageUrl: 'assets/esatta-images/designers/hp_el1.jpg'
+        },
+        {
+          name: 'Evon Wahab',
+          origin: 'Paris, France',
+          imageUrl: 'assets/esatta-images/designers/hp_el2.jpg'
+        },
+        {
+          name: 'John Doe',
+          origin: 'Cairo, Egypt',
+          imageUrl: 'assets/esatta-images/designers/hp_el3.jpg'
+        },
+        {
+          name: 'Clifford Smith',
+          origin: 'Brooklyn, USA',
+          imageUrl: 'assets/esatta-images/designers/hp_el1.jpg'
+        },
+        {
+          name: 'Evon Wahab',
+          origin: 'Paris, France',
+          imageUrl: 'assets/esatta-images/designers/hp_el2.jpg'
         },
         {
           name: 'Evon Wahab',

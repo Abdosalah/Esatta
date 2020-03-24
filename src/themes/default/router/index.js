@@ -10,6 +10,7 @@ const PaymentSuccess = () => import(/* webpackChunkName: "vsf-payment-success" *
 const DesignersPage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/DesignersPage.vue')
 const SingleDesignerpage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/SingleDesignerpage.vue')
 const HowitWorkspage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/HowitWorkspage.vue')
+const BodyShapes = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/BodyShapes.vue')
 
 const Compare = () => import(/* webpackChunkName: "vsf-compare" */ 'theme/pages/Compare.vue')
 const MyAccount = () => import(/* webpackChunkName: "vsf-my-profile" */ 'theme/pages/MyAccount.vue')
@@ -21,6 +22,7 @@ const FAQ = () => import(/* webpackChunkName: "vsf-browse" */ 'theme/components/
 let routes = [
   { name: 'home', path: '/', component: Home, alias: '/pwa.html' },
   { name: 'checkout', path: '/checkout', component: Checkout },
+  { name: 'body-shapes', path: '/body-shapes', component: BodyShapes },
   { name: 'how-it-works', path: '/how-it-works', component: HowitWorkspage },
   { name: 'single-designer', path: '/single-designer', component: SingleDesignerpage },
   { name: 'payment-success', path: '/payment-success', component: PaymentSuccess },

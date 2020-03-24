@@ -102,8 +102,11 @@ export default {
 .container{
     background-color: #C57974;
     color: white;
+<<<<<<< HEAD
     max-width: 100%;
     padding-bottom: 5%;
+=======
+>>>>>>> master
 }
 .links{
     padding: 10px;
