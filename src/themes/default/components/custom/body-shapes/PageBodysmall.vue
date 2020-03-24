@@ -1,14 +1,14 @@
 <template>
   <div class="">
-    <div class="w-65% ml-10% text-center mb-16">
-      <p class="w-4/5 ml-10%">
+    <div class="text-center mb-16">
+      <p class="mx-4">
         Donec scelerisque magna lorem, id cursus nibh viverra sed.
         Proin orci velit, fermentum eu dictum vel, imperdiet ut tortor.
         Donec consectetur dolor at mauris rhoncus mollis. Interdum et
         malesuada fames ac ante ipsum primis in faucibus.
       </p>
     </div>
-    <div class="mr-18%">
+    <div class="">
       <div class="my-grid mx-2.5%">
         <div
           v-for="(designer, key) in designersList"
@@ -35,7 +35,7 @@ export default {
 
 <style scoped>
 .my-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   display: grid;
 }
 </style>

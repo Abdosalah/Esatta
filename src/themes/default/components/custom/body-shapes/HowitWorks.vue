@@ -21,10 +21,10 @@
       </button>
     </div>
     <div class="w-1/3 text-center pt-15% lg:py-10% lg:w-1/4">
-      <p class="pb-4 text-6xl font-black">
+      <p class="text-6xl font-black">
         1
       </p>
-      <p class="py-4 text-xs">
+      <p class="py-4 text-xs font-bold">
         SHOP YOUR BODY
       </p>
       <p class="text-xs block lg:hidden">
@@ -47,10 +47,10 @@
       </p>
     </div>
     <div class="w-1/3 text-center pt-15% lg:py-10% lg:w-1/4">
-      <p class="pb-4 text-6xl font-black">
+      <p class="text-6xl font-black">
         3
       </p>
-      <p class="py-4 text-xs">
+      <p class="py-4 text-xs font-bold">
         OUR FIT GUARANTEE
       </p>
       <p class="text-xs block lg:hidden">
@@ -67,7 +67,6 @@
   margin-bottom: 5rem;
   margin-left: 2%;
   position: relative;
-  display: flex;
   height: 23rem;
   border: 0.5px solid gray;
 }
