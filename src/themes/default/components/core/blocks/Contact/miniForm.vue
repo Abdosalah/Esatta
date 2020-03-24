@@ -1,15 +1,17 @@
 <template>
   <div class="container">
-    <div class="grid lg:block m-10">
-      <input class="w-full lg:w-45%" v-model="message" placeholder="Name *">
-      <input class="w-full lg:w-45%" v-model="message" placeholder="Surname *">
+    <div class="m-10">
+      <input class="w-full" v-model="message" placeholder="Name *">
     </div>
-    <div class="flex m-10">
-      <input class="w-45% mr-2" v-model="message" placeholder="Your Email *">
-      <div class="w-45% flex">
-        <input class="w-20 mx-2 phoneNo" v-model="message" placeholder="+61 *">
-        <input class="w-4/5 phoneNo" v-model="message" placeholder="phone *">
-      </div>
+    <div class="m-10">
+      <input class="w-full" v-model="message" placeholder="Surname *">
+    </div>
+    <div class="m-10">
+      <input class="w-full" v-model="message" placeholder="Your Email *">
+    </div>
+    <div class="m-10">
+      <input class="w-20 mr-6" v-model="message" placeholder="+61 *">
+      <input class="w-3/5 md:w-4/5 phoneNo" v-model="message" placeholder="phone *">
     </div>
     <div class="m-10 w-11/12">
       <select>
@@ -19,19 +21,16 @@
       </select>
     </div>
     <div class="input m-10">
-      <textarea class="area w-1/2" v-model="message" placeholder="Message *" />
+      <textarea class="area" v-model="message" placeholder="Message *" />
     </div>
-    <div class="m-10">
-      <button class="btn-1 pointer">
+    <div class="grid md:block m-10">
+      <button class="w-full md:w-64 btn-1 pointer">
         <span>EXAMPLE OF COLLECTION</span>
       </button>
-      <button class="btn-2 pointer">
+      <button class="w-full md:w-64 btn-2 pointer">
         <span>SUBMIT</span>
       </button>
     </div>
-    <!-- <div v-if="selected === 'CAREERS' ">
-      Attachment
-    </div> -->
     <!-- <div id="app">
       <div v-if="!image">
         <h2>Select file to upload</h2>
@@ -53,17 +52,6 @@ export default {
     options: {
       type: Object,
       required: true
-    }
-  },
-  data () {
-    return {
-      attachment: false,
-      findName: 'CAREERS',
-      CAREERS: {
-        'Measurements1': 'CAREERS',
-        'Measurements2': 'CAREERS',
-        'Measurements3': 'CAREERS'
-      }
     }
   }
 }
@@ -87,7 +75,7 @@ export default {
       border-color: black;
   }
   .phoneNo{
-      margin-bottom: 0;
+      /* width: 81%; */
   }
   .dropdown{
       background-color: white;
@@ -97,6 +85,7 @@ export default {
       outline: 0;
       border-width: 1px;
       border-color: black;
+      width: 100%;
   }
   .btn-1{
       background-color: black;
@@ -104,7 +93,6 @@ export default {
       font-size: xx-small;
       text-align: center;
       height: 4rem;
-      width: 11rem;
       margin: 1%;
   }
   .btn-2{
@@ -113,7 +101,7 @@ export default {
       font-size: xx-small;
       text-align: center;
       height: 4rem;
-      width: 11rem;
+      float: right;
       margin: 1%;
   }
   /* #app {
@@ -124,5 +112,8 @@ img {
   margin: auto;
   display: block;
   margin-bottom: 10px;
+}
+button {
+
 }
 </style>

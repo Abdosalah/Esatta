@@ -16,6 +16,7 @@ const MyAccount = () => import(/* webpackChunkName: "vsf-my-profile" */ 'theme/p
 const Static = () => import(/* webpackChunkName: "vsf-static" */ 'theme/pages/Static.vue')
 const Browse = () => import(/* webpackChunkName: "vsf-browse" */ 'theme/components/core/blocks/Browse/Browse.vue')
 const Contact = () => import(/* webpackChunkName: "vsf-browse" */ 'theme/components/core/blocks/Contact/contact.vue')
+const FAQ = () => import(/* webpackChunkName: "vsf-browse" */ 'theme/components/core/blocks/FAQ/FAQ.vue')
 
 let routes = [
   { name: 'home', path: '/', component: Home, alias: '/pwa.html' },
@@ -56,7 +57,8 @@ let routes = [
   { name: 'category', path: '/c/:slug', component: Category },
   { name: 'cms-page', path: '/i/:slug', component: CmsPage },
   { name: 'browse', path: '/b/:slug', component: Browse },
-  { name: 'contact', path: '/contact', component: Contact }
+  { name: 'contact', path: '/contact', component: Contact },
+  { name: 'FAQ', path: '/FAQ', component: FAQ }
 ]
 
 export default routes
