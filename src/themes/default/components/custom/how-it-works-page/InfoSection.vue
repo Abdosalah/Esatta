@@ -4,7 +4,7 @@
       INDEPENDENT DESIGNS MADE FOR YOU
     </p>
     <carousel
-      class="mx-5% lg:mb-12 lg:mx-20% cl-secondary"
+      class="mx-10% lg:mb-12 lg:mx-20% cl-secondary"
       :per-page="1"
       :navigate-to="someLocalProperty"
       :mouse-drag="true"
@@ -157,5 +157,12 @@ export default {
 <style>
 .VueCarousel-navigation {
   font-size: 2rem
+}
+.VueCarousel-navigation-prev {
+  transform: translateY(-110%) translateX(-100%);
+}
+
+.VueCarousel-navigation-next {
+  transform: translateY(-110%) translateX(100%);
 }
 </style>
