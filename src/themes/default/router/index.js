@@ -9,6 +9,7 @@ const PaymentSuccess = () => import(/* webpackChunkName: "vsf-payment-success" *
 
 const DesignersPage = () => import(/* webpackChunkName: "" */ 'theme/pages/DesignersPage.vue')
 const Privacy = () => import(/* webpackChunkName: "" */ 'theme/pages/Privacy.vue')
+const Returns = () => import(/* webpackChunkName: "" */ 'theme/pages/Returns.vue')
 const SingleDesignerpage = () => import(/* webpackChunkName: "" */ 'theme/pages/SingleDesignerpage.vue')
 const HowitWorkspage = () => import(/* webpackChunkName: "" */ 'theme/pages/HowitWorkspage.vue')
 const BodyShapes = () => import(/* webpackChunkName: "" */ 'theme/pages/BodyShapes.vue')
@@ -27,6 +28,7 @@ let routes = [
   { name: 'how-it-works', path: '/how-it-works', component: HowitWorkspage },
   { name: 'single-designer', path: '/single-designer', component: SingleDesignerpage },
   { name: 'payment-success', path: '/payment-success', component: PaymentSuccess },
+  { name: 'returns', path: '/returns', component: Returns },
   { name: 'privacy', path: '/privacy', component: Privacy },
   { name: 'designers', path: '/designers', component: DesignersPage },
   { name: 'legal', path: '/legal', component: Static, props: {page: 'lorem', title: 'Legal Notice'}, meta: {title: 'Legal Notice', description: 'Legal Notice - example of description usage'} },
@@ -45,7 +47,6 @@ let routes = [
   { name: 'size-guide', path: '/size-guide', component: Static, props: {page: 'lorem', title: 'Size guide'} },
   { name: 'gift-card', path: '/gift-card', component: Static, props: {page: 'lorem', title: 'Gift card'} },
   { name: 'delivery', path: '/delivery', component: Static, props: {page: 'lorem', title: 'Delivery'} },
-  { name: 'returns', path: '/returns', component: Static, props: {page: 'lorem', title: 'Returns policy'} },
   { name: 'order-from-catalog', path: '/order-from-catalog', component: Static, props: {page: 'lorem', title: 'Order from catalog'} },
   // { name: 'contact', path: '/contact', component: Static, props: {page: 'contact', title: 'Contact'} },
   { name: 'compare', path: '/compare', component: Compare, props: {title: 'Compare Products'} },

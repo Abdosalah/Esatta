@@ -14,8 +14,8 @@
           Returns, Exchange & Refund information too.
         </p>
       </div>
-      <statement-desktop class="hidden lg:block" />
-      <statement-tablet class="lg:hidden" />
+      <!-- <statement-desktop class="hidden lg:block" />
+      <statement-tablet class="lg:hidden" /> -->
     </div>
   </div>
 </template>
