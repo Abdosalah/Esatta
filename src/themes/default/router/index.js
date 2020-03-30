@@ -7,10 +7,11 @@ const CmsPage = () => import(/* webpackChunkName: "vsf-cms" */ 'theme/pages/CmsP
 const Checkout = () => import(/* webpackChunkName: "vsf-checkout" */ 'theme/pages/Checkout.vue')
 const PaymentSuccess = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/PaymentSuccess.vue')
 
-const DesignersPage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/DesignersPage.vue')
-const SingleDesignerpage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/SingleDesignerpage.vue')
-const HowitWorkspage = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/HowitWorkspage.vue')
-const BodyShapes = () => import(/* webpackChunkName: "vsf-payment-success" */ 'theme/pages/BodyShapes.vue')
+const DesignersPage = () => import(/* webpackChunkName: "" */ 'theme/pages/DesignersPage.vue')
+const Privacy = () => import(/* webpackChunkName: "" */ 'theme/pages/Privacy.vue')
+const SingleDesignerpage = () => import(/* webpackChunkName: "" */ 'theme/pages/SingleDesignerpage.vue')
+const HowitWorkspage = () => import(/* webpackChunkName: "" */ 'theme/pages/HowitWorkspage.vue')
+const BodyShapes = () => import(/* webpackChunkName: "" */ 'theme/pages/BodyShapes.vue')
 
 const Compare = () => import(/* webpackChunkName: "vsf-compare" */ 'theme/pages/Compare.vue')
 const MyAccount = () => import(/* webpackChunkName: "vsf-my-profile" */ 'theme/pages/MyAccount.vue')
@@ -26,6 +27,7 @@ let routes = [
   { name: 'how-it-works', path: '/how-it-works', component: HowitWorkspage },
   { name: 'single-designer', path: '/single-designer', component: SingleDesignerpage },
   { name: 'payment-success', path: '/payment-success', component: PaymentSuccess },
+  { name: 'privacy', path: '/privacy', component: Privacy },
   { name: 'designers', path: '/designers', component: DesignersPage },
   { name: 'legal', path: '/legal', component: Static, props: {page: 'lorem', title: 'Legal Notice'}, meta: {title: 'Legal Notice', description: 'Legal Notice - example of description usage'} },
   { name: 'privacy', path: '/privacy', component: Static, props: {page: 'lorem', title: 'Privacy'} },
