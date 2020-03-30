@@ -2448,11 +2448,6 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.0.5.tgz#90ff3013c747c499c8b1d9684b63a7334a057f7d"
   integrity sha512-YOV1TitTNzJDXe/14sDJO/M/aL12Jhind0EkQRnqTX2167fqJsAICJfi0vsDdapPI1WaYsheyYYgy6PO02Nqqg==
 
-"@popperjs/core@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.0.5.tgz#90ff3013c747c499c8b1d9684b63a7334a057f7d"
-  integrity sha512-YOV1TitTNzJDXe/14sDJO/M/aL12Jhind0EkQRnqTX2167fqJsAICJfi0vsDdapPI1WaYsheyYYgy6PO02Nqqg==
-
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -10446,11 +10441,7 @@ lodash.uniqueid@^4.0.1:
   resolved "https://registry.yarnpkg.com/lodash.uniqueid/-/lodash.uniqueid-4.0.1.tgz#3268f26a7c88e4f4b1758d679271814e31fa5b26"
   integrity sha1-MmjyanyI5PSxdY1nknGBTjH6WyY=
 
-<<<<<<< HEAD
 lodash@4.17.15, lodash@^4.17.15, lodash@~4.17.11:
-=======
-lodash@4.17.15, lodash@^4.17.15:
->>>>>>> master
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
