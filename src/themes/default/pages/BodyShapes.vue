@@ -2,7 +2,7 @@
   <div class="">
     <page-header />
     <page-bodylarge :designers-list="designersArray" class="hidden lg:block" />
-    <page-bodymedium :designers-list="designersArray" class="hidden md:block lg:hidden" />
+    <page-bodymedium :designers-list="designersArray.slice(0,9)" class="hidden md:block lg:hidden" />
     <page-bodysmall :designers-list="designersArray" class="md:hidden" />
     <howit-works class="hidden lg:flex" />
     <howit-workstablet class="hidden md:block lg:hidden" />

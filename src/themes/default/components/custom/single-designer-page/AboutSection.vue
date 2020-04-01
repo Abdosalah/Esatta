@@ -37,19 +37,19 @@
     </div>
     <div class="my-16 w-1/2 ml-20% text-center">
       <p class="social-links">
-        <img src="/assets/svg/social/facebook.svg" class="h-8 w-8 m-auto">
+        <img src="/assets/svg/social/instagram.svg" class="h-6 w-6 m-auto">
       </p>
       <p class="social-links">
-        <img src="/assets/svg/social/instagram.svg" class="h-8 w-8 m-auto">
+        <img src="/assets/svg/social/facebook.svg" class="h-6 w-6 m-auto">
       </p>
       <p class="social-links">
-        <img src="/assets/svg/social/pinterest.svg" class="h-8 w-8 m-auto">
+        <img src="/assets/svg/social/pinterest.svg" class="h-6 w-6 m-auto">
       </p>
       <p class="social-links">
-        <img src="/assets/svg/social/google.svg" class="h-8 w-8 m-auto">
+        <img src="/assets/svg/social/twitter.svg" class="h-6 w-6 m-auto">
       </p>
       <p class="inline-block text-red w-19% hover:cursor-pointer">
-        <img src="/assets/svg/social/twitter.svg" class="h-8 w-8 m-auto">
+        <img src="/assets/svg/social/snapchat.svg" class="h-6 w-6 m-auto">
       </p>
     </div>
     <div class="my-video h-6/10 pl-10% pr-nav">

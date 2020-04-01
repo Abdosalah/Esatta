@@ -10,6 +10,7 @@ const PaymentSuccess = () => import(/* webpackChunkName: "vsf-payment-success" *
 const DesignersPage = () => import(/* webpackChunkName: "" */ 'theme/pages/DesignersPage.vue')
 const Privacy = () => import(/* webpackChunkName: "" */ 'theme/pages/Privacy.vue')
 const Returns = () => import(/* webpackChunkName: "" */ 'theme/pages/Returns.vue')
+const Blog = () => import(/* webpackChunkName: "" */ 'theme/pages/Blog.vue')
 const SingleDesignerpage = () => import(/* webpackChunkName: "" */ 'theme/pages/SingleDesignerpage.vue')
 const HowitWorkspage = () => import(/* webpackChunkName: "" */ 'theme/pages/HowitWorkspage.vue')
 const BodyShapes = () => import(/* webpackChunkName: "" */ 'theme/pages/BodyShapes.vue')
@@ -28,6 +29,7 @@ let routes = [
   { name: 'how-it-works', path: '/how-it-works', component: HowitWorkspage },
   { name: 'single-designer', path: '/single-designer', component: SingleDesignerpage },
   { name: 'payment-success', path: '/payment-success', component: PaymentSuccess },
+  { name: 'blog', path: '/blog', component: Blog },
   { name: 'returns', path: '/returns', component: Returns },
   { name: 'privacy', path: '/privacy', component: Privacy },
   { name: 'designers', path: '/designers', component: DesignersPage },

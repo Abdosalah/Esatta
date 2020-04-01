@@ -8,9 +8,9 @@
         Exclusive styles by independent designers. Made for You.
       </p>
     </div>
-    <div class="flex mb-8">
+    <div class="flex mb-12">
       <div class="w-1/3 text-center">
-        <p class="pb-4 text-6xl font-black">
+        <p class="text-6xl font-black">
           1
         </p>
         <p class="py-4 text-xs">
@@ -36,7 +36,7 @@
         </p>
       </div>
       <div class="w-1/3 text-center">
-        <p class="pb-4 text-6xl font-black">
+        <p class="text-6xl font-black">
           3
         </p>
         <p class="py-4 text-xs">

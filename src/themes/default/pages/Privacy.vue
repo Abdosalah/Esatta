@@ -1,6 +1,6 @@
 <template>
   <div class="md:relative h-screen">
-    <img class="md:absolute h-1/2 md:h-screen w-full" src="assets/esatta-images/privacy_policy.jpg">
+    <img class="md:absolute h-15vh md:h-screen w-full" src="assets/esatta-images/privacy_policy.jpg">
     <div class="md:absolute top-0 md:mt-24 ml-8% bg-white w-84% lg:w-70%">
       <div class="w-full text-center">
         <p class="text-5xl font-bold mt-8 md:mt-16">
@@ -14,8 +14,8 @@
           Returns, Exchange & Refund information too.
         </p>
       </div>
-      <!-- <statement-desktop class="hidden lg:block" />
-      <statement-tablet class="lg:hidden" /> -->
+      <statement-desktop class="hidden lg:block" />
+      <statement-tablet class="lg:hidden" />
     </div>
   </div>
 </template>

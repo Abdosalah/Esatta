@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen md:relative">
-    <img class="h-1/2 w-full md:absolute md:h-screen lg:h-80vh" src="assets/esatta-images/warranty.jpg">
+    <img class="h-15vh w-full md:absolute md:h-screen lg:h-80vh" src="assets/esatta-images/warranty.jpg">
     <div class="md:absolute top-0 md:mt-24 ml-8% bg-white w-84% lg:w-70%">
       <div class="w-full text-center">
         <p class="text-4xl font-bold mt-8 md:text-6xl md:mt-12">
@@ -9,7 +9,7 @@
         </p>
       </div>
       <div class="w-full ">
-        <p class="text-sm cl-secondary mt-8 md:mx-15% md:mt-20 lg:mx-23%">
+        <p class="text-sm cl-secondary mt-8 md:mx-15% md:mt-12 lg:mx-23%">
           We hope you're delighted with your order. If you're not completely satisfied, you may return
           items within 14 days (7 days for sale items).
         </p>
