@@ -230,7 +230,6 @@ export default {
   // color: black;
 }
 #navbarinternal{
-  background-color: #e2e2e2;
   color: #7b4240;
 }
 .button:hover, .button:active {
@@ -289,6 +288,7 @@ input[type="checkbox"]:checked + label{
     padding-top: 2%;
 }
 .nav{
-    color: black;
+  background-color: #E2E2E2;
+  color: black;
 }
 </style>
