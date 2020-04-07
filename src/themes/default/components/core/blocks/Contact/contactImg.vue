@@ -5,7 +5,7 @@
   <div class="main-div lg:relative">
     <img class="h-screen w-screen object-cover lg:block opacity-50" src="../../../../assets/contact_bcg.jpg">
     <div class="imgText lg:absolute lg:block m-auto table">
-      <h1 class="text-5xl ml-20">
+      <h1 class="text-5xl ml-20 font-extrabold">
         Contact
       </h1>
       <div class="pt-8 ml-20">
@@ -33,6 +33,6 @@
 .imgText{
   width: 60%;
   text-align: center;
-  top: 25%;
+  top: 30%;
 }
 </style>

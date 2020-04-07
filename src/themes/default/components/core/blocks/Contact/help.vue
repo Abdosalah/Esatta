@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h6 class="font-extrabold p-16">
+    <h6 class="font-extrabold p-4 md:p-16">
       WHAT CAN WE HELP YOU WITH
     </h6>
     <div class="linkContainer">
@@ -32,7 +32,7 @@
         PRESS
         <i class="material-icons icon">keyboard_arrow_right</i>
       </v-btn>
-      <v-btn class="links pointer" v-model="inp" @click="$emit('update:inp', dropdownOptions.OTHERS);">
+      <v-btn class="links pointer" v-model="inp" @click="$emit('update:inp', dropdownOptions.OTHERS); ">
         OTHERS
         <i class="material-icons icon">keyboard_arrow_right</i>
       </v-btn>
@@ -52,46 +52,54 @@ export default {
   data () {
     return {
       dropdownOptions: {
-        MY_MEASUREMENTS: {
-          'Measurements1': 'MY_MEASUREMENTS',
-          'Measurements2': 'MY_MEASUREMENTS',
-          'Measurements3': 'MY_MEASUREMENTS'
-        },
-        MY_ORDER: {
-          'Measurements1': 'MY_ORDER',
-          'Measurements2': 'MY_ORDER',
-          'Measurements3': 'MY_ORDER'
-        },
-        ALTERATIONS: {
-          'Measurements1': 'ALTERATIONS',
-          'Measurements2': 'ALTERATIONS',
-          'Measurements3': 'ALTERATIONS'
-        },
-        RETURNS: {
-          'Measurements1': 'RETURNS',
-          'Measurements2': 'RETURNS',
-          'Measurements3': 'RETURNS'
-        },
-        SELL_ON_ESATTA: {
-          'Measurements1': 'SELL_ON_ESATTA',
-          'Measurements2': 'SELL_ON_ESATTA',
-          'Measurements3': 'SELL_ON_ESATTA'
-        },
-        CAREERS: {
-          'Measurements1': 'CAREERS',
-          'Measurements2': 'CAREERS',
-          'Measurements3': 'CAREERS'
-        },
-        PRESS: {
-          'Measurements1': 'PRESS',
-          'Measurements2': 'PRESS',
-          'Measurements3': 'PRESS'
-        },
-        OTHERS: {
-          'Measurements1': 'OTHERS',
-          'Measurements2': 'OTHERS',
-          'Measurements3': 'OTHERS'
-        }
+        MY_MEASUREMENTS: [
+          {name: 'MY_MEASUREMENTS'},
+          {name: 'MY_MEASUREMENTS'},
+          {name: 'MY_MEASUREMENTS'},
+          {attachment: false}
+        ],
+        MY_ORDER: [
+          {name: 'MY_ORDER'},
+          {name: 'MY_ORDER'},
+          {name: 'MY_ORDER'},
+          {attachment: false}
+        ],
+        ALTERATIONS: [
+          {name: 'ALTERATIONS'},
+          {name: 'ALTERATIONS'},
+          {name: 'ALTERATIONS'},
+          {attachment: false}
+        ],
+        RETURNS: [
+          {name: 'RETURNS'},
+          {name: 'RETURNS'},
+          {name: 'RETURNS'},
+          {attachment: false}
+        ],
+        SELL_ON_ESATTA: [
+          {name: 'SELL_ON_ESATTA'},
+          {name: 'SELL_ON_ESATTA'},
+          {name: 'SELL_ON_ESATTA'},
+          {attachment: false}
+        ],
+        CAREERS: [
+          {name: 'CAREERS'},
+          {name: 'CAREERS'},
+          {name: 'CAREERS'},
+          {attachment: true}
+        ],
+        PRESS: [
+          {name: 'PRESS'},
+          {name: 'PRESS'},
+          {name: 'PRESS'},
+          {attachment: false}
+        ],
+        OTHERS: [
+          {name: 'OTHERS'},
+          {name: 'OTHERS'},
+          {name: 'OTHERS'},
+          {attachment: false}
+        ]
       }
     }
   }
@@ -104,6 +112,7 @@ export default {
     color: white;
     max-width: 100%;
     padding-bottom: 5%;
+    padding-top: 5%;
 }
 .links{
     padding: 10px;

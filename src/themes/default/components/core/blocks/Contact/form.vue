@@ -1,25 +1,31 @@
 <template>
   <div class="container">
     <div class="grid lg:block m-10">
-      <input class="w-full lg:w-45%" v-model="message" placeholder="Name *">
-      <input class="w-full lg:w-45%" v-model="message" placeholder="Surname *">
+      <input class="w-full lg:w-45%" v-model="message" placeholder="Name*">
+      <input class="w-full lg:w-45%" v-model="message" placeholder="Surname*">
     </div>
     <div class="flex m-10">
-      <input class="w-45% mr-2" v-model="message" placeholder="Your Email *">
+      <input class="w-45% mr-2" v-model="message" placeholder="Your Email*">
       <div class="w-45% flex">
-        <input class="w-20 mx-2 phoneNo" v-model="message" placeholder="+61 *">
-        <input class="w-4/5 phoneNo" v-model="message" placeholder="phone *">
+        <input class="w-20 mx-2 phoneNo" v-model="message" placeholder="+61*">
+        <input class="w-4/5 phoneNo" v-model="message" placeholder="Phone*">
       </div>
     </div>
     <div class="m-10 w-11/12">
-      <select>
-        <option v-for="(opti, name) in options" :value="opti" :key="opti">
-          {{ opti }} {{ name }}
+      <select @click="careerCheck()">
+        <option :value="null">
+          Select Issue
+        </option>
+        <option v-for="(opti) in options" :value="opti" :key="opti">
+          {{ opti.name }}
         </option>
       </select>
     </div>
     <div class="input m-10">
-      <textarea class="area w-1/2" v-model="message" placeholder="Message *" />
+      <textarea class="area w-1/2" v-model="message" placeholder=" Message*" />
+    </div>
+    <div v-show="attachment">
+      <upload />
     </div>
     <div class="m-10">
       <button class="btn-1 pointer">
@@ -29,26 +35,15 @@
         <span>SUBMIT</span>
       </button>
     </div>
-    <!-- <div v-if="selected === 'CAREERS' ">
-      Attachment
-    </div> -->
-    <!-- <div id="app">
-      <div v-if="!image">
-        <h2>Select file to upload</h2>
-        <input type="file" @change="onFileChange">
-      </div>
-      <div v-else>
-        <img :src="image">
-        <button @click="removeImage">
-          Remove image
-        </button>
-      </div>
-    </div> -->
   </div>
 </template>
 
 <script>
+import upload from 'theme/components/core/blocks/Contact/upload'
 export default {
+  components: {
+    upload
+  },
   props: {
     options: {
       type: Object,
@@ -57,12 +52,17 @@ export default {
   },
   data () {
     return {
-      attachment: false,
-      findName: 'CAREERS',
-      CAREERS: {
-        'Measurements1': 'CAREERS',
-        'Measurements2': 'CAREERS',
-        'Measurements3': 'CAREERS'
+      attachment: false
+    }
+  },
+  methods: {
+    careerCheck () {
+      for (let i = 0; i < this.options.length; i++) {
+        if (this.options[i].attachment === true) {
+          this.attachment = true
+        } else if (this.options[i].attachment === false) {
+          this.attachment = false
+        }
       }
     }
   }
@@ -97,6 +97,7 @@ export default {
       outline: 0;
       border-width: 1px;
       border-color: black;
+      padding: 1%;
   }
   .btn-1{
       background-color: black;
