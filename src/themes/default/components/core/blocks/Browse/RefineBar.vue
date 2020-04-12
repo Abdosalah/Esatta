@@ -22,7 +22,7 @@
           <li><a href="#">PRICE (LOW TO HIGH)</a></li>
         </ul>
       </li>
-      <li class="w-23% lg:w-13%">
+      <li class="hidden lg:block w-23% lg:w-13%">
         <a>SHOW
           <img src="../../../../assets/svg/ar_d.svg" class="images">
         </a>
@@ -32,7 +32,7 @@
           <li><a href="#">50</a></li>
         </ul>
       </li>
-      <li class="w-23% lg:w-13%">
+      <li class="hidden lg:block w-23% lg:w-13%">
         <a>MODEL
           <img src="../../../../assets/svg/eye.svg" class="images">
         </a>
@@ -49,13 +49,10 @@
 
 <script>
 import ExtendedRefine from 'theme/components/core/blocks/Browse/ExtendedRefine'
-import SortBY from 'theme/components/core/blocks/Browse/SortBY'
-import Dropdown from 'theme/components/core/blocks/Browse/Dropdown'
+
 export default {
   components: {
-    ExtendedRefine,
-    SortBY,
-    Dropdown
+    ExtendedRefine
   },
   data: function () {
     return {

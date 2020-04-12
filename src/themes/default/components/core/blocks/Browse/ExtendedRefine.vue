@@ -1,9 +1,9 @@
 <template>
   <div id="navbarinternal">
-    <div v-if="categories.length > '0'" class="buttonContainer">
-      <div class="m-2">
-        <v-btn @click="deleteAllEvents(categories)" class="filteredButton pointer">
-          <span style="margin-top: 8px;">
+    <div v-if="clearAllCheck(refineOptions)" class="buttonContainer">
+      <div class="">
+        <v-btn @click="deleteAllEvents(refineOptions)" class="filteredButton pointer">
+          <span>
             CLEAR ALL
           </span>
           <i class="material-icons" style="font-size: 11px">
@@ -11,175 +11,40 @@
           </i>
         </v-btn>
       </div>
-      <div v-for="(f, index) in categories" :key="f" class="m-2">
-        <v-btn @click="deleteEvent(index)" class="filteredButton pointer">
-          <span style="margin-top: 8px;">
-            {{ f }}
-          </span>
-          <i class="material-icons" style="font-size: 11px">
-            close
-          </i>
-        </v-btn>
+      <div v-for="(options, index) in refineOptions" :key="options" class="closeButtonMainDiv">
+        <span v-if="categorySelected(options)" class="index"> {{ index }} : </span>
+        <div v-for="option in options" :key="option" class="">
+          <v-btn v-show="option.selected === true" @click="option.selected = !option.selected" class="filteredButton pointer">
+            {{ option.name }}
+            <i class="material-icons" style="font-size: 11px">
+              close
+            </i>
+          </v-btn>
+        </div>
       </div>
     </div>
+    <hr v-if="clearAllCheck(refineOptions)" class="hr-text mr-1% lg:mr-20%">
     <div class="extendedRefine">
-      <v-btn flat slot="activated" class="button" @click="upHereAgain = !upHereAgain">
-        <span style="margin-top: 8px; font-colo">
-          DRESSES
-        </span>
-      </v-btn>
-      <v-btn flat slot="activated" class="button">
+      <v-btn v-for="(options, index) in refineOptions" :key="options" flat slot="activated" class="button" @click="changeActive(options)">
         <span style="margin-top: 8px;">
-          DESIGNER
+          {{ index }}
         </span>
       </v-btn>
-      <v-btn flat slot="activated" class="button">
-        <span style="margin-top: 8px;">
-          ACTIVITIES
-        </span>
-      </v-btn>
-      <v-btn flat slot="activated" class="button">
-        <span style="margin-top: 8px;">
-          THEMES
-        </span>
-      </v-btn>
-      <v-btn flat slot="activated" class="button">
-        <span style="margin-top: 8px;">
-          COLOURS & PATTERNS
-        </span>
-      </v-btn>
-      <v-btn flat slot="activated" class="button">
-        <span style="margin-top: 8px;">
-          BODY SHAPE
-        </span>
-      </v-btn>
-      <div class="nav mx-auto" id="checkboxes" v-show="upHereAgain">
-        <div class="pl-12 column options flex items-center mr-4 mb-4">
-          <input @click="categoryFilter(categories)" id="radio1" type="checkbox" name="radio" class="hidden" checked value="ALL DRESSES" v-model="categories">
-          <label for="radio1" class="flex items-center cursor-pointer">
-            <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-            ALL DRESSES</label>
-        </div>
-
-        <div class="pl-12 pr-48 pb-6 flex d-flex flex-row">
-          <div class="container d-flex flex-column">
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio2" type="checkbox" name="radio" class="hidden" value="RAINWEAR" v-model="categories">
-              <label for="radio2" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                RAINWEAR</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio3" type="checkbox" name="radio" class="hidden" value="SMART-CASUAL" v-model="categories">
-              <label for="radio3" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                SMART-CASUAL</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio4" type="checkbox" name="radio" class="hidden" value="WARDROBE ESSENTIALS" v-model="categories">
-              <label for="radio4" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                WARDROBE ESSENTIALS</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio5" type="checkbox" name="radio" class="hidden" value="70S / HIPSTER" v-model="categories">
-              <label for="radio5" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                70S / HIPSTER</label>
-            </div>
+      <div class="checkbox lg:pr-10%">
+        <div v-for="(options, index) in activeClass" :key="options">
+          <div v-if="options.name && index === 1" class="checkboxAllitemDiv">
+            <label class="flex items-center m-2 cursor-pointer">
+              <input @click="options.selected = !options.selected" type="checkbox" name="radio" class="hidden" checked :value="options.name" v-model="categories">
+              <span v-show="!options.selected" class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
+              <span v-show="options.selected" class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink bg-black" />
+              {{ options.name }} </label>
           </div>
-
-          <div class="container d-flex flex-column">
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio6" type="checkbox" name="radio" class="hidden" value="LINGERIE" v-model="categories">
-              <label for="radio6" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                LINGERIE</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio7" type="checkbox" name="radio" class="hidden" value="LINGERIE / BRA" v-model="categories">
-              <label for="radio7" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                LINGERIE / BRA</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio8" type="checkbox" name="radio" class="hidden" value="LINGERIE / PANTIES" v-model="categories">
-              <label for="radio8" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                LINGERIE / PANTIES</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio9" type="checkbox" name="radio" class="hidden" value="PANTS / TROUSERS" v-model="categories">
-              <label for="radio9" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                PANTS / TROUSERS</label>
-            </div>
-          </div>
-
-          <div class="container d-flex flex-column">
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio10" type="checkbox" name="radio" class="hidden" value="SHORTS" v-model="categories">
-              <label for="radio10" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                SHORTS</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio11" type="checkbox" name="radio" class="hidden" value="SKIRTS" v-model="categories">
-              <label for="radio11" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                SKIRTS</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio12" type="checkbox" name="radio" class="hidden" value="SLEEPWEAR / NIGHTWEAR" v-model="categories">
-              <label for="radio12" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                SLEEPWEAR / NIGHTWEAR</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio13" type="checkbox" name="radio" class="hidden" value="SUITS" v-model="categories">
-              <label for="radio13" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                SUITS</label>
-            </div>
-          </div>
-
-          <div class="container d-flex flex-column">
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio14" type="checkbox" name="radio" class="hidden" value="SWIMWEAR / BEACHWEAR" v-model="categories">
-              <label for="radio14" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                SWIMWEAR / BEACHWEAR</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio15" type="checkbox" name="radio" class="hidden" value="SWIMWEAR / BIKINI BOTTOM" v-model="categories">
-              <label for="radio15" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                SWIMWEAR / BIKINI BOTTOM</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio16" type="checkbox" name="radio" class="hidden" value="SWIMWEAR / BIKINI TOP" v-model="categories">
-              <label for="radio16" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                SWIMWEAR / BIKINI TOP</label>
-            </div>
-
-            <div class="options flex items-center mr-4 mb-4">
-              <input @click="categoryFilter(categories)" id="radio17" type="checkbox" name="radio" class="hidden" value="TOPS" v-model="categories">
-              <label for="radio17" class="flex items-center cursor-pointer">
-                <span class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
-                TOPS</label>
-            </div>
+          <div v-if="options.name && index !== 1" class="checkboxSecondDiv">
+            <label class="flex items-center m-2 cursor-pointer">
+              <input @click="options.selected = !options.selected" type="checkbox" name="radio" class="hidden" checked :value="options.name" v-model="categories">
+              <span v-show="!options.selected" class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink" />
+              <span v-show="options.selected" class="w-6 h-6 inline-block mr-2 rounded-full border border-grey flex-no-shrink bg-black" />
+              {{ options.name }} </label>
           </div>
         </div>
       </div>
@@ -195,19 +60,111 @@ export default {
   data: function () {
     return {
       upHereAgain: false,
-      categories: []
-    };
+      activeClass: [],
+      refineOptions: {
+        DRESSES: [
+          {category: 'DRESSES'},
+          {name: 'ALL DRESSES',
+            selected: false},
+          {name: 'Dress2',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false},
+          {name: 'Dress3',
+            selected: false}
+        ],
+        DESIGNER: [
+          {category: 'DESIGNER'},
+          {name: 'ALL DESIGNER',
+            selected: false},
+          {name: 'DESIGNER2',
+            selected: false},
+          {name: 'DESIGNER3',
+            selected: false}
+        ],
+        ACTIVITIES: [
+          {category: 'ACTIVITIES'},
+          {name: 'ALL ACTIVITIES',
+            selected: false},
+          {name: 'ACTIVITIES2',
+            selected: false},
+          {name: 'ACTIVITIES3',
+            selected: false}
+        ]
+      }
+    }
   },
   methods: {
-    categoryFilter (categories) {
-      this.categories = categories
+    deleteAllEvents: function (options) {
+      for (let option in options) {
+        for (let i = 0; i < options[option].length; i++) {
+          options[option][i].selected = false
+        }
+      }
     },
-    deleteEvent: function (index) {
-      // this.filter.splice(index);
-      this.$delete(this.categories, index)
+    clearAllCheck: function (options) {
+      for (let option in options) {
+        for (let i = 0; i < options[option].length; i++) {
+          if (options[option][i].selected === true) {
+            return true
+          }
+        }
+      }
     },
-    deleteAllEvents: function (index) {
-      this.categories.splice(index);
+    changeActive: function (selected) {
+      if (this.activeClass === selected) {
+        this.activeClass = null
+      } else { this.activeClass = selected }
+    },
+    categorySelected: function (category) {
+      for (let i = 0; i < category.length; i++) {
+        if (category[i].selected === true) {
+          return true
+        }
+      }
+      return false
     }
   }
 
@@ -239,6 +196,8 @@ export default {
   display: flex;
   margin-right: 25%;
   max-width: 1000px;
+  padding: 0.5rem;
+  flex-wrap: wrap;
 }
 .filteredButton{
   // padding: 0px 3%;
@@ -250,6 +209,7 @@ export default {
   white-space: nowrap;
   color: black;
   padding: 0.5rem;
+  margin: 0.5rem;
 }
 body{
  margin:0;
@@ -280,15 +240,50 @@ input[type="checkbox"]:checked + label{
     letter-spacing: 1px;
     color: black;
 }
-.container{
-    /* width: fit-content; */
+.checkbox{
+    display: flex;
+    color: black;
+    background-color: #f2f2f2;
+    flex-wrap: wrap;
+    padding-left: 2%;
+    font-size: x-small;
+}
+.checkboxSecondDiv{
+    width: 18rem;
+}
+.checkboxAllitemDiv{
+    width: 80rem;
+    padding-right: 80;
+    margin-top: 1%;
 }
 .column{
     margin-left: 9px;
     padding-top: 2%;
 }
 .nav{
-  background-color: #E2E2E2;
+  background-color: #f2f2f2;
   color: black;
 }
+.closeButtonMainDiv{
+  display: flex;
+  margin-left: 0.5rem;
+  flex-wrap: wrap;
+}
+.index{
+  font-size: x-small;
+  margin: 1rem;
+}
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  margin-left: 1%;
+  // margin-right: 20%;
+  height: 0%;
+  color: black;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  opacity: .5;
+  }
 </style>
