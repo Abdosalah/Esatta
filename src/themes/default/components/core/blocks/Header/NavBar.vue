@@ -9,7 +9,7 @@
           <account-icon class="p15 icon hidden-xs pointer" />
         </div>
         <div class="col-md-3 col-xs-5 center-xs ">
-          <img class="logo" src="assets/logo.svg">
+          <img class="logo" src="../../../../assets/logo.svg">
         </div>
         <div class="col-md-4 col-xs-2 end-xs px-3">
           <div class="inline-flex right-icons">

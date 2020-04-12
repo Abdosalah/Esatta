@@ -14,7 +14,7 @@
       type="button"
       class="bg-cl-transparent brdr-none p0"
     >
-      <img src="assets/svg/log_in.svg" class="w-6 h-6">
+      <img src="../../../../assets/svg/log_in.svg" class="ml-20% w-6 h-6">
     </button>
 
     <no-ssr>
