@@ -26,7 +26,11 @@
     <div v-if="upHere" class="dropdown">
       <div v-for="(options, index) in refineOptions" :key="options" class="option">
         <div @click="changeActive(options)">
-          <a href="#">{{ index }}</a>
+          <a href="#">
+            {{ index }}
+          </a>
+          <i v-if="checkActive(options)" class="material-icons icon">remove</i>
+          <i v-if="!checkActive(options)" class="material-icons icon">add</i>
         </div>
         <div v-if="checkActive(options)" class="dropdown">
           <div v-for="option in activeClass" :key="option" class="options">
@@ -242,7 +246,7 @@ export default {
   }
   .btn{
       font-weight: bold;
-      font-size: xx-small;
+      font-size: x-small;
       text-align: center;
       width: 94%;
       height: 2rem;
@@ -252,13 +256,18 @@ export default {
       border: 1px solid black;
   }
   .option{
-    font-size: xx-small;
+    font-size: x-small;
     padding: 3%;
     color: #7b4240;
   }
   .options{
-    font-size: xx-small;
+    font-size: x-small;
     padding: 2%;
     color: black;
+  }
+  .icon{
+    position: sticky;
+    left: 90%;
+    font-size: 1rem;
   }
 </style>
