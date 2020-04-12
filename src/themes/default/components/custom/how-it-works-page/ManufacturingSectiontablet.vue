@@ -24,7 +24,7 @@
       <div class="w-2/5" />
     </div>
     <div class="mx-5% flex pb-16">
-      <ul class="text-sm cl-secondary list-disc w-3/5">
+      <ul class="text-sm cl-secondary list-disc w-3/5 pl-4">
         <li>
           No forced labour
         </li>
@@ -50,8 +50,8 @@
           No forced labour
         </li>
       </ul>
-      <div class="w-2/5">
-        <button class="bg-white w-full">
+      <div class="w-2/5 relative">
+        <button class="bg-white w-full absolute bottom-0">
           <p class="text-red font-bold py-6">
             CONTACT US
           </p>

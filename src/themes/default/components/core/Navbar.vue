@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <nav>
     <div class="Navbar hidden lg:block animated fadein">
       <img class="image" src="../../assets/logo.svg">
       <router-link v-if="!currentUser" :to="localizedRoute('/my-account')" exact class="link">
@@ -44,7 +44,7 @@
     <div class="lg:hidden">
       <MediumNavbar />
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>

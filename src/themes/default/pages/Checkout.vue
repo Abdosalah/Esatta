@@ -231,4 +231,7 @@ button:focus {
   content: none;
   display: none;
 }
+nav {
+  display: none;
+}
 </style>

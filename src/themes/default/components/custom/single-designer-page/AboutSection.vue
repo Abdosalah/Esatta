@@ -37,19 +37,19 @@
     </div>
     <div class="my-16 w-1/2 ml-20% text-center">
       <p class="social-links">
-        FACEBOOK
+        <img src="/assets/svg/social/instagram.svg" class="h-6 w-6 m-auto">
       </p>
       <p class="social-links">
-        INSTAGRAM
+        <img src="/assets/svg/social/facebook.svg" class="h-6 w-6 m-auto">
       </p>
       <p class="social-links">
-        SNAPCHAT
+        <img src="/assets/svg/social/pinterest.svg" class="h-6 w-6 m-auto">
       </p>
       <p class="social-links">
-        TUMBLER
+        <img src="/assets/svg/social/twitter.svg" class="h-6 w-6 m-auto">
       </p>
       <p class="inline-block text-red w-19% hover:cursor-pointer">
-        TWITTER
+        <img src="/assets/svg/social/snapchat.svg" class="h-6 w-6 m-auto">
       </p>
     </div>
     <div class="my-video h-6/10 pl-10% pr-nav">
@@ -65,9 +65,8 @@
   display: inline-block;
   width: 19%;
   border-width: 1px;
-  border-color: #EC145B;
+  border-color: #C57974;
   border-style: none solid none none;
-  color: #EC145B;
   cursor: pointer;
 }
 .my-video {

@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="w-65% ml-10% text-center mb-16">
-      <p class="w-4/5 ml-10%">
+      <p class="w-4/5 ml-10% cl-secondary">
         Donec scelerisque magna lorem, id cursus nibh viverra sed.
         Proin orci velit, fermentum eu dictum vel, imperdiet ut tortor.
         Donec consectetur dolor at mauris rhoncus mollis. Interdum et

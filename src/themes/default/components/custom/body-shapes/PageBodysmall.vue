@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="text-center mb-16">
-      <p class="mx-4">
+      <p class="mx-4 cl-secondary">
         Donec scelerisque magna lorem, id cursus nibh viverra sed.
         Proin orci velit, fermentum eu dictum vel, imperdiet ut tortor.
         Donec consectetur dolor at mauris rhoncus mollis. Interdum et

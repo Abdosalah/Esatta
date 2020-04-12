@@ -5,6 +5,10 @@
     <how-itworks class="hidden md:block" />
     <just-landed />
     <designers />
+    <blog-header />
+    <blog-desktop :deigners-list="designersArray" class="hidden lg:block" />
+    <blog-tablet :deigners-list="designersArray.slice(0,3)" class="hidden md:block lg:hidden" />
+    <blog-mobile :deigners-list="designersArray.slice(0,2)" class="md:hidden" />
 
     <Onboard />
   </div>
@@ -16,6 +20,10 @@ import HowItworks from 'theme/components/custom/home-components/HowItWorks.vue'
 import HowItworksmobile from 'theme/components/custom/home-components/HowItworksmobile.vue'
 import JustLanded from 'theme/components/custom/home-components/JustLanded.vue'
 import Designers from 'theme/components/custom/home-components/Designers.vue'
+import BlogDesktop from 'theme/components/custom/home-components/BlogDesktop.vue'
+import BlogTablet from 'theme/components/custom/home-components/BlogTablet.vue'
+import BlogMobile from 'theme/components/custom/home-components/BlogMobile.vue'
+import BlogHeader from 'theme/components/custom/home-components/BlogHeader.vue'
 
 // query constructor
 import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/common'
@@ -40,12 +48,42 @@ export default {
   components: {
     HeadImage,
     HowItworks,
+    BlogHeader,
+    BlogDesktop,
+    BlogTablet,
+    BlogMobile,
     Designers,
     JustLanded,
     Onboard,
     ProductListing,
     HowItworksmobile,
     TileLinks
+  },
+  data () {
+    return {
+      designersArray: [
+        {
+          name: 'Clifford Smith',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lorem ligula, rhoncus vel sagittis at, tincidunt in quam.',
+          imageUrl: 'assets/esatta-images/designers/hp_el1.jpg'
+        },
+        {
+          name: 'Evon Wahab',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lorem ligula, rhoncus vel sagittis at, tincidunt in quam.',
+          imageUrl: 'assets/esatta-images/designers/hp_el2.jpg'
+        },
+        {
+          name: 'John Doe',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lorem ligula, rhoncus vel sagittis at, tincidunt in quam.',
+          imageUrl: 'assets/esatta-images/designers/hp_el3.jpg'
+        },
+        {
+          name: 'Clifford Smith',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lorem ligula, rhoncus vel sagittis at, tincidunt in quam.',
+          imageUrl: 'assets/esatta-images/designers/hp_el1.jpg'
+        }
+      ]
+    }
   },
   computed: {
     ...mapGetters('user', ['isLoggedIn']),
