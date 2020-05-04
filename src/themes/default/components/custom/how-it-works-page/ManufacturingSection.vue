@@ -49,7 +49,7 @@
           </li>
         </ul>
         <button class="bg-white mt-8">
-          <p class="text-red font-bold py-6 px-10">
+          <p class="text-dark_green font-bold py-6 px-10">
             CONTACT US
           </p>
         </button>

@@ -1,10 +1,10 @@
 <template>
-  <div class="mr-18%">
-    <div class="my-grid mx-2.5%">
+  <div class="mr-nav">
+    <div class="my-grid ml-5">
       <div
         v-for="(designer, key) in deignersList"
         :key="key"
-        class="w-95% mx-2.5%"
+        class="w-95%"
       >
         <img :src="designer.imageUrl" class="">
         <div class="text-center">
@@ -14,7 +14,7 @@
           <p class="mb-4">
             {{ designer.description }}
           </p>
-          <p class="text-red mb-10">
+          <p class="text-dark_green mb-10 font-bold">
             See our Blog
           </p>
         </div>

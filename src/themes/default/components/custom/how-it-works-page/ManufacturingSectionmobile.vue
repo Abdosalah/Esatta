@@ -50,7 +50,7 @@
         </li>
       </ul>
       <button class="bg-white w-full mt-16">
-        <p class="text-red font-bold py-6">
+        <p class="text-dark_green font-bold py-6">
           CONTACT US
         </p>
       </button>

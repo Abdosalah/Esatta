@@ -48,7 +48,7 @@
       <p class="social-links">
         <img src="/assets/svg/social/twitter.svg" class="h-6 w-6 m-auto">
       </p>
-      <p class="inline-block text-red w-19% hover:cursor-pointer">
+      <p class="inline-block text-dark_green w-19% hover:cursor-pointer">
         <img src="/assets/svg/social/snapchat.svg" class="h-6 w-6 m-auto">
       </p>
     </div>
@@ -65,7 +65,7 @@
   display: inline-block;
   width: 19%;
   border-width: 1px;
-  border-color: #C57974;
+  border-color: #536C4E;
   border-style: none solid none none;
   cursor: pointer;
 }

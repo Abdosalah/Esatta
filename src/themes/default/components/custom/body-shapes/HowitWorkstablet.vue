@@ -4,7 +4,7 @@
       <p class="text-3xl font-bold pb-6">
         How It Works
       </p>
-      <p class="text-red">
+      <p class="text-dark_green">
         Exclusive styles by independent designers. Made for You.
       </p>
     </div>

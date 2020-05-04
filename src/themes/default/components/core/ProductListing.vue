@@ -16,7 +16,7 @@
           <p class="text-3xl font-bold">
             How It Works
           </p>
-          <p class="textparaleft text-red py-8">
+          <p class="textparaleft text-dark_green py-8">
             Exclusive styles by independent <br>
             designers. Made for you
           </p>

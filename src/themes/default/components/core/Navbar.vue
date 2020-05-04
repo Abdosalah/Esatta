@@ -114,7 +114,7 @@ export default {
   height: fit-content;
 }
 .downlinks{
-  color: #EC145B;
+  color: #536C4E;
   font-size: xx-small;
   text-align: center;
   letter-spacing: 1px;

@@ -26,7 +26,7 @@
         <p>
           Designer Name
         </p>
-        <p class="text-red">
+        <p class="text-dark_green">
           Designer Location
         </p>
       </div>
@@ -34,7 +34,7 @@
         <p>
           Designer Name
         </p>
-        <p class="text-red">
+        <p class="text-dark_green">
           Designer Location
         </p>
       </div>
@@ -79,7 +79,7 @@
         <p>
           Designer Name
         </p>
-        <p class="text-red">
+        <p class="text-dark_green">
           Designer Location
         </p>
       </div>
@@ -87,7 +87,7 @@
         <p>
           Designer Name
         </p>
-        <p class="text-red">
+        <p class="text-dark_green">
           Designer Location
         </p>
       </div>

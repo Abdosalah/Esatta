@@ -27,7 +27,7 @@
         </p>
       </div>
       <div class="text-center text-sm my-16 lg:mb-32 md:mx-15% lg:flex lg:mx-23%">
-        <div class="m-auto bg-cl-secondary text-red py-8 w-full md:w-3/5 lg:w-45%">
+        <div class="m-auto bg-cl-secondary text-dark_green py-8 w-full md:w-3/5 lg:w-45%">
           <button class="font-bold">
             CLAIMING ALTERATION EXPENSE
           </button>
@@ -37,7 +37,7 @@
             or
           </p>
         </div>
-        <div class="m-auto bg-cl-secondary text-red py-8 w-full md:w-3/5 lg:w-45%">
+        <div class="m-auto bg-cl-secondary text-dark_green py-8 w-full md:w-3/5 lg:w-45%">
           <button class="font-bold">
             RETURN A PRODUCT
           </button>

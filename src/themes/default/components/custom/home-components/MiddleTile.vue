@@ -2,7 +2,7 @@
   <div class="main-div h-48 md:h-64 lg:w-1/3 w-full mx-5">
     <div class="flex items-center justify-center">
       <img class="h-5 w-5 float-left mr-5" src="assets/esatta-images/plus.svg">
-      <p class="text-red hover-effects">
+      <p class="text-dark_green hover-effects font-bold">
         LATEST INDEPENDANT
       </p>
     </div>
@@ -14,7 +14,7 @@
       designers to bring you the latest in cutting
       edge style design from around the world.
     </p>
-    <p class="text-center text-red pt-3">
+    <p class="text-center text-dark_green pt-3 font-bold">
       See our designers
     </p>
   </div>

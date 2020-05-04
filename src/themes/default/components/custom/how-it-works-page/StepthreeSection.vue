@@ -3,7 +3,7 @@
     <img class="w-full mb-20 pb-16 lg:pb-0 h-75vh lg:mb-0 lg:w-1/2 lg:h-65vh object-fill" src="assets/esatta-images/how-it-works/step3.jpg">
     <div class="flex h-30vh absolute md:bottom-0 md:w-90% md:left-5% md:bg-gray lg:bg-white lg:w-1/2 lg:left-35% lg:top-15vh">
       <div class="w-2/5">
-        <p class="steps-numbers">
+        <p class="steps-numbers text-med_green">
           3
         </p>
       </div>

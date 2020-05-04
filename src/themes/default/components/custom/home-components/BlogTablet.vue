@@ -14,7 +14,7 @@
           <p class="mb-4">
             {{ designer.description }}
           </p>
-          <p class="text-red mb-10">
+          <p class="text-dark_green mb-10 font-bold">
             See our Blog
           </p>
         </div>

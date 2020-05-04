@@ -1,14 +1,14 @@
 <template>
   <div class="bg-cl-secondary">
     <img class="w-full" src="assets/esatta-images/how-it-works/responsible_man.jpg" alt="">
-    <div class="w-full bg-pink-300">
+    <div class="w-full bg-dark_green">
       <p class="text-center text-2xl pt-16 pb-12 font-bold">
         SUPPORTING
         <br>INDEPENDENT
         <br>DESIGNERS
       </p>
       <button class="bg-white w-4/5 ml-10% mb-16">
-        <p class="text-red font-bold py-6">
+        <p class="text-dark_green font-bold py-6">
           SELL ON ESATTA
         </p>
       </button>

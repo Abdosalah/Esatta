@@ -37,26 +37,26 @@
     </div>
     <div class="md:relative bg-cl-secondary">
       <img class="w-full md:pb-20" src="assets/esatta-images/how-it-works/responsibility1.jpg">
-      <div class="w-full text-center md:text-left md:absolute bottom-0 md:w-90% md:mx-5% bg-pink-200 md:pl-12 py-12">
-        <p class="font-bold text-2xl md:inline-block md:mr-2.5% text-pink-500">
+      <div class="w-full text-center md:text-left md:absolute bottom-0 md:w-90% md:mx-5% bg-light_green md:pl-12 py-12">
+        <p class="font-bold text-2xl md:inline-block md:mr-2.5% text-dark_green">
           ORDER
         </p>
         <p class="font-bold text-2xl md:inline-block md:mr-2.5%">
           +
         </p>
-        <p class="font-bold text-2xl md:inline-block md:mr-2.5% text-pink-500">
+        <p class="font-bold text-2xl md:inline-block md:mr-2.5% text-dark_green">
           MANUFACTURE
         </p>
         <p class="font-bold text-2xl md:inline-block md:mr-2.5%">
           +
         </p>
-        <p class="font-bold text-2xl inline-block md:mr-2.5% text-pink-500">
+        <p class="font-bold text-2xl inline-block md:mr-2.5% text-dark_green">
           DELIVERY
         </p>
         <p class="font-bold text-2xl md:mr-2.5%">
           =
         </p>
-        <p class="font-bold text-2xl mt-4 md:mt-0 md:inline-block md:mr-2.5%">
+        <p class="font-bold text-2xl md:inline-block md:mr-2.5%">
           NO WASTAGE
         </p>
       </div>

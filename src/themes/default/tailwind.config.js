@@ -156,7 +156,9 @@ module.exports = {
         '15vh': '15vh'
       },
       colors: {
-        red: '#EC145B',
+        dark_green: '#536C4E',
+        med_green: '#A0A88A',
+        light_green: '#BDC2B1',
         gray: '#E2E2E2',
         grey_text: '#a0aec0',
         dark_grey: '#a9a9a9',

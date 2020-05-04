@@ -104,7 +104,7 @@
                 <label for="terms_and_conditions">
                   <span class="inline text-sm text-grey_text">
                     I understand and agree to the
-                    <p class="inline text-red">
+                    <p class="inline text-dark_green">
                       terms & conditions
                     </p>
                   </span>

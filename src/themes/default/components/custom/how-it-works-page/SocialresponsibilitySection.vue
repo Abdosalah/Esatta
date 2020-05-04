@@ -39,20 +39,20 @@
       <img class="w-1/2" src="assets/esatta-images/how-it-works/responsibility1.jpg">
       <img class="w-1/2 mt-5%" src="assets/esatta-images/how-it-works/responsibility2.jpg">
     </div>
-    <div class="w-full ml-12% bg-pink-200 pl-12 py-12">
-      <p class="font-bold text-2xl inline-block mr-2.5% text-pink-500">
+    <div class="w-full ml-12% bg-light_green pl-12 py-12">
+      <p class="font-bold text-2xl inline-block mr-2.5% text-dark_green">
         ORDER
       </p>
       <p class="font-bold text-2xl inline-block mr-2.5%">
         +
       </p>
-      <p class="font-bold text-2xl inline-block mr-2.5% text-pink-500">
+      <p class="font-bold text-2xl inline-block mr-2.5% text-dark_green">
         MANUFACTURE
       </p>
       <p class="font-bold text-2xl inline-block mr-2.5%">
         +
       </p>
-      <p class="font-bold text-2xl inline-block mr-2.5% text-pink-500">
+      <p class="font-bold text-2xl inline-block mr-2.5% text-dark_green">
         DELIVERY
       </p>
       <p class="font-bold text-2xl inline-block mr-2.5%">

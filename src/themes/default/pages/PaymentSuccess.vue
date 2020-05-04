@@ -5,7 +5,7 @@
         <p class="text-5xl font-bold mb-10">
           Order Successful
         </p>
-        <p class="mb-10 text-red">
+        <p class="mb-10 text-dark_green">
           Check your email
         </p>
         <p class="mb-12 mx-4 md:mx-0">

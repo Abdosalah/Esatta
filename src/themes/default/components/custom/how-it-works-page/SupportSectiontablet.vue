@@ -23,12 +23,12 @@
       </p>
     </div>
     <img class="h-7/10 w-full" src="assets/esatta-images/how-it-works/woman.jpg" alt="">
-    <div class="absolute top-60vh left-5% w-90% bg-pink-300 px-10%">
+    <div class="absolute top-60vh left-5% w-90% bg-dark_green px-10%">
       <p class="text-4xl pt-16 pb-12 font-bold">
         SUPPORTING INDEPENDENT DESIGNERS
       </p>
       <button class="bg-white w-2/5 mb-16">
-        <p class="text-red font-bold py-6">
+        <p class="text-dark_green font-bold py-6">
           SELL ON ESATTA
         </p>
       </button>

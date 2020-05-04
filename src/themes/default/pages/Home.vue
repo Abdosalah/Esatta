@@ -20,10 +20,10 @@ import HowItworks from 'theme/components/custom/home-components/HowItWorks.vue'
 import HowItworksmobile from 'theme/components/custom/home-components/HowItworksmobile.vue'
 import JustLanded from 'theme/components/custom/home-components/JustLanded.vue'
 import Designers from 'theme/components/custom/home-components/Designers.vue'
+import BlogHeader from 'theme/components/custom/home-components/BlogHeader.vue'
 import BlogDesktop from 'theme/components/custom/home-components/BlogDesktop.vue'
 import BlogTablet from 'theme/components/custom/home-components/BlogTablet.vue'
 import BlogMobile from 'theme/components/custom/home-components/BlogMobile.vue'
-import BlogHeader from 'theme/components/custom/home-components/BlogHeader.vue'
 
 // query constructor
 import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/common'

@@ -11,7 +11,7 @@
           <p class="mt-4 mb-2 text-2xl">
             {{ designer.name }}
           </p>
-          <p class="text-red mb-10">
+          <p class="text-dark_green mb-10">
             {{ designer.origin }}
           </p>
         </div>

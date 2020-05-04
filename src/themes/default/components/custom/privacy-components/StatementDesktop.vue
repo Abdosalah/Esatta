@@ -1,7 +1,7 @@
 <template>
   <div class="mx-15% mb-32 cl-secondary text-sm">
     <div class="font-bold ml-10">
-      <p class="mb-6 text-red">
+      <p class="mb-6 text-dark_green">
         PRIVACY STATEMENT
       </p>
       <p class="mb-6">

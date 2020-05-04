@@ -46,7 +46,7 @@ export default {
     min-width: 16px;
     min-height: 16px;
     border-radius: 10px;
-    background-color: #EC145B;
+    background-color: #536C4E;
   }
   .minicart-count-medium {
     /* top: 7px; */
@@ -56,7 +56,7 @@ export default {
     min-width: 16px;
     min-height: 16px;
     border-radius: 10px;
-    background-color: #EC145B;
+    background-color: #536C4E;
   }
   .link{
   width: 100%;

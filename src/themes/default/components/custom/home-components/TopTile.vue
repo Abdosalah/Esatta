@@ -2,7 +2,7 @@
   <div class="main-div my-5 h-48 w-full bg-gray">
     <div class="mb-4">
       <img class="h-5 w-5 float-left mr-2" src="assets/esatta-images/plus.svg">
-      <p class="text-red">
+      <p class="text-dark_green">
         LATEST INDEPENDANT
       </p>
     </div>

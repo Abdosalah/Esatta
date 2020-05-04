@@ -13,7 +13,7 @@
           My Profile
         </p>
         <div class="pt-20 w-2/3 pr-8% text-right">
-          <p class="pl-5% inline-block text-dark_grey hover:text-red" v-for="(page, index) in navigation" :key="index">
+          <p class="pl-5% inline-block text-dark_grey hover:text-dark_green" v-for="(page, index) in navigation" :key="index">
             <router-link :to="localizedRoute(page.link)" class="router-links">
               {{ page.title }}
             </router-link>
@@ -81,7 +81,7 @@
         </div>
         <div>
           <div class="pt-10 pl-4% w-full flex md:hidden">
-            <p class="w-1/3 text-center inline-block text-dark_grey hover:text-red" v-for="(page, index) in navigation" :key="index">
+            <p class="w-1/3 text-center inline-block text-dark_grey hover:text-dark_green" v-for="(page, index) in navigation" :key="index">
               <router-link v-if="page.title !== 'Purchases'" :to="localizedRoute(page.link)" class="router-links">
                 {{ page.title }}
               </router-link>
@@ -191,16 +191,16 @@ export default {
   border-radius: 50%;
 }
 .tablet-header {
-  border-bottom: 1px solid #EC145B;
+  border-bottom: 1px solid #536C4E;
 }
 .header-div {
-  border-top: 1px solid #EC145B;
+  border-top: 1px solid #536C4E;
   margin-top: 3rem;
   margin-left: 2rem;
   width: 100%;
 }
 .hdr-component {
-  border-right: 1px solid #EC145B;
+  border-right: 1px solid #536C4E;
   padding-top: 1.5rem;
   width: 25%;
   text-align: center;

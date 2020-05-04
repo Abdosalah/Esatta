@@ -2,7 +2,7 @@
   <div class="main-div m-2 w-1/2 relative md:m-5 md:h-64 lg:w-1/3">
     <img class="h-full w-full" :src="tileImage">
     <div class="designer-text hidden md:block">
-      <p class="text-red">
+      <p class="text-dark_green">
         DESIGN
       </p>
       <p class="font-black text-2xl">

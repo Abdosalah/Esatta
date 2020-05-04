@@ -2,7 +2,7 @@
   <div class="">
     <!-- YOUR BODY SHAPE DIV -->
     <div class="mt-8">
-      <p class="text-center text-red">
+      <p class="text-center text-dark_green">
         Your Body Shape is
       </p>
       <p v-if="measurements" class="text-center mt-4 text-2xl font-semibold md:text-4xl tracking-widest">
@@ -18,7 +18,7 @@
         <img v-if="measurements" class="body-img" src="../../../../assets/esatta-images/my-profile/front_facing.svg">
         <div v-if="measurements" class="m-auto text-center my-16">
           <img class="body-scan-img" src="../../../../assets/esatta-images/my-profile/body_scan.svg">
-          <p class="inline text-sm text-red">
+          <p class="inline text-sm text-dark_green">
             View all Body Shapes
           </p>
         </div>
@@ -51,31 +51,31 @@
     </div>
     <div v-if="measurements && !isHidden" class="hidden md:flex">
       <div class="w-1/6 text-sm">
-        <button v-if="componentName === 'ShoulderAngle'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
+        <button v-if="componentName === 'ShoulderAngle'" class="block bg-white text-dark_green mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
           Shoulder Angle
         </button>
         <button v-if="componentName !== 'ShoulderAngle'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('ShoulderAngle')">
           Shoulder Angle
         </button>
-        <button v-if="componentName === 'SeatAngle'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('SeatAngle')">
+        <button v-if="componentName === 'SeatAngle'" class="block bg-white text-dark_green mb-2 py-12 w-full" @click="toggle('SeatAngle')">
           Seat Angle
         </button>
         <button v-if="componentName !== 'SeatAngle'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('SeatAngle')">
           Seat Angle
         </button>
-        <button v-if="componentName === 'Posture'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('Posture')">
+        <button v-if="componentName === 'Posture'" class="block bg-white text-dark_green mb-2 py-12 w-full" @click="toggle('Posture')">
           Posture
         </button>
         <button v-if="componentName !== 'Posture'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('Posture')">
           Posture
         </button>
-        <button v-if="componentName === 'BustPoint'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('BustPoint')">
+        <button v-if="componentName === 'BustPoint'" class="block bg-white text-dark_green mb-2 py-12 w-full" @click="toggle('BustPoint')">
           Bust Point
         </button>
         <button v-if="componentName !== 'BustPoint'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('BustPoint')">
           Bust Point
         </button>
-        <button v-if="componentName === 'BraSize'" class="block bg-white text-red mb-2 py-12 w-full" @click="toggle('BraSize')">
+        <button v-if="componentName === 'BraSize'" class="block bg-white text-dark_green mb-2 py-12 w-full" @click="toggle('BraSize')">
           Bra Size
         </button>
         <button v-if="componentName !== 'BraSize'" class="block bg-gray mb-2 py-12 w-full" @click="toggle('BraSize')">
@@ -84,10 +84,10 @@
       </div>
       <div class="w-5/6 relative">
         <component :is="component" />
-        <button v-if="componentName !== 'ShoulderAngle'" class="absolute bottom-0 mb-4 block w-1/2 text-red" @click="toggle(prevComponent)">
+        <button v-if="componentName !== 'ShoulderAngle'" class="absolute bottom-0 mb-4 block w-1/2 text-dark_green" @click="toggle(prevComponent)">
           &#8592; Previous
         </button>
-        <button class="absolute bottom-0 mb-4 block w-1/2 text-red ml-50%" @click="toggle(nextComponent)">
+        <button class="absolute bottom-0 mb-4 block w-1/2 text-dark_green ml-50%" @click="toggle(nextComponent)">
           <p v-if="componentName !== 'BraSize'">
             Next &#8594;
           </p>
@@ -316,7 +316,7 @@ button:focus {
   width: 2rem;
   display: inline-block;
   border-radius: 50%;
-  border: 1px solid #EC145B;
+  border: 1px solid #536C4E;
   padding: 0.2rem;
   margin-right: 0.5rem;
 }

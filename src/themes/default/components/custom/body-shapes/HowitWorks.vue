@@ -4,7 +4,7 @@
       <p class="text-3xl font-bold">
         How It Works
       </p>
-      <p class="text-red py-8">
+      <p class="text-dark_green py-8">
         Exclusive styles by independent <br>
         designers. Made for you
       </p>

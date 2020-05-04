@@ -1,7 +1,7 @@
 <template>
   <div class="cl-secondary mb-32">
     <div class="font-bold text-center">
-      <p class="mb-6 text-red">
+      <p class="mb-6 text-dark_green">
         PRIVACY STATEMENT
       </p>
       <p class="mb-10">

@@ -52,7 +52,7 @@
       </ul>
       <div class="w-2/5 relative">
         <button class="bg-white w-full absolute bottom-0">
-          <p class="text-red font-bold py-6">
+          <p class="text-dark_green font-bold py-6">
             CONTACT US
           </p>
         </button>

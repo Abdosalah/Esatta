@@ -1,7 +1,8 @@
 <template>
   <div id="category">
     <div class="relative">
-      <img class="h-1/2 w-screen object-cover" src="../assets/esatta-images/hp_hiw.jpg">
+      <!-- <img class="h-1/2 w-screen object-cover" src="../assets/esatta-images/hp_hiw.jpg"> -->
+      <div class="h-1/2 w-screen bg-light_green"></div>
       <div class="absolute top-50% left-10% text-4xl font-bold">
         <p class="hidden md:inline-block">
           BROWSE
