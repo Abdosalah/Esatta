@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="body_font">
     <page-header />
     <page-bodylarge :designers-list="designersArray" class="hidden lg:block" />
     <page-bodymedium :designers-list="designersArray.slice(0,9)" class="hidden md:block lg:hidden" />
@@ -86,3 +86,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.body_font {
+  font-family: 'Lato', sans-serif;
+}
+</style>

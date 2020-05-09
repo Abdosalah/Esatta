@@ -22,7 +22,10 @@
       <div class="absolute h-30% top-65% left-55% bg-orange-300 w-1/4" />
     </div>
     <div class="relative w-full mb-16">
-      <div class="ml-10% h-6/10 bg-purple-300" />
+      <div class="ml-10% h-6/10 flex">
+        <div class="w-1/3 bg-purple-500" />
+        <div class="w-2/3 bg-purple-300" />
+      </div>
       <!-- THIS IS THE PLAIN WHITE TEXT BOX -->
       <div class="absolute h-30% top-35% left-30% bg-orange-300 w-1/4" />
     </div>

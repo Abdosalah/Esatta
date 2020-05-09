@@ -1,13 +1,13 @@
 <template>
   <div class="">
-    <p class="w-40% text-center ml-25% cl-secondary ">
+    <p class="text-center cl-secondary ">
       BROOKLYN, USA
     </p>
     <div class="flex mt-20">
-      <div class="w-1/5 text-right font-bold text-2xl">
+      <div class="w-1/4 text-center font-bold text-2xl">
         ABOUT
       </div>
-      <div class="w-1/4 ml-16 text-sm cl-secondary">
+      <div class="w-1/4 text-sm cl-secondary pr-4">
         <p class="mb-8">
           Donec scelerisque magna lorem, id cursus nibh viverra sed.
           Proin orci velit, fermentum eu dictum vel, imperdiet ut tortor.
@@ -22,7 +22,7 @@
           Vivamus tristique lacus egestas.
         </p>
       </div>
-      <div class="w-1/4 ml-10 text-sm cl-secondary">
+      <div class="w-1/4 text-sm cl-secondary pl-4">
         <p class="mb-8">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium
           sodales sem, a ultricies massa laoreet eget. Mauris nibh mi, efficitur
@@ -35,7 +35,7 @@
         </p>
       </div>
     </div>
-    <div class="my-16 w-1/2 ml-20% text-center">
+    <div class="my-16 w-1/2 ml-25% text-center">
       <p class="social-links">
         <img src="/assets/svg/social/instagram.svg" class="h-6 w-6 m-auto">
       </p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="body_font">
     <page-header class="" />
     <about-section class="hidden lg:block" />
     <about-sectiontablet class="hidden md:block lg:hidden" />
@@ -40,5 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.body_font {
+  font-family: 'Lato', sans-serif;
+}
 </style>
