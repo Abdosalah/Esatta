@@ -3,66 +3,17 @@
     <div
       v-for="(product, key) in products"
       :key="product.id"
-      class="flex pl-5 pb-32"
+      class="flex px-2"
       :class="{ mySpecdiv: key === 12, normalDiv: key !== 12 }"
     >
-      <div v-if="key === 12" class="middle-section">
-        <div class="DivHow absolute block lg:hidden">
-          <p class="text-3xl font-bold">
-            How It Works
-          </p>
-        </div>
-        <div class="w-1/3 py-5% pl-4% hidden lg:block">
-          <p class="text-3xl font-bold">
-            How It Works
-          </p>
-          <p class="textparaleft text-dark_green py-8">
-            Exclusive styles by independent <br>
-            designers. Made for you
-          </p>
-          <button class="bg-black text-white py-4 px-16">
-            LEARN MORE
-          </button>
-        </div>
-        <div class="w-1/3 text-center pt-15% lg:py-10% lg:w-1/4">
-          <p class="pb-4 text-6xl font-black">
-            1
-          </p>
-          <p class="py-4 text-xs font-bold">
-            SHOP YOUR BODY
-          </p>
-          <p class="textpara text-xs block">
-            All our garment are made for you <br>
-            from scratch and designed by <br>
-            independent designers
-          </p>
-        </div>
-        <div class="w-1/3 text-center pt-15% lg:w-1/4 lg:py-5%">
-          <p class="text-6xl font-black">
-            2
-          </p>
-          <p class="py-4 text-xs font-bold">
-            HANDCRAFTED & INDEPENDENT
-          </p>
-          <p class="textpara text-xs">
-            All our garment are made for you <br>
-            from scratch and designed by <br>
-            independent designers
-          </p>
-        </div>
-        <div class="w-1/3 text-center pt-15% lg:py-10% lg:w-1/4">
-          <p class="pb-4 text-6xl font-black">
-            3
-          </p>
-          <p class="py-4 text-xs font-bold">
-            OUR FIT GUARANTEE
-          </p>
-          <p class="textpara text-xs block">
-            All our garment are made for you <br>
-            from scratch and designed by <br>
-            independent designers
-          </p>
-        </div>
+      <div v-if="key === 12" class="w-full hidden lg:flex">
+        <middle-section class="" />
+      </div>
+      <div v-if="key === 12" class="w-full hidden md:block lg:hidden">
+        <middle-sectiontablet />
+      </div>
+      <div v-if="key === 12" class="w-full md:hidden">
+        <middle-sectionphone />
       </div>
       <product-tile v-if="key !== 12" :product="product" />
     </div>
@@ -71,10 +22,16 @@
 
 <script>
 import ProductTile from 'theme/components/core/ProductTile'
+import MiddleSection from 'theme/components/custom/browse-components/MiddleSection.vue'
+import MiddleSectiontablet from 'theme/components/custom/browse-components/MiddleSectiontablet.vue'
+import MiddleSectionphone from 'theme/components/custom/browse-components/MiddleSectionphone.vue'
 let lastHero = 0
 export default {
   name: 'ProductListing',
   components: {
+    MiddleSection,
+    MiddleSectiontablet,
+    MiddleSectionphone,
     ProductTile
   },
   props: {
@@ -111,6 +68,10 @@ export default {
 }
 .mySpecdiv {
   width: 100%;
+}
+
+.normalDiv {
+  padding-bottom: 8rem
 }
 
 @media only screen and (max-width: 640px) {

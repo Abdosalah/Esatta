@@ -30,7 +30,7 @@
         </div>
       </div>
     </header>
-    <div class="pb60 pt-16 mr-nav">
+    <div class="pb60 pt-16 lg:mr-nav">
       <!-- <div class="col-md-3 start-xs category-filters">
           <sidebar :filters="filters.available" />
         </div> -->
@@ -49,7 +49,7 @@
             {{ $t('Filter') }}
           </button-full>
         </div> -->
-      <div class="px10">
+      <div class="px-3">
         <div v-if="isCategoryEmpty" class="hidden-xs">
           <h4 data-testid="noProductsInfo">
             {{ $t('No products found!') }}
