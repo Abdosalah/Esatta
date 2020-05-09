@@ -1,7 +1,7 @@
 <template>
   <div class="ml-5">
     <div class="items-center mt-8">
-      <img class="h-4 w-4 float-left mr-2" src="assets/esatta-images/plus.svg">
+      <img class="h-4 w-4 float-left mr-2 mt-1" src="assets/esatta-images/plus.svg">
       <p class="text-dark_green font-bold">
         Browse Articles
       </p>

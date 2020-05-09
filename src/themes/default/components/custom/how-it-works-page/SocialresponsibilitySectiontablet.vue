@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <p class="text-center text-5xl font-bold">
+    <p class="text-center text-5xl font-bold header_font mt-8 md:mt-0">
       Social Responsibility
     </p>
     <div class="text-center mb-20">
@@ -38,28 +38,33 @@
     <div class="md:relative bg-cl-secondary">
       <img class="w-full md:pb-20" src="assets/esatta-images/how-it-works/responsibility1.jpg">
       <div class="w-full text-center md:text-left md:absolute bottom-0 md:w-90% md:mx-5% bg-light_green md:pl-12 py-12">
-        <p class="font-bold text-2xl md:inline-block md:mr-2.5% text-dark_green">
-          ORDER
-        </p>
-        <p class="font-bold text-2xl md:inline-block md:mr-2.5%">
-          +
-        </p>
-        <p class="font-bold text-2xl md:inline-block md:mr-2.5% text-dark_green">
-          MANUFACTURE
-        </p>
-        <p class="font-bold text-2xl md:inline-block md:mr-2.5%">
-          +
-        </p>
-        <p class="font-bold text-2xl inline-block md:mr-2.5% text-dark_green">
-          DELIVERY
-        </p>
-        <p class="font-bold text-2xl md:mr-2.5%">
+        <order-divtablet class="hidden md:flex" />
+        <order-divmobile class="md:hidden" />
+        <p class="font-bold text-2xl text-center">
           =
         </p>
-        <p class="font-bold text-2xl md:inline-block md:mr-2.5%">
+        <p class="font-bold text-2xl text-center">
           NO WASTAGE
         </p>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import OrderDivtablet from 'theme/components/custom/how-it-works-page/OrderDivtablet.vue'
+import OrderDivmobile from 'theme/components/custom/how-it-works-page/OrderDivmobile.vue'
+
+export default {
+  components: {
+    OrderDivtablet,
+    OrderDivmobile
+  }
+}
+</script>
+
+<style scoped>
+.header_font {
+  font-family: 'EB Garamond', serif;
+}
+</style>

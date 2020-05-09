@@ -1,6 +1,6 @@
 <template>
   <div class="pr-20% add-gradient pt-16">
-    <p class="text-center text-5xl font-bold">
+    <p class="text-center text-5xl font-bold header_font">
       Social Responsibility
     </p>
     <div class="flex ml-25% my-16">
@@ -68,5 +68,8 @@
 <style scoped>
 .add-gradient {
   background: linear-gradient(to bottom, #fff 95%, #f2f2f2 5%);
+}
+.header_font {
+  font-family: 'EB Garamond', serif;
 }
 </style>

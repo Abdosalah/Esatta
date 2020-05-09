@@ -8,7 +8,7 @@
         </p>
       </div>
       <div class="w-3/5 pr-5%">
-        <p class="text-2xl py-12 font-bold">
+        <p class="text-2xl pt-12 pb-8 font-bold">
           OUR FIT GUARANTEE
         </p>
         <p class="text-sm cl-secondary">
@@ -17,10 +17,7 @@
           product may not have the right fit we provide the following
         </p>
         <p class="font-bold cl-secondary pt-4">
-          ALTERATIONS >
-        </p>
-        <p class="font-bold cl-secondary pt-4">
-          REMAKE >
+          ALTERATIONS & RETURNS >
         </p>
       </div>
     </div>
@@ -32,7 +29,6 @@
   height: 100%;
   font-size: 10rem;
   font-weight: 900;
-  padding-top: 10%;
   text-align: center;
   padding-bottom: 10%;
 }

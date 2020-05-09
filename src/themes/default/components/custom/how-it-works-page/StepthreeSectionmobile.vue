@@ -6,8 +6,7 @@
         3
       </p>
       <p class="text-2xl pb-8 font-bold">
-        OUR FIT
-        <br>GUARANTEE
+        OUR FIT GUARANTEE
       </p>
       <p class="text-sm cl-secondary mx-10%">
         At Muute we guarntee fit. All our garments are hand-made
@@ -15,10 +14,7 @@
         product may not have the right fit we provide the following
       </p>
       <p class="font-bold cl-secondary pt-4">
-        ALTERATIONS >
-      </p>
-      <p class="font-bold cl-secondary pt-4">
-        REMAKE >
+        ALTERATIONS & RETURNS >
       </p>
     </div>
   </div>

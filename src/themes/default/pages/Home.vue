@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="home" class="body_font">
     <head-image />
     <how-itworksmobile class="block md:hidden" />
     <how-itworks class="hidden md:block" />
@@ -169,9 +169,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .new-collection {
-    @media (max-width: 767px) {
-      padding-top: 0;
-    }
+.new-collection {
+  @media (max-width: 767px) {
+    padding-top: 0;
   }
+}
+.body_font {
+  font-family: 'Lato', sans-serif;
+}
 </style>

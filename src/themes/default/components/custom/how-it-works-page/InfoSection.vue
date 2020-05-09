@@ -165,4 +165,10 @@ export default {
 .VueCarousel-navigation-next {
   transform: translateY(-110%) translateX(100%);
 }
+.body_font {
+  font-family: 'Lato', sans-serif;
+}
+.header_font {
+  font-family: 'EB Garamond', serif;
+}
 </style>

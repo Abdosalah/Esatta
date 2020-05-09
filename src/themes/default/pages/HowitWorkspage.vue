@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body_font">
     <page-header class="hidden md:block" />
     <page-headermobile class="md:hidden" />
 
@@ -78,3 +78,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.body_font {
+  font-family: 'Lato', sans-serif;
+}
+</style>
