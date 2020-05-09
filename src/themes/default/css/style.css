@@ -3308,6 +3308,10 @@ video {
   cursor: not-allowed;
 }
 
+.grid {
+  display: grid;
+}
+
 .block {
   display: block;
 }
@@ -14126,8 +14130,16 @@ video {
   width: 8.333333%;
 }
 
+.w-13\% {
+  width: 13%;
+}
+
 .w-2\/12 {
   width: 16.666667%;
+}
+
+.w-23\% {
+  width: 23%;
 }
 
 .w-3\/12 {
@@ -55093,6 +55105,10 @@ video {
 
   .lg\:w-3\/4 {
     width: 75%;
+  }
+
+  .lg\:w-13\% {
+    width: 13%;
   }
 
   .lg\:w-1\/5 {

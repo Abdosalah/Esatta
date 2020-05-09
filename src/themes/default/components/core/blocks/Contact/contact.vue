@@ -7,7 +7,7 @@
     </div>
     <div class="block lg:flex lg:mr-nav ">
       <contactForm :options="computedData" class="hidden lg:block" />
-      <miniContactForm class="block lg:hidden" />
+      <miniContactForm class="block lg:hidden" :options="computedData" />
       <links class="lg:mt-16" />
     </div>
   </div>

@@ -38,5 +38,7 @@ p{
 .icon{
     font-weight: 800;
     font-size: medium;
+    position: relative;
+    top: 10%;
 }
 </style>

@@ -1,52 +1,58 @@
 <template>
   <div>
-    <div class="navbar">
-      <v-bottom-navigation v-model="bottomNav" class="nav lg:pr-50%">
-        <v-btn flat slot="activated" class="button" @click="upHere = !upHere"
-               :class="{'white': !upHere, 'blue': upHere}"
-        >
-          <span style="margin-top: 8px;">
-            REFINE
-          </span>
+    <ul class="refineBar">
+      <li class="w-23% lg:w-13%">
+        <a @click="upHere = !upHere">REFINE
           <img src="../../../../assets/svg/flter.svg" class="images">
-        </v-btn>
-        <v-btn class="button" @click="sortby = !sortby">
-          <span style="margin-top: 8px;">
-            SORT BY
-          </span>
+        </a>
+      </li>
+      <li class="w-23% lg:w-13%">
+        <a>SORT BY
           <img src="../../../../assets/svg/flter.svg" class="images">
-        </v-btn>
-
-        <v-btn class="button hidden md:block">
-          <span style="margin-top: 8px;">
-            SHOW
-          </span>
+        </a>
+        <ul class="dropdown">
+          <li><a href="#">NEW ARRIVALS</a></li>
+          <li><a href="#">ALMOST DONE</a></li>
+          <li><a href="#">MOST POPULAR</a></li>
+          <li><a href="#">BRAND (A TO Z)</a></li>
+          <li><a href="#">BRAND (Z TO A)</a></li>
+          <li><a href="#">COUNTRY OF ORIGIN (A TO Z)</a></li>
+          <li><a href="#">COUNTRY OF ORIGIN (Z TO A)</a></li>
+          <li><a href="#">PRICE (HIGH TO LOW)</a></li>
+          <li><a href="#">PRICE (LOW TO HIGH)</a></li>
+        </ul>
+      </li>
+      <li class="hidden lg:block w-23% lg:w-13%">
+        <a>SHOW
           <img src="../../../../assets/svg/ar_d.svg" class="images">
-        </v-btn>
-
-        <v-btn class="button hidden md:block">
-          <span style="margin-top: 8px;">
-            MODEL
-          </span>
+        </a>
+        <ul class="dropdown">
+          <li><a href="#">20</a></li>
+          <li><a href="#">40</a></li>
+          <li><a href="#">50</a></li>
+        </ul>
+      </li>
+      <li class="hidden lg:block w-23% lg:w-13%">
+        <a>MODEL
           <img src="../../../../assets/svg/eye.svg" class="images">
-        </v-btn>
-      </v-bottom-navigation>
-      <ExtendedRefine id="navbarinternal" v-show="upHere" />
-    </div>
-    <SortBY v-show="sortby" />
-    <!-- <Dropdown /> -->
+        </a>
+        <ul class="dropdown">
+          <li><a href="#">Model1</a></li>
+          <li><a href="#">Model2</a></li>
+          <li><a href="#">Model3</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ExtendedRefine id="navbarinternal" v-show="upHere" />
   </div>
 </template>
 
 <script>
 import ExtendedRefine from 'theme/components/core/blocks/Browse/ExtendedRefine'
-import SortBY from 'theme/components/core/blocks/Browse/SortBY'
-import Dropdown from 'theme/components/core/blocks/Browse/Dropdown'
+
 export default {
   components: {
-    ExtendedRefine,
-    SortBY,
-    Dropdown
+    ExtendedRefine
   },
   data: function () {
     return {
@@ -59,66 +65,61 @@ export default {
 </script>>
 
 <style lang="scss" scoped>
-.navbar{
-  background: #e2e2e2;
-  // padding-right: 50%;
-  // width: 100%;
-  // height: 60px;
-  // background-color: #e2e2e2;
-  // bottom: 0;
-  // box-shadow: 0.1px 0.1px 15px 0.1px #273c75;
-  // border-radius:10px;
-  // display: flex;
-}
-.nav{
-  bottom: 0;
-  z-index: 1000;
-  background: #e2e2e2;
-  color: black;
-  // position: fixed;
-  width: 100%;
-  text-align: center;
-  height: 7%;
-  margin: 0;
-  display:flex;
-  flex-direction:row;
-}
-.button{
-  padding: 0px 3%;
-  border-right: 1px solid white;
-  //border-bottom: 1px solid #c2c0c0;
-  text-align: center;
-  line-height: 45px;
-  flex-grow:1;
-  font-size: x-small;
-  letter-spacing: 2px;
-  font-weight: bold;
-  width: 20%;
-  justify-content: center;
-  // color: black;
-  &.is-active {
-              background-color: white;
+  .refineBar{
+    font-size: x-small;
+    padding-left: 3%;
   }
-}
-.button::after{
-  position: absolute;
-  left    : 0;
-  bottom  : 0;
-  height: 5%;
-}
-.images{
-  display: inline-block;
-  width:10%;
-  height:45%;
-  margin-bottom: 4px;
-  text-align: center;
-  justify-content: center;
-}
-#navbarinternal{
-  background-color: white;
-  color: #7b4240;
-}
-.button:hover, .button:active {
-  background-color: white;
-}
+  .images{
+    margin-left: 10%;
+    display: inline-block;
+    width:10%;
+    height:45%;
+    margin-bottom: 4px;
+    text-align: center;
+    justify-content: center;
+  }
+  ul{
+    // border: 0 none;
+    background-color: #E2E2E2;
+    padding: 0;
+    list-style: none;
+    background: #f2f2f2;
+  }
+  ul li{
+    display: inline-block;
+    position: relative;
+    line-height: 21px;
+    text-align: left;
+  }
+  ul li a{
+    border-right: 1px solid white;
+    display: block;
+    padding: 8px 25px;
+    color: #333;
+    text-decoration: none;
+  }
+  ul li a:hover{
+    color: black;
+    background: white;
+  }
+  ul li ul.dropdown{
+    min-width: 120%; /* Set width of the dropdown */
+    background: white;
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+  }
+  ul li ul li{
+    width: 100%;
+  }
+  ul li ul li a{
+    color: #7b4240;
+  }
+  ul li:hover ul.dropdown{
+    display: block;/* Display the dropdown */
+  }
+  ul li ul.dropdown li{
+    display: block;
+  }
 </style>

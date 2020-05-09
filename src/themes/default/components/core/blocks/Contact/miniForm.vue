@@ -14,11 +14,17 @@
       <input class="w-3/5 md:w-4/5 phoneNo" v-model="message" placeholder="phone *">
     </div>
     <div class="m-10 w-11/12">
-      <select>
-        <option v-for="(opti, name) in options" :value="opti" :key="opti">
-          {{ opti }} {{ name }}
+      <select @click="careerCheck()">
+        <option :value="null">
+          Select Issue
+        </option>
+        <option v-for="(opti) in options" :value="opti" :key="opti">
+          {{ opti.name }}
         </option>
       </select>
+    </div>
+    <div v-show="attachment">
+      <upload />
     </div>
     <div class="input m-10">
       <textarea class="area" v-model="message" placeholder="Message *" />
@@ -31,27 +37,35 @@
         <span>SUBMIT</span>
       </button>
     </div>
-    <!-- <div id="app">
-      <div v-if="!image">
-        <h2>Select file to upload</h2>
-        <input type="file" @change="onFileChange">
-      </div>
-      <div v-else>
-        <img :src="image">
-        <button @click="removeImage">
-          Remove image
-        </button>
-      </div>
-    </div> -->
   </div>
 </template>
 
 <script>
+import upload from 'theme/components/core/blocks/Contact/upload'
 export default {
+  components: {
+    upload
+  },
   props: {
     options: {
       type: Object,
       required: true
+    }
+  },
+  data () {
+    return {
+      attachment: false
+    }
+  },
+  methods: {
+    careerCheck () {
+      for (let i = 0; i < this.options.length; i++) {
+        if (this.options[i].attachment === true) {
+          this.attachment = true
+        } else if (this.options[i].attachment === false) {
+          this.attachment = false
+        }
+      }
     }
   }
 }
@@ -74,8 +88,8 @@ export default {
       border-width: 0 0 2px;
       border-color: black;
   }
-  .phoneNo{
-      /* width: 81%; */
+  .buttons{
+      display: grid;
   }
   .dropdown{
       background-color: white;
@@ -86,6 +100,7 @@ export default {
       border-width: 1px;
       border-color: black;
       width: 100%;
+      padding: 1%;
   }
   .btn-1{
       background-color: black;
@@ -93,7 +108,7 @@ export default {
       font-size: xx-small;
       text-align: center;
       height: 4rem;
-      margin: 1%;
+      margin-bottom: 2%;
   }
   .btn-2{
       background-color: #EC145B;;
@@ -102,7 +117,6 @@ export default {
       text-align: center;
       height: 4rem;
       float: right;
-      margin: 1%;
   }
   /* #app {
   text-align: center;

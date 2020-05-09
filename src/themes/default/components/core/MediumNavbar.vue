@@ -4,15 +4,15 @@
     <div class=" hidden md:flex">
       <v-bottom-navigation v-model="bottomNav" class="nav">
         <v-btn value="recent" class="button">
-          <img src="assets/svg/browse_b.svg" class="image opacity-20">
+          <img src="../../assets/svg/browse_b.svg" class="image opacity-20">
           <span>BROWSE</span>
         </v-btn>
         <v-btn value="favorites" class="button">
-          <img src="assets/svg/like_prod.svg" class="image opacity-20">
+          <img src="../../assets/svg/like_prod.svg" class="image opacity-20">
           <span>LIKED</span>
         </v-btn>
         <v-btn value="nearby" class="button">
-          <img src="assets/svg/measure.svg" class="image">
+          <img src="../../assets/svg/measure.svg" class="image">
           <span>MEASURE ME</span>
         </v-btn>
         <!-- <v-btn value="nearby" class="button">
@@ -25,19 +25,19 @@
     <div class="md:hidden">
       <v-bottom-navigation v-model="bottomNav" class="nav2">
         <v-btn value="recent" class="button2">
-          <img src="assets/svg/browse_b.svg" class="image2 opacity-25">
+          <img src="../../assets/svg/browse_b.svg" class="image2 opacity-25">
           <span>BROWSE</span>
         </v-btn>
         <v-btn value="favorites" class="button2">
-          <img src="assets/svg/like_prod.svg" class="image2 opacity-25">
+          <img src="../../assets/svg/like_prod.svg" class="image2 opacity-25">
           <span>LIKED</span>
         </v-btn>
         <v-btn value="nearby" class="button2">
-          <img src="assets/svg/measure.svg" class="image2">
+          <img src="../../assets/svg/measure.svg" class="image2">
           <span>MEASURE ME</span>
         </v-btn>
         <v-btn value="nearby" class="button2">
-          <img src="assets/svg/bag.svg" class="image2">
+          <img src="../../assets/svg/bag.svg" class="image2">
           <span>BAG</span>
         </v-btn>
       </v-bottom-navigation>
