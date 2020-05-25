@@ -54,12 +54,14 @@ module.exports = {
         '30%': '30%',
         '19%': '19%',
         '10%': '10%',
+        '8%': '8%',
         '1.2rem': '1.2rem'
       },
       padding: {
         '50%': '50%',
         'nav': '22%',
         '20%': '20%',
+        '17%': '17%',
         '15%': '15%',
         '13%': '13%',
         '10%': '10%',
@@ -162,6 +164,7 @@ module.exports = {
         gray: '#E2E2E2',
         grey_text: '#a0aec0',
         dark_grey: '#a9a9a9',
+        secondary_grey: '#f2f2f2',
         background_gray: '#828282'
       },
       fontSize: {

@@ -1,6 +1,6 @@
 <template>
   <div id="product" class="" itemscope itemtype="http://schema.org/Product">
-    <section class="product-top-section bg-dark_grey lg:pr-nav">
+    <section class="product-top-section bg-white lg:bg-secondary_grey lg:pr-nav">
       <div class="relative">
         <section class="block lg:flex">
           <!-- PRODUCT IMAGE -->
@@ -17,7 +17,7 @@
             </div>
           </div>
           <!-- PRODUCT DATA -->
-          <div class="w-full data text-center px-20% pb-8 lg:pb-0 lg:w-40% lg:pr-0 lg:pl-4vw lg:pt-56 lg:text-left">
+          <div class="w-full data text-center px-20% pb-8 pt-8 lg:pb-0 lg:w-40% lg:pr-0 lg:pl-4vw lg:pt-56 lg:text-left">
             <p class="text-2xl tracking-widest font-medium" data-testid="productName" itemprop="name">
               {{ product.name | htmlDecode }}
               <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share" />
@@ -84,8 +84,23 @@
                   v-if="(!product.errors || Object.keys(product.errors).length === 0) && Object.keys(configuration).length > 0"
                   :key="index"
                 >
-                  <div class="variants-wrapper w-1/2" v-if="option.label == 'Color'">
-                    <div class="variants-label pb-3" data-testid="variantsLabel" v-if="option.label == 'Color'">
+                <div class="w-1/2 text-left" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle' && option.label == 'Color'">
+                    <base-input-number
+                      :name="$t('QTY')"
+                      v-model="product.qty"
+                      :min="1"
+                      @blur="$v.$touch()"
+                      class="mr-50%"
+                      :validations="[
+                        {
+                          condition: $v.product.qty.$error && !$v.product.qty.minValue,
+                          text: $t('Quantity must be above 0')
+                        }
+                      ]"
+                    />
+                  </div>
+                  <div class="variants-wrapper w-full text-right" v-if="option.label == 'Color'">
+                    <div class="variants-label pb-3 pr-17%" data-testid="variantsLabel" v-if="option.label == 'Color'">
                       COLOURS
                     </div>
                     <div>
@@ -101,21 +116,6 @@
                       />
                     </div>
                   </div>
-                  <div class="w-1/2 text-left" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle' && option.label == 'Color'">
-                    <base-input-number
-                      :name="$t('QTY')"
-                      v-model="product.qty"
-                      :min="1"
-                      @blur="$v.$touch()"
-                      class="ml-50%"
-                      :validations="[
-                        {
-                          condition: $v.product.qty.$error && !$v.product.qty.minValue,
-                          text: $t('Quantity must be above 0')
-                        }
-                      ]"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@
               <p class="text-xs inline">
                 I WOULD LIKE A
               </p>
-              <select class="text-xs inline bg-dark_grey">
+              <select class="text-xs inline bg-white lg:bg-cl-secondary">
                 <option value="1">
                   STANDARD
                 </option>
@@ -144,8 +144,30 @@
               <add-to-cart
                 :product="product"
                 :disabled="$v.product.qty.$error && !$v.product.qty.minValue"
-                class="w-1/2 m-auto lg:m-0 lg:w-3/4 py-8 rounded-full disable-hover"
+                class="hidden lg:block m-0 w-3/4 py-8 rounded-full cursor-pointer bg-white disable-hover"
               />
+              <add-to-cart
+                :product="product"
+                :disabled="$v.product.qty.$error && !$v.product.qty.minValue"
+                class="lg:hidden w-1/2 m-auto py-8 rounded-full cursor-pointer bg-cl-secondary disable-hover-tablet"
+              />
+              <div class="text-center mt-12">
+                <p class="social-links">
+                  <img src="/assets/svg/social/instagram.svg" class="h-6 w-6 m-auto">
+                </p>
+                <p class="social-links">
+                  <img src="/assets/svg/social/facebook.svg" class="h-6 w-6 m-auto">
+                </p>
+                <p class="social-links">
+                  <img src="/assets/svg/social/pinterest.svg" class="h-6 w-6 m-auto">
+                </p>
+                <p class="social-links">
+                  <img src="/assets/svg/social/twitter.svg" class="h-6 w-6 m-auto">
+                </p>
+                <p class="inline-block text-dark_green w-19% hover:cursor-pointer">
+                  <img src="/assets/svg/social/snapchat.svg" class="h-6 w-6 m-auto">
+                </p>
+              </div>
             </div>
             <!-- <div class="">
               <div class="product__add-to-compare">
@@ -169,17 +191,22 @@
               </div>
             </div> -->
           </div>
-          <wishlist-button class="absolute top-77vh left-46% lg:left-55.75% lg:top-30%" :product="product" img-dimensions="height_8" button-dimensions="big" />
+          <wishlist-button
+            class="absolute bg-secondary_grey lg:bg-white top-77vh left-46% lg:left-55.75% lg:top-30%"
+            :product="product"
+            img-dimensions="height_8"
+            button-dimensions="big"
+          />
         </section>
       </div>
     </section>
-    <section class="bg-cl-secondary lg:pr-nav">
+    <section class="lg:pr-nav">
       <p class="text-center text-lg font-medium py-12 cl-secondary">
         You Might Also Like
       </p>
       <related-products
         type="upsell"
-        class="bg-cl-secondary pl-8 md:pl-0 lg:pl-8 pr-8 lg:pr-0"
+        class="pl-8 md:pl-0 lg:pl-8 pr-8 lg:pr-0"
       />
     </section>
   </div>
@@ -469,5 +496,19 @@ select {
 .disable-hover:hover {
   cursor: pointer;
   background-color: white;
+}
+
+.disable-hover-tablet:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+.social-links {
+  display: inline-block;
+  width: 18%;
+  border-width: 1px;
+  border-color: #536C4E;
+  border-style: none solid none none;
+  cursor: pointer;
 }
 </style>

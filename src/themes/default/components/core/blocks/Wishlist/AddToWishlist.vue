@@ -31,7 +31,12 @@ button {
 }
 
 .big {
-  background-color: white;
+  @media only screen and (max-width: 1023px) {
+    background-color: #f2f2f2;
+  }
+  @media only screen and (min-width: 1024px) {
+    background-color: white;
+  }
   border-radius: 9999px;
   padding: 2vw;
   position: absolute;

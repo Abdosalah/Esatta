@@ -1,12 +1,9 @@
 <template>
-  <div class="">
+  <div class="bg-white">
     <swiper :options="swiperOption" class="h-88vh">
       <swiper-slide v-for="(images, index) in gallery" :key="index" class="">
         <div class="swiper-zoom-container h-screen relative">
           <img id="carousel-img" class="h-screen object-fill w-full mb-15vh" :src="images.src" alt="">
-        </div>
-        <div class="absolute w-full opacity-0 hover:opacity-100 z-10 top-35vh">
-          <img class="m-auto h-15vh" src="../../../assets/esatta-images/zoom_plus.svg">
         </div>
       </swiper-slide>
       <swiper-slide>
@@ -43,7 +40,7 @@
         <section class="bg-cl-secondary flex w-full">
           <img class="h-screen opacity-25 object-cover w-full" :src="gallery[0].src" alt="">
           <div class="pt-24 absolute top-0 w-full h-full cl-secondary">
-            <img class="profile-img" src="../../../assets/esatta-images/my-profile/avatar.jpg">
+            <img class="profile-img-tablet" src="../../../assets/esatta-images/my-profile/avatar.jpg">
             <div class="inline-block pl-8">
               <p class="text-xl">
                 WHY THIS FITS YOU ALEX
@@ -128,10 +125,10 @@ export default {
 }
 </script>
 
-<style>
-.profile-img {
-  height: 5rem;
-  width: 5rem;
+<style >
+.profile-img-tablet {
+  height: 1rem;
+  width: 1rem;
   margin-left: 20%;
   border-radius: 50%;
   display: inline-block;
@@ -139,6 +136,7 @@ export default {
 .swiper-container-vertical > .swiper-pagination-bullets {
   left: 2%;
   width: fit-content;
+  bottom: 0px;
 }
 #carousel-img {
   object-fit: fill;

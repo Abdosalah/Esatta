@@ -1,7 +1,7 @@
 <template>
   <button-full @click.native="addToCart(product)" :disabled="isProductDisabled" data-testid="addToCart">
     BAG IT
-    <img class="h-8 w-8 inline ml-8" src="../../assets/esatta-images/product/bag.svg">
+    <img class="bag-it-icon" src="../../assets/esatta-images/product/bag.svg">
   </button-full>
 </template>
 
@@ -36,3 +36,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.bag-it-icon {
+  width: 2rem;
+  height: 3.5rem;
+  display: inline;
+  margin-left: 2rem;
+  padding-bottom: 1.5rem;
+}
+</style>
