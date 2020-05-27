@@ -17,7 +17,7 @@
             </div>
           </div>
           <!-- PRODUCT DATA -->
-          <div class="w-full data text-center px-20% pb-8 pt-8 lg:pb-0 lg:w-40% lg:pr-0 lg:pl-4vw lg:pt-56 lg:text-left">
+          <div class="w-full data text-center px-10% pb-8 pt-8 lg:pb-0 lg:w-40% lg:pr-0 lg:pl-4vw lg:pt-56 lg:text-left">
             <p class="text-2xl tracking-widest font-medium" data-testid="productName" itemprop="name">
               {{ product.name | htmlDecode }}
               <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share" />
@@ -84,7 +84,11 @@
                   v-if="(!product.errors || Object.keys(product.errors).length === 0) && Object.keys(configuration).length > 0"
                   :key="index"
                 >
-                <div class="w-1/2 text-left" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle' && option.label == 'Color'">
+                  <div class="w-1/2 text-left" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle' && option.label == 'Color'">
+                    <!-- This p tag is here only to align it with the color selector -->
+                    <p class="opacity-0 pb-1">
+                      COLOURS
+                    </p>
                     <base-input-number
                       :name="$t('QTY')"
                       v-model="product.qty"
@@ -124,7 +128,7 @@
               <p class="text-xs inline">
                 I WOULD LIKE A
               </p>
-              <select class="text-xs inline bg-white lg:bg-cl-secondary">
+              <select class="text-xs inline bg-white lg:bg-secondary_grey">
                 <option value="1">
                   STANDARD
                 </option>
@@ -192,13 +196,88 @@
             </div> -->
           </div>
           <wishlist-button
-            class="absolute bg-secondary_grey lg:bg-white top-77vh left-46% lg:left-55.75% lg:top-30%"
+            class="absolute bg-secondary_grey lg:bg-white top-77vh left-44% md:left-46% lg:left-55.75% lg:top-30%"
             :product="product"
             img-dimensions="height_8"
             button-dimensions="big"
           />
         </section>
       </div>
+    </section>
+    <section>
+      <div class="h-screen">
+        <div class="pt-12 w-full h-full cl-secondary">
+          <p class="px-20% font-bold">
+            Material and Fabrics
+          </p>
+          <hr class="mx-20% mt-4 mb-10">
+          <!-- <p class="px-20% mb-4">
+            - 100% Wool <br>
+            - Already Warn Look
+          </p> -->
+          <p class="px-20% font-bold">
+            Model Wears
+          </p>
+          <hr class="mx-20% mt-4 mb-10">
+          <p class="px-20% font-bold">
+            Care instrusction
+          </p>
+          <hr class="mx-20% mt-4 mb-10">
+          <p class="px-20% font-bold">
+            Shipping
+          </p>
+          <hr class="mx-20% mt-4 mb-10">
+          <p class="px-20% font-bold">
+            Returns
+          </p>
+          <p class="px-20% my-4">
+            - 100% Wool <br>
+            - Already Warn Look
+          </p>
+          <hr class="mx-20% mt-4 mb-10">
+        </div>
+      </div>
+      <section class="bg-cl-secondary flex w-full">
+        <div class="pt-24 top-0 w-full h-full cl-secondary">
+          <img class="profile-img-tablet" src="../assets/esatta-images/my-profile/avatar.jpg">
+          <div class="inline-block pl-8">
+            <p class="text-xl">
+              WHY THIS FITS YOU ALEX
+            </p>
+            <hr class="mt-4">
+          </div>
+          <div class="flex pt-20 px-10%">
+            <div class="w-1/2">
+              <div class="relative">
+                <img class="w-60% h-25rem" src="../assets/esatta-images/product/body_shape.svg">
+                <img class="w-60% h-25rem py-8" src="../assets/esatta-images/product/shape_shape.png">
+              </div>
+            </div>
+            <div class="w-1/2 text-left text-sm pt-8">
+              <div>
+                <p class="text-lg font-bold tracking-widest">
+                  HOURGLASS
+                </p>
+                <p class="pt-8">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                  Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
+                  Vivamus molestie orci sit amet venenatis congue.
+                </p>
+                <p class="pt-8">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                  Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
+                  Vivamus molestie orci sit amet venenatis congue.
+                </p>
+                <p class="pt-8">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                  Donec mauris ex, fermentum id egestas eget, fermentum eu mi.<br>
+                  Vivamus molestie orci sit amet venenatis congue.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
     <section class="lg:pr-nav">
       <p class="text-center text-lg font-medium py-12 cl-secondary">
