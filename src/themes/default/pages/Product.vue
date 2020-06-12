@@ -204,7 +204,7 @@
         </section>
       </div>
     </section>
-    <section>
+    <section class="lg:hidden">
       <div class="h-screen">
         <div class="pt-12 w-full h-full cl-secondary">
           <p class="px-20% font-bold">
