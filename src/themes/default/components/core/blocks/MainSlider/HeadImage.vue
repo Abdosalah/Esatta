@@ -21,6 +21,7 @@
           </p>
         </button>
       </div>
+      <!-- CHANGE LINK TO "/b/women-3" TO WORK WITH MAGENTO BACKEND DATA -->
       <router-link :to="localizedRoute('/b/women-20')" class="block md:inline-block md:ml-10 router-links" exact>
         <button class="header-buttons">
           <img class="w-8 h-8 inline" src="assets/esatta-images/page-banner/browse.svg">

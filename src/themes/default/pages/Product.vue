@@ -205,55 +205,109 @@
       </div>
     </section>
     <section class="lg:hidden">
-      <div class="h-screen">
-        <div class="pt-12 w-full h-full cl-secondary">
-          <p class="px-20% font-bold">
+      <div class="py-12 mx-20% cl-secondary">
+        <!-- Material and Fabrics -->
+        <button class="settings_buttons" @click="toggle('MaterialAndFabrics')">
+          <p class="font-bold">
             Material and Fabrics
           </p>
-          <hr class="mx-20% mt-4 mb-10">
-          <!-- <p class="px-20% mb-4">
-            - 100% Wool <br>
-            - Already Warn Look
-          </p> -->
-          <p class="px-20% font-bold">
+          <p v-if="componentName !== 'MaterialAndFabrics'" class="absolute right-0 top-0">
+            &#9655;
+          </p>
+          <p v-else class="absolute right-0 top-0">
+            &#9661;
+          </p>
+        </button>
+        <p v-if="componentName === 'MaterialAndFabrics'" class="my-4">
+          - 100% Wool <br>
+          - Already Warn Look
+        </p>
+        <hr class="mt-4 mb-10">
+        <!-- Model Wears -->
+        <button class="settings_buttons" @click="toggle('ModelWears')">
+          <p class="font-bold">
             Model Wears
           </p>
-          <hr class="mx-20% mt-4 mb-10">
-          <p class="px-20% font-bold">
-            Care instrusction
+          <p v-if="componentName !== 'ModelWears'" class="absolute right-0 top-0">
+            &#9655;
           </p>
-          <hr class="mx-20% mt-4 mb-10">
-          <p class="px-20% font-bold">
+          <p v-else class="absolute right-0 top-0">
+            &#9661;
+          </p>
+        </button>
+        <p v-if="componentName === 'ModelWears'" class="my-4">
+          - 100% Wool <br>
+          - Already Warn Look
+        </p>
+        <hr class="mt-4 mb-10">
+        <!-- Care Instructions -->
+        <button class="settings_buttons" @click="toggle('CareInstructions')">
+          <p class="font-bold">
+            Care Instructions
+          </p>
+          <p v-if="componentName !== 'CareInstructions'" class="absolute right-0 top-0">
+            &#9655;
+          </p>
+          <p v-else class="absolute right-0 top-0">
+            &#9661;
+          </p>
+        </button>
+        <p v-if="componentName === 'CareInstructions'" class="my-4">
+          - 100% Wool <br>
+          - Already Warn Look
+        </p>
+        <hr class="mt-4 mb-10">
+        <!-- Shipping -->
+        <button class="settings_buttons" @click="toggle('Shipping')">
+          <p class="font-bold">
             Shipping
           </p>
-          <hr class="mx-20% mt-4 mb-10">
-          <p class="px-20% font-bold">
+          <p v-if="componentName !== 'Shipping'" class="absolute right-0 top-0">
+            &#9655;
+          </p>
+          <p v-else class="absolute right-0 top-0">
+            &#9661;
+          </p>
+        </button>
+        <p v-if="componentName === 'Shipping'" class="my-4">
+          - 100% Wool <br>
+          - Already Warn Look
+        </p>
+        <hr class="mt-4 mb-10">
+        <!-- Returns -->
+        <button class="settings_buttons" @click="toggle('Returns')">
+          <p class="font-bold">
             Returns
           </p>
-          <p class="px-20% my-4">
-            - 100% Wool <br>
-            - Already Warn Look
+          <p v-if="componentName !== 'Returns'" class="absolute right-0 top-0">
+            &#9655;
           </p>
-          <hr class="mx-20% mt-4 mb-10">
-        </div>
+          <p v-else class="absolute right-0 top-0">
+            &#9661;
+          </p>
+        </button>
+        <p v-if="componentName === 'Returns'" class="my-4">
+          - 100% Wool <br>
+          - Already Warn Look
+        </p>
+        <hr class="mt-4 mb-10">
       </div>
-      <section class="bg-cl-secondary flex w-full">
-        <div class="pt-24 top-0 w-full h-full cl-secondary">
-          <img class="profile-img-tablet" src="../assets/esatta-images/my-profile/avatar.jpg">
-          <div class="inline-block pl-8">
-            <p class="text-xl">
-              WHY THIS FITS YOU ALEX
+      <section class="bg-cl-secondary flex pb-12">
+        <div class="pt-12 mx-10% h-full cl-secondary">
+          <div class="text-center">
+            <img class="rounded-full h-16 w-16 inline-block mb-4 md:mb-0" src="../assets/esatta-images/my-profile/avatar.jpg">
+            <p class="text-xl inline-block md:ml-4">
+              WHY THIS FITS YOU <strong>ALEX</strong>
             </p>
-            <hr class="mt-4">
           </div>
-          <div class="flex pt-20 px-10%">
+          <div class="flex pt-12">
             <div class="w-1/2">
               <div class="relative">
-                <img class="w-60% h-25rem" src="../assets/esatta-images/product/body_shape.svg">
+                <img class="w-60% h-25rem absolute" src="../assets/esatta-images/product/body_shape.svg">
                 <img class="w-60% h-25rem py-8" src="../assets/esatta-images/product/shape_shape.png">
               </div>
             </div>
-            <div class="w-1/2 text-left text-sm pt-8">
+            <div class="w-1/2 text-left text-sm">
               <div>
                 <p class="text-lg font-bold tracking-widest">
                   HOURGLASS
@@ -340,7 +394,8 @@ export default {
   mixins: [Product, VueOfflineMixin],
   data () {
     return {
-      detailsOpen: false
+      detailsOpen: false,
+      componentName: ''
     }
   },
   directives: { focusClean },
@@ -352,6 +407,9 @@ export default {
     }
   },
   methods: {
+    toggle (componentName) {
+      this.componentName = (this.componentName === componentName) ? '' : componentName
+    },
     showDetails (event) {
       this.detailsOpen = true
       event.target.classList.add('hidden')
@@ -589,5 +647,16 @@ select {
   border-color: #536C4E;
   border-style: none solid none none;
   cursor: pointer;
+}
+
+.settings_buttons {
+  position: relative;
+  text-align: left;
+  font-weight: 700;
+  width: 100%;
+}
+
+button:focus {
+  outline: none;
 }
 </style>

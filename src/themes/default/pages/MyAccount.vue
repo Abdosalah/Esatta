@@ -102,19 +102,20 @@
 <script>
 import MyAccount from '@vue-storefront/core/pages/MyAccount'
 import MyProfile from '../components/core/blocks/MyAccount/MyProfile'
+import MySettings from '../components/custom/profile-components/MySettings'
 import MyMeasurements from '../components/core/blocks/MyAccount/MyMeasurements'
 import MyContactDetails from '../components/core/blocks/MyAccount/MyContactDetails'
-import MyOrders from '../components/core/blocks/MyAccount/MyOrders'
-import MyOrder from '../components/core/blocks/MyAccount/MyOrder'
+// import MyOrders from '../components/core/blocks/MyAccount/MyOrders'
+// import MyOrder from '../components/core/blocks/MyAccount/MyOrder'
 import NoSSR from 'vue-no-ssr'
 
 export default {
   data () {
     return {
       navigation: [
-        { title: this.$t('Measurements'), link: '/my-profile/measurements' },
+        { title: this.$t('Measurements'), link: '/my-profile' },
         { title: this.$t('Purchases'), link: '/my-profile/contact-details' },
-        { title: this.$t('Settings'), link: '/my-profile/orders' }
+        { title: this.$t('Settings'), link: '/my-profile/settings' }
       ]
     }
   },
@@ -122,8 +123,9 @@ export default {
     MyProfile,
     MyMeasurements,
     MyContactDetails,
-    MyOrders,
-    MyOrder,
+    MySettings,
+    // MyOrders,
+    // MyOrder,
     'no-ssr': NoSSR
   },
   mixins: [MyAccount]

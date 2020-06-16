@@ -40,6 +40,7 @@ let routes = [
   { name: 'my-profile', path: '/my-profile', component: MyAccount, meta: { requiresAuth: true }, props: { activeBlock: 'MyMeasurements' } },
   { name: 'my-measurements', path: '/my-profile/measurements', component: MyAccount, props: { activeBlock: 'MyMeasurements' }, meta: { requiresAuth: true } },
   { name: 'my-contact-details', path: '/my-profile/contact-details', component: MyAccount, props: { activeBlock: 'MyContactDetails' }, meta: { requiresAuth: true } },
+  { name: 'my-settings', path: '/my-profile/settings', component: MyAccount, props: { activeBlock: 'MySettings' }, meta: { requiresAuth: true } },
   { name: 'my-orders', path: '/my-profile/orders', component: MyAccount, props: { activeBlock: 'MyOrders' }, meta: { requiresAuth: true } },
   { name: 'my-order', path: '/my-profile/orders/:orderId', component: MyAccount, props: { activeBlock: 'MyOrder' }, meta: { requiresAuth: true } },
   { name: 'about-us', path: '/about-us', component: Static, props: {page: 'lorem', title: 'About us'} },
