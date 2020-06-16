@@ -5,7 +5,7 @@
     </div>
 
     <div class="w-full text-sm ">
-      <hr />
+      <hr>
 
       <button class="settings_buttons" @click="toggle('MyMeasurements')">
         <p class="">
@@ -21,7 +21,7 @@
       <div v-if="componentName === 'MyMeasurements'">
         Setting description
       </div>
-      <hr />
+      <hr>
 
       <button class="settings_buttons" @click="toggle('MyOrder')">
         <p class="">
@@ -37,7 +37,7 @@
       <div v-if="componentName === 'MyOrder'">
         Setting description
       </div>
-      <hr />
+      <hr>
 
       <button class="settings_buttons" @click="toggle('Alterations')">
         <p class="">
@@ -53,7 +53,7 @@
       <div v-if="componentName === 'Alterations'">
         Setting description
       </div>
-      <hr />
+      <hr>
 
       <button class="settings_buttons" @click="toggle('Returns')">
         <p class="">
@@ -69,7 +69,7 @@
       <div v-if="componentName === 'Returns'">
         Setting description
       </div>
-      <hr />
+      <hr>
 
       <button class="settings_buttons" @click="toggle('SellOnEsatta')">
         <p class="">
@@ -85,7 +85,7 @@
       <div v-if="componentName === 'SellOnEsatta'">
         Setting description
       </div>
-      <hr />
+      <hr>
 
       <button class="settings_buttons" @click="toggle('Careers')">
         <p class="">
@@ -101,7 +101,7 @@
       <div v-if="componentName === 'Careers'">
         Setting description
       </div>
-      <hr />
+      <hr>
 
       <button class="settings_buttons" @click="toggle('Press')">
         <p class="">
@@ -117,7 +117,7 @@
       <div v-if="componentName === 'Press'">
         Setting description
       </div>
-      <hr />
+      <hr>
 
       <button class="settings_buttons" @click="toggle('Other')">
         <p class="">
@@ -133,9 +133,8 @@
       <div v-if="componentName === 'Other'">
         Setting description
       </div>
-      <hr />
+      <hr>
     </div>
-
   </div>
 </template>
 
@@ -154,8 +153,6 @@ export default {
   }
 }
 </script>
-
-
 
 <style scoped>
 .settings_buttons {
