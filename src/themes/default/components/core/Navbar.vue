@@ -2,7 +2,7 @@
   <nav>
     <div class="Navbar hidden lg:block animated fadein">
       <img class="image" src="../../assets/logo.svg">
-      <router-link v-if="!currentUser" :to="localizedRoute('/my-account')" exact class="link">
+      <router-link v-if="!currentUser" :to="localizedRoute('/my-profile')" exact class="link">
         <img src="../../assets/svg/measure.svg" class="images">
         {{ $t('MEASURE ME') }}
       </router-link>
@@ -10,7 +10,7 @@
         <img src="../../assets/svg/browse_b.svg" class="images opacity-25">
         {{ $t('BROWSE') }}
       </router-link>
-      <router-link :to="localizedRoute('/returns')" exact class="link">
+      <router-link :to="localizedRoute('/')" exact class="link">
         <img src="../../assets/svg/like_prod.svg" class="images opacity-25">
         <!-- <WishlistIcon /> -->
         {{ $t('LIKED') }}
@@ -30,13 +30,13 @@
       </router-link>
       <Currency class="currency opacity-25" />
       <div class="downlinks">
-        <router-link :to="localizedRoute('/returns')" exact class="link">
+        <router-link :to="localizedRoute('/how-it-works')" exact class="link">
           {{ $t('HOW IT WORKS') }}
         </router-link>
-        <router-link :to="localizedRoute('/returns')" exact class="link">
+        <router-link :to="localizedRoute('/designers')" exact class="link">
           {{ $t('OUR DESIGNERS') }}
         </router-link>
-        <router-link v-if="!currentUser" :to="localizedRoute('/returns')" exact class="link">
+        <router-link v-if="!currentUser" :to="localizedRoute('/body-shapes')" exact class="link">
           {{ $t('BODY SHAPES') }}
         </router-link>
       </div>

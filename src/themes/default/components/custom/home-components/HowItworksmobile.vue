@@ -1,6 +1,10 @@
 <template>
   <div class="my-carousel">
-    <carousel :per-page="1" :navigate-to="someLocalProperty" :mouse-drag="true">
+    <carousel
+      :per-page="1"
+      :navigate-to="someLocalProperty"
+      :mouse-drag="true"
+    >
       <slide>
         <div class="text-center relative">
           <p class="numbers absolute right-0 opacity-50">

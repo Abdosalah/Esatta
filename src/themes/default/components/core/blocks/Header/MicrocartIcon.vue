@@ -8,7 +8,9 @@
   >
     <img src="../../../../assets/svg/bag.svg" class="images hidden lg:block md:mt-2 lg:mt-0 lg:relative">
     <img src="../../../../assets/svg/bag.svg" class="mediumImages lg:hidden md:mt-2 lg:mt-0 lg:relative">
-    <div>BAG</div>
+    <p class="text-sm font-light pl-3 lg:text-sm lg:pt-0">
+      BAG
+    </p>
     <!-- <i class="material-icons">shopping_cart</i> -->
     <span
       class="hidden lg:block minicart-count absolute flex center-xs middle-xs border-box py0 px2 h6 lh16 weight-700 cl-white"
@@ -69,10 +71,6 @@ export default {
   transition: all 0.3s ease 0s;
   font-weight: bold;
 }
-.link:hover {
-  transform: translateY(-7px);
-  box-shadow: 0px 15px 20px rgba(0,0,0,0.2);
-}
 .images{
   width:1.75rem;
   height:1.75rem;
@@ -82,8 +80,8 @@ export default {
   bottom: 8px;
 }
 .mediumImages{
-  width:22%;
-  height:1.75rem;
+  width: 2rem;
+  height: 2rem;
   padding: 2%;
   bottom: 8px;
 }

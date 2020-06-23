@@ -4,16 +4,22 @@
     <div class=" hidden md:flex">
       <v-bottom-navigation v-model="bottomNav" class="nav">
         <v-btn value="recent" class="button">
-          <img src="../../assets/svg/browse_b.svg" class="image opacity-20">
-          <span>BROWSE</span>
+          <img src="../../assets/svg/browse.svg" class="image opacity-20">
+          <span class="font-light pt-2">
+            BROWSE
+          </span>
         </v-btn>
         <v-btn value="favorites" class="button">
-          <img src="../../assets/svg/like_prod.svg" class="image opacity-20">
-          <span>LIKED</span>
+          <img src="../../assets/svg/like_prod.svg" class="image opacity-25">
+          <span class="font-light pt-2">
+            LIKED
+          </span>
         </v-btn>
         <v-btn value="nearby" class="button">
           <img src="../../assets/svg/measure.svg" class="image">
-          <span>MEASURE ME</span>
+          <span class="font-light pt-2">
+            MEASURE ME
+          </span>
         </v-btn>
         <!-- <v-btn value="nearby" class="button">
           <img src="assets/svg/bag.svg" class="image">
@@ -69,7 +75,7 @@ export default {
   position: fixed;
   width: 100%;
   text-align: center;
-  height: 7%;
+  height: 3.5rem;
   padding: 0;
   margin: 0;
   display:flex;
@@ -88,7 +94,7 @@ export default {
   position: fixed;
   width: 100%;
   text-align: center;
-  height: 8%;
+  height: 3.5rem;
   padding: 0;
   margin: 0;
   display: inline-block;
@@ -104,34 +110,24 @@ export default {
   border-right: 1px solid #c2c0c0;
   border-bottom: 1px solid #c2c0c0;
   text-align: center;
-  line-height: 45px;
+  line-height: 3rem;
   flex-grow:1;
-  font-size: x-small;
-  letter-spacing: 2px;
-  font-weight: bold;
+  font-size: .875rem;
+  letter-spacing: 1px;
   width: 20%;
   justify-content: center;
-}
-.button:hover{
-  background-color: rgba(255, 255, 255, 0.3);
 }
 .button:active{
   background-color: none !important;
 }
 .button2{
-  // padding: 0px 20px;
   background-color: white;
   border-right: 1px solid #c2c0c0;
-  // border-bottom: 1px solid #c2c0c0;
   text-align: center;
   display: table-cell;
-  width: 25%;
-  padding-top: 2%;
+  width: 20%;
+  padding-top: 0.5rem;
   padding-bottom: 4%;
-  // display: flex;
-  // flex-direction: column;
-  // line-height: 40px;
-  // flex-grow:1;
   font-size: x-small;
 }
 .button2:hover{
@@ -152,7 +148,7 @@ export default {
 .image2{
   width: 100%;
   height: 15%;
-  padding-bottom: 10%;
+  padding-bottom: 0.25rem;
   text-align: center;
   justify-content: center;
 }

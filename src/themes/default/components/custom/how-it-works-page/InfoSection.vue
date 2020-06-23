@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <p class="w-full text-center font-bold my-12">
+    <p class="w-full text-center font-bold mt-12">
       INDEPENDENT DESIGNS MADE FOR YOU
     </p>
     <carousel
@@ -9,11 +9,11 @@
       :navigate-to="someLocalProperty"
       :mouse-drag="true"
       :navigation-enabled="true"
-      navigation-next-label="&gt;"
-      navigation-prev-label="&lt;"
+      navigation-next-label="&rsaquo;"
+      navigation-prev-label="&lsaquo;"
       :loop="true"
     >
-      <slide class="flex">
+      <slide class="flex pt-20">
         <div class="w-1/2 pr-4 cl-secondary">
           <p class="pb-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -55,7 +55,7 @@
           </p>
         </div>
       </slide>
-      <slide class="flex">
+      <slide class="flex pt-20">
         <div class="w-1/2 pr-4 cl-secondary">
           <p class="pb-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -97,7 +97,7 @@
           </p>
         </div>
       </slide>
-      <slide class="flex">
+      <slide class="flex pt-20">
         <div class="w-1/2 pr-4 cl-secondary">
           <p class="pb-6">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -155,16 +155,16 @@ export default {
 </script>
 
 <style>
-.VueCarousel-navigation {
-  font-size: 2rem
-}
-.VueCarousel-navigation-prev {
-  transform: translateY(-110%) translateX(-100%);
+.VueCarousel-navigation-button {
+  font-size: 5rem;
+  padding: 1rem 0;
+  left: 98%;
 }
 
-.VueCarousel-navigation-next {
-  transform: translateY(-110%) translateX(100%);
+.VueCarousel-navigation-prev {
+  margin-left: -1rem;
 }
+
 .body_font {
   font-family: 'Lato', sans-serif;
 }
